@@ -66,38 +66,12 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
         }
 
-        .logo-icon {
-            width: 45px;
+        .logo-img {
             height: 45px;
-            background: var(--gradient-secondary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            line-height: 1;
-        }
-
-        .logo-sub {
-            font-size: 0.75rem;
-            color: var(--medium-gray);
-            font-weight: 500;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-menu {
@@ -789,27 +763,13 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
             margin-bottom: 1.5rem;
         }
 
-        .footer-logo-icon {
-            width: 40px;
+        .footer-logo-img {
             height: 40px;
-            background: var(--gradient-secondary);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .footer-logo-text {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            width: auto;
+            object-fit: contain;
         }
 
         .footer-bottom {
@@ -904,6 +864,59 @@
             }
         }
 
+        /* Enhanced mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .product-content {
+                padding: 1.5rem;
+            }
+
+            .btn-primary, .btn-secondary, .btn-demo, .btn-info, .btn-video {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .founder-card {
+                padding: 1.5rem;
+            }
+
+            .contact-item {
+                font-size: 0.8rem;
+                word-break: break-all;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .logo-img {
+                height: 35px;
+            }
+
+            .footer-logo-img {
+                height: 30px;
+            }
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -967,51 +980,6 @@
                 font-size: 1.125rem;
                 padding: 0.5rem 0;
                 display: block;
-            }
-        }
-
-        /* Enhanced mobile responsiveness */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .hero-content {
-                padding: 0 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .product-content {
-                padding: 1.5rem;
-            }
-
-            .btn-primary, .btn-secondary, .btn-demo, .btn-info, .btn-video {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .founder-card {
-                padding: 1.5rem;
-            }
-
-            .contact-item {
-                font-size: 0.8rem;
-                word-break: break-all;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .cta-title {
-                font-size: 2rem;
             }
         }
 
@@ -1119,11 +1087,7 @@
     <header class="header" id="header">
         <nav class="nav-container">
             <div class="logo-container">
-                <div class="logo-icon">GDI</div>
-                <div class="logo-text">
-                    <div class="logo-main">Gobierno Digital</div>
-                    <div class="logo-sub">e Innovación</div>
-                </div>
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
             </div>
             
             <ul class="nav-menu">
@@ -1588,8 +1552,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="footer-logo-icon">GDI</div>
-                        <div class="footer-logo-text">Gobierno Digital e Innovación</div>
+                        <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="footer-logo-img">
                     </div>
                     <p>
                         Startup mexicana especializada en transformación digital del sector público. 
@@ -1836,7 +1799,7 @@
     <meta property="og:description" content="Startup mexicana especializada en transformación digital gubernamental. Productos innovadores: Municipio Digital Inteligente, Copilots México, Yo Candidato, Portal FAIS Bienestar y Portal Inteligente.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gobiernodigitaleinnovacion.com">
-    <meta property="og:image" content="https://www.gobiernodigitaleinnovacion.com/images/og-image.jpg">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GDI - Gobierno Digital e Innovación">
@@ -1854,7 +1817,7 @@
       "name": "GDI - Gobierno Digital e Innovación",
       "description": "Startup mexicana especializada en transformación digital del sector público",
       "url": "https://www.gobiernodigitaleinnovacion.com",
-      "logo": "https://www.gobiernodigitaleinnovacion.com/images/logo.png",
+      "logo": "https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+52-55-1080-6597",
@@ -1911,5 +1874,6 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" as="script">
+    <link rel="preload" href="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" as="image">
 </body>
 </html>
