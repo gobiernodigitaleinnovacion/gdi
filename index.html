@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDI - Gobierno Digital e Innovación | Transformación Digital del Sector Público</title>
+    <meta name="description" content="Startup mexicana especializada en transformación digital gubernamental. Productos innovadores: Municipio Digital Inteligente, Copilots México, Yo Candidato, Portal FAIS Bienestar y Portal Inteligente.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1d4ed8;
+            --accent-color: #3b82f6;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-card:nth-child(1) { transform: translateY(-20px); }
+        .hero-card:nth-child(4) { transform: translateY(-20px); }
+
+        .hero-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-card p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .product-image {
+            height: 200px;
+            background: var(--gradient-primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
+        }
+
+        .product-icon {
+            font-size: 4rem;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .product-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .product-features li i {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        .product-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-demo, .btn-info, .btn-video {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-demo {
+            background: var(--gradient-secondary);
+            color: white;
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-demo:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-info {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-info:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-video {
+            background: transparent;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+        }
+
+        .btn-video:hover {
+            background: #ff0000;
+            color: white;
+        }
+
+        .video-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+        }
+
+        .stat-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--medium-gray);
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .founder-card {
+            background: var(--light-gray);
+            border-radius: 20px;
+            padding: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .founder-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .founder-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .founder-details h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .founder-details p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            width: 16px;
+        }
+
+        .about-features {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .feature-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-content p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .contact-info {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .product-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Enhanced mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .product-content {
+                padding: 1.5rem;
+            }
+
+            .btn-primary, .btn-secondary, .btn-demo, .btn-info, .btn-video {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .founder-card {
+                padding: 1.5rem;
+            }
+
+            .contact-item {
+                font-size: 0.8rem;
+                word-break: break-all;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .logo-img {
+                height: 35px;
+            }
+
+            .footer-logo-img {
+                height: 30px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Scroll animations will be handled by AOS library */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-heavy);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+
+            .nav-menu a {
+                font-size: 1.125rem;
+                padding: 0.5rem 0;
+                display: block;
+            }
+        }
+
+        /* Additional optimizations */
+        .nav-menu a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover .product-icon {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Loading states */
+        .product-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Focus states for accessibility */
+        .btn-primary:focus,
+        .btn-secondary:focus,
+        .btn-demo:focus,
+        .btn-info:focus,
+        .btn-video:focus,
+        .cta-button:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .hero {
+                background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            }
+            
+            .product-image {
+                background: var(--primary-color);
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .float-animation {
+                animation: none;
+            }
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            padding: 6rem 0;
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .contact-form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        }
+
+        .contact-form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-form-info {
+            padding: 2rem 0;
+        }
+
+        .contact-form-info h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-form-info p {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-info-icon i {
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .contact-info-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info-text p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin: 0;
+        }
+
+        .contact-info-text a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info-text a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-form-wrapper {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-wrapper p {
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group label .required {
+            color: #ef4444;
+            margin-left: 0.25rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-button {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #6ee7b7;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+            display: block;
+        }
+
+        /* Responsive Design for Contact Form */
+        @media (max-width: 1024px) {
+            .contact-form-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+
+            .contact-form-info h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .hero-visual,
+            .cta-section,
+            .footer {
+                display: none;
+            }
+            
+            .hero {
+                background: white;
+                color: black;
+                min-height: auto;
+                padding: 2rem 0;
+            }
+            
+            .hero-text {
+                color: black;
+            }
+            
+            .product-card,
+            .stat-item,
+            .feature-item {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --dark-color: #f8fafc;
+                --light-gray: #1e293b;
+                --medium-gray: #94a3b8;
+                --white: #0f172a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto-form">Contacto</a></li>
+            </ul>
+
+            <a href="#contacto-form" class="cta-button">
+                <i class="fas fa-envelope"></i>
+                Contactar
+            </a>
+
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-right">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    Startup Mexicana Innovadora
+                </div>
+                <h1>Transformación Digital del Sector Público</h1>
+                <p class="hero-subtitle">
+                    "La Información es Poder" - Revolucionamos las instituciones públicas 
+                    con tecnología avanzada. Productos funcionales listos para implementar.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Ver Productos en Vivo
+                    </a>
+                    <a href="#contacto-form" class="btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contactar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="hero-cards">
+                    <div class="hero-card float-animation">
+                        <i class="fas fa-city"></i>
+                        <h3>Municipios</h3>
+                        <p>Digitales Inteligentes</p>
+                    </div>
+                    <div class="hero-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>IA</h3>
+                        <p>Copilots Estatales</p>
+                    </div>
+                    <div class="hero-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Participación</h3>
+                        <p>Ciudadana Digital</p>
+                    </div>
+                    <div class="hero-card float-animation">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Datos</h3>
+                        <p>para Decisiones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid" data-aos="fade-up">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Productos Funcionales</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-number">32</div>
+                    <div class="stat-label">Estados Cubiertos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="stat-number">AI</div>
+                    <div class="stat-label">Tecnología Avanzada</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Datos Oficiales</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="productos" class="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-tools"></i>
+                    Productos Innovadores
+                </div>
+                <h2 class="section-title">Soluciones Tecnológicas Funcionales</h2>
+                <p class="section-subtitle">
+                    Productos desarrollados y listos para implementar en instituciones públicas. 
+                    Prueba nuestras demos completamente funcionales.
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Municipio Digital Inteligente -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <i class="product-icon fas fa-city"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Municipio Digital Inteligente</h3>
+                        <p class="product-description">
+                            Portal completo de trámites municipales con gestión digital integral, 
+                            pagos en línea y seguimiento en tiempo real.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Sistema de solicitudes en 4 etapas</li>
+                            <li><i class="fas fa-check"></i> Consulta de estatus en tiempo real</li>
+                            <li><i class="fas fa-check"></i> Pagos integrados con Stripe</li>
+                            <li><i class="fas fa-check"></i> Encuestas de satisfacción</li>
+                            <li><i class="fas fa-check"></i> Mapas interactivos</li>
+                            <li><i class="fas fa-check"></i> Notificaciones automáticas</li>
+                        </ul>
+                        <div class="product-buttons">
+                            <a href="https://municipiodigitalinteligente.powerappsportals.com/" target="_blank" class="btn-demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Demo
+                            </a>
+                            <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/municipiodigitalinteligente.html" target="_blank" class="btn-info">
+                                <i class="fas fa-info-circle"></i>
+                                Más Info
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=mOg22KLviKQ" target="_blank" class="btn-video">
+                                <i class="fab fa-youtube"></i>
+                                Ver Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copilots México -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <i class="product-icon fas fa-robot"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Copilots México</h3>
+                        <p class="product-description">
+                            Asistentes de IA especializados para cada estado de México con datos 
+                            oficiales de INEGI, CONEVAL y Hacienda.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> 32 copilots estatales</li>
+                            <li><i class="fas fa-check"></i> Datos oficiales verificados</li>
+                            <li><i class="fas fa-check"></i> Interfaz conversacional</li>
+                            <li><i class="fas fa-check"></i> Análisis demográfico</li>
+                            <li><i class="fas fa-check"></i> Indicadores de pobreza</li>
+                            <li><i class="fas fa-check"></i> Finanzas públicas</li>
+                        </ul>
+                        <div class="product-buttons">
+                            <a href="https://gobiernodigitalinnovacion.github.io/GobiAsistente/gobiasistente.html" target="_blank" class="btn-demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Demo
+                            </a>
+                            <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/copilotsmx.html" target="_blank" class="btn-info">
+                                <i class="fas fa-info-circle"></i>
+                                Más Info
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=wD8wPkDqSgI" target="_blank" class="btn-video">
+                                <i class="fab fa-youtube"></i>
+                                Ver Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yo Candidato -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image">
+                        <i class="product-icon fas fa-vote-yea"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Yo Candidato</h3>
+                        <p class="product-description">
+                            Plataforma apolítica de participación ciudadana para recopilar propuestas 
+                            y crear puentes entre ciudadanos y candidatos.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Recopilación de propuestas</li>
+                            <li><i class="fas fa-check"></i> Clasificación geográfica</li>
+                            <li><i class="fas fa-check"></i> Dashboards en Power BI</li>
+                            <li><i class="fas fa-check"></i> Evaluación ciudadana</li>
+                            <li><i class="fas fa-check"></i> Sistema apolítico</li>
+                            <li><i class="fas fa-check"></i> Análisis de tendencias</li>
+                        </ul>
+                        <div class="product-buttons">
+                            <a href="https://propuestasciudadanaspiloto.powerappsportals.com/" target="_blank" class="btn-demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Demo
+                            </a>
+                            <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/yocandidato.html" target="_blank" class="btn-info">
+                                <i class="fas fa-info-circle"></i>
+                                Más Info
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=nUbpU5aWyAI&t=5s" target="_blank" class="btn-video">
+                                <i class="fab fa-youtube"></i>
+                                Ver Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portal FAIS Bienestar -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-image">
+                        <i class="product-icon fas fa-hands-helping"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Portal FAIS Bienestar</h3>
+                        <p class="product-description">
+                            Una plataforma digital integral especializada en la administración inteligente del Fondo de Aportaciones para la Infraestructura Social (FAIS), que combina análisis de datos avanzados, asistencia virtual y herramientas de gestión para optimizar la asignación y seguimiento de recursos destinados al desarrollo de infraestructura social en México.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Dashboard de análisis Ramo 33 - Visualización interactiva de datos actualizados trimestralmente</li>
+                            <li><i class="fas fa-check"></i> Asistente virtual GobiFAIS - Copiloto experto disponible 24/7</li>
+                            <li><i class="fas fa-check"></i> Generación de informes automatizados - Herramienta para crear reportes detallados</li>
+                            <li><i class="fas fa-check"></i> Gestión normativa integrada - Acceso centralizado a toda la regulación</li>
+                            <li><i class="fas fa-check"></i> Transparencia y seguimiento en tiempo real - Monitoreo continuo</li>
+                            <li><i class="fas fa-check"></i> Interfaz especializada para gobierno - Diseñada para funcionarios públicos</li>
+                        </ul>
+                        <div class="product-buttons">
+                            <a href="https://www.faisbienestar.com/" target="_blank" class="btn-demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Demo
+                            </a>
+                            <div class="video-group">
+                                <a href="https://www.youtube.com/watch?v=JAp0H-zXOdo" target="_blank" class="btn-video">
+                                    <i class="fab fa-youtube"></i>
+                                    Ver Video: Dashboard
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=VT2_AYkrej8" target="_blank" class="btn-video">
+                                    <i class="fab fa-youtube"></i>
+                                    Ver Video: GobiFAIS
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=UKpcwb3TrTw" target="_blank" class="btn-video">
+                                    <i class="fab fa-youtube"></i>
+                                    Ver Video: Informes FAIS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portal Inteligente -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-image">
+                        <i class="product-icon fas fa-brain"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Portal Inteligente</h3>
+                        <p class="product-description">
+                            Una solución digital avanzada que transforma la gestión de información gubernamental mediante dashboards interactivos, análisis de datos inteligente y asistencia virtual, diseñada específicamente para empoderar a estados y municipios con herramientas de visualización y consulta que optimizan la toma de decisiones basada en más de 359 indicadores socioeconómicos oficiales de INEGI y CONEVAL.
+                        </p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Dashboards interactivos multiplataforma</li>
+                            <li><i class="fas fa-check"></i> Análisis inteligente de datos</li>
+                            <li><i class="fas fa-check"></i> Asistente virtual de consulta</li>
+                            <li><i class="fas fa-check"></i> Acceso centralizado multiplataforma</li>
+                            <li><i class="fas fa-check"></i> Modernización de gestión gubernamental</li>
+                            <li><i class="fas fa-check"></i> Modelo escalable por uso</li>
+                        </ul>
+                        <div class="product-buttons">
+                            <a href="https://sites.google.com/view/portalzacatecasinteligente/p%C3%A1gina-principal" target="_blank" class="btn-demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Demo
+                            </a>
+                            <a href="https://portalinteligente.netlify.app/" target="_blank" class="btn-info">
+                                <i class="fas fa-info-circle"></i>
+                                Más Info
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=gzYcbgQ_Ny0" target="_blank" class="btn-video">
+                                <i class="fab fa-youtube"></i>
+                                Ver Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recursos Adicionales -->
+            <div class="section-header" style="margin-top: 4rem;" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-book"></i>
+                    Recursos Técnicos
+                </div>
+                <h3 class="section-title" style="font-size: 2rem;">Documentación y Marco Teórico</h3>
+            </div>
+
+            <div class="resource-card" data-aos="fade-up" style="max-width: 800px; margin: 0 auto; background: var(--light-gray); border-radius: 20px; padding: 2rem; text-align: center;">
+                <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark-color);">
+                    Modelo de Instituciones Públicas Inteligentes (IPI)
+                </h3>
+                <p style="color: var(--medium-gray); margin-bottom: 2rem; line-height: 1.6;">
+                    Marco teórico completo sobre la transformación digital gubernamental y el modelo 
+                    de instituciones públicas inteligentes desarrollado por GDI.
+                </p>
+                <a href="https://drive.google.com/file/d/1zjqz9x7_Rbwgomitl-_nEd6YTdrOg4qa/view" target="_blank" 
+                   style="background: var(--gradient-secondary); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-2px)'"
+                   onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fas fa-download"></i>
+                    Descargar Documento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2>Sobre GDI</h2>
+                    <p>
+                        <strong>Gobierno Digital e Innovación (GDI)</strong> es una startup mexicana dedicada a 
+                        revolucionar el sector público mediante la integración de tecnologías avanzadas.
+                    </p>
+                    <p>
+                        Fundada con la visión de empoderar a las instituciones públicas a través de la 
+                        digitalización, la inteligencia artificial y el análisis de datos, GDI nace de la 
+                        pasión por la innovación y el compromiso con el progreso social.
+                    </p>
+                    <p>
+                        Aunque somos una startup nueva, contamos con productos funcionales desarrollados 
+                        y listos para implementar, demostrando nuestras capacidades técnicas y visión innovadora.
+                    </p>
+
+                    <div class="founder-card">
+                        <div class="founder-info">
+                            <div class="founder-avatar">JHR</div>
+                            <div class="founder-details">
+                                <h3>Juan Heriberto Rosas</h3>
+                                <p>Fundador y Director Técnico</p>
+                            </div>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>juanheriberto.rosas@gobiernodigitaleinnovacion.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-features" data-aos="fade-left">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Innovación Constante</h3>
+                            <p>Desarrollamos soluciones de vanguardia utilizando las últimas tecnologías en IA, análisis de datos y automatización.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Transparencia Total</h3>
+                            <p>Todos nuestros productos priorizan la transparencia gubernamental y el acceso ciudadano a la información pública.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Compromiso Social</h3>
+                            <p>Creemos en el poder transformador de la tecnología para mejorar la vida de las personas y fortalecer las instituciones.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Productos Funcionales</h3>
+                            <p>No solo teoría: tenemos productos desarrollados, probados y listos para implementar en instituciones públicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2 class="cta-title">¿Listo para Modernizar tu Institución?</h2>
+                <p class="cta-description">
+                    Prueba nuestros productos funcionales y descubre cómo GDI puede transformar
+                    tu institución pública con tecnología de vanguardia.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://municipiodigitalinteligente.powerappsportals.com/" target="_blank" class="btn-primary">
+                        <i class="fas fa-play"></i>
+                        Probar Demos Ahora
+                    </a>
+                    <a href="#contacto-form" class="btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Enviar Mensaje
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contacto-form" class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-container">
+                <!-- Contact Info -->
+                <div class="contact-form-info" data-aos="fade-right">
+                    <div class="section-badge">
+                        <i class="fas fa-envelope"></i>
+                        Contáctanos
+                    </div>
+                    <h2>Transformemos Juntos tu Institución</h2>
+                    <p>
+                        ¿Listo para llevar tu institución al siguiente nivel? Completa el formulario
+                        y nos pondremos en contacto contigo a la brevedad para discutir cómo nuestras
+                        soluciones pueden transformar tu organización.
+                    </p>
+
+                    <div class="contact-info-cards">
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Teléfono</h4>
+                                <p><a href="https://wa.me/5215522727458" target="_blank">55 2272 7458</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Ubicación</h4>
+                                <p>Ciudad de México, México</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Horario de Atención</h4>
+                                <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <h3>Solicita Información</h3>
+                    <p>Completa el formulario y te responderemos pronto</p>
+
+                    <form name="contacto-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <!-- Honeypot for spam protection -->
+                        <input type="hidden" name="form-name" value="contacto-gdi">
+                        <p style="display: none;">
+                            <label>No llenes esto si eres humano: <input name="bot-field" /></label>
+                        </p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">
+                                    Nombre Completo<span class="required">*</span>
+                                </label>
+                                <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">
+                                    Teléfono<span class="required">*</span>
+                                </label>
+                                <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email<span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="institucion">
+                                    Tipo de Institución<span class="required">*</span>
+                                </label>
+                                <select id="institucion" name="institucion" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Gobierno Municipal">Gobierno Municipal</option>
+                                    <option value="Gobierno Estatal">Gobierno Estatal</option>
+                                    <option value="Gobierno Federal">Gobierno Federal</option>
+                                    <option value="Organismo Autónomo">Organismo Autónomo</option>
+                                    <option value="Empresa Privada">Empresa Privada</option>
+                                    <option value="Organización Civil">Organización Civil</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="producto">
+                                    Producto de Interés<span class="required">*</span>
+                                </label>
+                                <select id="producto" name="producto" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Municipio Digital Inteligente">Municipio Digital Inteligente</option>
+                                    <option value="Copilots México">Copilots México</option>
+                                    <option value="Yo Candidato">Yo Candidato</option>
+                                    <option value="Portal FAIS Bienestar">Portal FAIS Bienestar</option>
+                                    <option value="Portal Inteligente">Portal Inteligente</option>
+                                    <option value="Todos los productos">Todos los productos</option>
+                                    <option value="Consultoría personalizada">Consultoría personalizada</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">
+                                Mensaje<span class="required">*</span>
+                            </label>
+                            <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos sobre tu proyecto o necesidades..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+
+                        <div id="form-message" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="footer-logo-img">
+                    </div>
+                    <p>
+                        Startup mexicana especializada en transformación digital del sector público. 
+                        "La Información es Poder" - Datos para mejores decisiones.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/Gobdigitale" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@Gobiernodigitaleinnovacion/videos" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Productos</h3>
+                    <a href="https://municipiodigitalinteligente.powerappsportals.com/" target="_blank">Municipio Digital Inteligente</a>
+                    <a href="https://gobiernodigitalinnovacion.github.io/GobiAsistente/gobiasistente.html" target="_blank">Copilots México</a>
+                    <a href="https://propuestasciudadanaspiloto.powerappsportals.com/" target="_blank">Yo Candidato</a>
+                    <a href="https://www.faisbienestar.com/" target="_blank">Portal FAIS Bienestar</a>
+                    <a href="https://sites.google.com/view/portalzacatecasinteligente/p%C3%A1gina-principal" target="_blank">Portal Inteligente</a>
+                    <a href="https://drive.google.com/file/d/1zjqz9x7_Rbwgomitl-_nEd6YTdrOg4qa/view" target="_blank">Modelo IPI</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/municipiodigitalinteligente.html" target="_blank">Documentación Técnica</a>
+                    <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/copilotsmx.html" target="_blank">Info Copilots</a>
+                    <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/yocandidato.html" target="_blank">Info Yo Candidato</a>
+                    <a href="#productos">Demos en Vivo</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><strong>Juan Heriberto Rosas</strong><br>Fundador y Director Técnico</p>
+                    <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com">
+                        <i class="fas fa-envelope"></i> juanheriberto.rosas@gobiernodigitaleinnovacion.com
+                    </a>
+                    <p style="margin-top: 1rem;"><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
+                    <a href="#contacto-form" style="display: inline-block; margin-top: 1rem; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 8px; transition: opacity 0.3s;">
+                        <i class="fas fa-envelope"></i> Formulario de Contacto
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+                <p>Startup mexicana comprometida con la transformación digital del sector público.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            offset: 100,
+            once: true
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        var mobileToggle = document.querySelector('.mobile-menu-toggle');
+        var navMenu = document.querySelector('.nav-menu');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                
+                // Animate hamburger
+                var spans = this.querySelectorAll('span');
+                if (this.classList.contains('active')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        var navLinks = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        mobileToggle.click();
+                    }
+                }
+            });
+        }
+
+        // Add loading animation to elements
+        function addLoadingAnimations() {
+            var elements = document.querySelectorAll('.product-card, .stat-item, .feature-item');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.animationDelay = (i * 0.1) + 's';
+                elements[i].classList.add('loading');
+            }
+        }
+
+        // Counter animation for stats
+        function animateCounters() {
+            var counters = document.querySelectorAll('.stat-number');
+            
+            for (var i = 0; i < counters.length; i++) {
+                var counter = counters[i];
+                var target = counter.textContent;
+                
+                if (!isNaN(target)) {
+                    var targetNum = parseInt(target);
+                    var increment = targetNum / 50;
+                    var current = 0;
+                    
+                    var timer = setInterval(function() {
+                        current += increment;
+                        if (current >= targetNum) {
+                            counter.textContent = targetNum;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                }
+            }
+        }
+
+        // Intersection Observer for counter animation
+        var statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        var statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            var scrolled = window.pageYOffset;
+            var parallax = document.querySelector('.hero');
+            if (parallax) {
+                var speed = scrolled * 0.5;
+                parallax.style.transform = 'translateY(' + speed + 'px)';
+            }
+        });
+
+        // Enhanced hover effects for product cards
+        var productCards = document.querySelectorAll('.product-card');
+        for (var i = 0; i < productCards.length; i++) {
+            productCards[i].addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.boxShadow = 'var(--shadow-heavy)';
+            });
+            
+            productCards[i].addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'var(--shadow-light)';
+            });
+        }
+
+        // Click tracking for analytics
+        function trackClicks() {
+            var links = document.querySelectorAll('a[href*="powerappsportals"], a[href*="github.io"], a[href*="drive.google.com"], a[href*="faisbienestar.com"], a[href*="sites.google.com"], a[href*="youtube.com"]');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function() {
+                    console.log('Demo/Resource/Video accessed:', this.href);
+                    // Integrate with analytics service here
+                });
+            }
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            addLoadingAnimations();
+            trackClicks();
+            
+            // Add subtle entrance animation to hero content
+            setTimeout(function() {
+                var heroText = document.querySelector('.hero-text');
+                var heroVisual = document.querySelector('.hero-visual');
+                if (heroText) heroText.style.opacity = '1';
+                if (heroVisual) heroVisual.style.opacity = '1';
+            }, 100);
+        });
+
+        // Performance optimization: Lazy load non-critical images
+        if ('IntersectionObserver' in window) {
+            var lazyImages = document.querySelectorAll('img[data-src]');
+            var imageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            for (var i = 0; i < lazyImages.length; i++) {
+                imageObserver.observe(lazyImages[i]);
+            }
+        }
+
+        console.log('🚀 GDI - Gobierno Digital e Innovación | Sitio web cargado exitosamente');
+        console.log('📱 Productos funcionales disponibles para demostración');
+        console.log('🔗 Contacto: Juan Heriberto Rosas - 5522727458');
+    </script>
+
+    <!-- Additional Meta Tags for SEO -->
+    <meta property="og:title" content="GDI - Gobierno Digital e Innovación | Transformación Digital del Sector Público">
+    <meta property="og:description" content="Startup mexicana especializada en transformación digital gubernamental. Productos innovadores: Municipio Digital Inteligente, Copilots México, Yo Candidato, Portal FAIS Bienestar y Portal Inteligente.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gobiernodigitaleinnovacion.com">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GDI - Gobierno Digital e Innovación">
+    <meta name="twitter:description" content="Transformación Digital del Sector Público - Productos funcionales listos para implementar">
+    
+    <meta name="keywords" content="gobierno digital, transformación digital, municipios inteligentes, inteligencia artificial, sector público, México, GDI, copilots, participación ciudadana, bienestar social, portal inteligente">
+    <meta name="author" content="Juan Heriberto Rosas">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GDI - Gobierno Digital e Innovación",
+      "description": "Startup mexicana especializada en transformación digital del sector público",
+      "url": "https://www.gobiernodigitaleinnovacion.com",
+      "logo": "https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "juanheriberto.rosas@gobiernodigitaleinnovacion.com"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Juan Heriberto Rosas",
+        "email": "juanheriberto.rosas@gobiernodigitaleinnovacion.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressCountry": "México"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/",
+        "https://x.com/Gobdigitale",
+        "https://github.com/gobiernodigitaleinnovacion",
+        "https://www.youtube.com/@Gobiernodigitaleinnovacion/videos"
+      ]
+    }
+    </script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//municipiodigitalinteligente.powerappsportals.com">
+    <link rel="dns-prefetch" href="//gobiernodigitaleinnovacion.github.io">
+    <link rel="dns-prefetch" href="//propuestasciudadanaspiloto.powerappsportals.com">
+    <link rel="dns-prefetch" href="//www.faisbienestar.com">
+    <link rel="dns-prefetch" href="//sites.google.com">
+    <link rel="dns-prefetch" href="//www.youtube.com">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Additional Performance Enhancements -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="GDI">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" as="script">
+    <link rel="preload" href="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" as="image">
+</body>
+</html>
