@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tijuana: Radiografía del Municipio Más Endeudado de México - GDI</title>
+    <meta name="description" content="Un análisis de las finanzas públicas 2024 de Tijuana basado en datos del INEGI. El municipio fronterizo enfrenta un momento crítico con más del 20% de sus ingresos provenientes de deuda.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --danger-color: #ef4444;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-danger);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--danger-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
+            <span><i class="far fa-calendar"></i> 6 de diciembre de 2025</span>
+            <span><i class="far fa-clock"></i> 10 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Tijuana: Radiografía del Municipio Más Endeudado de México</h1>
+        <p class="article-subtitle">Un análisis de las finanzas públicas 2024 basado en datos del INEGI</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-exclamation-triangle"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Finanzas Tijuana 2024</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>1. Panorama General: Las Finanzas de Tijuana en 2024</h2>
+
+            <p>Tijuana, la ciudad fronteriza más grande de México, maneja en 2024 un presupuesto de <strong>$14,559 millones de pesos</strong>, cifra que representa un crecimiento acumulado del 89.85% desde 2019. Este incremento casi duplica el presupuesto en apenas cinco años.</p>
+
+            <div class="callout callout-danger">
+                <strong>Dato crítico:</strong>
+                Más del 72% de cada peso que ingresa ya tiene destino fijo antes de poder invertirse en nuevas obras o programas.
+            </div>
+
+            <h2>2. ¿De Dónde Viene el Dinero?</h2>
+
+            <p>La estructura de ingresos de Tijuana revela una dependencia preocupante. Las participaciones federales aportan el <strong>34.46%</strong> del total ($5,016 millones). Pero lo más revelador: el <strong>financiamiento representa el 20.04% ($2,918 millones)</strong>. Una quinta parte de los ingresos proviene de deuda.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Fuente de Ingreso</th>
+                        <th>Monto</th>
+                        <th>Porcentaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Participaciones Federales</td>
+                        <td>$5,016 millones</td>
+                        <td class="highlight-cell">34.46%</td>
+                    </tr>
+                    <tr style="background: rgba(239, 68, 68, 0.1);">
+                        <td><strong>Financiamiento (Deuda)</strong></td>
+                        <td>$2,918 millones</td>
+                        <td class="danger-cell">20.04%</td>
+                    </tr>
+                    <tr>
+                        <td>Impuestos Locales</td>
+                        <td>$2,721 millones</td>
+                        <td>18.69%</td>
+                    </tr>
+                    <tr>
+                        <td>Aportaciones Federales/Estatales</td>
+                        <td>$2,022 millones</td>
+                        <td>13.89%</td>
+                    </tr>
+                    <tr>
+                        <td>Derechos</td>
+                        <td>$1,651 millones</td>
+                        <td>11.34%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>3. ¿A Dónde Se Va el Dinero?</h2>
+
+            <p>Los servicios personales (nómina) consumen el <strong>38.21%</strong> del presupuesto: $5,562 millones. Los servicios generales representan 17.94% ($2,612 millones), mientras que el pago de deuda absorbe 15.91% ($2,315 millones).</p>
+
+            <div class="stat-highlight">
+                <p>Estos tres rubros suman</p>
+                <p class="number">72.06%</p>
+                <p>del presupuesto total</p>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Concepto de Egreso</th>
+                        <th>Monto</th>
+                        <th>Porcentaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: rgba(245, 158, 11, 0.1);">
+                        <td><strong>Servicios Personales (Nómina)</strong></td>
+                        <td>$5,562 millones</td>
+                        <td class="highlight-cell">38.21%</td>
+                    </tr>
+                    <tr>
+                        <td>Servicios Generales</td>
+                        <td>$2,612 millones</td>
+                        <td>17.94%</td>
+                    </tr>
+                    <tr style="background: rgba(239, 68, 68, 0.1);">
+                        <td><strong>Deuda Pública</strong></td>
+                        <td>$2,315 millones</td>
+                        <td class="danger-cell">15.91%</td>
+                    </tr>
+                    <tr style="background: rgba(16, 185, 129, 0.1);">
+                        <td>Inversión Pública</td>
+                        <td>$1,378 millones</td>
+                        <td class="success-cell">9.47%</td>
+                    </tr>
+                    <tr>
+                        <td>Materiales y Suministros</td>
+                        <td>$1,133 millones</td>
+                        <td>7.78%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>4. El Elefante en la Sala: La Deuda Pública</h2>
+
+            <div class="stat-highlight">
+                <p>Deuda pública 2024</p>
+                <p class="number">$2,315 millones</p>
+                <p>15.91% del presupuesto</p>
+            </div>
+
+            <p>Mientras en 2023 el municipio destinó $331 millones al pago de deuda, en 2024 esa cifra se dispara a <strong>$2,315 millones</strong>, un incremento de casi 600%.</p>
+
+            <p>Si sumamos que el 20% de los ingresos proviene de financiamiento nuevo, queda claro que Tijuana está en un ciclo de endeudamiento: pide prestado para pagar deuda anterior.</p>
+
+            <h2>5. Señales de Alerta</h2>
+
+            <ul>
+                <li><strong>Dependencia de financiamiento:</strong> 20.04% de los ingresos proviene de deuda</li>
+                <li><strong>Volatilidad financiera:</strong> 24.68% de variación general</li>
+                <li><strong>Rigidez presupuestal:</strong> 72% del gasto es inflexible</li>
+                <li><strong>Baja inversión:</strong> Solo 9.47% se destina a inversión pública</li>
+            </ul>
+
+            <h2>6. Recomendaciones</h2>
+
+            <h3>Fortalecer ingresos propios</h3>
+            <p>Con solo 18.69% de ingresos provenientes de impuestos locales, hay amplio margen para mejorar la recaudación.</p>
+
+            <h3>Reestructurar la deuda</h3>
+            <p>Renegociar plazos y tasas para distribuir los pagos de manera más uniforme.</p>
+
+            <h3>Optimizar el gasto en personal</h3>
+            <p>La digitalización de procesos podría generar eficiencias significativas.</p>
+
+            <h2>Conclusión</h2>
+
+            <p>Tijuana enfrenta un momento crítico en su historia financiera. El crecimiento del presupuesto no ha venido acompañado de mayor autonomía ni flexibilidad.</p>
+
+            <div class="callout callout-info">
+                <strong>Las decisiones que se tomen en los próximos años determinarán si la ciudad logra equilibrar sus finanzas o si profundiza una espiral de endeudamiento.</strong>
+            </div>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Finanzas Públicas Municipales - INEGI | <strong>Análisis:</strong> GDI | Diciembre 2025</p>
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> ¿Quieres analizar las finanzas de tu municipio?</h3>
+                <p>Accede a datos oficiales del INEGI y genera análisis como este en minutos.</p>
+                <a href="https://gdidata.com" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar Plataforma
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2025 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

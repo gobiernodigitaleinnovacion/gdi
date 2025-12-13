@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toluca: 44% para Nómina, 8% para Obras - GDI</title>
+    <meta name="description" content="Análisis de las finanzas públicas 2024 de la capital mexiquense. Toluca administra $5,051 millones con 72.89% comprometido en nómina, servicios y deuda.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover { color: var(--secondary-color); }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(102, 126, 234, 0.05); }
+
+        .highlight-cell {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .danger-cell {
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-box a:hover { transform: translateY(-2px); }
+
+        /* Source Box */
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer p { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .data-table { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category">Finanzas Municipales</span>
+            <span><i class="far fa-calendar"></i> 13 de diciembre de 2025</span>
+            <span><i class="far fa-clock"></i> 10 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Toluca: 44% para Nómina, 8% para Obras</h1>
+        <p class="article-subtitle">Análisis de las finanzas públicas 2024 de la capital mexiquense. Un presupuesto de $5,051 millones con rigidez estructural y desafíos de inversión.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-coins"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Finanzas Toluca 2024</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>1. Panorama General: Las Finanzas de Toluca en 2024</h2>
+
+            <p>Toluca, capital del Estado de México, administra en 2024 un presupuesto de <strong>$5,051 millones de pesos</strong>, cifra que representa un crecimiento del 25.67% respecto a 2019. A diferencia de otros municipios con alto endeudamiento, Toluca muestra un crecimiento más controlado, con una volatilidad de apenas 8.98%, lo que facilita la planeación presupuestal.</p>
+
+            <div class="callout callout-warning">
+                <strong>Dato clave:</strong>
+                El 72.89% del presupuesto está comprometido en solo tres rubros: nómina, servicios generales y deuda pública. Esta rigidez limita la capacidad de inversión.
+            </div>
+
+            <h2>2. ¿De Dónde Viene el Dinero?</h2>
+
+            <p>La estructura de ingresos de Toluca muestra una marcada dependencia de recursos federales. Las participaciones federales aportan el <strong>42.86%</strong> del total ($2,164 millones), mientras que las aportaciones federales y estatales representan otro <strong>26.73%</strong> ($1,350 millones). En conjunto, casi el 70% del presupuesto depende de transferencias externas.</p>
+
+            <div class="callout callout-success">
+                <strong>Dato positivo:</strong>
+                Toluca no reporta financiamiento (deuda nueva) en 2024, a diferencia de Tijuana donde representa el 20% de los ingresos.
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Fuente de Ingreso</th>
+                        <th>Monto</th>
+                        <th>Porcentaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Participaciones Federales</td>
+                        <td>$2,164 millones</td>
+                        <td class="highlight-cell">42.86%</td>
+                    </tr>
+                    <tr>
+                        <td>Aportaciones Federales y Estatales</td>
+                        <td>$1,350 millones</td>
+                        <td class="highlight-cell">26.73%</td>
+                    </tr>
+                    <tr>
+                        <td>Impuestos Locales</td>
+                        <td>$1,051 millones</td>
+                        <td class="highlight-cell">20.82%</td>
+                    </tr>
+                    <tr>
+                        <td>Derechos</td>
+                        <td>$324 millones</td>
+                        <td>6.43%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>3. ¿A Dónde Se Va el Dinero?</h2>
+
+            <p>El gasto de Toluca está dominado por los servicios personales (nómina), que absorben el <strong>44.02%</strong> del presupuesto: $2,223 millones. Esto significa que <strong>casi la mitad de cada peso se destina a pagar salarios y prestaciones</strong> de los trabajadores municipales.</p>
+
+            <div class="callout callout-danger">
+                <strong>Alerta:</strong>
+                La inversión pública apenas alcanza el <strong>8.79%</strong> ($444 millones), una proporción baja para una capital estatal con necesidades importantes de infraestructura.
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Concepto de Egreso</th>
+                        <th>Monto</th>
+                        <th>Porcentaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: rgba(239, 68, 68, 0.1);">
+                        <td><strong>Servicios Personales (Nómina)</strong></td>
+                        <td>$2,223 millones</td>
+                        <td class="danger-cell">44.02%</td>
+                    </tr>
+                    <tr>
+                        <td>Servicios Generales</td>
+                        <td>$744 millones</td>
+                        <td>14.74%</td>
+                    </tr>
+                    <tr>
+                        <td>Deuda Pública</td>
+                        <td>$713 millones</td>
+                        <td class="danger-cell">14.13%</td>
+                    </tr>
+                    <tr>
+                        <td>Transferencias y Subsidios</td>
+                        <td>$627 millones</td>
+                        <td>12.41%</td>
+                    </tr>
+                    <tr style="background: rgba(245, 158, 11, 0.1);">
+                        <td>Inversión Pública</td>
+                        <td>$444 millones</td>
+                        <td>8.79%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>4. La Deuda Pública: Una Carga Histórica</h2>
+
+            <div class="callout callout-info">
+                <strong>Deuda pública 2024: $713 millones (14.13% del presupuesto)</strong>
+            </div>
+
+            <p>La deuda pública de Toluca ha tenido un comportamiento volátil. En 2019, el municipio destinaba apenas $124 millones al pago de deuda. Para 2020, esta cifra se disparó a $493 millones (<strong>+297%</strong>), y en 2021 alcanzó su máximo histórico de $772 millones.</p>
+
+            <p>El crecimiento acumulado de la deuda entre 2019 y 2024 es del <strong>474.59%</strong>, con una volatilidad del 44.54%. Esta variabilidad extrema dificulta la planeación financiera.</p>
+
+            <h2>5. Señales de Alerta: Los ADEFAS</h2>
+
+            <p>Un problema particular de Toluca son los <strong>Adeudos de Ejercicios Fiscales Anteriores (ADEFAS)</strong>, que representan compromisos no pagados. En 2024, los ADEFAS alcanzan <strong>$516 millones</strong>, el 10.23% del presupuesto total.</p>
+
+            <div class="callout callout-danger">
+                <strong>Crecimiento explosivo:</strong>
+                En 2023 los ADEFAS aumentaron <strong>351%</strong> respecto a 2022, pasando de $110 millones a $499 millones.
+            </div>
+
+            <h2>6. ¿Qué Puede Hacer Toluca?</h2>
+
+            <h3>Fortalecer la recaudación local</h3>
+            <p>Con 20.82% de ingresos por impuestos locales, Toluca tiene una base tributaria que puede expandirse mediante actualización catastral, combate a la evasión y modernización de sistemas de cobro.</p>
+
+            <h3>Contener el gasto en nómina</h3>
+            <p>El 44% destinado a servicios personales es excesivo. La digitalización de trámites y la revisión de estructuras administrativas podrían liberar recursos para inversión.</p>
+
+            <h3>Liquidar los ADEFAS</h3>
+            <p>Es urgente establecer un plan para eliminar los $516 millones en adeudos acumulados.</p>
+
+            <h3>Reestructurar la deuda</h3>
+            <p>Negociar mejores tasas y plazos para los $713 millones de deuda pública.</p>
+
+            <h2>Conclusión</h2>
+
+            <p>Toluca presenta un <strong>panorama financiero mixto</strong>. Por un lado, no está adquiriendo deuda nueva y mantiene una volatilidad presupuestal controlada. Por otro, la nómina consume casi la mitad del presupuesto, la deuda acumulada representa el 14% del gasto, y los ADEFAS siguen creciendo.</p>
+
+            <div class="callout callout-info">
+                <strong>La capital mexiquense necesita una estrategia integral</strong> que fortalezca sus ingresos propios, contenga el gasto corriente y liquide sus pasivos históricos para recuperar flexibilidad financiera.
+            </div>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Finanzas Públicas Municipales - INEGI | <strong>Análisis:</strong> GDI | Diciembre 2025</p>
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> ¿Necesitas análisis de tu municipio?</h3>
+                <p>Con nuestras herramientas puedes consultar datos de cualquier municipio de México: ingresos, egresos, deuda, inversión y más.</p>
+                <a href="https://gdidata.com" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar Plataforma
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Toluca: 44% para Nómina, 8% para Obras",
+    "slug": "toluca-finanzas-publicas-2024",
+    "date": "2025-12-13",
+    "author": "Juan Heriberto Rosas",
+    "category": "Finanzas Municipales",
+    "categoryColor": "purple",
+    "image": "",
+    "excerpt": "Análisis de las finanzas públicas 2024 de la capital mexiquense. Toluca administra $5,051 millones con 72.89% comprometido en nómina, servicios y deuda. Solo 8.79% se destina a inversión pública.",
+    "url": "blog/articulos/2025-12-13-toluca-finanzas-publicas-2024.html",
+    "readTime": "10 min",
+    "featured": true
+  },
+  {
+    "title": "Tijuana: Radiografía del Municipio Más Endeudado de México",
+    "slug": "tijuana-municipio-mas-endeudado",
+    "date": "2025-12-06",
+    "author": "Juan Heriberto Rosas",
+    "category": "Alerta",
+    "categoryColor": "red",
+    "image": "",
+    "excerpt": "Un análisis de las finanzas públicas 2024 de Tijuana basado en datos del INEGI. El municipio fronterizo enfrenta un momento crítico con más del 20% de sus ingresos provenientes de deuda.",
+    "url": "blog/articulos/2025-12-06-tijuana-municipio-mas-endeudado.html",
+    "readTime": "10 min",
+    "featured": true
+  },
+  {
+    "title": "Falla Técnica en Uruapan: Lo que los Datos Revelan Sobre una Deuda Heredada",
+    "slug": "uruapan-falla-tecnica-deuda-heredada",
+    "date": "2025-11-22",
+    "author": "Juan Heriberto Rosas",
+    "category": "Alerta",
+    "categoryColor": "red",
+    "image": "",
+    "excerpt": "El gobernador de Michoacán declaró que Uruapan enfrenta una 'falla técnica' por sobreendeudamiento. Los datos oficiales del INEGI revelan que Carlos Manzo heredó una bomba financiera, no la creó.",
+    "url": "blog/articulos/2025-11-22-uruapan-falla-tecnica-deuda-heredada.html",
+    "readTime": "10 min",
+    "featured": true
+  }
+]
