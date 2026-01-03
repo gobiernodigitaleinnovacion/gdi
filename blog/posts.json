@@ -1,5 +1,18 @@
 [
   {
+    "title": "México Hackeado: La Crisis de Ciberseguridad y el Camino hacia la Protección de Datos",
+    "slug": "mexico-hackeado-crisis-ciberseguridad",
+    "date": "2026-01-03",
+    "author": "Juan Heriberto Rosas",
+    "category": "Alerta",
+    "categoryColor": "red",
+    "image": "",
+    "excerpt": "El grupo Chronus vulneró 20 instituciones públicas mexicanas exponiendo datos de millones de ciudadanos. Análisis de la crisis y soluciones con Microsoft Fabric.",
+    "url": "blog/articulos/2026-01-03-mexico-hackeado-crisis-ciberseguridad.html",
+    "readTime": "15 min",
+    "featured": true
+  },
+  {
     "title": "Toluca: 44% para Nómina, 8% para Obras",
     "slug": "toluca-finanzas-publicas-2024",
     "date": "2025-12-13",

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>México Hackeado: La Crisis de Ciberseguridad y el Camino hacia la Protección de Datos - GDI</title>
+    <meta name="description" content="El grupo Chronus vulneró 20 instituciones públicas mexicanas exponiendo datos de millones de ciudadanos. Análisis de la crisis y soluciones con Microsoft Fabric.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --danger-color: #ef4444;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-danger);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--danger-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border-left: 4px solid var(--danger-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
+            <span><i class="far fa-calendar"></i> 3 de enero de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">México Hackeado: La Crisis de Ciberseguridad y el Camino hacia la Protección de Datos</h1>
+        <p class="article-subtitle">El grupo Chronus vulneró 20 instituciones públicas exponiendo millones de datos ciudadanos. Análisis de la crisis y soluciones con Microsoft Fabric.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-shield-virus"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Crisis de Ciberseguridad 2025</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>1. La Noticia: El Hackeo Masivo de Diciembre 2025</h2>
+
+            <p>El 30 de diciembre de 2025, México cerró el año con una de las peores crisis de ciberseguridad de su historia. El grupo de hackers conocido como <strong>Chronus</strong> vulneró los sistemas de al menos 20 instituciones públicas federales, estatales y municipales, liberando de manera masiva información sensible de millones de ciudadanos.</p>
+
+            <p>Entre las instituciones afectadas se encuentran el <strong>Servicio de Administración Tributaria (SAT)</strong>, el <strong>Instituto Mexicano del Seguro Social (IMSS)</strong>, el <strong>Poder Judicial de Sonora y Querétaro</strong>, el <strong>Tribunal de Justicia Administrativa de la Ciudad de México</strong>, y las Secretarías de Salud de Tlaxcala y Sinaloa.</p>
+
+            <div class="callout callout-danger">
+                <strong>Caso crítico: Secretaría de Educación de Tabasco</strong>
+                Se filtraron 33.8 gigabytes de documentos que incluyen fotografías de INE, actas de nacimiento, comprobantes de domicilio y constancias de situación fiscal de más de 25 mil personas.
+            </div>
+
+            <p>Lo más alarmante: no se trata de bases de datos antiguas. Son millones de registros activos y descargables que comprometen la seguridad fiscal, médica y física de la ciudadanía mexicana. Información actualizada hasta diciembre de 2025 que ahora circula en la dark web, disponible para quien quiera comprarla.</p>
+
+            <p>La Secretaría Anticorrupción y Buen Gobierno, encabezada por Raquel Buenrostro, inició investigaciones de oficio. Sin embargo, la respuesta institucional ha sido tibia: mientras analizan si fue un hackeo o "uso indebido de credenciales", los datos de millones de mexicanos ya están expuestos.</p>
+
+            <h2>2. El Problema: La Fragilidad Estructural de la Ciberseguridad Gubernamental</h2>
+
+            <p>Este incidente no es aislado. México se ha convertido en el <strong>segundo país más atacado de Latinoamérica</strong> y el cuarto a nivel mundial en ciberataques.</p>
+
+            <div class="stat-highlight">
+                <p>Aumento de ciberataques a gobierno en 2025</p>
+                <p class="number">+260%</p>
+                <p>El 70% de las instituciones presenta vulnerabilidades significativas</p>
+            </div>
+
+            <p>Las consecuencias para los ciudadanos son devastadoras:</p>
+
+            <ul>
+                <li><strong>Robo de identidad:</strong> Con CURP, RFC y fotografía de INE, cualquier criminal puede suplantar tu identidad.</li>
+                <li><strong>Fraudes bancarios y fiscales:</strong> Obtener créditos a tu nombre, desviar devoluciones de impuestos.</li>
+                <li><strong>Extorsión directa:</strong> Especialmente grave para funcionarios de seguridad cuyas direcciones y datos familiares quedan expuestos.</li>
+            </ul>
+
+            <p>El patrón se repite una y otra vez. En 2022 fueron los "Guacamaya Leaks" con 6 terabytes de información de la Sedena. En 2023, ataques de ransomware a Conagua. En 2024, hackeos a fiscalías estatales. En 2025, Chronus. La pregunta no es si habrá otro ataque masivo, sino cuándo.</p>
+
+            <h2>3. Las Razones: Por Qué las Instituciones Públicas No Protegen Tus Datos</h2>
+
+            <h3>3.1 Capital humano inexistente</h3>
+
+            <p>México tiene un déficit de <strong>260,000 profesionales en ciberseguridad</strong>. En todo el país, solo existen 401 personas certificadas con CISSP, la credencial más reconocida internacionalmente.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Institución</th>
+                        <th>Ingenieros de Seguridad</th>
+                        <th>Comparación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pemex (empresa más grande del país)</td>
+                        <td class="danger-cell">5</td>
+                        <td>Gravemente insuficiente</td>
+                    </tr>
+                    <tr>
+                        <td>Un banco privado mexicano</td>
+                        <td class="success-cell">150</td>
+                        <td>30 veces más que Pemex</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Los pocos profesionales capacitados huyen al sector privado, donde ganan entre 40 mil y 300 mil pesos mensuales. O emigran a Estados Unidos y Canadá, donde el mismo puesto paga entre 160 mil y 440 mil pesos. ¿Quién va a trabajar para el gobierno ganando una fracción?</p>
+
+            <h3>3.2 Infraestructura tecnológica obsoleta</h3>
+
+            <p>Muchas dependencias gubernamentales todavía operan con <strong>Windows 7</strong>, un sistema operativo sin soporte desde 2020. Análisis de seguridad han detectado más de 10,000 equipos gubernamentales con este sistema vulnerable.</p>
+
+            <div class="callout callout-danger">
+                <strong>Caso emblemático:</strong>
+                El hackeo a la Sedena en 2022 ocurrió precisamente por un servidor Microsoft Exchange sin actualizar.
+            </div>
+
+            <p>No aplican parches de seguridad. No actualizan software. No implementan autenticación de dos factores, algo gratuito y básico que cualquier usuario de Gmail tiene activado. Las contraseñas son débiles, compartidas, y cuando un empleado se va, nadie desactiva sus accesos.</p>
+
+            <h3>3.3 Presupuesto ridículo y cero consecuencias</h3>
+
+            <div class="stat-highlight">
+                <p>Presupuesto federal para tecnologías de la información</p>
+                <p class="number">&lt; 0.5%</p>
+                <p>Una de las proporciones más bajas en décadas</p>
+            </div>
+
+            <p>La Guardia Nacional, responsable de la ciberdefensa del país, ha recibido solo dos cursos de capacitación en la materia, por los que pagó menos de medio millón de pesos.</p>
+
+            <p>No existe una ley de ciberseguridad que obligue a proteger datos ni castigue la negligencia. Cuando ocurre un hackeo, las autoridades minimizan, investigan sin transparencia, y todo sigue igual hasta el próximo ataque.</p>
+
+            <h2>4. Crítica a la Agencia de Transformación Digital: Prioridades Equivocadas</h2>
+
+            <p>Mientras los hackers roban millones de datos ciudadanos, ¿en qué se enfoca la <strong>Agencia de Transformación Digital y Telecomunicaciones (ATDT)</strong>? En construir <strong>Coatlicue</strong>, una supercomputadora de 6,000 millones de pesos que promete ser "la más poderosa de América Latina".</p>
+
+            <p>El proyecto suena impresionante: 14,480 GPUs, 314 mil billones de operaciones por segundo, capacidad equivalente a 375,000 computadoras convencionales. La presidenta Claudia Sheinbaum la presentó como "la supercomputadora del pueblo de México".</p>
+
+            <div class="quote-box">
+                <strong>La paradoja brutal:</strong> La primera etapa del proyecto ni siquiera operará en México. Comenzará en España, en el Centro de Supercómputo de Barcelona, mientras se construyen las instalaciones nacionales. Los profesionales mexicanos se formarán en la India.
+            </div>
+
+            <p>Y mientras tanto, la realidad:</p>
+
+            <ul>
+                <li>El grupo Chronus hackea 20 instituciones públicas sin esfuerzo</li>
+                <li>El SAT y el IMSS no pueden proteger datos básicos de millones de ciudadanos</li>
+                <li>Las dependencias operan con Windows 7 sin soporte desde 2020</li>
+                <li>Pemex tiene 5 ingenieros de seguridad (un banco privado tiene 150)</li>
+                <li>No implementan autenticación de dos factores, algo gratuito y básico</li>
+            </ul>
+
+            <div class="stat-highlight">
+                <p>Inversión en Coatlicue</p>
+                <p class="number">$6,000 M</p>
+                <p>¿Cuánto para ciberseguridad básica? Menos del 0.5% del presupuesto</p>
+            </div>
+
+            <p>La ATDT también pretende regular a empresas privadas, obligándolas a cumplir requisitos tecnológicos y de protección de datos que el propio gobierno es incapaz de implementar. ¿Con qué autoridad moral? ¿Con qué credencial técnica?</p>
+
+            <h3>Lo que deberían hacer primero:</h3>
+
+            <ol>
+                <li>Proteger los datos de los ciudadanos antes de construir supercomputadoras.</li>
+                <li>Invertir en ciberseguridad básica: actualizar sistemas, aplicar parches, activar autenticación multifactor.</li>
+                <li>Contratar profesionales certificados con salarios competitivos, no mandarlos a formarse al extranjero.</li>
+                <li>Predicar con el ejemplo antes de exigir cumplimiento a las empresas.</li>
+                <li>Dejar de regular lo que no entienden y no practican.</li>
+            </ol>
+
+            <p>Coatlicue puede esperar. Los datos de 130 millones de mexicanos que ya fueron filtrados, no. Primero lo básico: que no nos hackeen.</p>
+
+            <h2>5. La Solución: Microsoft Fabric como Plataforma de Seguridad y Gobernanza de Datos</h2>
+
+            <p>Ante este panorama desolador, existen soluciones tecnológicas probadas que podrían transformar la gestión de datos en el sector público. Una de ellas es <strong>Microsoft Fabric</strong>, una plataforma unificada de análisis y gobernanza de datos con capacidades de seguridad integradas.</p>
+
+            <h3>¿Qué es Microsoft Fabric?</h3>
+
+            <p>Microsoft Fabric es una plataforma integral que unifica el almacenamiento, procesamiento y análisis de datos en un solo entorno. Pero más allá del análisis, ofrece herramientas robustas de seguridad y gobernanza que podrían resolver muchos de los problemas estructurales del gobierno mexicano.</p>
+
+            <h3>Capacidades de seguridad relevantes para el sector público</h3>
+
+            <ul>
+                <li><strong>Gobernanza centralizada:</strong> Control unificado sobre quién accede a qué datos, eliminando la fragmentación actual donde cada dependencia maneja su propia (in)seguridad.</li>
+                <li><strong>Control de accesos granular:</strong> Permisos específicos por usuario, rol y tipo de dato. Cuando alguien deja la institución, su acceso se revoca automáticamente.</li>
+                <li><strong>Monitoreo y auditoría en tiempo real:</strong> Detección de comportamientos anómalos, intentos de acceso no autorizado y extracción masiva de datos antes de que sea demasiado tarde.</li>
+                <li><strong>Cifrado de extremo a extremo:</strong> Protección de información confidencial tanto en tránsito como en reposo.</li>
+                <li><strong>Integración con Microsoft Defender:</strong> Detección de amenazas con inteligencia artificial, respondiendo automáticamente a ataques conocidos.</li>
+            </ul>
+
+            <h3>Ventajas para instituciones mexicanas</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Ventaja</th>
+                        <th>Problema que resuelve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Elimina la fragmentación</strong></td>
+                        <td>Una plataforma unificada con estándares consistentes en lugar de cientos de sistemas desconectados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reduce dependencia de expertos</strong></td>
+                        <td>La automatización permite operar con equipos más pequeños sin sacrificar seguridad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cumplimiento normativo</strong></td>
+                        <td>Políticas de protección de datos implementadas de forma consistente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Escalabilidad en la nube</strong></td>
+                        <td>Sin inversión en infraestructura propia que nadie actualiza ni mantiene</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Actualizaciones automáticas</strong></td>
+                        <td>Microsoft aplica parches continuamente, eliminando sistemas obsoletos</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-info">
+                <strong>La tecnología existe. Las soluciones están disponibles.</strong>
+                Lo que falta es voluntad política y una reorientación de prioridades.
+            </div>
+
+            <h2>6. Conclusiones: El Camino hacia Adelante</h2>
+
+            <p>El hackeo de Chronus no será el último. Mientras el gobierno mexicano siga operando con sistemas obsoletos, personal sin capacitación, presupuestos miserables y prioridades equivocadas, los datos de millones de ciudadanos seguirán siendo botín fácil para cualquier grupo criminal con conocimientos básicos de hacking.</p>
+
+            <p><strong>La urgencia es real.</strong> Cada día que pasa sin acción es un día más de exposición. Los datos filtrados no se pueden "desfiltrar". El daño a las víctimas de robo de identidad es permanente.</p>
+
+            <p><strong>Primero la seguridad, después los proyectos de relumbrón.</strong> Coatlicue costará 6,000 millones de pesos y tardará dos años en construirse. Mientras tanto, ¿quién protege los datos del SAT, del IMSS, de las fiscalías? No se necesita una supercomputadora para implementar autenticación de dos factores o actualizar Windows 7. Se necesita voluntad y sentido común.</p>
+
+            <p><strong>Primero la seguridad, después la regulación.</strong> La ATDT y el gobierno en general deben entender que no tienen credibilidad para exigir estándares de ciberseguridad a empresas privadas cuando sus propios sistemas son un colador. Hay que predicar con el ejemplo.</p>
+
+            <p><strong>La solución existe.</strong> Plataformas como Microsoft Fabric ofrecen herramientas probadas para gobernar y proteger datos sensibles. No es necesario inventar nada nuevo, solo implementar lo que ya funciona en el sector privado y en gobiernos de otros países.</p>
+
+            <div class="quote-box">
+                El llamado es claro: menos supercomputadoras promocionales, menos regulaciones vacías, menos discursos. Más inversión real en ciberseguridad, más profesionales certificados, más sistemas actualizados. Los datos de 130 millones de mexicanos lo exigen.
+            </div>
+
+            <div class="source-box">
+                <p><strong>Fuentes:</strong> Reportes de ciberseguridad 2025, INEGI, análisis independientes | <strong>Análisis:</strong> GDI | Enero 2026</p>
+                <p style="margin-top: 0.5rem; font-style: italic;">La ciberseguridad no es un gasto, es una inversión. Y en México, es una deuda pendiente con cada ciudadano cuyos datos han sido expuestos por la negligencia institucional.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-shield-alt"></i> ¿Quieres proteger los datos de tu institución?</h3>
+                <p>Conoce cómo Microsoft Fabric puede ayudar a implementar gobernanza y seguridad de datos en el sector público.</p>
+                <a href="https://gdidata.com" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar Soluciones
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
