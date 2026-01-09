@@ -1,5 +1,18 @@
 [
   {
+    "title": "El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento",
+    "slug": "renacer-ferroviario-mexico",
+    "date": "2026-01-09",
+    "author": "Juan Heriberto Rosas",
+    "category": "Economía",
+    "categoryColor": "green",
+    "image": "",
+    "excerpt": "Análisis del Censo Económico 2024: 82,856 empleos y $323,305 millones en el ecosistema ferroviario mexicano. El desafío de la modernización digital.",
+    "url": "blog/articulos/2026-01-09-renacer-ferroviario-mexico.html",
+    "readTime": "12 min",
+    "featured": true
+  },
+  {
     "title": "México Hackeado: La Crisis de Ciberseguridad y el Camino hacia la Protección de Datos",
     "slug": "mexico-hackeado-crisis-ciberseguridad",
     "date": "2026-01-03",

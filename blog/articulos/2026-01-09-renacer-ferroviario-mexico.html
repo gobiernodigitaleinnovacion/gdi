@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento - GDI</title>
+    <meta name="description" content="Análisis del Censo Económico 2024: 82,856 empleos y $323,305 millones en el ecosistema ferroviario mexicano. Construcción, manufactura y el desafío de la modernización digital.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --economy-color: #10b981;
+            --economy-dark: #059669;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-economy: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-economy);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--economy-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-economy {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .economy-cell { color: #10b981; font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border-left: 4px solid var(--economy-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-chart-line"></i> Economía</span>
+            <span><i class="far fa-calendar"></i> 9 de enero de 2026</span>
+            <span><i class="far fa-clock"></i> 12 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento</h1>
+        <p class="article-subtitle">Construcción, Manufactura y el Desafío de la Modernización Digital. Análisis basado en Censo Económico 2024.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-train"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Censo Económico 2024</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>1. El Boom de la Construcción Ferroviaria</h2>
+
+            <p>México vive su mayor expansión ferroviaria en décadas. El Tren Maya, el Tren Interoceánico del Istmo de Tehuantepec, y diversos proyectos de trenes de pasajeros han detonado una industria que el Censo Económico 2024 permite dimensionar con precisión.</p>
+
+            <p>El subsector de <strong>construcción de obras para transporte eléctrico y ferroviario (237993)</strong> registra cifras extraordinarias:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Unidades económicas</td>
+                        <td>86 empresas</td>
+                    </tr>
+                    <tr>
+                        <td>Personal ocupado</td>
+                        <td class="economy-cell">58,409 empleos</td>
+                    </tr>
+                    <tr>
+                        <td>Producción bruta</td>
+                        <td class="economy-cell">$256,982 millones de pesos</td>
+                    </tr>
+                    <tr>
+                        <td>Valor agregado</td>
+                        <td>$73,250 MDP</td>
+                    </tr>
+                    <tr>
+                        <td>Productividad</td>
+                        <td class="economy-cell">$1,254,080 por persona</td>
+                    </tr>
+                    <tr>
+                        <td>Remuneración media</td>
+                        <td>$316,496 anuales</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Para dimensionar: este subsector representa el <strong>97% de la producción</strong> de toda la categoría "Otras construcciones de ingeniería civil" ($265,689 MDP). La construcción ferroviaria eclipsa a presas, represas, obras marítimas y cualquier otra infraestructura civil combinada.</p>
+
+            <div class="stat-highlight">
+                <p>Productividad por trabajador</p>
+                <p class="number">$1.25 M</p>
+                <p>Una de las más altas de toda la economía mexicana</p>
+            </div>
+
+            <p>La productividad de <strong>$1.25 millones por trabajador</strong> es de las más altas de toda la economía, superando incluso a sectores como minería y servicios financieros. Las remuneraciones de $316,496 anuales —casi tres veces el salario mínimo— reflejan la especialización técnica requerida.</p>
+
+            <h2>2. La Concentración Geográfica: Todo Pasa por la Capital</h2>
+
+            <p>La distribución geográfica de la construcción ferroviaria revela una concentración extrema:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Producción (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ciudad de México</td>
+                        <td>20</td>
+                        <td class="economy-cell">53,239</td>
+                        <td class="economy-cell">$223,281</td>
+                    </tr>
+                    <tr>
+                        <td>Resto del país (23 estados)</td>
+                        <td>66</td>
+                        <td>~5,170*</td>
+                        <td>~$33,700*</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.9rem; color: var(--medium-gray); font-style: italic;">*Datos confidenciales para estados individuales, estimación por diferencia.</p>
+
+            <div class="callout callout-economy">
+                <strong>Concentración extrema</strong>
+                El 91% del empleo y 87% de la producción del sector se concentra en la Ciudad de México. Las empresas constructoras tienen sus matrices y nóminas registradas en la capital, aunque las obras se construyan en otros estados.
+            </div>
+
+            <p>Estados donde hay presencia de construcción ferroviaria (aunque con datos confidenciales): Chiapas (7 empresas), Quintana Roo (5), Campeche (4), Tabasco (2), Yucatán (1). El corredor del Tren Maya está representado, pero la derrama económica real en esos estados queda opaca en los datos censales.</p>
+
+            <h2>3. Fabricación de Equipo Ferroviario: El Eslabón Industrial</h2>
+
+            <p>Paralelo a la construcción, México cuenta con una industria de <strong>fabricación de equipo ferroviario (336510)</strong> que produce locomotoras, vagones, carros de pasajeros y componentes:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Unidades económicas</td>
+                        <td>57 empresas</td>
+                    </tr>
+                    <tr>
+                        <td>Personal ocupado</td>
+                        <td class="economy-cell">24,447 empleos</td>
+                    </tr>
+                    <tr>
+                        <td>Producción bruta</td>
+                        <td class="economy-cell">$66,323 millones de pesos</td>
+                    </tr>
+                    <tr>
+                        <td>Valor agregado</td>
+                        <td>$20,486 MDP</td>
+                    </tr>
+                    <tr>
+                        <td>Productividad</td>
+                        <td>$837,979 por persona</td>
+                    </tr>
+                    <tr>
+                        <td>Remuneración media</td>
+                        <td>$297,222 anuales</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>A diferencia de la construcción, la manufactura ferroviaria sí muestra dispersión geográfica industrial:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Producción (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Coahuila</td>
+                        <td>12</td>
+                        <td class="economy-cell">13,301</td>
+                        <td>$23,907</td>
+                    </tr>
+                    <tr>
+                        <td>Hidalgo</td>
+                        <td>3</td>
+                        <td>5,993</td>
+                        <td class="economy-cell">$26,975</td>
+                    </tr>
+                    <tr>
+                        <td>Nuevo León</td>
+                        <td>10</td>
+                        <td>1,241</td>
+                        <td>$3,848</td>
+                    </tr>
+                    <tr>
+                        <td>San Luis Potosí</td>
+                        <td>7</td>
+                        <td>782</td>
+                        <td>$1,745</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Coahuila</strong> lidera en empleo (54% del total nacional) con su tradición manufacturera en Saltillo y Monclova. <strong>Hidalgo</strong> sorprende con la mayor producción, probablemente vinculada a plantas de ensamble de vagones para los nuevos trenes de pasajeros. El corredor industrial del norte (Coahuila, Nuevo León, San Luis Potosí) concentra la capacidad productiva ferroviaria del país.</p>
+
+            <h2>4. El Ecosistema Ferroviario: 83,000 Empleos y $323,000 Millones</h2>
+
+            <p>Sumando construcción y manufactura, el ecosistema ferroviario visible en el Censo representa:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Segmento</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Producción (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Construcción ferroviaria</td>
+                        <td>86</td>
+                        <td>58,409</td>
+                        <td>$256,982</td>
+                    </tr>
+                    <tr>
+                        <td>Fabricación de equipo</td>
+                        <td>57</td>
+                        <td>24,447</td>
+                        <td>$66,323</td>
+                    </tr>
+                    <tr style="background: rgba(16, 185, 129, 0.1); font-weight: bold;">
+                        <td>Total ecosistema</td>
+                        <td>143</td>
+                        <td class="economy-cell">82,856</td>
+                        <td class="economy-cell">$323,305</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Falta el eslabón operativo: el <strong>transporte por ferrocarril (482)</strong> aparece con solo 10 empresas y datos confidenciales. Estas son las grandes concesionarias de carga (Ferromex, Kansas City Southern de México, Ferrosur) y los nuevos operadores de pasajeros. La confidencialidad protege información comercial sensible de un oligopolio de facto.</p>
+
+            <h2>5. La Paradoja: Inversión Récord, Resultados Cuestionables</h2>
+
+            <p>Los más de <strong>$323,000 millones de pesos</strong> en producción del ecosistema ferroviario representan una apuesta histórica del Estado mexicano por el transporte férreo. Sin embargo, la implementación ha estado marcada por:</p>
+
+            <h3>Sobrecostos documentados:</h3>
+            <ul>
+                <li>Tren Maya: presupuesto inicial de $150,000 MDP, estimaciones actuales superan $500,000 MDP</li>
+                <li>Tren Interoceánico: incrementos significativos sobre proyecciones originales</li>
+            </ul>
+
+            <h3>Problemas operativos:</h3>
+            <ul>
+                <li>Múltiples descarrilamientos en las primeras fases de operación</li>
+                <li>Incidentes de seguridad que han puesto en riesgo a pasajeros</li>
+                <li>Retrasos en la entrega de tramos completos</li>
+            </ul>
+
+            <h3>Cuestionamientos de rentabilidad:</h3>
+            <ul>
+                <li>Ocupación de trenes por debajo de proyecciones</li>
+                <li>Tarifas subsidiadas que no cubren costos operativos</li>
+                <li>Ausencia de estudios de demanda rigurosos previos a la construcción</li>
+            </ul>
+
+            <div class="quote-box">
+                La inversión en infraestructura ferroviaria es, en principio, correcta: México tiene un rezago histórico en transporte de pasajeros por tren comparado con economías similares. El problema no es construir trenes, sino <strong>cómo se construyen, operan y mantienen</strong>.
+            </div>
+
+            <h2>6. El Factor Crítico: Seguridad y Mantenimiento</h2>
+
+            <p>Los descarrilamientos y fallas operativas de los nuevos trenes de pasajeros no son accidentes aislados: son síntomas de un problema sistémico. La infraestructura ferroviaria moderna requiere:</p>
+
+            <ol>
+                <li><strong>Monitoreo en tiempo real</strong> de vías, señalización y material rodante</li>
+                <li><strong>Mantenimiento predictivo</strong> que anticipe fallas antes de que ocurran</li>
+                <li><strong>Gestión integrada de datos</strong> de sensores, operación y condiciones ambientales</li>
+                <li><strong>Análisis de patrones</strong> para identificar tramos o equipos de riesgo</li>
+            </ol>
+
+            <div class="callout callout-economy">
+                <strong>La realidad del siglo XXI</strong>
+                Los sistemas ferroviarios modernos no se operan con bitácoras en papel y revisiones visuales. Se operan con plataformas de datos inteligentes.
+            </div>
+
+            <h2>7. Microsoft Fabric: La Propuesta para un Ferrocarril Seguro</h2>
+
+            <p>La modernización del sistema ferroviario mexicano requiere una infraestructura de datos tan robusta como la infraestructura física. <strong>Microsoft Fabric</strong> ofrece una plataforma unificada que puede transformar la operación ferroviaria:</p>
+
+            <h3>Integración de Datos en Tiempo Real:</h3>
+            <ul>
+                <li>Sensores IoT en vías, puentes, túneles y vagones</li>
+                <li>Telemetría de locomotoras (temperatura, vibración, velocidad)</li>
+                <li>Datos meteorológicos y sísmicos</li>
+                <li>Información de sistemas de señalización</li>
+            </ul>
+
+            <h3>Lakehouse para Históricos Operativos:</h3>
+            <ul>
+                <li>Arquitectura medallón (Bronze, Silver, Gold) para datos de operación</li>
+                <li>Registro histórico de mantenimientos, incidentes y reparaciones</li>
+                <li>Trazabilidad completa del ciclo de vida de cada componente</li>
+            </ul>
+
+            <h3>Mantenimiento Predictivo con IA:</h3>
+            <ul>
+                <li>Modelos de Machine Learning entrenados con patrones de falla</li>
+                <li>Alertas tempranas cuando un componente muestra degradación</li>
+                <li>Optimización de calendarios de mantenimiento basada en uso real</li>
+                <li>Reducción de paros no programados y costos de emergencia</li>
+            </ul>
+
+            <h3>Seguridad Operativa:</h3>
+            <ul>
+                <li>Dashboards en tiempo real para centros de control</li>
+                <li>Detección de anomalías en patrones de operación</li>
+                <li>Correlación de variables (clima, carga, velocidad) con incidentes</li>
+                <li>Simulación de escenarios de riesgo</li>
+            </ul>
+
+            <div class="stat-highlight">
+                <p>Caso de uso concreto</p>
+                <p class="number" style="font-size: 1.5rem;">Palenque → Cancún</p>
+                <p>Un tren genera miles de datos por minuto. Fabric puede detectar vibración anormal en una rueda o deformación térmica en vía antes del incidente.</p>
+            </div>
+
+            <h2>8. Conclusiones: De la Infraestructura Física a la Infraestructura de Datos</h2>
+
+            <p>México está invirtiendo cifras históricas en su sistema ferroviario: <strong>82,856 empleos</strong> y <strong>$323,305 millones de pesos</strong> en construcción y manufactura lo demuestran. Pero construir vías y comprar vagones es solo la mitad de la ecuación.</p>
+
+            <p>Los descarrilamientos, sobrecostos y problemas operativos revelan que falta la otra mitad: <strong>la inteligencia para operar el sistema de manera segura y eficiente</strong>.</p>
+
+            <p>Las economías que lideran en transporte ferroviario —Japón, Francia, Alemania, China— no solo tienen más kilómetros de vía: tienen <strong>ecosistemas de datos</strong> que monitorean cada componente, predicen fallas, optimizan operaciones y garantizan seguridad.</p>
+
+            <p>México tiene la oportunidad de dar ese salto. La infraestructura física ya se está construyendo. La pregunta es si tendremos la visión de construir, en paralelo, la infraestructura digital que la haga funcionar.</p>
+
+            <div class="quote-box">
+                <strong>La inversión en fierro sin inversión en datos es construir el siglo XXI con herramientas del siglo XX.</strong>
+            </div>
+
+            <p>Plataformas como <strong>Microsoft Fabric</strong> no son un lujo tecnológico: son el sistema nervioso que un ferrocarril moderno necesita para operar. Sin datos integrados, sin analítica predictiva, sin inteligencia artificial aplicada al mantenimiento, los trenes seguirán descarrilando y los sobrecostos seguirán acumulándose.</p>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Económico 2024, INEGI - Códigos 237993, 336510, 482</p>
+                <p style="margin-top: 0.5rem;"><strong>Procesamiento:</strong> Microsoft Fabric + PySpark</p>
+                <p style="margin-top: 0.5rem;"><strong>Fecha de análisis:</strong> Enero 2026</p>
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-train"></i> ¿Quieres modernizar la operación de infraestructura?</h3>
+                <p>Conoce cómo Microsoft Fabric puede implementar monitoreo predictivo y análisis de datos en tiempo real para el sector transporte.</p>
+                <a href="https://gdidata.com" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar Soluciones
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
