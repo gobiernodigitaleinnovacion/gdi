@@ -78,61 +78,100 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 
 **Ubicación:** `social-drafts/linkedin-YYYY-MM-DD-slug.txt`
 
-**Formato CON MUCHOS EMOJIS y HASHTAGS:**
+**Formato VIRAL CON ESTRUCTURA VISUAL:**
 
 ```
-🚀🔥 [TÍTULO EN MAYÚSCULAS] 🔥🚀
+[EMOJI_TEMA]🔥 [TÍTULO EN MAYÚSCULAS] 🔥[EMOJI_TEMA]
 
 📊 Nuevo análisis publicado en GDI Data
 
-[Gancho inicial con emoji relevante]
-
-💡 Los hallazgos clave:
-
-✅ [Punto 1]
-✅ [Punto 2]
-✅ [Punto 3]
-✅ [Punto 4]
-✅ [Punto 5]
-
-📈 [Dato impactante destacado]
-
-🎯 [Conclusión o llamado a la acción]
-
-👉 Lee el análisis completo: [URL]
+🇲🇽 [Gancho inicial que genere curiosidad con pregunta] 👇
 
 ━━━━━━━━━━━━━━━━━━━━━━
 
-#FinanzasPúblicas #GobiernosMunicipales #Transparencia #DatosAbiertos #INEGI #México #AnálisisDeDatos #GDIData #AdministraciónPública #Municipios #Presupuesto #DeudaPública #GestiónPública #Gobierno #PolíticaPública #Accountability #TransparenciaFiscal #[+relevantes al tema]
+💡 LOS HALLAZGOS CLAVE:
+
+✅ [Punto 1 con DATO DURO en mayúsculas]
+✅ [Punto 2 con número impactante]
+✅ [Punto 3]
+✅ [Punto 4]
+✅ [Punto 5]
+✅ [Punto 6 si aplica]
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+📈 EL DATO QUE IMPACTA:
+
+🚨 [Dato más sorprendente del artículo]
+
+⚡ [Comparación que dimensione el dato]
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ EL PROBLEMA CRÍTICO: (si aplica)
+
+❌ [Problema 1]
+❌ [Problema 2]
+❌ [Problema 3]
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+💭 LA REFLEXIÓN:
+
+"[Frase memorable o cita del artículo en cursiva]"
+
+🎯 [Conclusión con llamado a la acción]
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+👉 Lee el análisis completo: [URL]
+
+🔄 COMPARTE si crees que [mensaje relacionado al tema]
+
+💬 ¿Qué opinas? [Pregunta que invite al debate]
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+#[25-35 hashtags relevantes separados por espacios]
 ```
 
-**Reglas LinkedIn:**
-- Mínimo 15-20 hashtags
-- Emojis en cada sección
-- Formato visual con líneas separadoras
-- Datos duros destacados con emojis
+**Reglas LinkedIn ESTRICTAS:**
+- **MÍNIMO 25-35 hashtags** (más hashtags = más alcance)
+- **Emojis en CADA sección** (mínimo 15-20 emojis en todo el post)
+- **Separadores visuales** con ━━━━━━ entre secciones
+- **Datos duros en MAYÚSCULAS** para destacar
+- **Preguntas** al inicio y final para engagement
+- **Llamado a COMPARTIR** explícito
+- Usar emojis de banderas cuando menciones países (🇲🇽🇯🇵🇫🇷🇩🇪)
+- Usar 🚨⚠️❌ para problemas/alertas
+- Usar ✅📈💡🎯 para puntos positivos
+
+**Hashtags base GDI (usar siempre + agregar específicos del tema):**
+#INEGI #México #GDIData #AnálisisDeDatos #DatosAbiertos #Transparencia #GobiernoDigital #TransformaciónDigital #BigData #DataAnalytics #DataDriven #OpenData
 
 ### 5. Crear borrador Twitter/X
 
 **Ubicación:** `social-drafts/twitter-x-YYYY-MM-DD-slug.txt`
 
-**Formato UN SOLO TWEET (no hilo):**
+**Formato UN SOLO TWEET VIRAL:**
 
 ```
-🚀 [Título corto o gancho]
+[EMOJI]🔥 [Dato impactante o gancho corto]
 
-[1-2 datos impactantes máximo]
+[Frase memorable o insight clave] [EMOJI_ALERTA]
 
 👉 [URL]
 
-#INEGI #México #FinanzasMunicipales
+#[3-5 hashtags] 🇲🇽
 ```
 
-**Reglas Twitter/X:**
-- MÁXIMO 280 caracteres
-- UN solo tweet, NUNCA hilo
-- Solo 3-5 hashtags
-- Ir al grano
+**Reglas Twitter/X ESTRICTAS:**
+- **MÁXIMO 280 caracteres** (contar bien)
+- **UN solo tweet**, NUNCA hilo
+- **Solo 3-5 hashtags** (Twitter penaliza muchos)
+- **Emojis al inicio y final** (mínimo 3-4)
+- **Ir al grano** con el dato más impactante
+- Terminar con bandera 🇲🇽
 
 ### 6. Git commit y push
 
