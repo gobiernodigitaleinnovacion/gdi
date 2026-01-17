@@ -1,5 +1,18 @@
 [
   {
+    "title": "IA + Datos Oficiales: El Nuevo Estandar para Municipios Inteligentes",
+    "slug": "ia-datos-oficiales-municipios",
+    "date": "2026-01-17",
+    "author": "Juan Heriberto Rosas",
+    "category": "Tecnologia",
+    "categoryColor": "blue",
+    "image": "",
+    "excerpt": "Los municipios pierden 4 horas semanales buscando datos oficiales. Un chat con IA conectado a INEGI y CONEVAL entrega respuestas verificadas en segundos.",
+    "url": "blog/articulos/2026-01-17-ia-datos-oficiales-municipios.html",
+    "readTime": "10 min",
+    "featured": true
+  },
+  {
     "title": "El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento",
     "slug": "renacer-ferroviario-mexico",
     "date": "2026-01-09",
