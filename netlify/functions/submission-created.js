@@ -58,7 +58,7 @@ exports.handler = async (event) => {
       event_source_id: TIKTOK_PIXEL_ID,
       data: [
         {
-          event: 'CompleteRegistration',
+          event: 'Lead',
           event_time: Math.floor(Date.now() / 1000),
           event_id: `form_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
           user: user,
