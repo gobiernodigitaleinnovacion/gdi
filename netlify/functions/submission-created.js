@@ -68,9 +68,9 @@ exports.handler = async (event) => {
           },
           properties: {
             content_name: formName || 'contact-form',
-            content_type: 'product',
+            content_type: 'lead_form',
             currency: 'MXN',
-            value: 0
+            value: 100
           }
         }
       ]
