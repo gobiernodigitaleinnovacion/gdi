@@ -26,6 +26,19 @@
       gtag('config', 'AW-3373421209');
     </script>
 
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D5MHUKBC77UEK8Q4I9B0');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
     <style>
         * {
             margin: 0;
@@ -1499,15 +1512,15 @@
                 <li><a href="#contacto-form">Contacto</a></li>
             </ul>
 
-            <a href="https://datosestados.com/" target="_blank" class="cta-button">
+            <a href="https://datosestados.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
                 <i class="fas fa-chart-bar"></i>
                 Datos Estatales
             </a>
-            <a href="https://iaelectoralmx.com/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);">
+            <a href="https://iaelectoralmx.com/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);" onclick="ttq.track('ClickButton');">
                 <i class="fas fa-vote-yea"></i>
                 IA Electoral
             </a>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+            <a href="https://gdidata.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
                 <i class="fas fa-rocket"></i>
                 Ir a la App
             </a>
@@ -1534,11 +1547,11 @@
                     con tecnología avanzada. Productos funcionales listos para implementar.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#productos" class="btn-primary">
+                    <a href="#productos" class="btn-primary" onclick="ttq.track('ClickButton');">
                         <i class="fas fa-rocket"></i>
                         Ver Productos en Vivo
                     </a>
-                    <a href="#contacto-form" class="btn-secondary">
+                    <a href="#contacto-form" class="btn-secondary" onclick="ttq.track('ClickButton');">
                         <i class="fas fa-envelope"></i>
                         Contactar
                     </a>
@@ -2045,11 +2058,11 @@
                     tu institución pública con tecnología de vanguardia.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://portal-ecatepec.azurewebsites.net/" target="_blank" class="btn-primary">
+                    <a href="https://portal-ecatepec.azurewebsites.net/" target="_blank" class="btn-primary" onclick="ttq.track('ClickButton');">
                         <i class="fas fa-play"></i>
                         Probar Demos Ahora
                     </a>
-                    <a href="#contacto-form" class="btn-secondary">
+                    <a href="#contacto-form" class="btn-secondary" onclick="ttq.track('ClickButton');">
                         <i class="fas fa-envelope"></i>
                         Enviar Mensaje
                     </a>
@@ -2082,7 +2095,7 @@
                             </div>
                             <div class="contact-info-text">
                                 <h4>WhatsApp</h4>
-                                <p><a href="https://wa.me/525575569848" target="_blank">55 7556 9848</a></p>
+                                <p><a href="https://wa.me/525575569848" target="_blank" onclick="ttq.track('Contact');">55 7556 9848</a></p>
                             </div>
                         </div>
 
@@ -2092,7 +2105,7 @@
                             </div>
                             <div class="contact-info-text">
                                 <h4>Email</h4>
-                                <p><a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a></p>
+                                <p><a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="ttq.track('Contact');">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a></p>
                             </div>
                         </div>
 
@@ -2123,7 +2136,7 @@
                     <h3>Solicita Información</h3>
                     <p>Completa el formulario y te responderemos pronto</p>
 
-                    <form name="contacto-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <form name="contacto-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="ttq.track('SubmitForm');">
                         <!-- Honeypot for spam protection -->
                         <input type="hidden" name="form-name" value="contacto-gdi">
                         <p style="display: none;">
