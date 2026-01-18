@@ -11,7 +11,6 @@ function hashData(data) {
 }
 
 exports.handler = async (event) => {
-  // Get access token from environment variable
   const accessToken = process.env.TIKTOK_ACCESS_TOKEN;
 
   if (!accessToken) {
@@ -26,48 +25,58 @@ exports.handler = async (event) => {
     const formName = payload.form_name;
 
     console.log(`Form submission received: ${formName}`);
+    console.log('Form data:', JSON.stringify(formData));
 
     // Extract user data from form
     const email = formData.email || formData.correo || '';
     const phone = formData.telefono || formData.phone || '';
-    const name = formData.nombre || formData.name || '';
 
     // Get request context
-    const clientIp = payload.human_fields?.ip || event.headers['x-forwarded-for'] || '';
+    const clientIp = event.headers['x-forwarded-for']?.split(',')[0] || event.headers['client-ip'] || '';
     const userAgent = event.headers['user-agent'] || '';
 
-    // Build TikTok event payload
-    const tiktokPayload = {
-      pixel_code: TIKTOK_PIXEL_ID,
-      event: 'SubmitForm',
-      event_id: `form_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      timestamp: new Date().toISOString(),
-      context: {
-        user_agent: userAgent,
-        ip: clientIp,
-        page: {
-          url: payload.site_url || 'https://gobiernodigitaleinnovacion.com',
-          referrer: ''
-        }
-      },
-      properties: {
-        content_name: formName,
-        content_type: 'contact_form',
-        description: `Contact form submission from ${name}`
-      }
+    // Build user object with hashed PII
+    const user = {
+      ip: clientIp,
+      user_agent: userAgent
     };
 
-    // Add hashed user data (TikTok requires SHA256 hashing for PII)
     if (email) {
-      tiktokPayload.context.user = tiktokPayload.context.user || {};
-      tiktokPayload.context.user.email = hashData(email);
+      user.email = hashData(email);
     }
     if (phone) {
-      tiktokPayload.context.user = tiktokPayload.context.user || {};
-      // Remove non-numeric characters and hash
       const cleanPhone = phone.replace(/\D/g, '');
-      tiktokPayload.context.user.phone = hashData(cleanPhone);
+      if (cleanPhone) {
+        user.phone = hashData(cleanPhone);
+      }
     }
+
+    // Build TikTok Events API payload (correct format)
+    const tiktokPayload = {
+      pixel_code: TIKTOK_PIXEL_ID,
+      event_source: 'web',
+      event_source_id: TIKTOK_PIXEL_ID,
+      data: [
+        {
+          event: 'CompleteRegistration',
+          event_time: Math.floor(Date.now() / 1000),
+          event_id: `form_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+          user: user,
+          page: {
+            url: payload.site_url || 'https://gobiernodigitaleinnovacion.com',
+            referrer: ''
+          },
+          properties: {
+            content_name: formName || 'contact-form',
+            content_type: 'product',
+            currency: 'MXN',
+            value: 0
+          }
+        }
+      ]
+    };
+
+    console.log('Sending to TikTok:', JSON.stringify(tiktokPayload));
 
     // Send event to TikTok Events API
     const response = await fetch(TIKTOK_API_URL, {
@@ -76,14 +85,7 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json',
         'Access-Token': accessToken
       },
-      body: JSON.stringify({
-        pixel_code: TIKTOK_PIXEL_ID,
-        event: tiktokPayload.event,
-        event_id: tiktokPayload.event_id,
-        timestamp: tiktokPayload.timestamp,
-        context: tiktokPayload.context,
-        properties: tiktokPayload.properties
-      })
+      body: JSON.stringify(tiktokPayload)
     });
 
     const result = await response.json();
@@ -91,15 +93,14 @@ exports.handler = async (event) => {
 
     if (result.code === 0) {
       console.log('Event sent successfully to TikTok');
-      return { statusCode: 200, body: 'Event sent to TikTok' };
+      return { statusCode: 200, body: JSON.stringify({ success: true, tiktok: result }) };
     } else {
       console.error('TikTok API Error:', result.message);
-      return { statusCode: 200, body: 'Event processed with warnings' };
+      return { statusCode: 200, body: JSON.stringify({ success: false, error: result.message }) };
     }
 
   } catch (error) {
-    console.error('Error processing submission:', error);
-    // Return 200 to not block form submission
-    return { statusCode: 200, body: 'Error logged' };
+    console.error('Error processing submission:', error.message);
+    return { statusCode: 200, body: JSON.stringify({ success: false, error: error.message }) };
   }
 };
