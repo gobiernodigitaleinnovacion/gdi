@@ -1,5 +1,18 @@
 [
   {
+    "title": "Decisiones Basadas en Datos: Capacidades de IA Empresarial para los Tres Niveles de Gobierno",
+    "slug": "ia-empresarial-tres-niveles-gobierno",
+    "date": "2026-01-25",
+    "author": "Juan Heriberto Rosas",
+    "category": "Tecnologia",
+    "categoryColor": "blue",
+    "image": "",
+    "excerpt": "Agentes autonomos, modelos predictivos, multimodalidad y lenguaje natural: las 4 capacidades de IA que transforman la gestion publica con Microsoft Fabric y Azure.",
+    "url": "blog/articulos/2026-01-25-ia-empresarial-tres-niveles-gobierno.html",
+    "readTime": "15 min",
+    "featured": true
+  },
+  {
     "title": "IA + Datos Oficiales: El Nuevo Estandar para Municipios Inteligentes",
     "slug": "ia-datos-oficiales-municipios",
     "date": "2026-01-17",
