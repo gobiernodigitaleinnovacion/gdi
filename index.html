@@ -171,6 +171,17 @@
             box-shadow: var(--shadow-medium);
         }
 
+        /* Nav CTA buttons wrapper */
+        .nav-cta-buttons {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .mobile-cta {
+            display: none;
+        }
+
         /* Mobile Menu */
         .mobile-menu-toggle {
             display: none;
@@ -858,8 +869,17 @@
         }
 
         @media (max-width: 768px) {
-            .nav-menu {
+            .nav-cta-buttons {
                 display: none;
+            }
+
+            .mobile-cta {
+                display: block;
+            }
+
+            .mobile-cta .cta-button {
+                width: 100%;
+                justify-content: center;
             }
 
             .mobile-menu-toggle {
@@ -1510,20 +1530,26 @@
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="#contacto-form">Contacto</a></li>
+                <!-- CTA buttons inside menu for mobile -->
+                <li class="mobile-cta"><a href="https://datosestados.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');"><i class="fas fa-chart-bar"></i> Datos Estatales</a></li>
+                <li class="mobile-cta"><a href="https://iaelectoralmx.com/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);" onclick="ttq.track('ClickButton');"><i class="fas fa-vote-yea"></i> IA Electoral</a></li>
+                <li class="mobile-cta"><a href="https://gdidata.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');"><i class="fas fa-rocket"></i> Ir a la App</a></li>
             </ul>
 
-            <a href="https://datosestados.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
-                <i class="fas fa-chart-bar"></i>
-                Datos Estatales
-            </a>
-            <a href="https://iaelectoralmx.com/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);" onclick="ttq.track('ClickButton');">
-                <i class="fas fa-vote-yea"></i>
-                IA Electoral
-            </a>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
-                <i class="fas fa-rocket"></i>
-                Ir a la App
-            </a>
+            <div class="nav-cta-buttons">
+                <a href="https://datosestados.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
+                    <i class="fas fa-chart-bar"></i>
+                    Datos Estatales
+                </a>
+                <a href="https://iaelectoralmx.com/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);" onclick="ttq.track('ClickButton');">
+                    <i class="fas fa-vote-yea"></i>
+                    IA Electoral
+                </a>
+                <a href="https://gdidata.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
+                    <i class="fas fa-rocket"></i>
+                    Ir a la App
+                </a>
+            </div>
 
             <div class="mobile-menu-toggle">
                 <span></span>
