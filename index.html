@@ -1005,17 +1005,20 @@
         @media (max-width: 768px) {
             .nav-menu {
                 position: fixed;
-                top: 100%;
+                top: 70px;
                 left: 0;
                 width: 100%;
+                height: calc(100vh - 70px);
+                overflow-y: auto;
                 background: white;
                 flex-direction: column;
-                padding: 2rem;
+                padding: 1rem 1.5rem 2rem;
                 box-shadow: var(--shadow-heavy);
-                transform: translateY(-100%);
                 opacity: 0;
                 visibility: hidden;
+                transform: translateY(-10px);
                 transition: all 0.3s ease;
+                z-index: 999;
             }
 
             .nav-menu.active {
@@ -1025,13 +1028,22 @@
             }
 
             .nav-menu li {
-                margin: 0.5rem 0;
+                margin: 0.25rem 0;
             }
 
             .nav-menu a {
-                font-size: 1.125rem;
-                padding: 0.5rem 0;
+                font-size: 1.1rem;
+                padding: 0.75rem 0;
                 display: block;
+                color: var(--dark-color) !important;
+                opacity: 1 !important;
+            }
+
+            .mobile-cta .cta-button {
+                color: white !important;
+                opacity: 1 !important;
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
             }
         }
 
@@ -1505,15 +1517,7 @@
             }
         }
 
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --dark-color: #f8fafc;
-                --light-gray: #1e293b;
-                --medium-gray: #94a3b8;
-                --white: #0f172a;
-            }
-        }
+        /* Dark mode disabled - site designed for light mode only */
     </style>
 </head>
 <body>
