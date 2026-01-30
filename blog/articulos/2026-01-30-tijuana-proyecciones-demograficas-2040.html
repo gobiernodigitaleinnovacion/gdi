@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tijuana 2040: Proyecciones Demograficas Revelan Envejecimiento Acelerado - GDI</title>
+    <meta name="description" content="Tijuana crecera 23.78% para 2040 alcanzando 2.66 millones de habitantes. La poblacion de 65+ anos aumentara 126.50%. Analisis demografico proyectivo completo.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --eco-color: #10b981;
+            --eco-color-dark: #059669;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-eco: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-eco);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-eco);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--eco-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--eco-color);
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-eco);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
+
+        .stat-highlight {
+            background: var(--gradient-eco);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            border-top: 3px solid var(--eco-color);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--eco-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border-left: 4px solid var(--eco-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .message-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            box-shadow: var(--shadow-medium);
+            border-left: 4px solid var(--eco-color);
+        }
+
+        .message-card .msg-number {
+            background: var(--gradient-eco);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 0.75rem;
+        }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-chart-line"></i> Economia</span>
+            <span><i class="far fa-calendar"></i> 30 de enero de 2026</span>
+            <span><i class="far fa-clock"></i> 12 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Tijuana 2040: Proyecciones Demograficas Revelan Envejecimiento Acelerado y Crecimiento de Medio Millon de Habitantes</h1>
+        <p class="article-subtitle">De 2.15 millones a 2.66 millones de habitantes. La poblacion de adultos mayores crecera 126.50% mientras los menores de 14 anos disminuyen. Analisis demografico proyectivo completo.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-users"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Proyecciones Demograficas Tijuana 2025-2040</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>Resumen Ejecutivo</h2>
+
+            <p>En 2025, Tijuana cuenta con una poblacion total de <strong>2,151,740 habitantes</strong>, y se proyecta que en 2040 habra <strong>2,663,508 habitantes</strong>, lo que representa un incremento absoluto de <strong>511,768 personas</strong>, equivalente a un aumento del <strong>23.78%</strong>.</p>
+
+            <p>Este crecimiento demografico esta acompanado por un envejecimiento significativo de la poblacion, evidenciado por un aumento en la edad mediana de <strong>31 anos en 2025 a 37 anos en 2040</strong>, lo que implica un incremento de 6 anos o 19.35%.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">+23.78%</div>
+                    <div class="label">Crecimiento poblacional 2025-2040</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">+126.50%</div>
+                    <div class="label">Aumento poblacion 65+ anos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">-4.98%</div>
+                    <div class="label">Reduccion poblacion 0-14 anos</div>
+                </div>
+            </div>
+
+            <p>El cambio mas notable en la estructura poblacional es el aumento del grupo de 65 anos y mas, que pasa de 136,102 personas en 2025 a 308,276 en 2040, lo que representa un crecimiento del <strong>126.50%</strong>. En contraste, el grupo de 0 a 14 anos disminuye de 463,945 a 440,831 personas, una reduccion de 23,114 individuos o -4.98%. Esto refleja una transicion demografica avanzada.</p>
+
+            <h2>Analisis Detallado por Componente Demografico</h2>
+
+            <h3>a) Poblacion Total</h3>
+
+            <p>En 2025 hay 2,151,740 habitantes, y se proyecta que en 2040 habra 2,663,508 habitantes, lo que representa un incremento absoluto de 511,768 personas, equivalente a un aumento del 23.78%.</p>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-exclamation-triangle"></i> Presion sobre infraestructura</strong>
+                Este crecimiento indica una presion creciente sobre la infraestructura urbana, la vivienda y los servicios publicos, como transporte, agua potable y recoleccion de residuos. La expansion poblacional generara una mayor demanda de empleo y oportunidades economicas.
+            </div>
+
+            <h3>b) Estructura por Edad</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Grupo de edad</th>
+                        <th>2025</th>
+                        <th>2040</th>
+                        <th>Cambio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>0 a 14 anos</strong></td>
+                        <td>463,945</td>
+                        <td>440,831</td>
+                        <td style="color: #ef4444; font-weight: 600;">-4.98%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15 a 64 anos</strong></td>
+                        <td>1,551,693</td>
+                        <td>1,914,401</td>
+                        <td style="color: #10b981; font-weight: 600;">+23.37%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>65 anos y mas</strong></td>
+                        <td>136,102</td>
+                        <td>308,276</td>
+                        <td style="color: #ef4444; font-weight: 600;">+126.50%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>El grupo de <strong>0 a 14 anos</strong> disminuye de 463,945 personas en 2025 a 440,831 en 2040, lo que implica una reduccion de 23,114 individuos o -4.98%. Esto sugiere una disminucion en la natalidad y, por ende, una menor demanda de servicios educativos basicos, como escuelas primarias y secundarias, asi como una posible reduccion en la poblacion economicamente activa en el largo plazo.</p>
+
+            <p>El grupo de <strong>15 a 64 anos</strong>, que representa la poblacion en edad productiva, aumenta de 1,551,693 personas en 2025 a 1,914,401 en 2040, un incremento de 362,708 personas o 23.37%. Este crecimiento implica una mayor fuerza laboral disponible, lo que podria ser una oportunidad para el desarrollo economico del municipio.</p>
+
+            <div class="stat-highlight">
+                <p>El dato mas impactante</p>
+                <p class="number">+126.50%</p>
+                <p>Crecimiento de la poblacion de 65 anos y mas: de 136,102 a 308,276 personas</p>
+            </div>
+
+            <p>El grupo de <strong>65 anos y mas</strong> crece de 136,102 personas en 2025 a 308,276 en 2040, lo que representa un aumento absoluto de 172,174 personas o 126.50%. Este cambio refleja un envejecimiento acelerado de la poblacion, lo que incrementara la demanda de servicios de salud especializados, pensiones, cuidados de largo plazo e infraestructura accesible.</p>
+
+            <h3>c) Distribucion por Sexo</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>2025</th>
+                        <th>2040</th>
+                        <th>Cambio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hombres</strong></td>
+                        <td>1,091,103</td>
+                        <td>1,356,147</td>
+                        <td style="color: #10b981; font-weight: 600;">+24.29%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mujeres</strong></td>
+                        <td>1,060,637</td>
+                        <td>1,307,361</td>
+                        <td style="color: #10b981; font-weight: 600;">+23.27%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relacion H/M</strong></td>
+                        <td>102.87</td>
+                        <td>103.73</td>
+                        <td style="font-weight: 600;">+0.84%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>La proporcion equilibrada entre hombres y mujeres se mantiene estable, con un ligero aumento en el indice de masculinidad de 0.86 puntos. Este cambio marginal sugiere que no habra transformaciones significativas en las dinamicas de genero en el municipio.</p>
+
+            <h3>d) Edad Mediana</h3>
+
+            <p>En 2025, la edad mediana es de <strong>31 anos</strong>, y se proyecta que en 2040 sera de <strong>37 anos</strong>, un incremento de 6 anos o 19.35%. Este aumento indica una poblacion mas madura, con una mayor proporcion de adultos en edad laboral y una reduccion relativa de jovenes.</p>
+
+            <div class="callout callout-info">
+                <strong><i class="fas fa-info-circle"></i> Implicaciones de la edad mediana</strong>
+                Aunque una poblacion mas madura puede significar mayor experiencia y estabilidad en la fuerza laboral, tambien implica un menor dinamismo demografico y una posible disminucion en la tasa de crecimiento economico a largo plazo.
+            </div>
+
+            <h2>Patrones Transversales y Transicion Demografica</h2>
+
+            <p>El patron general que emerge de estas proyecciones es un <strong>crecimiento poblacional acompanado de un envejecimiento acelerado</strong>. Mientras que el grupo de 0 a 14 anos disminuye en un -4.98%, el grupo de 65 anos y mas crece en un 126.50%, lo que refleja una reconfiguracion generacional profunda.</p>
+
+            <div class="quote-box">
+                <p>"El contraste entre la reduccion del grupo de 0 a 14 anos y el aumento del grupo de 65 anos y mas revela un cambio en las prioridades y necesidades municipales. La disminucion de ninos reducira la demanda de infraestructura educativa basica, mientras que el aumento de adultos mayores incrementara la necesidad de servicios de salud, pensiones y cuidados especializados."</p>
+            </div>
+
+            <h2>Diagnostico Integral y Desafios Proyectados</h2>
+
+            <p>El perfil demografico futuro de Tijuana estara marcado por un crecimiento poblacional moderado y un envejecimiento significativo. El principal cambio demografico es el aumento del grupo de 65 anos y mas, con un crecimiento del 126.50%, lo que implicara una mayor presion sobre los sistemas de salud, pensiones y cuidados de largo plazo.</p>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-circle"></i> Alerta demografica</strong>
+                La reduccion de la poblacion joven podria limitar el dinamismo economico y la innovacion en el futuro, mientras que el envejecimiento acelerado generara presiones significativas sobre la infraestructura y los servicios publicos, especialmente en salud y cuidado de adultos mayores.
+            </div>
+
+            <h2>Cinco Mensajes Clave</h2>
+
+            <div class="message-card">
+                <p><span class="msg-number">1</span> Tijuana experimentara un crecimiento poblacional del <strong>23.78%</strong> entre 2025 y 2040, alcanzando 2,663,508 habitantes, lo que implicara una mayor presion sobre la infraestructura urbana y los servicios publicos.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">2</span> La poblacion de 65 anos y mas crecera en un <strong>126.50%</strong>, lo que demandara una expansion significativa en servicios de salud especializados, pensiones y cuidados de largo plazo.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">3</span> La disminucion del grupo de 0 a 14 anos en un <strong>-4.98%</strong> refleja una menor natalidad y reducira la demanda de servicios educativos basicos, pero tambien podria limitar la renovacion de la fuerza laboral en el futuro.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">4</span> La edad mediana aumentara de <strong>31 anos en 2025 a 37 anos en 2040</strong>, indicando una poblacion mas madura y con mayor experiencia laboral, pero con menor dinamismo demografico.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">5</span> La combinacion de un crecimiento poblacional moderado y un envejecimiento acelerado posiciona a Tijuana en una <strong>etapa avanzada de transicion demografica</strong>, con desafios significativos en terminos de planificacion y adaptacion de servicios municipales.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Explora mas datos demograficos y de finanzas publicas</h3>
+                <p>GDI Data te permite analizar proyecciones, indicadores y tendencias de los municipios de Mexico con inteligencia artificial. Inscribete y accede a la plataforma.</p>
+                <a href="https://gdidata.com/" target="_blank"><i class="fas fa-rocket"></i> Ir a GDI Data</a>
+            </div>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Analisis Demografico Proyectivo elaborado con datos de CONAPO e INEGI. Proyecciones de poblacion 2025-2040 para el municipio de Tijuana, Baja California.</p>
+                <p><strong>Autor:</strong> Juan Heriberto Rosas | GDI - Gobierno Digital e Innovacion</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
