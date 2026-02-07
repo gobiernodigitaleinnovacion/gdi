@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que heredo Diego Rivera: Analisis financiero de las vulnerabilidades de Tequila - GDI</title>
+    <meta name="description" content="Analisis financiero del municipio de Tequila, Jalisco. 64.39% de dependencia en transferencias, solo 18% de ingresos propios y 41.71% destinado a nomina. Radiografia de vulnerabilidades estructurales.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover { color: var(--secondary-color); }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(102, 126, 234, 0.05); }
+
+        .highlight-cell {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .danger-cell {
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        .stat-highlight {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .message-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            box-shadow: var(--shadow-medium);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .message-card .msg-number {
+            background: var(--gradient-primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 0.75rem;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-box a:hover { transform: translateY(-2px); }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin: 0;
+        }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer p { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-landmark"></i> Finanzas Municipales</span>
+            <span><i class="far fa-calendar"></i> 7 de febrero de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Que heredo Diego Rivera: Analisis financiero revela las vulnerabilidades del municipio de Tequila antes de la crisis</h1>
+        <p class="article-subtitle">Un analisis de las finanzas publicas 2019-2023 de Tequila, Jalisco, revela una estructura presupuestal con alta dependencia de transferencias, baja recaudacion propia y concentracion del gasto que exponia al municipio a riesgos institucionales significativos.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-search-dollar"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Radiografia Financiera de Tequila, Jalisco</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>Contexto</h2>
+
+            <p>La detencion del presidente municipal de Tequila, Diego Rivera Navarro, el pasado 5 de febrero, ha puesto en el centro de la discusion publica la situacion institucional de uno de los municipios mas emblematicos de Jalisco. Las autoridades investigan presuntas irregularidades en su gestion, que apenas habia comenzado el 1 de octubre de 2024.</p>
+
+            <p>Mas alla de los procesos judiciales en curso, surge una pregunta relevante desde la perspectiva de las finanzas publicas: <strong>que condiciones financieras estructurales existian en Tequila antes del cambio de administracion?</strong> Un analisis de los datos oficiales del periodo 2019-2023 permite identificar vulnerabilidades que, independientemente de quien gobierne, representan riesgos para la gestion municipal.</p>
+
+            <h2>Radiografia financiera: Los numeros de Tequila 2019-2023</h2>
+
+            <p>Segun datos del INEGI, en 2023 Tequila administro un presupuesto de <strong>$317.7 millones de pesos</strong>. La estructura de estos recursos revela patrones que merecen atencion.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">64.39%</div>
+                    <div class="label">Dependencia de transferencias externas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">18.07%</div>
+                    <div class="label">Ingresos propios (derechos)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">41.71%</div>
+                    <div class="label">Gasto en nomina</div>
+                </div>
+            </div>
+
+            <h3>La dependencia de transferencias: El principal riesgo estructural</h3>
+
+            <p>El hallazgo mas significativo del analisis es que <strong>64.39% de los ingresos municipales provienen de transferencias federales y estatales</strong>:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Monto (MDP)</th>
+                        <th>% del total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Participaciones federales</strong></td>
+                        <td>$137.2</td>
+                        <td class="highlight-cell">43.18%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aportaciones federales y estatales</strong></td>
+                        <td>$67.4</td>
+                        <td class="highlight-cell">21.21%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Derechos (ingresos propios)</strong></td>
+                        <td>$57.4</td>
+                        <td>18.07%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Otros ingresos</strong></td>
+                        <td>$55.7</td>
+                        <td>17.54%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-exclamation-triangle"></i> Riesgo de dependencia</strong>
+                Casi dos tercios del presupuesto de Tequila dependen de decisiones tomadas en la Ciudad de Mexico y Guadalajara. Estos recursos estan sujetos a politicas del gobierno federal y estatal, lo que expone al municipio a posibles recortes presupuestales o cambios en las reglas de distribucion.
+            </div>
+
+            <h3>Ingresos propios: La oportunidad no aprovechada</h3>
+
+            <p>En 2023, Tequila recaudo apenas <strong>$57.4 millones en derechos</strong> (18.07% del presupuesto total). De estos, $47.4 millones provenian de derechos por uso, goce y aprovechamiento de bienes de dominio publico.</p>
+
+            <p>Esta cifra resulta particularmente llamativa considerando que Tequila es la cuna de la bebida mexicana mas exportada del mundo. La industria tequilera genero <strong>575 millones de dolares en exportaciones en 2024</strong>, el municipio recibe aproximadamente <strong>1.4 millones de turistas anuales</strong> a traves de la Ruta del Tequila, y alberga decenas de destilerias, hoteles y negocios relacionados.</p>
+
+            <div class="stat-highlight">
+                <p>La brecha fiscal</p>
+                <p class="number">$57.4 MDP</p>
+                <p>Recaudacion propia vs. cientos de millones de dolares en actividad economica local</p>
+            </div>
+
+            <p>Esta brecha entre la actividad economica del territorio y la capacidad de recaudacion del municipio refleja decadas de debilidad institucional en materia fiscal. Un municipio con tal dinamismo economico podria tener una base fiscal significativamente mas robusta.</p>
+
+            <h2>La estructura del gasto: Concentracion y rigidez</h2>
+
+            <p>El analisis del gasto revela una estructura concentrada en pocos rubros, con limitada flexibilidad presupuestal.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Rubro de gasto</th>
+                        <th>Monto (MDP)</th>
+                        <th>% del total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Servicios personales (nomina)</strong></td>
+                        <td>$132.5</td>
+                        <td class="danger-cell">41.71%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Servicios generales</strong></td>
+                        <td>$62.1</td>
+                        <td>19.54%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inversion publica</strong></td>
+                        <td>$47.9</td>
+                        <td>15.10%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Otros gastos</strong></td>
+                        <td>$75.2</td>
+                        <td>23.65%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Nomina: 41.71% del presupuesto</h3>
+
+            <p>Tequila destino <strong>$132.5 millones (41.71%)</strong> a servicios personales, de los cuales $95.8 millones correspondian a remuneraciones directas. Esta proporcion limita la flexibilidad presupuestal, ya que los salarios no se pueden ajustar facilmente de un ejercicio a otro.</p>
+
+            <h3>Servicios generales: Volatilidad sin explicacion clara</h3>
+
+            <p>El 19.54% del presupuesto ($62.1 millones) se destinaba a servicios generales: limpieza, mantenimiento, arrendamientos y asesorias. El analisis identifica una <strong>volatilidad del 15.96%</strong> en esta categoria, con variaciones significativas entre anos sin razones documentadas de forma clara.</p>
+
+            <h3>Inversion publica: Solo 15.10%</h3>
+
+            <p>En 2023, Tequila destino $47.9 millones (15.10%) a obra publica. Aunque este fue el valor maximo historico del periodo analizado, sigue siendo una proporcion baja para un municipio con las necesidades de infraestructura que demanda su actividad turistica y agroindustrial.</p>
+
+            <div class="callout callout-info">
+                <strong><i class="fas fa-chart-pie"></i> Concentracion presupuestal</strong>
+                El 76.35% del presupuesto se concentraba en tres rubros: servicios personales, servicios generales e inversion publica. Esta concentracion, sin mecanismos robustos de control interno, representa un area de oportunidad para el fortalecimiento de la gobernanza municipal.
+            </div>
+
+            <h2>Vulnerabilidades estructurales identificadas</h2>
+
+            <p>El analisis financiero 2019-2023 permite identificar cuatro vulnerabilidades estructurales que cualquier administracion municipal debe atender:</p>
+
+            <h3>1. Discrecionalidad en la recaudacion de derechos</h3>
+
+            <p>Los derechos municipales implican un grado de discrecionalidad en su aplicacion: permisos, licencias, inspecciones y tarifas dependen en buena medida de decisiones administrativas. En un municipio con alta actividad economica pero recaudacion debil, esta discrecionalidad requiere controles claros y transparentes.</p>
+
+            <h3>2. Concentracion sin contrapesos suficientes</h3>
+
+            <p>La concentracion de mas del 76% del presupuesto en tres rubros, bajo el control directo del presidente municipal y sus directores, demanda mecanismos de supervision proporcionales al nivel de recursos manejados.</p>
+
+            <h3>3. Volatilidad presupuestal</h3>
+
+            <p>El analisis identifico una volatilidad del <strong>16.31%</strong> en ingresos y egresos. Variaciones significativas de un ano a otro sin justificaciones claras pueden dificultar la deteccion oportuna de irregularidades.</p>
+
+            <h3>4. Limitada inversion en controles internos</h3>
+
+            <p>No se observa en los datos evidencia de inversiones significativas en sistemas de control interno, auditorias preventivas, tecnologia para transparencia o mecanismos de denuncia ciudadana.</p>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-circle"></i> Diagnostico clave</strong>
+                Un municipio que destina 41.71% a nomina pero no invierte proporcionalmente en controles internos y transparencia presenta un desequilibrio que lo expone a riesgos institucionales independientemente de quien lo gobierne.
+            </div>
+
+            <h2>Los hechos recientes: Lo que revelan las investigaciones</h2>
+
+            <p>Las autoridades han senalado que durante los cuatro meses de gestion de Diego Rivera (octubre 2024 - febrero 2025), se habrian presentado presuntas irregularidades que incluyen cobros atipicos a empresas de la region y un manejo cuestionable de recursos e inmuebles publicos, como el Museo Nacional del Tequila (MUNAT).</p>
+
+            <p>Es importante senalar que estas acusaciones se encuentran en proceso judicial y corresponde a las autoridades competentes determinar las responsabilidades. Sin embargo, desde la optica del analisis financiero, los hechos denunciados guardan relacion directa con las vulnerabilidades estructurales ya identificadas en los datos 2019-2023:</p>
+
+            <ul>
+                <li>La <strong>brecha entre actividad economica y recaudacion</strong> crea espacio para cobros discrecionales</li>
+                <li>La <strong>concentracion presupuestal sin controles</strong> facilita el manejo opaco de recursos</li>
+                <li>La <strong>debilidad de los sistemas de supervision</strong> dificulta la deteccion temprana de irregularidades</li>
+            </ul>
+
+            <h2>Preguntas que debe responder la auditoria</h2>
+
+            <p>Independientemente del resultado de los procesos judiciales, la auditoria del periodo octubre 2024 - febrero 2026 deberia atender las siguientes areas:</p>
+
+            <h3>Sobre ingresos</h3>
+            <ul>
+                <li>Cuanto ingreso realmente al municipio en este periodo?</li>
+                <li>Existieron cobros fuera de los parametros establecidos?</li>
+                <li>Como se comparan los ingresos por derechos con el promedio historico?</li>
+            </ul>
+
+            <h3>Sobre egresos</h3>
+            <ul>
+                <li>Cuantas contrataciones se realizaron en servicios personales?</li>
+                <li>Que licitaciones de obra publica se adjudicaron?</li>
+                <li>Existen pagos a proveedores que no puedan verificarse?</li>
+            </ul>
+
+            <h3>Sobre contratos y patrimonio</h3>
+            <ul>
+                <li>Que contratos se firmaron y bajo que condiciones?</li>
+                <li>Cual es el estado del Museo Nacional del Tequila?</li>
+                <li>Existen compromisos financieros pendientes?</li>
+            </ul>
+
+            <h2>Lecciones para otros municipios</h2>
+
+            <p>El caso de Tequila ofrece lecciones valiosas para la gestion municipal en Mexico:</p>
+
+            <div class="message-card">
+                <p><span class="msg-number">1</span> <strong>La dependencia financiera es vulnerabilidad institucional.</strong> Un municipio que depende 64% de transferencias externas tiene limitada autonomia y pocos incentivos para fortalecer su recaudacion local.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">2</span> <strong>La brecha fiscal es un riesgo de gobernanza.</strong> Cuando la diferencia entre la actividad economica de un territorio y lo que recauda el municipio es muy amplia, se generan incentivos perversos y espacios para la discrecionalidad.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">3</span> <strong>La concentracion presupuestal requiere contrapesos.</strong> Tener 76% del presupuesto en tres rubros bajo control directo del ejecutivo municipal demanda mecanismos de supervision proporcionalmente robustos.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">4</span> <strong>Los controles internos no son opcionales.</strong> La ausencia de inversiones en auditoria preventiva, transparencia y sistemas de control es una invitacion a problemas, sin importar quien gobierne.</p>
+            </div>
+
+            <div class="message-card">
+                <p><span class="msg-number">5</span> <strong>Las senales tempranas importan.</strong> Los indicadores financieros de Tequila mostraban vulnerabilidades claras desde antes del cambio de administracion. La atencion oportuna a estos indicadores puede prevenir crisis institucionales.</p>
+            </div>
+
+            <h2>Indicadores de alerta para municipios</h2>
+
+            <p>A partir de este analisis, cualquier municipio puede evaluar su propio nivel de exposicion a riesgos institucionales:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Umbral de alerta</th>
+                        <th>Tequila</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dependencia de transferencias</td>
+                        <td>Mayor a 60%</td>
+                        <td class="danger-cell">64.39%</td>
+                    </tr>
+                    <tr>
+                        <td>Ingresos propios</td>
+                        <td>Menor a 25%</td>
+                        <td class="danger-cell">18.07%</td>
+                    </tr>
+                    <tr>
+                        <td>Gasto en nomina</td>
+                        <td>Mayor a 40%</td>
+                        <td class="danger-cell">41.71%</td>
+                    </tr>
+                    <tr>
+                        <td>Volatilidad presupuestal</td>
+                        <td>Mayor a 15%</td>
+                        <td class="danger-cell">16.31%</td>
+                    </tr>
+                    <tr>
+                        <td>Inversion publica</td>
+                        <td>Menor a 20%</td>
+                        <td class="danger-cell">15.10%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-exclamation-triangle"></i> Pregunta para cada municipio</strong>
+                Si tu municipio supera el umbral de alerta en tres o mas de estos indicadores, existen vulnerabilidades estructurales que requieren atencion inmediata para fortalecer la gobernanza y prevenir riesgos institucionales.
+            </div>
+
+            <h2>Recomendaciones para el fortalecimiento institucional</h2>
+
+            <h3>Acciones inmediatas</h3>
+            <ul>
+                <li><strong>Auditoria forense completa:</strong> Revisar ingresos y egresos del periodo reciente, identificar posibles irregularidades</li>
+                <li><strong>Inventario de compromisos:</strong> Listar contratos vigentes, licitaciones en proceso y pagos pendientes</li>
+                <li><strong>Revision de plantilla laboral:</strong> Verificar contrataciones recientes y existencia real de empleados</li>
+            </ul>
+
+            <h3>Medidas estructurales (6 meses)</h3>
+            <ul>
+                <li><strong>Fortalecer recaudacion propia:</strong> Actualizar catastro, modernizar sistemas de cobro, implementar transparencia en tiempo real</li>
+                <li><strong>Implementar controles internos:</strong> Sistema digital de compras y licitaciones, auditorias aleatorias trimestrales, comite de etica ciudadano</li>
+                <li><strong>Crear fondo de estabilizacion:</strong> Destinar 5% de excedentes anuales para contingencias</li>
+                <li><strong>Profesionalizar la administracion:</strong> Servicio civil de carrera para puestos tecnicos, capacitacion en etica</li>
+            </ul>
+
+            <h3>Mediano plazo (1-3 anos)</h3>
+            <ul>
+                <li><strong>Reducir dependencia:</strong> Meta de pasar del 64% al 50% de dependencia en transferencias</li>
+                <li><strong>Reequilibrar gasto:</strong> Reducir nomina del 41% al 35%, aumentar inversion publica del 15% al 25%</li>
+                <li><strong>Transformacion digital:</strong> Portal de transparencia en tiempo real, tramites digitales, sistema de alertas ciudadanas</li>
+            </ul>
+
+            <h2>Reflexion final</h2>
+
+            <p>Los datos financieros del periodo 2019-2023 muestran que Tequila presentaba vulnerabilidades estructurales significativas antes de la crisis actual. La alta dependencia de transferencias externas, la baja recaudacion propia, la concentracion presupuestal y la limitada inversion en controles internos configuraban un escenario de riesgo institucional.</p>
+
+            <div class="quote-box">
+                <p>"Las vulnerabilidades financieras de un municipio no son solo numeros en una hoja de calculo. Son las condiciones que determinan la calidad de la gestion publica y, en ultima instancia, la confianza de los ciudadanos en sus instituciones."</p>
+            </div>
+
+            <p>Tequila tiene ahora la oportunidad de utilizar esta coyuntura como catalizador para una transformacion profunda de su gestion financiera y administrativa. Para que esto suceda, no basta con atender los procesos judiciales: es necesario fortalecer las instituciones, diversificar los ingresos, implementar controles robustos y construir un gobierno municipal resiliente.</p>
+
+            <p><strong>Los numeros del periodo 2019-2023 ya senalaban areas de atencion. La pregunta es si otros municipios con indicadores similares tomaran nota antes de enfrentar su propia crisis.</strong></p>
+
+            <div class="cta-box">
+                <h3>Analiza las finanzas de cualquier municipio de Mexico</h3>
+                <p>GDI Data te permite consultar indicadores financieros, detectar vulnerabilidades y comparar municipios con inteligencia artificial aplicada a datos oficiales del INEGI.</p>
+                <a href="https://gdidata.com/" target="_blank"><i class="fas fa-rocket"></i> Ir a GDI Data</a>
+            </div>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Analisis elaborado con datos oficiales del INEGI correspondientes al periodo 2019-2023 para el municipio de Tequila, Jalisco. Informacion complementaria basada en reportes publicos sobre la situacion institucional del municipio.</p>
+                <p><strong>Autor:</strong> Juan Heriberto Rosas | GDI - Gobierno Digital e Innovacion</p>
+                <p><strong>Nota:</strong> Las acusaciones mencionadas en este articulo se encuentran en proceso judicial. Este analisis se centra en las condiciones financieras estructurales del municipio y no prejuzga sobre responsabilidades individuales.</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
