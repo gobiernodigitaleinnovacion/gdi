@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mineria Oculta de Sinaloa: Lo que el Censo Economico Revela sobre el Oro y la Plata - GDI</title>
+    <meta name="description" content="Sinaloa tiene 8 minas de oro y 2 de plata registradas, pero INEGI clasifica sus datos como confidenciales. Analisis del Censo Economico 2024 revela lo que no vemos.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --danger-color: #ef4444;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-danger);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--danger-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+        .warning-cell { color: #f59e0b; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--danger-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .structure-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        .structure-box .visible { color: #10b981; }
+        .structure-box .hidden { color: #ef4444; }
+        .structure-box .header-text { color: #f59e0b; font-weight: 700; }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border-left: 4px solid var(--danger-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
+            <span><i class="far fa-calendar"></i> 13 de febrero de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">La Mineria Oculta de Sinaloa: Lo que el Censo Economico Revela (y lo que No) sobre el Oro y la Plata</h1>
+        <p class="article-subtitle">Censo Economico 2024: Sinaloa tiene 8 minas de oro y 2 de plata registradas, pero INEGI clasifica sus datos como confidenciales. El 33% de las empresas mineras tiene datos ocultos.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-gem"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Mineria Oculta de Sinaloa</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Economico 2024 | INEGI</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>El Contexto: Sinaloa en el Mapa Minero</h2>
+
+            <p>Sinaloa no es el primer estado que viene a la mente cuando se habla de mineria en Mexico. Ese lugar lo ocupan Zacatecas, Sonora, Chihuahua y Durango &mdash;los gigantes historicos de la extraccion de metales preciosos.</p>
+
+            <p>Sin embargo, el Censo Economico 2024 registra <strong>48 establecimientos mineros</strong> en Sinaloa, con <strong>2,082 empleos</strong> y una produccion bruta de <strong>$2,209 millones de pesos</strong>. La remuneracion promedio es de <strong>$166,278 anuales</strong> &mdash;superior al promedio manufacturero.</p>
+
+            <div class="callout callout-danger">
+                <strong>El problema central:</strong>
+                Gran parte de los datos de mineria metalica en Sinaloa estan ocultos. INEGI clasifica como confidencial la informacion de oro, plata y cobre porque hay muy pocas empresas en cada categoria.
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">48</div>
+                    <div class="label">Establecimientos mineros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">2,082</div>
+                    <div class="label">Empleos mineros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">$2,209M</div>
+                    <div class="label">Produccion bruta (MDP)</div>
+                </div>
+            </div>
+
+            <h2>Lo que Vemos: Arena, Grava y Sal</h2>
+
+            <p>La unica mineria con datos completos en Sinaloa es la <strong>no metalica</strong>:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Actividad</th>
+                        <th>Codigo</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mineria de arena y grava</td>
+                        <td>212321</td>
+                        <td class="highlight-cell">29</td>
+                        <td>517</td>
+                        <td>$280.83</td>
+                    </tr>
+                    <tr>
+                        <td>Mineria de sal</td>
+                        <td>212391</td>
+                        <td class="highlight-cell">3</td>
+                        <td>77</td>
+                        <td>$14.21</td>
+                    </tr>
+                    <tr style="background: rgba(239, 68, 68, 0.05); font-weight: 700;">
+                        <td><strong>Total no metalica</strong></td>
+                        <td>2123</td>
+                        <td class="highlight-cell">32</td>
+                        <td>594</td>
+                        <td>$295.04</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Esta es mineria para construccion (arena, grava) y consumo (sal). Los municipios con actividad visible son:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Culiacan</td>
+                        <td class="highlight-cell">11</td>
+                        <td>243</td>
+                        <td>$120.90</td>
+                    </tr>
+                    <tr>
+                        <td>Navolato</td>
+                        <td class="highlight-cell">6</td>
+                        <td>144</td>
+                        <td>$46.90</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Lo que No Vemos: El Oro y la Plata</h2>
+
+            <p>Aqui esta lo interesante. El Censo registra actividad de mineria metalica, pero <strong>todos los datos de empleo y produccion son confidenciales</strong>:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Actividad</th>
+                        <th>Codigo</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Produccion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mineria de minerales metalicos</td>
+                        <td>2122</td>
+                        <td class="highlight-cell">13</td>
+                        <td class="danger-cell">NULL</td>
+                        <td class="danger-cell">NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Mineria de oro y plata</td>
+                        <td>21222</td>
+                        <td class="highlight-cell">10</td>
+                        <td class="danger-cell">NULL</td>
+                        <td class="danger-cell">NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Mineria de oro</td>
+                        <td>212221</td>
+                        <td class="highlight-cell">8</td>
+                        <td class="danger-cell">NULL</td>
+                        <td class="danger-cell">NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Mineria de plata</td>
+                        <td>212222</td>
+                        <td class="highlight-cell">2</td>
+                        <td class="danger-cell">NULL</td>
+                        <td class="danger-cell">NULL</td>
+                    </tr>
+                    <tr>
+                        <td>Mineria de cobre</td>
+                        <td>212231</td>
+                        <td class="highlight-cell">2</td>
+                        <td class="danger-cell">NULL</td>
+                        <td class="danger-cell">NULL</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-danger">
+                <strong>8 minas de oro y 2 de plata con datos ocultos</strong>
+                INEGI clasifica sus datos como confidenciales porque hay muy pocas empresas en cada categoria. Revelar los numeros expondria informacion comercial de operadores especificos. Tambien hay 3 empresas de servicios relacionados con la mineria (codigo 213) con datos igualmente ocultos.
+            </div>
+
+            <h2>Sinaloa en el Contexto Nacional</h2>
+
+            <p>Para dimensionar lo que podria estar oculto, veamos los principales estados en mineria de oro y plata:</p>
+
+            <h3>Mineria de Oro y Plata (21222) - Ranking Nacional</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Estado</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="highlight-cell">Sonora</td>
+                        <td>23</td>
+                        <td>8,817</td>
+                        <td class="success-cell">$35,077</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="highlight-cell">Durango</td>
+                        <td>24</td>
+                        <td>8,865</td>
+                        <td class="success-cell">$11,999</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="highlight-cell">Chihuahua</td>
+                        <td>25</td>
+                        <td>7,759</td>
+                        <td class="success-cell">$10,446</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Guanajuato</td>
+                        <td>3</td>
+                        <td>1,337</td>
+                        <td>$2,166</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Coahuila</td>
+                        <td>3</td>
+                        <td>1,172</td>
+                        <td>$801</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Nayarit</td>
+                        <td>18</td>
+                        <td>296</td>
+                        <td>$238</td>
+                    </tr>
+                    <tr style="background: rgba(239, 68, 68, 0.1);">
+                        <td>?</td>
+                        <td class="danger-cell">Sinaloa</td>
+                        <td class="highlight-cell">10</td>
+                        <td class="danger-cell">Confidencial</td>
+                        <td class="danger-cell">Confidencial</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Con 10 empresas de oro y plata, Sinaloa tendria mas operaciones que Guanajuato (3), Coahuila (3) o Nayarit (18). Pero sus datos estan ocultos.</p>
+
+            <h3>Mineria de Minerales Metalicos (2122) - Ranking Nacional</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Estado</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="highlight-cell">Zacatecas</td>
+                        <td>20,681</td>
+                        <td class="success-cell">$52,776</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="highlight-cell">Guerrero</td>
+                        <td>2,720</td>
+                        <td class="success-cell">$21,145</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="highlight-cell">Chihuahua</td>
+                        <td>9,917</td>
+                        <td class="success-cell">$17,114</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="highlight-cell">Durango</td>
+                        <td>11,005</td>
+                        <td class="success-cell">$14,941</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Hidalgo</td>
+                        <td>2,157</td>
+                        <td>$3,623</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Sinaloa no aparece en este ranking porque sus datos son confidenciales. Pero sabemos que tiene 13 empresas de mineria metalica &mdash;mas que Guerrero (3) o Guanajuato (3).</p>
+
+            <h2>Cuanto Podria Valer la Mineria Metalica de Sinaloa?</h2>
+
+            <p>Haciendo una estimacion conservadora con los promedios nacionales por empresa:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Empresas</th>
+                        <th>Produccion Total (MDP)</th>
+                        <th>Produccion por Empresa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sonora</td>
+                        <td>23</td>
+                        <td>$35,077</td>
+                        <td class="success-cell">$1,525 MDP</td>
+                    </tr>
+                    <tr>
+                        <td>Durango</td>
+                        <td>24</td>
+                        <td>$11,999</td>
+                        <td>$500 MDP</td>
+                    </tr>
+                    <tr>
+                        <td>Chihuahua</td>
+                        <td>25</td>
+                        <td>$10,446</td>
+                        <td>$418 MDP</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="stat-highlight">
+                <p>Estimacion conservadora (promedio Chihuahua)</p>
+                <p class="number">~$4,180 MDP</p>
+                <p>10 empresas x $418 MDP = produccion oculta de oro y plata</p>
+            </div>
+
+            <p>Esto casi <strong>duplicaria</strong> la produccion minera visible del estado ($2,209 MDP). En empleos, si el promedio es ~400-500 empleos por empresa grande, la estimacion seria de <strong>1,500 - 3,000 empleos adicionales</strong> en mineria metalica.</p>
+
+            <h2>La Geografia Probable: La Sierra</h2>
+
+            <p>Los datos municipales no muestran mineria metalica porque esta concentrada en pocos puntos de la sierra &mdash;municipios como:</p>
+
+            <ul>
+                <li><strong>Cosala</strong> &mdash; Historico distrito minero colonial</li>
+                <li><strong>San Ignacio</strong> &mdash; Actividad de oro y plata</li>
+                <li><strong>Concordia</strong> &mdash; Zona de vetas metalicas</li>
+                <li><strong>Badiraguato</strong> &mdash; Sierra con recursos minerales</li>
+            </ul>
+
+            <p>Estos municipios probablemente tienen 1-2 operaciones mineras cada uno, insuficientes para que INEGI publique datos sin revelar informacion comercial especifica.</p>
+
+            <h2>El Perfil del Sector en Sinaloa</h2>
+
+            <p>Con los datos disponibles, podemos caracterizar la mineria sinaloense:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total establecimientos</td>
+                        <td class="highlight-cell">48</td>
+                    </tr>
+                    <tr>
+                        <td>Empleos totales</td>
+                        <td class="highlight-cell">2,082</td>
+                    </tr>
+                    <tr>
+                        <td>Produccion bruta</td>
+                        <td class="highlight-cell">$2,209 MDP</td>
+                    </tr>
+                    <tr>
+                        <td>Remuneracion promedio</td>
+                        <td class="success-cell">$166,278 anuales</td>
+                    </tr>
+                    <tr>
+                        <td>vs Salario minimo</td>
+                        <td class="success-cell">1.47x el minimo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-info">
+                <strong>La mineria paga bien</strong>
+                $166,278 anuales es superior al promedio de manufactura. Un minero en Sinaloa gana casi 50% mas que el salario minimo.
+            </div>
+
+            <h2>Estructura del Sector: Lo Visible vs Lo Oculto</h2>
+
+            <div class="structure-box">
+                <span class="header-text">MINERIA EN SINALOA (48 empresas)</span><br>
+                |<br>
+                +-- <span class="visible">MINERIA NO METALICA (32 empresas) ---- VISIBLE</span><br>
+                |&nbsp;&nbsp;&nbsp;+-- Arena y grava (29): 517 empleos, $281 MDP<br>
+                |&nbsp;&nbsp;&nbsp;+-- Sal (3): 77 empleos, $14 MDP<br>
+                |<br>
+                +-- <span class="hidden">MINERIA METALICA (13 empresas) ------- CONFIDENCIAL</span><br>
+                |&nbsp;&nbsp;&nbsp;+-- Oro (8): NULL<br>
+                |&nbsp;&nbsp;&nbsp;+-- Plata (2): NULL<br>
+                |&nbsp;&nbsp;&nbsp;+-- Cobre (2): NULL<br>
+                |&nbsp;&nbsp;&nbsp;+-- Otros metales (1): NULL<br>
+                |<br>
+                +-- <span class="hidden">SERVICIOS MINEROS (3 empresas) ------- CONFIDENCIAL</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;+-- Exploracion/procesamiento: NULL
+            </div>
+
+            <p><strong>El 67% de las empresas mineras de Sinaloa</strong> (32 de 48) son de arena, grava y sal. <strong>El 33% restante</strong> (16 empresas de metalicos y servicios) tiene datos ocultos.</p>
+
+            <h2>Conclusiones</h2>
+
+            <ol>
+                <li><strong>Sinaloa tiene mineria de oro y plata</strong>, pero sus datos son confidenciales por el bajo numero de empresas (8 de oro, 2 de plata).</li>
+                <li><strong>La produccion visible ($2,209 MDP) probablemente subestima</strong> el tamano real del sector. La mineria metalica oculta podria duplicar esta cifra.</li>
+                <li><strong>2,082 empleos mineros</strong> con remuneracion promedio de $166,278 &mdash;empleos de calidad en un estado donde el promedio es menor.</li>
+                <li><strong>La mineria no metalica (arena, grava)</strong> esta en Culiacan y Navolato, alimentando la construccion local.</li>
+                <li><strong>La mineria metalica</strong> esta probablemente en la sierra (Cosala, San Ignacio, Concordia), en operaciones pequenas pero valiosas.</li>
+                <li><strong>El Censo Economico tiene limites:</strong> cuando hay pocas empresas en una actividad, la confidencialidad impide conocer el tamano real del sector. Para mineria metalica en Sinaloa, necesitariamos datos de la Secretaria de Economia o reportes de las propias mineras.</li>
+            </ol>
+
+            <div class="quote-box">
+                El Censo Economico confirma que Sinaloa tiene actividad minera de oro y plata, pero la confidencialidad estadistica nos impide saber cuanto vale realmente. Lo que esta oculto podria ser mas grande que lo visible.
+            </div>
+
+            <h2>Codigos SCIAN Relevantes</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Descripcion</th>
+                        <th>Empresas Sinaloa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>21</td>
+                        <td>Mineria (sector completo)</td>
+                        <td class="highlight-cell">48</td>
+                    </tr>
+                    <tr>
+                        <td>212</td>
+                        <td>Mineria de minerales metalicos y no metalicos</td>
+                        <td class="highlight-cell">45</td>
+                    </tr>
+                    <tr>
+                        <td>2122</td>
+                        <td>Mineria de minerales metalicos</td>
+                        <td class="highlight-cell">13</td>
+                    </tr>
+                    <tr>
+                        <td>21222</td>
+                        <td>Mineria de oro y plata</td>
+                        <td class="highlight-cell">10</td>
+                    </tr>
+                    <tr>
+                        <td>212221</td>
+                        <td>Mineria de oro</td>
+                        <td class="highlight-cell">8</td>
+                    </tr>
+                    <tr>
+                        <td>212222</td>
+                        <td>Mineria de plata</td>
+                        <td class="highlight-cell">2</td>
+                    </tr>
+                    <tr>
+                        <td>212231</td>
+                        <td>Mineria de cobre</td>
+                        <td class="highlight-cell">2</td>
+                    </tr>
+                    <tr>
+                        <td>2123</td>
+                        <td>Mineria de minerales no metalicos</td>
+                        <td class="highlight-cell">32</td>
+                    </tr>
+                    <tr>
+                        <td>212321</td>
+                        <td>Mineria de arena y grava</td>
+                        <td class="highlight-cell">29</td>
+                    </tr>
+                    <tr>
+                        <td>212391</td>
+                        <td>Mineria de sal</td>
+                        <td class="highlight-cell">3</td>
+                    </tr>
+                    <tr>
+                        <td>213</td>
+                        <td>Servicios relacionados con la mineria</td>
+                        <td class="highlight-cell">3</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Economico 2024, INEGI | <strong>Analisis:</strong> GDI | Febrero 2026</p>
+                <p style="margin-top: 0.5rem; font-style: italic;">Nota: Datos de mineria metalica en Sinaloa son confidenciales por bajo numero de establecimientos.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> Analiza los datos del Censo Economico</h3>
+                <p>Descubre informacion oculta en los datos oficiales de INEGI con nuestras herramientas de analisis de datos.</p>
+                <a href="https://gdidata.com" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar GDI Data
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
