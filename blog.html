@@ -215,6 +215,10 @@
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         }
 
+        .article-image.tecnologia {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
         .article-image i {
             font-size: 4rem;
             color: white;
@@ -415,6 +419,112 @@
             transform: translateY(-2px);
         }
 
+        /* Filters */
+        .filters-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            color: var(--medium-gray);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        .posts-info {
+            margin-left: auto;
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .page-btn {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            background: white;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .page-btn:hover:not(.disabled) {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .page-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .page-btn.disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+
+        .page-btn.arrow {
+            width: auto;
+            padding: 0 1rem;
+            gap: 0.5rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--medium-gray);
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .no-results p {
+            font-size: 1.1rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-menu {
@@ -435,6 +545,25 @@
 
             .newsletter-form input {
                 min-width: 100%;
+            }
+
+            .filters-bar {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .posts-info {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .page-btn.arrow span {
+                display: none;
             }
         }
     </style>
@@ -480,8 +609,16 @@
                 Artículos Recientes
             </h2>
 
+            <div class="filters-bar" id="filters-bar">
+                <!-- Filtros se generan dinámicamente -->
+            </div>
+
             <div class="blog-grid" id="blog-grid">
                 <!-- Los artículos se cargan dinámicamente desde posts.json -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Paginación se genera dinámicamente -->
             </div>
         </div>
     </section>
@@ -554,28 +691,69 @@
     </footer>
 
     <script>
-        // Cargar posts desde posts.json
-        async function loadPosts() {
+        const POSTS_PER_PAGE = 6;
+        let allPosts = [];
+        let filteredPosts = [];
+        let currentPage = 1;
+        let currentFilter = 'Todos';
+
+        async function init() {
             try {
                 const response = await fetch('blog/posts.json');
-                const posts = await response.json();
+                allPosts = await response.json();
+                filteredPosts = allPosts;
+                renderFilters();
+                renderPage();
+            } catch (error) {
+                console.error('Error cargando posts:', error);
+            }
+        }
 
-                const grid = document.getElementById('blog-grid');
-                grid.innerHTML = '';
+        function renderFilters() {
+            const bar = document.getElementById('filters-bar');
+            const categories = ['Todos', ...new Set(allPosts.map(p => p.category))];
 
-                posts.forEach(post => {
-                    const card = document.createElement('article');
-                    card.className = 'article-card';
+            bar.innerHTML = categories.map(cat =>
+                `<button class="filter-btn ${cat === currentFilter ? 'active' : ''}" onclick="setFilter('${cat}')">${cat}</button>`
+            ).join('') + '<span class="posts-info" id="posts-info"></span>';
+        }
 
-                    let imageClass = 'finanzas';
-                    if (post.categoryColor === 'red') imageClass = 'alerta';
-                    if (post.categoryColor === 'green') imageClass = 'economia';
+        function setFilter(category) {
+            currentFilter = category;
+            currentPage = 1;
+            filteredPosts = category === 'Todos' ? allPosts : allPosts.filter(p => p.category === category);
+            renderFilters();
+            renderPage();
+        }
 
-                    let icon = 'fa-coins';
-                    if (post.category === 'Alerta') icon = 'fa-exclamation-triangle';
-                    if (post.category === 'Economía') icon = 'fa-chart-line';
+        function renderPage() {
+            const grid = document.getElementById('blog-grid');
+            const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+            const start = (currentPage - 1) * POSTS_PER_PAGE;
+            const pagePosts = filteredPosts.slice(start, start + POSTS_PER_PAGE);
 
-                    card.innerHTML = `
+            document.getElementById('posts-info').textContent =
+                `${filteredPosts.length} artículo${filteredPosts.length !== 1 ? 's' : ''}`;
+
+            if (pagePosts.length === 0) {
+                grid.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No hay artículos en esta categoría</p></div>';
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+
+            grid.innerHTML = pagePosts.map(post => {
+                let imageClass = 'finanzas';
+                if (post.categoryColor === 'red') imageClass = 'alerta';
+                if (post.categoryColor === 'green') imageClass = 'economia';
+                if (post.categoryColor === 'blue') imageClass = 'tecnologia';
+
+                let icon = 'fa-coins';
+                if (post.category === 'Alerta') icon = 'fa-exclamation-triangle';
+                if (post.category === 'Economía') icon = 'fa-chart-line';
+                if (post.category === 'Tecnologia') icon = 'fa-microchip';
+
+                return `
+                    <article class="article-card">
                         <div class="article-image ${imageClass}">
                             <i class="fas ${icon}"></i>
                         </div>
@@ -595,22 +773,47 @@
                                 Leer análisis <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
-                    `;
+                    </article>
+                `;
+            }).join('');
 
-                    grid.appendChild(card);
-                });
-            } catch (error) {
-                console.error('Error cargando posts:', error);
+            renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+            const container = document.getElementById('pagination');
+            if (totalPages <= 1) { container.innerHTML = ''; return; }
+
+            let html = `<button class="page-btn arrow ${currentPage === 1 ? 'disabled' : ''}" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+                <i class="fas fa-chevron-left"></i> <span>Anterior</span>
+            </button>`;
+
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
             }
+
+            html += `<button class="page-btn arrow ${currentPage === totalPages ? 'disabled' : ''}" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+                <span>Siguiente</span> <i class="fas fa-chevron-right"></i>
+            </button>`;
+
+            container.innerHTML = html;
+        }
+
+        function goToPage(page) {
+            const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderPage();
+            document.getElementById('blog-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function formatDate(dateStr) {
-            const date = new Date(dateStr);
+            const date = new Date(dateStr + 'T00:00:00');
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
             return date.toLocaleDateString('es-MX', options);
         }
 
-        document.addEventListener('DOMContentLoaded', loadPosts);
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
