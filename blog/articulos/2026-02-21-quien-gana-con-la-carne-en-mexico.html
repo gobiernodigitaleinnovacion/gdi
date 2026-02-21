@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quien Gana con la Carne en Mexico? El Mapa de la Desigualdad Salarial Carnica - GDI</title>
+    <meta name="description" content="De $23,723 en Oaxaca a $234,909 en Chihuahua: 10 veces de diferencia salarial en la misma industria carnica. Analisis del Censo Economico 2024 con 529,306 empleos y medio billon de pesos.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --economy-color: #10b981;
+            --economy-dark: #059669;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-economy: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-economy);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--economy-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout-economy {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--economy-color);
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+        .warning-cell { color: #f59e0b; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--economy-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border-left: 4px solid var(--economy-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.85rem; }
+            .data-table td, .data-table th { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-chart-line"></i> Economia</span>
+            <span><i class="far fa-calendar"></i> 21 de febrero de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Quien Gana con la Carne en Mexico? El Mapa de la Desigualdad Salarial Carnica</h1>
+        <p class="article-subtitle">De $23,723 en Oaxaca a $234,909 en Chihuahua &mdash; 10 veces de diferencia en el mismo sector. 529,306 empleos y casi medio billon de pesos en produccion bruta.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-drumstick-bite"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Desigualdad Salarial Carnica</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Economico 2024 | INEGI</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>El hallazgo</h2>
+
+            <p>La cadena de valor de la carne en Mexico genera <strong>529,306 empleos</strong> y casi <strong>medio billon de pesos</strong> en produccion bruta. Es una de las cadenas productivas mas grandes del pais, mas que toda la industria automotriz en terminos de empleo. Pero detras de estas cifras agregadas se esconde una realidad que deberia preocupar a cualquier gobierno estatal o municipal: la brecha salarial dentro del mismo sector varia hasta <strong>10 veces</strong> dependiendo del territorio.</p>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-triangle"></i> El dato critico:</strong>
+                Un trabajador de la industria carnica en Chihuahua gana $234,909 al a&ntilde;o; uno en Oaxaca, $23,723. Misma industria, mismo pais, mundos distintos.
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">529,306</div>
+                    <div class="label">Empleos en la cadena carnica</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">~$500B</div>
+                    <div class="label">Produccion bruta total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">10x</div>
+                    <div class="label">Brecha salarial territorial</div>
+                </div>
+            </div>
+
+            <h2>La cadena: tres eslabones, tres realidades</h2>
+
+            <p>La cadena carnica se estructura en tres grandes eslabones, y cada uno tiene un perfil laboral radicalmente distinto:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Eslabon</th>
+                        <th>SCIAN</th>
+                        <th>Empresas</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                        <th>Remuneracion promedio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Matanza, empacado y procesamiento</td>
+                        <td>3116</td>
+                        <td>5,199</td>
+                        <td class="highlight-cell">132,735</td>
+                        <td>$291,192</td>
+                        <td class="success-cell">$168,061</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Comercio al por mayor</td>
+                        <td>4311</td>
+                        <td>22,860</td>
+                        <td class="highlight-cell">40,681</td>
+                        <td>$48,249</td>
+                        <td class="warning-cell">$132,185</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Carnicerías (menudeo)</td>
+                        <td>46112</td>
+                        <td>147,925</td>
+                        <td class="highlight-cell">355,890</td>
+                        <td>$130,438</td>
+                        <td class="danger-cell">$43,998</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-circle"></i> El dato mas alarmante:</strong>
+                Las carnicerias concentran el <strong>67% del empleo</strong> de toda la cadena, pero pagan en promedio $43,998 al a&ntilde;o &mdash; apenas el <strong>39% del salario minimo anual general</strong> ($113,464). El eslabon que mas empleo genera es tambien el que peores condiciones laborales ofrece.
+            </div>
+
+            <p>En contraste, la industria de embutidos y conservas (SCIAN 311613), con 50,898 empleos, paga <strong>$198,567</strong> promedio &mdash; casi <strong>4.5 veces mas</strong> que una carniceria.</p>
+
+            <h2>La geografia de la desigualdad</h2>
+
+            <p>La brecha no es solo entre eslabones, sino entre territorios. En el eslabon industrial (3116), las diferencias son dramaticas:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                        <th>Remuneracion promedio</th>
+                        <th>Vs salario minimo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Chihuahua</td>
+                        <td>4,357</td>
+                        <td>$9,962</td>
+                        <td class="success-cell">$234,909</td>
+                        <td class="success-cell">207%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Estado de Mexico</td>
+                        <td>13,426</td>
+                        <td>$23,494</td>
+                        <td class="success-cell">$233,888</td>
+                        <td class="success-cell">206%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Nuevo Leon</td>
+                        <td>11,326</td>
+                        <td>$35,710</td>
+                        <td class="success-cell">$220,690</td>
+                        <td class="success-cell">195%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Jalisco</td>
+                        <td>20,684</td>
+                        <td>$34,054</td>
+                        <td class="success-cell">$211,921</td>
+                        <td class="success-cell">187%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Guanajuato</td>
+                        <td>7,733</td>
+                        <td>$19,738</td>
+                        <td class="success-cell">$183,967</td>
+                        <td class="success-cell">162%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Sonora</td>
+                        <td>9,570</td>
+                        <td>$18,279</td>
+                        <td class="warning-cell">$133,139</td>
+                        <td class="warning-cell">117%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Yucatan</td>
+                        <td>9,487</td>
+                        <td>$16,601</td>
+                        <td class="warning-cell">$106,464</td>
+                        <td class="danger-cell">94%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Veracruz</td>
+                        <td>4,344</td>
+                        <td>$5,667</td>
+                        <td class="warning-cell">$111,537</td>
+                        <td class="danger-cell">98%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Oaxaca</td>
+                        <td>1,857</td>
+                        <td>$868</td>
+                        <td class="danger-cell">$23,723</td>
+                        <td class="danger-cell">21%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="stat-highlight">
+                <div class="number">$23,723 vs $234,909</div>
+                <p style="margin-top: 0.5rem; font-size: 1.1rem;">Oaxaca vs Chihuahua: 10 veces de diferencia en el mismo sector industrial</p>
+            </div>
+
+            <p><strong>Oaxaca</strong> es el caso mas critico. Con 702 unidades economicas &mdash; el estado con mas empresas carnicas del pais &mdash; apenas genera $868 MDP en produccion y paga $23,723 promedio anual. Eso es el <strong>21% del salario minimo</strong>. La explicacion: atomizacion extrema de microempresas, muchas de ellas en condiciones de informalidad, con alto porcentaje de trabajo no remunerado.</p>
+
+            <p><strong>Veracruz</strong> presenta un patron similar: 469 empresas pero solo $5,667 MDP de produccion, con remuneraciones apenas en el umbral del salario minimo. Ambos estados tienen muchas unidades economicas pero de muy baja productividad y precarias condiciones laborales.</p>
+
+            <p>En contraste, <strong>Nuevo Leon</strong> opera con un modelo industrial integrado: 117 empresas que generan $35,710 MDP y pagan $220,690 promedio. Plantas grandes, capitalizadas, con cadenas de frio y estandares de exportacion.</p>
+
+            <h2>Yucatan: mucho empleo, bajas remuneraciones</h2>
+
+            <p>Yucatan merece atencion particular. Con <strong>9,487 empleos</strong> es el quinto estado en personal ocupado de la industria carnica, pero su remuneracion promedio ($106,464) esta <strong>6% por debajo del salario minimo</strong>. Tiene casi tantos empleados como Nuevo Leon (11,326), pero paga la mitad.</p>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-exclamation-triangle"></i> Modelo de produccion cuestionable:</strong>
+                Yucatan sugiere un modelo de produccion intensivo en mano de obra barata, concentrado en Kanasin (4,624 empleos, probablemente una o dos grandes plantas avicolas) que, si bien genera empleo masivo, lo hace en condiciones que el gobierno estatal deberia monitorear.
+            </div>
+
+            <h2>Los municipios: concentracion y dependencia</h2>
+
+            <p>A nivel municipal, la concentracion es notable:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Estado</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Culiacan</td>
+                        <td>Sinaloa</td>
+                        <td>5,976</td>
+                        <td class="success-cell">$16,194</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Celaya</td>
+                        <td>Guanajuato</td>
+                        <td>2,942</td>
+                        <td class="success-cell">$12,375</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Gomez Palacio</td>
+                        <td>Durango</td>
+                        <td>4,419</td>
+                        <td class="success-cell">$10,829</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Chihuahua</td>
+                        <td>Chihuahua</td>
+                        <td>3,214</td>
+                        <td class="success-cell">$8,523</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Ecatepec</td>
+                        <td>Estado de Mexico</td>
+                        <td>5,842</td>
+                        <td class="warning-cell">$8,330</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Guadalajara</td>
+                        <td>Jalisco</td>
+                        <td>6,474</td>
+                        <td class="warning-cell">$4,911</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Culiacan</strong> encabeza la produccion nacional con $16,194 MDP &mdash; mas que Monterrey, Guadalajara o cualquier otro municipio. Para el gobierno municipal de Culiacan, esto implica que una porcion significativa de su economia depende de la industria carnica, una dependencia sectorial que debe evaluarse en el Plan Municipal de Desarrollo.</p>
+
+            <p><strong>Gomez Palacio</strong> (Durango) presenta un caso similar: 4,419 empleos en matanza y procesamiento representan una dependencia importante para un municipio de esa escala.</p>
+
+            <h2>Que debe hacer el gobierno?</h2>
+
+            <p>Los datos del Censo 2024 revelan al menos cuatro lineas de accion urgentes:</p>
+
+            <h3>1. Formalizacion del eslabon minorista</h3>
+            <p>Las 147,925 carnicerias del pais emplean a 355,890 personas en condiciones mayoritariamente precarias. Los gobiernos municipales, que otorgan los permisos de operacion, tienen la capacidad de vincular la formalizacion con acceso a programas de capacitacion y financiamiento.</p>
+
+            <h3>2. Monitoreo laboral en Oaxaca, Veracruz y Guerrero</h3>
+            <p>Las remuneraciones por debajo del salario minimo en la industria carnica de estos estados sugieren condiciones de informalidad que requieren inspeccion laboral y programas de regularizacion.</p>
+
+            <h3>3. Evaluacion de dependencia sectorial municipal</h3>
+            <p>Municipios como Culiacan, Gomez Palacio y Kanasin tienen una concentracion elevada en la industria carnica. Los gobiernos municipales deben incluir en sus diagnosticos economicos el riesgo de depender de un solo sector &mdash; una crisis sanitaria, un cierre de planta o un cambio regulatorio podrian impactar miles de empleos.</p>
+
+            <h3>4. Politica de valor agregado</h3>
+            <p>La brecha entre matanza ($143,535 de remuneracion) y embutidos ($198,567) demuestra que la transformacion industrial genera mejores empleos. Los gobiernos estatales con fuerte presencia de matanza pero poca industrializacion (Sinaloa, Sonora, Yucatan) tienen la oportunidad de incentivar la diversificacion hacia procesamiento y valor agregado.</p>
+
+            <h2>Conclusion</h2>
+
+            <div class="quote-box">
+                <p>La cadena de la carne en Mexico es un espejo de las desigualdades territoriales del pais. El mismo sector que paga $234,909 en Chihuahua paga $23,723 en Oaxaca. El mismo tipo de empleo que en Nuevo Leon viene con seguridad social y cadena de frio, en Guerrero viene sin remuneracion formal.</p>
+            </div>
+
+            <p>Los datos estan sobre la mesa: <strong>medio billon de pesos y 529 mil empleos</strong> que necesitan una politica publica a la altura de su importancia economica.</p>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Economico 2024, INEGI | <strong>Codigos SCIAN:</strong> 3116, 311611, 311612, 311613, 311614, 43112, 46112</p>
+                <p style="margin-top: 0.5rem;"><strong>Cobertura:</strong> Nacional, estatal y municipal | <strong>Analisis:</strong> GDI | Febrero 2026</p>
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> Analiza los datos del Censo Economico</h3>
+                <p>Explora la cadena de valor carnica y otras industrias con datos oficiales de INEGI en nuestra plataforma.</p>
+                <a href="https://gdidata.com" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar GDI Data
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
