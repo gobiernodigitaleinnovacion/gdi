@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres Ciudades, Tres Estrategias: El Mapa Industrial de la Frontera - GDI</title>
+    <meta name="description" content="846,659 empleos manufactureros en la frontera norte. Tijuana diversifica, Juarez se concentra, Reynosa equilibra. Analisis del Censo Economico 2024.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --economy-color: #10b981;
+            --economy-dark: #059669;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-economy: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-economy);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--economy-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout-economy {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--economy-color);
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+        .warning-cell { color: #f59e0b; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-economy);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--economy-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border-left: 4px solid var(--economy-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.85rem; }
+            .data-table td, .data-table th { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-chart-line"></i> Economia</span>
+            <span><i class="far fa-calendar"></i> 28 de febrero de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Tres Ciudades, Tres Estrategias: El Mapa Industrial de la Frontera</h1>
+        <p class="article-subtitle">846,659 empleos manufactureros &mdash; Tijuana diversifica, Juarez se concentra, Reynosa equilibra. Tres modelos industriales que definen el futuro de la frontera norte.</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-industry"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Mapa Industrial de la Frontera</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Economico 2024 | INEGI</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>La frontera no es un bloque homogeneo</h2>
+
+            <p>Detras de la etiqueta generica de &ldquo;economia maquiladora&rdquo; se esconden tres modelos industriales distintos que definen el futuro economico de Juarez, Tijuana y Reynosa. Los datos del Censo Economico 2024 revelan que estas tres ciudades, aunque todas dependen de la manufactura, han tomado caminos diferentes &mdash; y enfrentan vulnerabilidades distintas.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">846,659</div>
+                    <div class="label">Empleos manufactureros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">11.8%</div>
+                    <div class="label">Del total nacional manufacturero</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">$646,972M</div>
+                    <div class="label">Produccion bruta (MDP)</div>
+                </div>
+            </div>
+
+            <h2>El panorama general</h2>
+
+            <p>Las tres ciudades concentran <strong>846,659 empleos manufactureros</strong>, el 11.8% del total nacional en el sector. Juntas producen $646,972 millones de pesos, equivalentes al 4.6% de la produccion manufacturera de Mexico. Pero las similitudes terminan ahi.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Empleos</th>
+                        <th>% Empleo Total</th>
+                        <th>Produccion (MDP)</th>
+                        <th>Rem. Promedio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Juarez</td>
+                        <td>364,180</td>
+                        <td class="danger-cell">63.1%</td>
+                        <td>$230,889</td>
+                        <td>$215,003</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Tijuana</td>
+                        <td>325,983</td>
+                        <td class="success-cell">49.7%</td>
+                        <td>$302,569</td>
+                        <td>$231,496</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Reynosa</td>
+                        <td>156,496</td>
+                        <td class="warning-cell">60.2%</td>
+                        <td>$113,513</td>
+                        <td>$228,870</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.85rem; color: var(--medium-gray); text-align: center;"><em>Fuente: Censo Economico 2024, INEGI</em></p>
+
+            <h2>Juarez: La concentracion industrial como vulnerabilidad</h2>
+
+            <p>Ciudad Juarez es el municipio mas dependiente de la manufactura en Mexico entre las grandes ciudades: <strong>63.1% de su empleo total</strong> proviene de este sector. Esta concentracion tiene un nombre y un codigo SCIAN: <strong>fabricacion de equipo de transporte (336)</strong>.</p>
+
+            <p>La industria automotriz emplea a 130,033 personas en Juarez &mdash; el 35.7% de toda la manufactura local. Le sigue la fabricacion de equipo de computo y electronica (334) con 85,515 empleos. Entre ambos subsectores concentran <strong>59% del empleo manufacturero municipal</strong>.</p>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-triangle"></i> Alerta estructural:</strong>
+                Cualquier crisis en la cadena automotriz global &mdash; aranceles estadounidenses, escasez de semiconductores, cambios regulatorios en emisiones &mdash; impacta directamente a dos de cada tres trabajadores de Juarez. La ciudad enfrenta una de las dependencias sectoriales mas pronunciadas del pais.
+            </div>
+
+            <h3>Remuneraciones y genero</h3>
+
+            <p>La remuneracion promedio en manufactura de Juarez es de <strong>$215,003 anuales</strong>, 19% superior al promedio nacional del sector ($180,378). Sin embargo, es la mas baja de las tres ciudades fronterizas analizadas.</p>
+
+            <p>En cuanto a genero, Juarez registra <strong>45.3% de participacion femenina</strong> en el empleo manufacturero &mdash; la mas alta de las tres ciudades y superior al promedio nacional de manufactura (39%). Esto refleja la composicion de las plantas maquiladoras de electronica y ensamble automotriz.</p>
+
+            <h2>Tijuana: La estrategia de diversificacion</h2>
+
+            <p>Tijuana presenta el modelo mas equilibrado: <strong>49.7% de su empleo</strong> proviene de la manufactura &mdash; alto, pero significativamente menor que Juarez y Reynosa. Esta ciudad ha diversificado su base industrial de manera notable.</p>
+
+            <p>El subsector lider es <strong>&ldquo;Otras industrias manufactureras&rdquo; (339)</strong> con 86,419 empleos. Este codigo SCIAN incluye principalmente la fabricacion de dispositivos medicos, una industria de alto valor agregado que ha convertido a Tijuana en un hub global del sector.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Subsector SCIAN</th>
+                        <th>Empleos</th>
+                        <th>Produccion (MDP)</th>
+                        <th>Rem. Promedio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">339 - Otras manufacturas (medico)</td>
+                        <td>86,419</td>
+                        <td>$44,386</td>
+                        <td class="success-cell">$227,212</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">334 - Electronica</td>
+                        <td>60,847</td>
+                        <td>$36,843</td>
+                        <td class="success-cell">$254,837</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">336 - Automotriz</td>
+                        <td>28,289</td>
+                        <td>$91,121</td>
+                        <td>$223,565</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">326 - Plastico y hule</td>
+                        <td>24,954</td>
+                        <td>$14,649</td>
+                        <td>$214,181</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">332 - Productos metalicos</td>
+                        <td>24,592</td>
+                        <td>$22,093</td>
+                        <td>$233,448</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.85rem; color: var(--medium-gray); text-align: center;"><em>Fuente: Censo Economico 2024, INEGI</em></p>
+
+            <div class="callout callout-economy">
+                <strong><i class="fas fa-lightbulb"></i> Implicacion para politica publica:</strong>
+                Tijuana ha logrado lo que Juarez aun no consigue: diversificar sin perder volumen. Ningun subsector representa mas del 26.5% del empleo manufacturero. Esta distribucion ofrece mayor resiliencia ante shocks sectoriales.
+            </div>
+
+            <h3>Productividad superior</h3>
+
+            <p>Tijuana produce $302,569 millones de pesos con 325,983 empleos &mdash; una productividad de <strong>$928,108 por persona</strong>. En contraste, Juarez con mas empleados (364,180) produce menos ($230,889 MDP), lo que arroja una productividad de $634,029 por persona.</p>
+
+            <div class="stat-highlight">
+                <div class="number">46%</div>
+                <p style="font-size: 1.1rem; margin-top: 0.5rem;">Brecha de productividad entre Tijuana y Juarez</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.25rem;">$928,108 vs $634,029 por persona</p>
+            </div>
+
+            <p>Esta brecha refleja la diferencia entre manufactura de ensamble (Juarez) y manufactura de alto valor agregado (Tijuana). Para el gobierno municipal, esto se traduce en mayor recaudacion de impuestos locales por unidad economica.</p>
+
+            <h2>Reynosa: El equilibrio entre automotriz y electronica</h2>
+
+            <p>Reynosa presenta un perfil intermedio: <strong>60.2% de dependencia manufacturera</strong>, ligeramente inferior a Juarez pero sustancialmente mayor que Tijuana. Su estructura industrial esta practicamente dividida entre dos sectores:</p>
+
+            <ul>
+                <li><strong>Fabricacion de equipo de transporte (336):</strong> 41,165 empleos</li>
+                <li><strong>Fabricacion de equipo de computo y electronica (334):</strong> 40,387 empleos</li>
+            </ul>
+
+            <p>Este equilibrio dual reduce parcialmente el riesgo de concentracion, aunque la ciudad sigue siendo altamente vulnerable a disrupciones en cualquiera de estas dos cadenas globales.</p>
+
+            <div class="callout callout-info">
+                <strong><i class="fas fa-star"></i> Dato destacado:</strong>
+                La electronica en Reynosa paga la remuneracion promedio mas alta de las tres ciudades: <strong>$264,829 anuales</strong> &mdash; 47% superior al promedio nacional manufacturero y 23% mas que Tijuana en el mismo subsector.
+            </div>
+
+            <h3>Participacion femenina</h3>
+
+            <p>Reynosa registra <strong>43.8% de mujeres</strong> en el empleo manufacturero (68,570 de 156,496), un indicador de la predominancia de plantas electronicas y de ensamble que historicamente han contratado mas mujeres que la manufactura pesada.</p>
+
+            <h2>Implicaciones para la gestion publica</h2>
+
+            <h3>1. Diversificacion economica como politica de estado</h3>
+
+            <p>Juarez necesita una estrategia deliberada de atraccion de inversion en sectores no automotrices. La dependencia del 63% en manufactura (y dentro de ella, la concentracion en automotriz) es un riesgo sistemico. Un programa municipal de incentivos fiscales para industrias no manufactureras &mdash; logistica, servicios profesionales, tecnologia &mdash; deberia ser prioridad.</p>
+
+            <h3>2. Infraestructura diferenciada por vocacion</h3>
+
+            <ul>
+                <li><strong>Tijuana:</strong> Requiere infraestructura para dispositivos medicos &mdash; laboratorios de certificacion, zonas esteriles, conectividad aeroportuaria para envios urgentes.</li>
+                <li><strong>Juarez:</strong> Necesita fortalecer la infraestructura para cadena automotriz &mdash; ferrocarril, cruces fronterizos eficientes, centros de capacitacion tecnica.</li>
+                <li><strong>Reynosa:</strong> Debe mantener conectividad dual &mdash; carretera para componentes electronicos y automotrices.</li>
+            </ul>
+
+            <h3>3. Formacion de capital humano especializado</h3>
+
+            <p>Las remuneraciones superiores al promedio nacional (entre 19% y 28% mas altas) indican que estas tres ciudades compiten por talento tecnico especializado. Los gobiernos estatales y municipales deben:</p>
+
+            <ul>
+                <li>Alinear la oferta de universidades tecnologicas y politecnicas con la demanda sectorial local</li>
+                <li>Crear programas de certificacion tecnica avalados por la industria</li>
+                <li>Vincular secundarias tecnicas con plantas manufactureras para formacion dual</li>
+            </ul>
+
+            <h3>4. Monitoreo de vulnerabilidad ante shocks externos</h3>
+
+            <p>Con dependencias manufactureras superiores al 49%, estas tres ciudades estan expuestas a:</p>
+
+            <ul>
+                <li>Aranceles estadounidenses (60-80% de las exportaciones manufactureras van a EUA)</li>
+                <li>Disrupciones en cadenas globales de suministro</li>
+                <li>Recesiones en Estados Unidos que reducen demanda de bienes duraderos</li>
+            </ul>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-shield-alt"></i> Los gobiernos municipales deben contar con:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Observatorios economicos que monitoreen indicadores adelantados de EUA</li>
+                    <li>Fondos de contingencia para programas de empleo temporal</li>
+                    <li>Planes de reconversion laboral en caso de cierre de plantas</li>
+                </ul>
+            </div>
+
+            <h3>5. Equidad de genero en manufactura</h3>
+
+            <p>Con participaciones femeninas entre 43.8% y 45.3%, estas ciudades estan por encima del promedio nacional manufacturero (39%). Sin embargo, este dato debe analizarse con cuidado: &iquest;las mujeres estan en los mismos niveles jerarquicos que los hombres? &iquest;Tienen acceso a puestos tecnicos mejor remunerados o estan concentradas en ensamble?</p>
+
+            <p>Los gobiernos locales deben promover:</p>
+
+            <ul>
+                <li>Programas de capacitacion tecnica para mujeres en oficios manufactureros especializados</li>
+                <li>Certificacion de empresas con equidad salarial</li>
+                <li>Infraestructura de cuidado infantil cerca de parques industriales</li>
+            </ul>
+
+            <h2>Datos tecnicos</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Codigo SCIAN</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">31-33</td>
+                        <td>Industrias manufactureras (sector completo)</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">336</td>
+                        <td>Fabricacion de equipo de transporte</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">334</td>
+                        <td>Fabricacion de equipo de computacion, comunicacion, medicion</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">339</td>
+                        <td>Otras industrias manufactureras (incluye dispositivos medicos)</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">335</td>
+                        <td>Fabricacion de accesorios, aparatos electricos y equipo de generacion</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">333</td>
+                        <td>Fabricacion de maquinaria y equipo</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">326</td>
+                        <td>Industria del plastico y del hule</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="data-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Clave Geografica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Juarez, Chihuahua</td>
+                        <td>08037</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Tijuana, Baja California</td>
+                        <td>02004</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Reynosa, Tamaulipas</td>
+                        <td>28032</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Conclusion</h2>
+
+            <div class="quote-box">
+                <p>La frontera norte no es monolitica. Tres ciudades, tres estrategias, tres niveles de vulnerabilidad. Tijuana ha diversificado y capturado manufactura de alto valor. Juarez se ha especializado hasta el punto de la dependencia peligrosa. Reynosa mantiene un equilibrio dual que ofrece mayor resiliencia que Juarez, pero menor que Tijuana.</p>
+            </div>
+
+            <p>Para los gobiernos municipales y estatales, la pregunta es clara: <strong>&iquest;seguir el modelo de concentracion industrial que maximiza empleo en el corto plazo, o invertir en diversificacion que protege contra shocks en el largo plazo?</strong></p>
+
+            <p>Los datos del Censo Economico 2024 muestran que Tijuana ya tomo esa decision. Juarez y Reynosa aun pueden hacerlo.</p>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Economico 2024, INEGI | <strong>Codigos SCIAN:</strong> 31-33, 334, 336, 339, 326, 332, 333, 335</p>
+                <p style="margin-top: 0.5rem;"><strong>Claves geograficas:</strong> 08037, 02004, 28032 | <strong>Analisis:</strong> GDI | Febrero 2026</p>
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> Analiza los datos del Censo Economico</h3>
+                <p>Explora la manufactura fronteriza y otras industrias con datos oficiales de INEGI en nuestra plataforma.</p>
+                <a href="https://gdidata.com" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar GDI Data
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
