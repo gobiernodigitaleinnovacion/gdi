@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Vulnerabilidad: Los Municipios que No Sobrevivirían una Crisis Sectorial - GDI</title>
+    <meta name="description" content="293 municipios mexicanos concentran mas del 60% de su empleo en un solo sector. Manufactura domina 84 de ellos. Analisis del Censo Economico 2024.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --danger-color: #ef4444;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-danger);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--danger-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+        .warning-cell { color: #f59e0b; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--danger-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border-left: 4px solid var(--danger-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
+            <span><i class="far fa-calendar"></i> 21 de marzo de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Mapa de Vulnerabilidad: Los Municipios que No Sobrevivir&iacute;an una Crisis Sectorial</h1>
+        <p class="article-subtitle">293 municipios mexicanos concentran m&aacute;s del 60% de su empleo en un solo sector. Manufactura domina 84 de ellos. &iquest;Tiene M&eacute;xico un problema estructural de diversificaci&oacute;n econ&oacute;mica?</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-map-marked-alt"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Vulnerabilidad Municipal Sectorial</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Econ&oacute;mico 2024 | INEGI</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>El dato que los planes de desarrollo ignoran</h2>
+
+            <p>Cuando un presidente municipal presenta su Plan de Desarrollo, el cap&iacute;tulo econ&oacute;mico suele celebrar las empresas instaladas, los empleos generados, la inversi&oacute;n atra&iacute;da. Rara vez menciona lo que suceder&iacute;a si esa inversi&oacute;n se fuera.</p>
+
+            <p>El Censo Econ&oacute;mico 2024 del INEGI permite hacer esa pregunta con datos duros. Y la respuesta es inc&oacute;moda: de los 1,653 municipios mexicanos con al menos 500 empleos formales, 293 concentran m&aacute;s del 60% de su empleo en un solo sector econ&oacute;mico. Son municipios que, ante una crisis sectorial, una decisi&oacute;n corporativa o un choque externo, no tienen red de protecci&oacute;n.</p>
+
+            <p>El problema no es menor ni marginal. Es estructural.</p>
+
+            <div class="callout callout-danger">
+                <strong>El dato central:</strong>
+                De 1,653 municipios con al menos 500 empleos formales, 293 (17.7%) concentran m&aacute;s del 60% de su empleo en un solo sector. Una crisis sectorial, un arancel o una decisi&oacute;n corporativa pueden desestabilizar su econom&iacute;a completa.
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">293</div>
+                    <div class="label">Municipios vulnerables</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">84</div>
+                    <div class="label">Dominados por manufactura</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">17.7%</div>
+                    <div class="label">Del universo analizado</div>
+                </div>
+            </div>
+
+            <h2>Radiograf&iacute;a de la dependencia</h2>
+
+            <p>El Censo 2024 permite clasificar a los municipios seg&uacute;n su grado de concentraci&oacute;n sectorial en el empleo formal:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Rango de dependencia</th>
+                        <th>Municipios</th>
+                        <th>% del universo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>90-100% &mdash; Dependencia cr&iacute;tica</td>
+                        <td class="highlight-cell">2</td>
+                        <td class="danger-cell">0.1%</td>
+                    </tr>
+                    <tr>
+                        <td>80-89% &mdash; Dependencia muy alta</td>
+                        <td class="highlight-cell">10</td>
+                        <td class="danger-cell">0.6%</td>
+                    </tr>
+                    <tr>
+                        <td>70-79% &mdash; Dependencia alta</td>
+                        <td class="highlight-cell">40</td>
+                        <td class="warning-cell">2.4%</td>
+                    </tr>
+                    <tr>
+                        <td>60-69% &mdash; Dependencia moderada-alta</td>
+                        <td class="highlight-cell">69</td>
+                        <td class="warning-cell">4.2%</td>
+                    </tr>
+                    <tr>
+                        <td>50-59% &mdash; Dependencia moderada</td>
+                        <td class="highlight-cell">172</td>
+                        <td>10.4%</td>
+                    </tr>
+                    <tr>
+                        <td>Menos de 50% &mdash; Diversificado</td>
+                        <td class="highlight-cell">1,360</td>
+                        <td class="success-cell">82.3%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Universo: municipios con 500+ empleos formales.</p>
+            </div>
+
+            <p>El 82.3% de los municipios analizados muestra una estructura econ&oacute;mica relativamente diversificada. Pero el 17.7% restante &mdash; 293 municipios &mdash; opera con una dependencia sectorial que representa una alerta de gesti&oacute;n p&uacute;blica.</p>
+
+            <h2>&iquest;Qu&eacute; sectores dominan m&aacute;s municipios?</h2>
+
+            <p>No todos los sectores generan el mismo tipo de dependencia. El an&aacute;lisis a nivel de sector (2 d&iacute;gitos SCIAN) revela un patr&oacute;n claro:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Sector SCIAN</th>
+                        <th>Descripci&oacute;n</th>
+                        <th>Municipios dominados</th>
+                        <th>% empleo promedio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">31-33</td>
+                        <td>Industrias manufactureras</td>
+                        <td class="danger-cell">84</td>
+                        <td>71.4%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">46</td>
+                        <td>Comercio al por menor</td>
+                        <td class="warning-cell">23</td>
+                        <td>65.8%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">11</td>
+                        <td>Agricultura y ganader&iacute;a</td>
+                        <td>9</td>
+                        <td>64.7%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">21</td>
+                        <td>Miner&iacute;a</td>
+                        <td>2</td>
+                        <td>67.3%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">72</td>
+                        <td>Alojamiento y alimentos</td>
+                        <td>2</td>
+                        <td>63.4%</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">43</td>
+                        <td>Comercio al por mayor</td>
+                        <td>1</td>
+                        <td>83.7%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>La manufactura es el sector con mayor capacidad de captura econ&oacute;mica municipal: domina 84 municipios con un promedio de 71.4% del empleo total. Esto no es necesariamente negativo &mdash; la manufactura genera empleos formales, remuneraciones superiores al promedio y encadenamientos productivos. El problema es la concentraci&oacute;n, no la actividad en s&iacute;.</p>
+
+            <h2>Los casos de alerta m&aacute;xima</h2>
+
+            <h3>Dependencia industrial planificada: el riesgo automotriz</h3>
+
+            <p>El an&aacute;lisis a nivel subsector (3 d&iacute;gitos SCIAN) revela los casos m&aacute;s cr&iacute;ticos. Tres municipios destacan por una dependencia extrema en la fabricaci&oacute;n de equipo de transporte (subsector 336):</p>
+
+            <div class="stat-highlight">
+                <p>Villa de Reyes, San Luis Potos&iacute;</p>
+                <p class="number">86.4%</p>
+                <p>del empleo en manufactura. 62.4% en fabricaci&oacute;n de equipo de transporte. $235,754 MDP de producci&oacute;n = 91% del total municipal.</p>
+            </div>
+
+            <p><strong>Villa de Reyes, San Luis Potos&iacute;:</strong> 31,327 empleos en manufactura, representando el 86.4% del empleo municipal total. A nivel subsector, el 62.4% del empleo corresponde exclusivamente a fabricaci&oacute;n de equipo de transporte &mdash; con una producci&oacute;n de $235,754 millones de pesos que representa el 91% de toda la producci&oacute;n del municipio. Una sola decisi&oacute;n en una sala de juntas corporativa puede alterar la econom&iacute;a de decenas de miles de familias.</p>
+
+            <p><strong>San Jos&eacute; Chiapa, Puebla:</strong> 73.1% del empleo en fabricaci&oacute;n de equipo de transporte (subsector 336), con $105,917 MDP de producci&oacute;n representando el 99.4% de la producci&oacute;n municipal total. La instalaci&oacute;n de la planta Audi transform&oacute; este municipio rural &mdash; pero tambi&eacute;n lo hizo casi completamente dependiente de una empresa extranjera.</p>
+
+            <p><strong>Pesquer&iacute;a, Nuevo Le&oacute;n:</strong> 57.6% del empleo en subsector 336, con 21,913 empleos directos en manufactura automotriz. Municipio en plena expansi&oacute;n del nearshoring, pero con una base econ&oacute;mica que concentra el riesgo.</p>
+
+            <p>Estos tres municipios comparten un perfil: fueron transformados por inversi&oacute;n manufacturera de gran escala, tienen empleos formales bien remunerados, y son exactamente el tipo de caso de &eacute;xito que se celebra en los informes de gobierno. Tambi&eacute;n son los municipios m&aacute;s vulnerables ante un arancel, una recesi&oacute;n en Estados Unidos o una decisi&oacute;n de relocalizaci&oacute;n.</p>
+
+            <h3>Dependencia estructural hist&oacute;rica: el riesgo silencioso</h3>
+
+            <p>Existe un segundo tipo de dependencia, menos visible pero igualmente preocupante: municipios cuya econom&iacute;a se concentra en actividades tradicionales de baja productividad.</p>
+
+            <p><strong>San Pedro Taviche, Oaxaca:</strong> 95.1% del empleo en manufactura &mdash; pero el subsector dominante es industria de la madera (321), con 786 empleados en actividades mayoritariamente artesanales. La producci&oacute;n de $46.9 MDP contrasta con los $235,754 MDP de Villa de Reyes: misma dependencia sectorial, realidades econ&oacute;micas radicalmente distintas.</p>
+
+            <p><strong>Municipios pesqueros de Yucat&aacute;n y Veracruz:</strong> San Felipe (70.1% pesca), Dzilam de Bravo (66.9%), Tampico Alto (67.8%), Tamiahua (63.8%), Celest&uacute;n (61.1%). Econom&iacute;as costeras donde la pesca y captura (subsector 114) concentra el empleo, con productividades bajas y alta exposici&oacute;n a factores ambientales y de regulaci&oacute;n pesquera.</p>
+
+            <p><strong>Municipios textiles y artesanales:</strong> Teotitl&aacute;n del Valle en Oaxaca (57.4% en fabricaci&oacute;n de productos textiles), San Crist&oacute;bal Amatl&aacute;n (73% en insumos textiles), Copalillo en Guerrero (71.4% en textiles). Comunidades donde la econom&iacute;a gira en torno a una actividad ancestral que genera empleo pero con remuneraciones y productividades limitadas.</p>
+
+            <div class="quote-box">
+                &ldquo;Los datos del Censo 2024 no distinguen entre un municipio que crece y uno que es fr&aacute;gil. Ambos pueden tener miles de empleos, producci&oacute;n en alza e inversi&oacute;n r&eacute;cord. La diferencia est&aacute; en cu&aacute;ntos sectores sostienen esa prosperidad.&rdquo;
+            </div>
+
+            <h2>La brecha empleo-producci&oacute;n</h2>
+
+            <p>El an&aacute;lisis revela un fen&oacute;meno que los indicadores de empleo no capturan solos. Tuxcacuesco, Jalisco, concentra el 83.7% de su empleo en comercio al por mayor &mdash; pero ese sector genera apenas el 5.9% de la producci&oacute;n municipal. Es un municipio donde la mayor&iacute;a de las personas trabajan en actividades de bajo valor agregado, posiblemente como punto de tr&aacute;nsito o almacenamiento de cadenas externas.</p>
+
+            <p>Esta brecha entre concentraci&oacute;n de empleo y concentraci&oacute;n de producci&oacute;n es una se&ntilde;al de alerta para los directores de desarrollo econ&oacute;mico municipal: no basta con contar empleos, hay que analizar qu&eacute; valor genera cada sector para el territorio.</p>
+
+            <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
+
+            <h3>Para municipios con dependencia industrial planificada (automotriz, manufactura de exportaci&oacute;n):</h3>
+
+            <ul>
+                <li>Desarrollar estrategias activas de atracci&oacute;n de sectores complementarios: proveedur&iacute;a local, log&iacute;stica, servicios industriales, comercio especializado.</li>
+                <li>Crear fondos de contingencia o reservas fiscales para escenarios de contracci&oacute;n del sector dominante.</li>
+                <li>Incluir cl&aacute;usulas de permanencia y encadenamiento local en los convenios de instalaci&oacute;n con grandes empresas.</li>
+                <li>Monitorear indicadores de empleo del sector dominante como se&ntilde;al temprana de crisis.</li>
+            </ul>
+
+            <h3>Para municipios con dependencia estructural hist&oacute;rica (artesan&iacute;as, pesca, textiles tradicionales):</h3>
+
+            <ul>
+                <li>Dise&ntilde;ar programas de valor agregado: certificaciones de origen, comercio justo, turismo experiencial vinculado a la actividad productiva.</li>
+                <li>Invertir en infraestructura que permita escalar la producci&oacute;n artesanal sin perder su car&aacute;cter diferenciador.</li>
+                <li>Vincular con programas federales de desarrollo de cadenas de valor (INADEM, SE, SADER seg&uacute;n aplique).</li>
+                <li>Atender el rezago social que frecuentemente acompa&ntilde;a a estas econom&iacute;as.</li>
+            </ul>
+
+            <h3>Para todos los municipios con dependencia sectorial alta:</h3>
+
+            <ul>
+                <li>Incorporar el &iacute;ndice de concentraci&oacute;n sectorial como indicador obligatorio en los Planes Municipales de Desarrollo.</li>
+                <li>Establecer metas expl&iacute;citas de diversificaci&oacute;n econ&oacute;mica con indicadores medibles.</li>
+                <li>Requerir estudios de impacto econ&oacute;mico territorial antes de autorizar inversiones que concentren m&aacute;s del 40% del empleo en una sola empresa.</li>
+            </ul>
+
+            <h2>Datos t&eacute;cnicos</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Universo de an&aacute;lisis</td>
+                        <td class="highlight-cell">1,653 municipios (500+ empleos)</td>
+                    </tr>
+                    <tr>
+                        <td>Municipios con dependencia &gt;60% (sector)</td>
+                        <td class="highlight-cell">293 (17.7%)</td>
+                    </tr>
+                    <tr>
+                        <td>Municipios con dependencia &gt;60% (subsector)</td>
+                        <td class="highlight-cell">~121 estimado</td>
+                    </tr>
+                    <tr>
+                        <td>Sector m&aacute;s dominante</td>
+                        <td class="highlight-cell">Manufactura (31-33): 84 municipios</td>
+                    </tr>
+                    <tr>
+                        <td>Caso extremo empleo</td>
+                        <td class="danger-cell">San Pedro Taviche, Oaxaca: 95.1%</td>
+                    </tr>
+                    <tr>
+                        <td>Caso extremo producci&oacute;n</td>
+                        <td class="danger-cell">San Jos&eacute; Chiapa, Puebla: 99.4% en subsector 336</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="source-box">
+                <p><strong>C&oacute;digos SCIAN relevantes:</strong> 31-33 (Manufactura), 336 (Equipo de transporte), 314-315 (Textiles y prendas), 114 (Pesca), 321 (Madera), 46 (Comercio al por menor)</p>
+                <p style="margin-top: 0.5rem;"><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Lakehouse: lhcensoeconomico20042024.</p>
+            </div>
+
+            <h2>Conclusi&oacute;n</h2>
+
+            <p>Los datos del Censo 2024 no distinguen entre un municipio que crece y uno que es fr&aacute;gil. Ambos pueden tener miles de empleos, producci&oacute;n en alza e inversi&oacute;n r&eacute;cord. La diferencia est&aacute; en cu&aacute;ntos sectores sostienen esa prosperidad.</p>
+
+            <p>M&eacute;xico tiene 293 municipios que dependen de un solo sector para m&aacute;s del 60% de su empleo. Algunos son casos de &eacute;xito industrial que hoy enfrentan aranceles y reconfiguraci&oacute;n de cadenas globales. Otros son comunidades hist&oacute;ricamente marginadas cuya econom&iacute;a nunca se diversific&oacute;. El instrumento de pol&iacute;tica p&uacute;blica es distinto en cada caso &mdash; pero la urgencia de actuar es la misma.</p>
+
+            <div class="quote-box">
+                Un Plan Municipal de Desarrollo que no incluya una estrategia de diversificaci&oacute;n econ&oacute;mica no es un plan: es una apuesta.
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres analizar la vulnerabilidad sectorial de tu municipio?</h3>
+                <p>En GDI Data tenemos los datos del Censo Econ&oacute;mico 2024 listos para consulta por municipio, sector y subsector.</p>
+                <a href="https://gdidata.com/" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar datos
+                </a>
+            </div>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Procesado con Microsoft Fabric. An&aacute;lisis: GDI Data.</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
