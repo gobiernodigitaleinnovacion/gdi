@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Cabos: Cuando el 84% del Hospedaje Estatal Depende de un Solo Municipio - GDI</title>
+    <meta name="description" content="BCS concentra el 84.4% de su empleo hotelero en Los Cabos. Analisis comparativo con Cancun y Puerto Vallarta usando datos del Censo Economico 2024.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --danger-color: #ef4444;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-danger);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--danger-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+        .warning-cell { color: #f59e0b; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--danger-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border-left: 4px solid var(--danger-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
+            <span><i class="far fa-calendar"></i> 27 de marzo de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Los Cabos: Cuando el 84% del Hospedaje Estatal Depende de un Solo Municipio</h1>
+        <p class="article-subtitle">BCS concentra su econom&iacute;a tur&iacute;stica en un punto fr&aacute;gil &mdash; &iquest;qu&eacute; pasa si el destino se apaga?</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-hotel"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Concentraci&oacute;n Tur&iacute;stica en BCS</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Econ&oacute;mico 2024 | INEGI</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>El dato que debe preocupar a Baja California Sur</h2>
+
+            <p>El 84.4% del empleo hotelero de todo Baja California Sur ocurre en un solo municipio: Los Cabos. No es una estad&iacute;stica menor. Es una se&ntilde;al de alerta estructural que cualquier administraci&oacute;n estatal responsable debe atender: cuando la econom&iacute;a de un estado entero descansa sobre un solo punto geogr&aacute;fico, la vulnerabilidad no es potencial &mdash; es real y medible.</p>
+
+            <p>El Censo Econ&oacute;mico 2024 del INEGI permite, por primera vez con datos actualizados, hacer una radiograf&iacute;a comparativa de los tres grandes destinos tur&iacute;sticos de M&eacute;xico: Benito Ju&aacute;rez (Canc&uacute;n), Los Cabos y Puerto Vallarta. Lo que revelan los n&uacute;meros sobre BCS es tan claro como inc&oacute;modo.</p>
+
+            <div class="callout callout-danger">
+                <strong>El dato central:</strong>
+                Los Cabos concentra el 84.4% del empleo hotelero, el 56.1% del restaurantero y el 63.0% del transporte tur&iacute;stico de todo Baja California Sur. Cualquier crisis que afecte al municipio golpea simult&aacute;neamente al estado entero.
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">84.4%</div>
+                    <div class="label">Empleo hotelero de BCS en Los Cabos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">$26,969</div>
+                    <div class="label">MDP producci&oacute;n tur&iacute;stica</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">41,629</div>
+                    <div class="label">Empleos tur&iacute;sticos totales</div>
+                </div>
+            </div>
+
+            <h2>Contexto: Tres destinos, tres realidades administrativas</h2>
+
+            <p>Los tres municipios analizados pertenecen a tres entidades distintas y enfrentan retos de gesti&oacute;n igualmente distintos:</p>
+
+            <ul>
+                <li><strong>Benito Ju&aacute;rez (Canc&uacute;n)</strong> &mdash; Quintana Roo. El mayor destino tur&iacute;stico de M&eacute;xico por volumen de actividad econ&oacute;mica. Administraci&oacute;n municipal dentro de un estado cuya econom&iacute;a tambi&eacute;n est&aacute; dominada por el turismo, pero distribuida entre varios municipios (Tulum, Playa del Carmen, Cozumel).</li>
+                <li><strong>Los Cabos</strong> &mdash; Baja California Sur. Destino de lujo con alta concentraci&oacute;n. Estado con escasa diversificaci&oacute;n econ&oacute;mica y dependencia casi absoluta de este municipio en el sector tur&iacute;stico.</li>
+                <li><strong>Puerto Vallarta</strong> &mdash; Jalisco. Destino consolidado pero que compite por recursos y atenci&oacute;n dentro de un estado con una econom&iacute;a mucho m&aacute;s diversificada, donde Guadalajara absorbe la mayor&iacute;a de la actividad econ&oacute;mica.</li>
+            </ul>
+
+            <h2>Radiograf&iacute;a econ&oacute;mica: Lo que dice el Censo 2024</h2>
+
+            <h3>Hospedaje (Sector 721)</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>UE</th>
+                        <th>Empleos</th>
+                        <th>Producci&oacute;n (MDP)</th>
+                        <th>Rem. prom. anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Benito Ju&aacute;rez</td>
+                        <td>261</td>
+                        <td class="highlight-cell">28,981</td>
+                        <td class="highlight-cell">$25,568</td>
+                        <td>$110,989</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Los Cabos</td>
+                        <td>179</td>
+                        <td class="highlight-cell">23,892</td>
+                        <td class="highlight-cell">$18,454</td>
+                        <td class="danger-cell">$98,327</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Puerto Vallarta</td>
+                        <td>206</td>
+                        <td>15,134</td>
+                        <td>$9,235</td>
+                        <td class="success-cell">$157,549</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Restaurantes y alimentos (Sector 722)</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>UE</th>
+                        <th>Empleos</th>
+                        <th>Producci&oacute;n (MDP)</th>
+                        <th>Rem. prom. anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Benito Ju&aacute;rez</td>
+                        <td>3,949</td>
+                        <td class="highlight-cell">25,807</td>
+                        <td class="highlight-cell">$10,927</td>
+                        <td>$78,359</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Los Cabos</td>
+                        <td>2,403</td>
+                        <td>16,001</td>
+                        <td>$6,897</td>
+                        <td>$78,023</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Puerto Vallarta</td>
+                        <td>2,718</td>
+                        <td>14,814</td>
+                        <td>$6,897</td>
+                        <td>$69,958</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Transporte tur&iacute;stico (Sector 487)</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>UE</th>
+                        <th>Empleos</th>
+                        <th>Producci&oacute;n (MDP)</th>
+                        <th>Rem. prom. anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Los Cabos</td>
+                        <td>105</td>
+                        <td class="highlight-cell">1,736</td>
+                        <td class="highlight-cell">$1,617</td>
+                        <td class="success-cell">$164,736</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Puerto Vallarta</td>
+                        <td>75</td>
+                        <td>265</td>
+                        <td>$204</td>
+                        <td>$104,392</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Benito Ju&aacute;rez</td>
+                        <td>8</td>
+                        <td><em>Confidencial</em></td>
+                        <td><em>Confidencial</em></td>
+                        <td>&mdash;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-exclamation-triangle"></i> Nota sobre datos confidenciales:</strong>
+                El sector de transporte tur&iacute;stico (487) en Benito Ju&aacute;rez registra solo 8 unidades econ&oacute;micas. INEGI clasifica los datos de empleo y producci&oacute;n como confidenciales para proteger informaci&oacute;n comercial espec&iacute;fica de empresas individuales.
+            </div>
+
+            <h3>Resumen tur&iacute;stico total (721 + 722 + 487)</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>UE Total</th>
+                        <th>Empleos Totales</th>
+                        <th>Producci&oacute;n Total (MDP)</th>
+                        <th>Valor Agregado (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight-cell">Benito Ju&aacute;rez</td>
+                        <td>4,218</td>
+                        <td class="highlight-cell">54,788</td>
+                        <td class="highlight-cell">$36,495</td>
+                        <td>$18,653</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Los Cabos</td>
+                        <td>2,687</td>
+                        <td class="highlight-cell">41,629</td>
+                        <td class="highlight-cell">$26,969</td>
+                        <td>$14,405</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight-cell">Puerto Vallarta</td>
+                        <td>2,999</td>
+                        <td>30,213</td>
+                        <td>$16,337</td>
+                        <td>$8,127</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Hallazgos clave: Las alertas que el gobierno de BCS no puede ignorar</h2>
+
+            <h3><span style="color: #ef4444;">&#x1F534;</span> Alerta 1: Dependencia cr&iacute;tica en hospedaje</h3>
+
+            <p>Los Cabos concentra el <strong>84.4% del empleo hotelero de todo Baja California Sur</strong>. Para el sector restaurantero, la concentraci&oacute;n es del 56.1%. Para transporte tur&iacute;stico, el 63.0%. No hay ning&uacute;n otro municipio en el estado que contrabalancee esta concentraci&oacute;n.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Sector</th>
+                        <th>Empleo en Los Cabos</th>
+                        <th>Empleo total BCS</th>
+                        <th>% del Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hospedaje (721)</td>
+                        <td class="highlight-cell">23,892</td>
+                        <td>28,302</td>
+                        <td class="danger-cell">84.4%</td>
+                    </tr>
+                    <tr>
+                        <td>Transporte (487)</td>
+                        <td class="highlight-cell">1,736</td>
+                        <td>2,757</td>
+                        <td class="danger-cell">63.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Restaurantes (722)</td>
+                        <td class="highlight-cell">16,001</td>
+                        <td>28,529</td>
+                        <td class="warning-cell">56.1%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Lo que esto significa para la gesti&oacute;n p&uacute;blica es directo: cualquier crisis que afecte a Los Cabos &mdash; un hurac&aacute;n de categor&iacute;a mayor, una recesi&oacute;n en el mercado emisor estadounidense, una pandemia, un conflicto de seguridad &mdash; golpea simult&aacute;neamente al municipio <em>y</em> al estado. BCS no tiene amortiguadores econ&oacute;micos territoriales.</p>
+
+            <div class="stat-highlight">
+                <p>Concentraci&oacute;n de empleo hotelero en Los Cabos</p>
+                <p class="number">84.4%</p>
+                <p>de todo Baja California Sur &mdash; sin ning&uacute;n otro polo tur&iacute;stico que contrabalancee</p>
+            </div>
+
+            <h3><span style="color: #ef4444;">&#x1F534;</span> Alerta 2: La remuneraci&oacute;n m&aacute;s baja en hospedaje entre los tres destinos</h3>
+
+            <p>Los trabajadores hoteleros de Los Cabos ganan en promedio <strong>$98,327 anuales</strong> &mdash; la remuneraci&oacute;n m&aacute;s baja entre los tres destinos analizados, y por debajo del salario m&iacute;nimo anual de zona fronteriza ($158,713). Esto en el destino que genera mayor producci&oacute;n por establecimiento entre los tres. La brecha entre el valor que produce el sector y lo que reciben sus trabajadores es una se&ntilde;al de precariedad que la pol&iacute;tica laboral y social del estado debe atender.</p>
+
+            <h3><span style="color: #f59e0b;">&#x26A0;&#xFE0F;</span> Alerta 3: Quintana Roo est&aacute; m&aacute;s diversificado que BCS</h3>
+
+            <p>Aunque Canc&uacute;n domina el turismo de Quintana Roo, el estado tiene otros polos activos: Playa del Carmen, Tulum, Cozumel, Chetumal. La concentraci&oacute;n de hospedaje de Canc&uacute;n en su estado es del 34.0% &mdash; menos de la mitad que la concentraci&oacute;n de Los Cabos en BCS (84.4%). Quintana Roo tiene redundancia territorial. BCS no.</p>
+
+            <h3><span style="color: #f59e0b;">&#x26A0;&#xFE0F;</span> Alerta 4: Puerto Vallarta, lecci&oacute;n no aprendida</h3>
+
+            <p>Puerto Vallarta paga la remuneraci&oacute;n m&aacute;s alta en hospedaje ($157,549/a&ntilde;o) siendo el destino de menor producci&oacute;n absoluta. Esto sugiere un modelo donde la calidad del empleo es mayor con menor escala. Para BCS, la pregunta de pol&iacute;tica p&uacute;blica es si el modelo de crecimiento de Los Cabos &mdash; m&aacute;s producci&oacute;n, menor remuneraci&oacute;n &mdash; es el que conviene sostener o transformar.</p>
+
+            <div class="quote-box">
+                &ldquo;La historia econ&oacute;mica de M&eacute;xico tiene muchos ejemplos de territorios que construyeron su prosperidad sobre una sola actividad y pagaron el precio cuando el ciclo cambi&oacute;.&rdquo;
+            </div>
+
+            <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
+
+            <h3>Para el Gobierno Estatal de BCS:</h3>
+
+            <ol>
+                <li><strong>Diversificaci&oacute;n econ&oacute;mica territorial urgente.</strong> La Secretar&iacute;a de Econom&iacute;a estatal debe incluir en el Plan Estatal de Desarrollo una estrategia expl&iacute;cita de desarrollo de otros municipios como polos econ&oacute;micos alternativos. La dependencia del 84% es insostenible ante cualquier choque externo.</li>
+                <li><strong>Programa de mejora salarial en el sector tur&iacute;stico.</strong> Con $98,327 de remuneraci&oacute;n promedio en hospedaje &mdash; sector que genera $18,454 MDP de producci&oacute;n &mdash; hay margen fiscal y pol&iacute;tico para impulsar acuerdos sectoriales que mejoren las condiciones laborales sin afectar la competitividad del destino.</li>
+                <li><strong>Fondo de contingencia tur&iacute;stica.</strong> La concentraci&oacute;n econ&oacute;mica en un solo municipio justifica la creaci&oacute;n de un mecanismo de reserva presupuestal para responder ante crisis que afecten espec&iacute;ficamente al sector tur&iacute;stico de Los Cabos.</li>
+                <li><strong>Infraestructura social proporcional al empleo tur&iacute;stico.</strong> Con m&aacute;s de 41,000 empleos tur&iacute;sticos en Los Cabos, la demanda de servicios de salud, vivienda, educaci&oacute;n y transporte p&uacute;blico para la poblaci&oacute;n trabajadora del sector debe reflejarse en las asignaciones presupuestales municipales y estatales.</li>
+            </ol>
+
+            <h3>Para el Gobierno Municipal de Los Cabos:</h3>
+
+            <ol>
+                <li><strong>Registro y formalizaci&oacute;n del transporte tur&iacute;stico.</strong> Solo 8 unidades econ&oacute;micas de transporte tur&iacute;stico registradas en Canc&uacute;n (dato confidencial) contrasta con 105 en Los Cabos. El municipio debe revisar si su padr&oacute;n de operadores tur&iacute;sticos est&aacute; completo y si la informalidad en este eslab&oacute;n de la cadena representa un riesgo fiscal y de seguridad para los visitantes.</li>
+                <li><strong>Pol&iacute;tica de vivienda para trabajadores tur&iacute;sticos.</strong> La remuneraci&oacute;n promedio del sector no es suficiente para acceder a vivienda digna en un municipio con los costos de vida de Los Cabos. El gobierno municipal debe incluir este tema en su agenda de desarrollo urbano.</li>
+            </ol>
+
+            <h2>Conclusi&oacute;n: El &eacute;xito que puede convertirse en trampa</h2>
+
+            <p>Los Cabos es, por cualquier m&eacute;trica, uno de los destinos tur&iacute;sticos m&aacute;s exitosos de M&eacute;xico. $26,969 MDP de producci&oacute;n tur&iacute;stica con solo 2,687 unidades econ&oacute;micas es un indicador extraordinario de eficiencia y valor por establecimiento. Pero ese mismo &eacute;xito ha creado una estructura donde Baja California Sur depende de un solo punto para m&aacute;s del 80% de su actividad tur&iacute;stica.</p>
+
+            <p>La administraci&oacute;n estatal y municipal tienen hoy, con datos verificables del Censo 2024, la informaci&oacute;n necesaria para anticiparse. La pregunta no es si Los Cabos seguir&aacute; siendo un motor econ&oacute;mico &mdash; lo seguir&aacute; siendo. La pregunta es si BCS tendr&aacute; otros motores cuando Los Cabos necesite mantenimiento.</p>
+
+            <div class="quote-box">
+                La pregunta no es si Los Cabos seguir&aacute; siendo un motor econ&oacute;mico &mdash; lo seguir&aacute; siendo. La pregunta es si BCS tendr&aacute; otros motores cuando Los Cabos necesite mantenimiento.
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres analizar la concentraci&oacute;n tur&iacute;stica de tu estado?</h3>
+                <p>En GDI Data tenemos los datos del Censo Econ&oacute;mico 2024 listos para consulta por municipio, sector y subsector.</p>
+                <a href="https://gdidata.com/" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar datos
+                </a>
+            </div>
+
+            <h2>Datos t&eacute;cnicos</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fuente</td>
+                        <td class="highlight-cell">Censo Econ&oacute;mico 2024, INEGI</td>
+                    </tr>
+                    <tr>
+                        <td>C&oacute;digos SCIAN</td>
+                        <td class="highlight-cell">721 (Alojamiento), 722 (Alimentos y bebidas), 487 (Transporte tur&iacute;stico)</td>
+                    </tr>
+                    <tr>
+                        <td>Municipios analizados</td>
+                        <td class="highlight-cell">Benito Ju&aacute;rez (QR), Los Cabos (BCS), Puerto Vallarta (JAL)</td>
+                    </tr>
+                    <tr>
+                        <td>Concentraci&oacute;n m&aacute;xima</td>
+                        <td class="danger-cell">84.4% del empleo hotelero de BCS en Los Cabos</td>
+                    </tr>
+                    <tr>
+                        <td>Producci&oacute;n tur&iacute;stica Los Cabos</td>
+                        <td class="highlight-cell">$26,969 MDP (721+722+487)</td>
+                    </tr>
+                    <tr>
+                        <td>Nota metodol&oacute;gica</td>
+                        <td>Datos de transporte tur&iacute;stico (487) en Benito Ju&aacute;rez confidenciales por bajo n&uacute;mero de establecimientos</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Procesado con Microsoft Fabric. An&aacute;lisis: GDI Data.</p>
+                <p style="margin-top: 0.5rem;"><strong>Fecha de an&aacute;lisis:</strong> Marzo 2026 | GDI &mdash; Gobierno Digital e Innovaci&oacute;n | gobiernodigitaleinnovacion.com</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
