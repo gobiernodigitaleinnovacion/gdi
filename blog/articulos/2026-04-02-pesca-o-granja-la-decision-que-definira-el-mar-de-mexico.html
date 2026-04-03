@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesca o Granja: La Decision que Definira el Mar de Mexico - GDI</title>
+    <meta name="description" content="42% de pescadores trabaja sin sueldo mientras la acuicultura paga el doble. Censo Economico 2024 revela una fractura en la economia del mar en Mexico.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #10b981;
+            --accent-dark: #059669;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-accent);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+        .warning-cell { color: #f59e0b; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-chart-line"></i> Econom&iacute;a</span>
+            <span><i class="far fa-calendar"></i> 2 de abril de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Pesca o Granja: La Decisi&oacute;n que Definir&aacute; el Mar de M&eacute;xico</h1>
+        <p class="article-subtitle">42% de pescadores trabaja sin sueldo mientras la acuicultura paga el doble</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-fish"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Econom&iacute;a del Mar en M&eacute;xico</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Econ&oacute;mico 2024 | INEGI</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <h2>La fractura silenciosa</h2>
+
+            <p>El Censo Econ&oacute;mico 2024 del INEGI revela una fractura silenciosa en la econom&iacute;a del mar en M&eacute;xico: mientras 80,000 personas trabajan sin remuneraci&oacute;n en la pesca extractiva, las granjas acu&iacute;colas pagan salarios que duplican los del sector pesquero tradicional. La pregunta que ning&uacute;n gobierno costero ha respondido con claridad es si sus pol&iacute;ticas p&uacute;blicas est&aacute;n del lado correcto de esa fractura.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">42.3%</div>
+                    <div class="label">Pescadores sin remuneraci&oacute;n</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">$115,094</div>
+                    <div class="label">Salario anual en acuicultura</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">219,498</div>
+                    <div class="label">Personas en econom&iacute;a del mar</div>
+                </div>
+            </div>
+
+            <h2>La Radiograf&iacute;a: Dos Econom&iacute;as del Mar</h2>
+
+            <p>M&eacute;xico tiene dos industrias del mar que conviven sin integrarse. La primera es la <strong>pesca extractiva</strong> (c&oacute;digo SCIAN 114): 20,152 embarcaciones y establecimientos, 189,091 personas ocupadas, $45,365 millones de pesos en producci&oacute;n. La segunda es la <strong>acuicultura</strong> (c&oacute;digo SCIAN 1125): 3,321 granjas, 30,407 personas ocupadas, $17,209 millones de pesos en producci&oacute;n.</p>
+
+            <p>En t&eacute;rminos absolutos, la pesca es m&aacute;s grande. Pero los n&uacute;meros cambian radicalmente cuando se analiza la calidad del empleo y la productividad por unidad econ&oacute;mica.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Pesca Extractiva (114)</th>
+                        <th>Acuicultura (1125)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Unidades econ&oacute;micas</td>
+                        <td class="highlight-cell">20,152</td>
+                        <td class="highlight-cell">3,321</td>
+                    </tr>
+                    <tr>
+                        <td>Empleos totales</td>
+                        <td class="highlight-cell">189,091</td>
+                        <td class="highlight-cell">30,407</td>
+                    </tr>
+                    <tr>
+                        <td>Producci&oacute;n (MDP)</td>
+                        <td class="highlight-cell">$45,365</td>
+                        <td class="highlight-cell">$17,209</td>
+                    </tr>
+                    <tr>
+                        <td>Producci&oacute;n por UE (MDP)</td>
+                        <td>$2.25</td>
+                        <td class="success-cell">$5.18</td>
+                    </tr>
+                    <tr>
+                        <td>Sin remuneraci&oacute;n</td>
+                        <td class="danger-cell">79,987 (42.3%)</td>
+                        <td>&mdash;</td>
+                    </tr>
+                    <tr>
+                        <td>Remuneraci&oacute;n promedio</td>
+                        <td class="warning-cell">$40,696/a&ntilde;o</td>
+                        <td class="success-cell">$115,094/a&ntilde;o*</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: -1rem;">* Referencia Sonora, el estado l&iacute;der en acuicultura industrial.</p>
+
+            <h2>La Alerta: 80,000 Personas Trabajando Gratis</h2>
+
+            <p>El dato m&aacute;s preocupante del Censo 2024 no es el tama&ntilde;o del sector: es que <strong>79,987 personas</strong> en la pesca extractiva trabajan sin remuneraci&oacute;n formal, equivalente al 42.3% del empleo total del sector. No son voluntarios ni socios &mdash; son pescadores artesanales cuya actividad no alcanza a generar ingresos monetarios regulares, o que operan en esquemas de autoconsumo y econom&iacute;a informal.</p>
+
+            <div class="stat-highlight">
+                <div class="number">79,987</div>
+                <p style="font-size: 1.1rem; margin-top: 0.5rem;">personas en la pesca trabajan sin remuneraci&oacute;n formal</p>
+            </div>
+
+            <p>Esta cifra no es uniforme. Hay estados donde la informalidad es la norma:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Empleos en Pesca</th>
+                        <th>Sin Remuneraci&oacute;n</th>
+                        <th>Rem. Promedio Anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Guerrero</td>
+                        <td class="highlight-cell">17,622</td>
+                        <td class="danger-cell">16,684 (94.7%)</td>
+                        <td class="danger-cell">$4,225</td>
+                    </tr>
+                    <tr>
+                        <td>Chiapas</td>
+                        <td class="highlight-cell">12,733</td>
+                        <td class="danger-cell">12,097 (95.0%)</td>
+                        <td class="danger-cell">$2,526</td>
+                    </tr>
+                    <tr>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">21,209</td>
+                        <td class="warning-cell">15,036 (70.9%)</td>
+                        <td class="warning-cell">$18,883</td>
+                    </tr>
+                    <tr>
+                        <td>Sinaloa</td>
+                        <td class="highlight-cell">26,576</td>
+                        <td>8,744 (32.9%)</td>
+                        <td class="success-cell">$57,144</td>
+                    </tr>
+                    <tr>
+                        <td>Sonora</td>
+                        <td class="highlight-cell">14,376</td>
+                        <td class="success-cell">861 (6.0%)</td>
+                        <td class="success-cell">$57,842</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-triangle"></i> Alerta m&aacute;xima:</strong>
+                Guerrero y Chiapas tienen m&aacute;s del 94% de sus pescadores trabajando sin sueldo, con remuneraciones promedio que no alcanzan ni el 4% del salario m&iacute;nimo anual ($113,464 en 2026). No es pesca &mdash; es subsistencia disfrazada de actividad econ&oacute;mica.
+            </div>
+
+            <h2>El Contraste: Sonora y Sinaloa Muestran el Camino</h2>
+
+            <p>En el extremo opuesto, Sonora y Sinaloa demuestran que la econom&iacute;a del mar puede generar empleo formal y bien remunerado &mdash; pero con modelos distintos.</p>
+
+            <p><strong>Sinaloa</strong> es el l&iacute;der hist&oacute;rico de la pesca extractiva: $9,403 MDP en producci&oacute;n pesquera, 26,576 empleos, y ha desarrollado adem&aacute;s una acuicultura importante ($4,743 MDP). Su remuneraci&oacute;n promedio en pesca ($57,144/a&ntilde;o) es cinco veces mayor que Guerrero, reflejo de una flota m&aacute;s industrializada.</p>
+
+            <p><strong>Sonora</strong> cuenta la historia m&aacute;s reveladora: su acuicultura ($5,745 MDP) ya supera a su pesca extractiva ($5,410 MDP). Con apenas 102 granjas acu&iacute;colas genera m&aacute;s valor que toda la flota pesquera del estado. La remuneraci&oacute;n en acuicultura alcanza $115,094 anuales &mdash; pr&aacute;cticamente el salario m&iacute;nimo formal, muy por encima de los $57,842 que paga la pesca.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Pesca (MDP)</th>
+                        <th>Acuicultura (MDP)</th>
+                        <th>Total (MDP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sinaloa</td>
+                        <td class="highlight-cell">$9,403</td>
+                        <td class="success-cell">$4,743</td>
+                        <td class="highlight-cell">$14,146</td>
+                    </tr>
+                    <tr>
+                        <td>Sonora</td>
+                        <td class="highlight-cell">$5,410</td>
+                        <td class="success-cell">$5,745</td>
+                        <td class="highlight-cell">$11,155</td>
+                    </tr>
+                    <tr>
+                        <td>Tabasco</td>
+                        <td class="highlight-cell">$3,988</td>
+                        <td class="warning-cell">$249</td>
+                        <td class="highlight-cell">$4,237</td>
+                    </tr>
+                    <tr>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">$2,028</td>
+                        <td class="danger-cell">$136</td>
+                        <td class="highlight-cell">$2,164</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-info">
+                <strong><i class="fas fa-info-circle"></i> Dato clave:</strong>
+                Tabasco y Veracruz, con econom&iacute;as del mar entre 10 y 16 veces menores que Sinaloa, tienen una acuicultura pr&aacute;cticamente inexistente en comparaci&oacute;n con su potencial costero.
+            </div>
+
+            <h2>El Camar&oacute;n: La Batalla M&aacute;s Ilustrativa</h2>
+
+            <p>Ning&uacute;n producto refleja mejor esta transici&oacute;n que el camar&oacute;n. El Censo 2024 permite comparar directamente dos formas de producirlo:</p>
+
+            <ul>
+                <li><strong>Pesca de camar&oacute;n (114111):</strong> 3,715 embarcaciones/establecimientos &rarr; <strong>$9,793 MDP</strong></li>
+                <li><strong>Camaronicultura (112513 + 112514):</strong> 901 granjas &rarr; <strong>$12,326 MDP</strong></li>
+            </ul>
+
+            <div class="stat-highlight">
+                <div class="number">+26%</div>
+                <p style="font-size: 1.1rem; margin-top: 0.5rem;">m&aacute;s valor genera el camar&oacute;n de granja vs el de pesca, con 4x menos unidades econ&oacute;micas</p>
+            </div>
+
+            <p>El camar&oacute;n de granja ya genera 26% m&aacute;s valor que el camar&oacute;n de pesca, con 4 veces menos unidades econ&oacute;micas. Esta no es una tendencia futura &mdash; es una realidad que el Censo 2024 documenta hoy.</p>
+
+            <p>Para los gobiernos estatales costeros, esta cifra tiene una implicaci&oacute;n directa: los programas de apoyo a pescadores artesanales, los subsidios al di&eacute;sel marino y las pol&iacute;ticas de concesiones pesqueras est&aacute;n sosteniendo un modelo que pierde terreno estructuralmente frente a la acuicultura intensiva.</p>
+
+            <h2>Implicaciones para la Gesti&oacute;n P&uacute;blica</h2>
+
+            <h3>Para gobiernos estatales costeros (Veracruz, Tabasco, Guerrero, Chiapas, Oaxaca)</h3>
+
+            <p>La concentraci&oacute;n de empleo sin remuneraci&oacute;n en la pesca artesanal no es un problema que se resuelva con m&aacute;s apoyos al sector tradicional. Requiere una estrategia de reconversi&oacute;n productiva que incluya:</p>
+
+            <ol>
+                <li><strong>Programas de capacitaci&oacute;n t&eacute;cnica</strong> en acuicultura para pescadores artesanales</li>
+                <li><strong>Infraestructura h&iacute;drica</strong> para estanques y granjas en zonas costeras</li>
+                <li><strong>Regularizaci&oacute;n del empleo informal</strong> pesquero para acceso a seguridad social</li>
+                <li><strong>Atracci&oacute;n de inversi&oacute;n privada</strong> en procesamiento y cadena de fr&iacute;o</li>
+            </ol>
+
+            <h3>Para gobiernos municipales en zonas pesqueras</h3>
+
+            <p>Los municipios con alta dependencia en pesca artesanal (Guerrero, Chiapas, Veracruz interior) enfrentan un riesgo de vulnerabilidad econ&oacute;mica similar al de los municipios monoindustriales. Una crisis sanitaria, clim&aacute;tica o de mercado en el sector pesquero impacta directamente la base econ&oacute;mica local y la recaudaci&oacute;n municipal.</p>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-question-circle"></i> La pregunta inc&oacute;moda para los planes de desarrollo:</strong>
+                &iquest;Cu&aacute;ntos Planes Municipales de Desarrollo costeros incluyen una estrategia expl&iacute;cita de transici&oacute;n hacia la acuicultura? Los datos del Censo 2024 sugieren que, para la mayor&iacute;a, la respuesta es ninguno.
+            </div>
+
+            <h2>Conclusi&oacute;n</h2>
+
+            <p>M&eacute;xico tiene 219,498 personas ocupadas en la econom&iacute;a del mar entre pesca y acuicultura. De ellas, al menos 80,000 trabajan sin remuneraci&oacute;n formal. La acuicultura, con 15 veces menos unidades econ&oacute;micas que la pesca, genera empleos con salarios hasta tres veces superiores.</p>
+
+            <p>La decisi&oacute;n de pol&iacute;tica p&uacute;blica no es si apoyar a los pescadores &mdash; es c&oacute;mo transformar gradualmente un modelo de subsistencia en uno de productividad. Sonora ya tom&oacute; esa decisi&oacute;n. Veracruz, Tabasco, Guerrero y Chiapas a&uacute;n no.</p>
+
+            <div class="quote-box">
+                El mar no espera.
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres analizar la econom&iacute;a pesquera de tu estado?</h3>
+                <p>En GDI Data tenemos los datos del Censo Econ&oacute;mico 2024 listos para consulta por municipio, sector y subsector.</p>
+                <a href="https://gdidata.com/" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar datos
+                </a>
+            </div>
+
+            <h2>Datos t&eacute;cnicos</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fuente</td>
+                        <td class="highlight-cell">Censo Econ&oacute;mico 2024, INEGI</td>
+                    </tr>
+                    <tr>
+                        <td>C&oacute;digos SCIAN</td>
+                        <td class="highlight-cell">114 (Pesca, caza y captura), 1125 (Acuicultura), 112513-112514 (Camaronicultura), 114111 (Pesca de camar&oacute;n), 431123 (Comercio al por mayor de pescados y mariscos)</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha de an&aacute;lisis</td>
+                        <td class="highlight-cell">Abril 2026</td>
+                    </tr>
+                    <tr>
+                        <td>Nota metodol&oacute;gica</td>
+                        <td>Datos de Sonora en comercio mayorista (431123) presentan valor agregado negativo; se excluyen de comparaciones de rentabilidad por posible ajuste contable en la captaci&oacute;n censal.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Procesado con Microsoft Fabric. An&aacute;lisis: GDI Data.</p>
+                <p style="margin-top: 0.5rem;"><strong>Fecha de an&aacute;lisis:</strong> Abril 2026 | GDI &mdash; Gobierno Digital e Innovaci&oacute;n | gobiernodigitaleinnovacion.com</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
