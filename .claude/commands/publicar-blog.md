@@ -173,7 +173,21 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 - **Ir al grano** con el dato más impactante
 - Terminar con bandera 🇲🇽
 
-### 6. Git commit y push
+### 6. Regenerar sitemap.xml y notificar a buscadores
+
+**OBLIGATORIO antes del commit.** El sitemap se regenera desde `posts.json`
+y se hace ping a IndexNow (Bing/Yandex) + se actualiza `lastmod` para que
+Google re-rastree rápido vía robots.txt.
+
+```bash
+cd "C:\paginas\GDI"
+node scripts/generate-sitemap.js
+node scripts/ping-search-engines.js
+```
+
+Si alguno falla, NO abortes el commit — repórtalo al usuario pero continúa.
+
+### 7. Git commit y push
 
 ```bash
 cd "C:\paginas\GDI"
@@ -189,6 +203,8 @@ git push origin main
 - [ ] index.html actualizado (3 artículos, nuevo primero)
 - [ ] Borrador LinkedIn con emojis y 15+ hashtags
 - [ ] Borrador Twitter/X UN solo tweet
+- [ ] sitemap.xml regenerado (node scripts/generate-sitemap.js)
+- [ ] Ping a IndexNow ejecutado (node scripts/ping-search-engines.js)
 - [ ] Git commit y push completado
 
 ## Respuesta al usuario
