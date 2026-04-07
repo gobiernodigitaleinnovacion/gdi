@@ -2163,7 +2163,7 @@
                             </div>
                             <div class="contact-info-text">
                                 <h4>WhatsApp</h4>
-                                <p><a href="https://wa.me/525575569848" target="_blank" onclick="ttq.track('Contact');">55 7556 9848</a></p>
+                                <p><a href="https://wa.me/525575569848" target="_blank" onclick="ttq.track('Contact'); gtag('event', 'contact', {method: 'whatsapp'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'whatsapp'});">55 7556 9848</a></p>
                             </div>
                         </div>
 
@@ -2173,7 +2173,7 @@
                             </div>
                             <div class="contact-info-text">
                                 <h4>Email</h4>
-                                <p><a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="ttq.track('Contact');">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a></p>
+                                <p><a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="ttq.track('Contact'); gtag('event', 'contact', {method: 'email'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'email'});">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a></p>
                             </div>
                         </div>
 
@@ -2204,7 +2204,7 @@
                     <h3>Solicita Información</h3>
                     <p>Completa el formulario y te responderemos pronto</p>
 
-                    <form name="contacto-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="ttq.track('SubmitForm');">
+                    <form name="contacto-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="ttq.track('SubmitForm'); gtag('event', 'generate_lead', {currency: 'MXN', value: 10.0, lead_source: 'contact_form'}); gtag('event', 'form_submit', {form_name: 'contacto-gdi'});">
                         <!-- Honeypot for spam protection -->
                         <input type="hidden" name="form-name" value="contacto-gdi">
                         <p style="display: none;">
@@ -2325,7 +2325,7 @@
                 <div class="footer-section">
                     <h3>Contacto</h3>
                     <p><strong>Juan Heriberto Rosas</strong><br>Fundador y Director Técnico</p>
-                    <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com">
+                    <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="gtag('event', 'contact', {method: 'email_footer'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'email_footer'});">
                         <i class="fas fa-envelope"></i> juanheriberto.rosas@gobiernodigitaleinnovacion.com
                     </a>
                     <p style="margin-top: 1rem;"><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
