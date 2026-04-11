@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo que el Chapopote No Tapa: Radiograf&iacute;a Econ&oacute;mica del Litoral Afectado - GDI</title>
+    <meta name="description" content="45,932 pescadores en alerta en Veracruz, Tabasco y Tamaulipas. 42% sin acceso a seguridad social antes del derrame. Radiografia del Censo Economico 2024.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --danger-color: #ef4444;
+            --danger-dark: #dc2626;
+            --dark-color: #1e293b;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-gray);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-img { height: 45px; }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .article-category {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-hero {
+            background: var(--gradient-danger);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .article-hero i { font-size: 5rem; opacity: 0.9; }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--danger-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .callout-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--danger-color);
+        }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+
+        .callout-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
+        }
+
+        .callout strong { display: block; margin-bottom: 0.5rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .data-table th {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
+
+        .highlight-cell { font-weight: 700; }
+        .danger-cell { color: #ef4444; font-weight: 700; }
+        .success-cell { color: #10b981; font-weight: 700; }
+        .warning-cell { color: #f59e0b; font-weight: 700; }
+
+        .stat-highlight {
+            background: var(--gradient-danger);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--danger-color);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border-left: 4px solid var(--danger-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.75rem; }
+            .nav-menu { display: none; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../../index.html">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../../index.html#productos">Productos</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../index.html#contacto-form">Contacto</a></li>
+            </ul>
+            <a href="https://gdidata.com/" target="_blank" class="cta-button">
+                <i class="fas fa-rocket"></i> Ir a la App
+            </a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="../../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+
+        <div class="article-meta">
+            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
+            <span><i class="far fa-calendar"></i> 11 de abril de 2026</span>
+            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        </div>
+
+        <h1 class="article-title">Lo que el Chapopote No Tapa: Radiograf&iacute;a Econ&oacute;mica del Litoral Afectado</h1>
+        <p class="article-subtitle">45,932 pescadores en alerta en Veracruz, Tabasco y Tamaulipas &mdash; 42% sin acceso a seguridad social antes de que llegara el hidrocarburo</p>
+
+        <div class="article-hero">
+            <div>
+                <i class="fas fa-oil-can"></i>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Derrame en el Golfo de M&eacute;xico</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Econ&oacute;mico 2024 | INEGI</p>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <p>El derrame de hidrocarburos en el Golfo de M&eacute;xico dej&oacute; im&aacute;genes de playas cubiertas de chapopote. Lo que no muestran las fotograf&iacute;as es la econom&iacute;a que hab&iacute;a debajo: <strong>45,932 pescadores</strong> distribuidos en tres estados, comunidades donde m&aacute;s de la mitad de los empleos dependen del mar, y una informalidad estructural que hace a estos trabajadores invisibles para cualquier red de protecci&oacute;n social. El Censo Econ&oacute;mico 2024 del INEGI ten&iacute;a todo esto documentado antes de que llegara el primer manch&oacute;n de hidrocarburo.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">45,932</div>
+                    <div class="label">Pescadores afectados en 3 estados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">42.3%</div>
+                    <div class="label">Sin remuneraci&oacute;n formal</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">630 km</div>
+                    <div class="label">Litoral con presencia de chapopote</div>
+                </div>
+            </div>
+
+            <h2>Contexto Territorial</h2>
+
+            <p>El derrame afect&oacute; m&aacute;s de <strong>630 kil&oacute;metros</strong> de litoral en Veracruz, Tabasco y Tamaulipas, alcanzando siete &aacute;reas naturales protegidas y 51 sitios con presencia confirmada de chapopote. En t&eacute;rminos econ&oacute;micos, estos tres estados concentran algunas de las comunidades pesqueras m&aacute;s activas del pa&iacute;s y una cadena de turismo costero que emplea a m&aacute;s de <strong>267,000 personas</strong> en hoteler&iacute;a, restaurantes y servicios de alimentos.</p>
+
+            <p>No es una regi&oacute;n marginal del mapa econ&oacute;mico nacional. Es, seg&uacute;n el Censo Econ&oacute;mico 2024, la zona donde opera <strong>1 de cada 4 pescadores de M&eacute;xico</strong>.</p>
+
+            <h2>Radiograf&iacute;a Econ&oacute;mica: Lo que los Datos Dicen</h2>
+
+            <h3>La Pesca: el Sector M&aacute;s Expuesto</h3>
+
+            <p>A nivel nacional, el sector pesquero (SCIAN 114) registra <strong>20,152 unidades econ&oacute;micas</strong> y <strong>189,091 personas ocupadas</strong>, con una producci&oacute;n bruta de $45,365 millones de pesos. Es un sector que vive al margen de la formalidad: 42.3% de sus trabajadores &mdash;79,987 personas en todo el pa&iacute;s&mdash; opera sin remuneraci&oacute;n formal, es decir, son pescadores artesanales por cuenta propia sin acceso a IMSS, cr&eacute;dito productivo ni seguro de desempleo.</p>
+
+            <p>En los tres estados del Golfo afectados, la concentraci&oacute;n es significativa:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Unidades pesqueras</th>
+                        <th>Empleos en pesca</th>
+                        <th>% del total nacional</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">2,103</td>
+                        <td class="highlight-cell">21,209</td>
+                        <td class="danger-cell">11.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Tabasco</td>
+                        <td class="highlight-cell">3,086</td>
+                        <td class="highlight-cell">18,373</td>
+                        <td class="danger-cell">9.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Tamaulipas</td>
+                        <td class="highlight-cell">876</td>
+                        <td class="highlight-cell">6,350</td>
+                        <td class="warning-cell">3.4%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total 3 estados</strong></td>
+                        <td class="highlight-cell"><strong>6,065</strong></td>
+                        <td class="highlight-cell"><strong>45,932</strong></td>
+                        <td class="danger-cell"><strong>24.3%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: -1rem;">Fuente: Censo Econ&oacute;mico 2024, INEGI. Sector 114 &mdash; Pesca, caza y captura.</p>
+
+            <h3>El Municipio M&aacute;s Vulnerable: Tamiahua, Veracruz</h3>
+
+            <p>Entre todos los municipios del litoral afectado, <strong>Tamiahua</strong> presenta la mayor dependencia econ&oacute;mica del sector pesquero: <strong>63.8% de su empleo total</strong> depende de la pesca. Con apenas 2,586 personas ocupadas en toda su econom&iacute;a, 1,649 son pescadores. No hay colch&oacute;n sectorial. No hay diversificaci&oacute;n que amortig&uuml;e el golpe.</p>
+
+            <div class="stat-highlight">
+                <div class="number">63.8%</div>
+                <p style="font-size: 1.1rem; margin-top: 0.5rem;">del empleo de Tamiahua depende de la pesca. No hay red de contenci&oacute;n sectorial.</p>
+            </div>
+
+            <p>El resto del litoral presenta perfiles de dependencia variables, pero en todos los casos la interrupci&oacute;n pesquera representa una fractura en la econom&iacute;a local:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Estado</th>
+                        <th>Empleos pesca</th>
+                        <th>Empleo total</th>
+                        <th>Dependencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tamiahua</td>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">1,649</td>
+                        <td class="highlight-cell">2,586</td>
+                        <td class="danger-cell">63.8% &#x1F534;</td>
+                    </tr>
+                    <tr>
+                        <td>Cazones de Herrera</td>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">170</td>
+                        <td class="highlight-cell">1,008</td>
+                        <td class="warning-cell">16.9% &#x1F7E1;</td>
+                    </tr>
+                    <tr>
+                        <td>Para&iacute;so</td>
+                        <td>Tabasco</td>
+                        <td class="highlight-cell">3,144</td>
+                        <td class="highlight-cell">26,657</td>
+                        <td class="warning-cell">11.8% &#x1F7E1;</td>
+                    </tr>
+                    <tr>
+                        <td>Pajapan</td>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">267</td>
+                        <td class="highlight-cell">2,375</td>
+                        <td class="warning-cell">11.2% &#x1F7E1;</td>
+                    </tr>
+                    <tr>
+                        <td>C&aacute;rdenas</td>
+                        <td>Tabasco</td>
+                        <td class="highlight-cell">3,070</td>
+                        <td class="highlight-cell">35,720</td>
+                        <td class="success-cell">8.6% &#x1F7E2;</td>
+                    </tr>
+                    <tr>
+                        <td>Tuxpan</td>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">288</td>
+                        <td class="highlight-cell">20,670</td>
+                        <td class="success-cell">1.4% &#x1F7E2;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>La Paradoja de Para&iacute;so, Tabasco</h3>
+
+            <p>Para&iacute;so es el municipio con mayor producci&oacute;n econ&oacute;mica del litoral afectado: <strong>$278,088 millones de pesos</strong> en producci&oacute;n total. Pero esa cifra es enga&ntilde;osa para quien busca entender el impacto del derrame. El <strong>96.6%</strong> de esa producci&oacute;n proviene del sector minero-petrolero (sector 21): 8 empresas generan $268,578 MDP. La pesca, con 204 unidades econ&oacute;micas y 3,144 empleos, representa apenas $1,408 MDP.</p>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-triangle"></i> La paradoja que ning&uacute;n plan municipal puede ignorar:</strong>
+                El mismo sector industrial que est&aacute; en el origen del derrame es el motor econ&oacute;mico del municipio m&aacute;s afectado del litoral. Para&iacute;so genera el 96.6% de su producci&oacute;n con 8 empresas petroleras &mdash; y son los 3,144 pescadores los que pagan el costo.
+            </div>
+
+            <h3>El Turismo Costero: el Da&ntilde;o Silencioso</h3>
+
+            <p>M&aacute;s all&aacute; de la pesca, el derrame golpea una cadena de servicios costeros que en los tres estados emplea a m&aacute;s de <strong>267,000 personas</strong>:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Hoteler&iacute;a (721)</th>
+                        <th>Restaurantes (722)</th>
+                        <th>Total turismo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Veracruz</td>
+                        <td class="highlight-cell">16,496</td>
+                        <td class="highlight-cell">137,333</td>
+                        <td class="danger-cell">153,829</td>
+                    </tr>
+                    <tr>
+                        <td>Tabasco</td>
+                        <td class="highlight-cell">4,389</td>
+                        <td class="highlight-cell">39,259</td>
+                        <td class="warning-cell">43,648</td>
+                    </tr>
+                    <tr>
+                        <td>Tamaulipas</td>
+                        <td class="highlight-cell">6,632</td>
+                        <td class="highlight-cell">62,918</td>
+                        <td class="warning-cell">69,550</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td class="highlight-cell"><strong>27,517</strong></td>
+                        <td class="highlight-cell"><strong>239,510</strong></td>
+                        <td class="danger-cell"><strong>267,027</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Estos empleos no dependen directamente de la captura, pero s&iacute; del atractivo costero: la imagen de playas contaminadas afecta reservaciones, eventos y temporada alta. El impacto es indirecto pero inmediato.</p>
+
+            <h2>Hallazgos Clave: Las Alertas que los Datos Revelan</h2>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-triangle"></i> Alerta 1 &mdash; Informalidad estructural previa al derrame</strong>
+                El 42.3% de los pescadores nacionales trabaja sin remuneraci&oacute;n formal. En los municipios afectados, esto significa que la mayor&iacute;a de quienes perdieron acceso al mar no tienen mecanismo institucional de compensaci&oacute;n: no cotizan al IMSS, no acceden a cr&eacute;ditos productivos, no califican para muchos programas de apoyo federales basados en registro patronal.
+            </div>
+
+            <div class="callout callout-danger">
+                <strong><i class="fas fa-exclamation-triangle"></i> Alerta 2 &mdash; Tamiahua sin alternativa econ&oacute;mica</strong>
+                Con 63.8% de dependencia pesquera, Tamiahua no tiene sectores sustitutos que absorban el golpe. La industria alimentaria local (13 unidades, 37 empleos) y el turismo (24 unidades de alojamiento, 61 empleos) son insuficientes para compensar la paralizaci&oacute;n de 1,649 pescadores.
+            </div>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-exclamation-circle"></i> Alerta 3 &mdash; Datos confidenciales en pesca de Tuxpan</strong>
+                La pesca de camar&oacute;n (1 empresa) y t&uacute;nidos (5 empresas) en Tuxpan, Veracruz tienen datos marcados como confidenciales por INEGI, al tratarse de pocas unidades econ&oacute;micas. Esto sugiere que la actividad pesquera industrial en ese municipio est&aacute; altamente concentrada en muy pocos actores, lo que amplifica el riesgo ante una contingencia.
+            </div>
+
+            <div class="callout callout-warning">
+                <strong><i class="fas fa-exclamation-circle"></i> Alerta 4 &mdash; Turismo costero sin cuantificaci&oacute;n de da&ntilde;o indirecto</strong>
+                Los 267,027 empleos en hoteler&iacute;a y restaurantes de los tres estados no tienen un mecanismo de compensaci&oacute;n por contingencia ambiental. No existe en el marco normativo actual un instrumento de resarcimiento para este sector ante derrames de hidrocarburos.
+            </div>
+
+            <h2>Implicaciones para la Gesti&oacute;n P&uacute;blica</h2>
+
+            <h3>Para los gobiernos municipales de Tamiahua, Pajapan y Cazones de Herrera</h3>
+
+            <p>La prioridad inmediata es <strong>el padr&oacute;n de pescadores activos</strong>. Sin un registro actualizado de qui&eacute;n opera en el litoral, qui&eacute;n es propietario de embarcaci&oacute;n y qui&eacute;n es trabajador por cuenta propia, cualquier programa de apoyo llegar&aacute; incompleto o mal focalizado. El Censo Econ&oacute;mico da el n&uacute;mero agregado; el REPDA y el padr&oacute;n municipal deben dar los nombres.</p>
+
+            <h3>Para el gobierno de Veracruz</h3>
+
+            <p>La dependencia econ&oacute;mica de Tamiahua (63.8%) no es una crisis creada por el derrame &mdash; es una vulnerabilidad estructural que el derrame hizo visible. <strong>El Plan Estatal de Desarrollo debe incluir estrategias de diversificaci&oacute;n econ&oacute;mica para municipios con dependencia sectorial superior al 50%</strong>.</p>
+
+            <h3>Para el gobierno de Tabasco</h3>
+
+            <p>La paradoja de Para&iacute;so &mdash;municipio petrolero golpeado por el petr&oacute;leo&mdash; exige una pol&iacute;tica de <strong>responsabilidad extendida del productor</strong>. Pemex y las empresas contratistas tienen obligaci&oacute;n de resarcimiento no solo ambiental sino econ&oacute;mico hacia las comunidades pesqueras que comparten territorio con la infraestructura petrolera.</p>
+
+            <h3>Para el gobierno federal</h3>
+
+            <p>El 42.3% de informalidad en la pesca nacional es un problema preexistente que esta contingencia convierte en urgente. Un programa de formalizaci&oacute;n del sector pesquero artesanal &mdash;con registro, acceso a seguridad social y cr&eacute;dito productivo&mdash; reduce la vulnerabilidad ante cualquier futura contingencia ambiental o clim&aacute;tica.</p>
+
+            <h2>Conclusi&oacute;n</h2>
+
+            <p>El chapopote lleg&oacute; a playas que ya eran fr&aacute;giles. Los datos del Censo Econ&oacute;mico 2024 muestran comunidades con alt&iacute;sima dependencia de un solo recurso, trabajadores mayoritariamente informales, y una cadena de turismo costero expuesta a cualquier contingencia ambiental sin mecanismos de compensaci&oacute;n. <strong>El derrame en el Golfo de M&eacute;xico no cre&oacute; la vulnerabilidad econ&oacute;mica del litoral: la revel&oacute;.</strong></p>
+
+            <p>La pregunta para las administraciones de Veracruz, Tabasco y Tamaulipas no es solo cu&aacute;nto chapopote se recolect&oacute;. Es cu&aacute;ntos de esos 45,932 pescadores tienen hoy un ingreso alternativo, acceso a salud y perspectiva de retorno a la actividad. Los datos ya exist&iacute;an. La pol&iacute;tica p&uacute;blica debi&oacute; anticiparse.</p>
+
+            <div class="quote-box">
+                El derrame no cre&oacute; la vulnerabilidad del litoral. La revel&oacute;.
+            </div>
+
+            <div class="cta-box">
+                <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres analizar la vulnerabilidad econ&oacute;mica de tu municipio?</h3>
+                <p>En GDI Data tenemos los datos del Censo Econ&oacute;mico 2024 listos para consulta por municipio, sector y subsector.</p>
+                <a href="https://gdidata.com/" target="_blank">
+                    <i class="fas fa-rocket"></i> Explorar datos
+                </a>
+            </div>
+
+            <h2>Datos t&eacute;cnicos</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fuente</td>
+                        <td class="highlight-cell">Censo Econ&oacute;mico 2024, INEGI</td>
+                    </tr>
+                    <tr>
+                        <td>C&oacute;digos SCIAN</td>
+                        <td class="highlight-cell">114 (Pesca, caza y captura), 1141 (Pesca), 1125 (Acuicultura), 311 (Industria alimentaria), 721 (Alojamiento temporal), 722 (Restaurantes y alimentos), 211 (Extracci&oacute;n de petr&oacute;leo y gas)</td>
+                    </tr>
+                    <tr>
+                        <td>Estados analizados</td>
+                        <td class="highlight-cell">Veracruz (cve_ent: 30), Tabasco (cve_ent: 27), Tamaulipas (cve_ent: 28)</td>
+                    </tr>
+                    <tr>
+                        <td>Municipios analizados</td>
+                        <td class="highlight-cell">Tamiahua, Cazones de Herrera, Pajapan, Tuxpan (Veracruz); Para&iacute;so, C&aacute;rdenas (Tabasco)</td>
+                    </tr>
+                    <tr>
+                        <td>Lakehouse</td>
+                        <td>lhcensoeconomico20042024</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha de an&aacute;lisis</td>
+                        <td class="highlight-cell">Abril 2026</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="source-box">
+                <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Procesado con Microsoft Fabric. An&aacute;lisis: GDI Data.</p>
+                <p style="margin-top: 0.5rem;"><strong>Fecha de an&aacute;lisis:</strong> Abril 2026 | GDI &mdash; Gobierno Digital e Innovaci&oacute;n | gobiernodigitaleinnovacion.com</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
