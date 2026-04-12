@@ -72,14 +72,10 @@ function main() {
       var adGroupName = 'Post: ' + post.slug;
       var existingAdGroup = getAdGroup(campaign, adGroupName);
       if (existingAdGroup) {
-        if (!adGroupHasKeywords(existingAdGroup)) {
-          Logger.log('🔧 Reparando keywords: ' + adGroupName);
-          addKeywords(existingAdGroup, post);
-          repaired++;
-        } else {
-          Logger.log('⏭️  Ya existe y tiene keywords: ' + adGroupName);
-          skipped++;
-        }
+        removeAllKeywords(existingAdGroup);
+        Logger.log('🔄 Reemplazando keywords: ' + adGroupName);
+        addKeywords(existingAdGroup, post);
+        repaired++;
         continue;
       }
       var adGroup = createAdGroup(campaign, adGroupName);
@@ -137,9 +133,14 @@ function getAdGroup(campaign, name) {
   return iter.hasNext() ? iter.next() : null;
 }
 
-function adGroupHasKeywords(adGroup) {
+function removeAllKeywords(adGroup) {
   var iter = adGroup.keywords().get();
-  return iter.totalNumEntities() > 0;
+  var count = 0;
+  while (iter.hasNext()) {
+    iter.next().remove();
+    count++;
+  }
+  Logger.log('  🗑️ Eliminadas ' + count + ' keywords viejas');
 }
 
 function createAdGroup(campaign, name) {
@@ -232,71 +233,92 @@ function buildDescriptions(post) {
 }
 
 function addKeywords(adGroup, post) {
-  // Keywords derivadas del slug, título, categoría + plantillas por categoría
-  var stopWords = {
-    'de': 1, 'la': 1, 'el': 1, 'en': 1, 'y': 1, 'a': 1, 'que': 1, 'los': 1,
-    'las': 1, 'un': 1, 'una': 1, 'del': 1, 'al': 1, 'para': 1, 'con': 1,
-    'por': 1, 'lo': 1, 'mas': 1, 'no': 1, 'es': 1, 'se': 1, 'sin': 1,
-    'como': 1, 'sus': 1, 'les': 1, 'nos': 1, 'este': 1, 'esta': 1,
+  // Keywords manuales por slug — búsquedas reales que la gente hace
+  var KEYWORD_MAP = {
+    'chapopote-radiografia-economica-litoral-afectado': [
+      'derrame petróleo veracruz', 'chapopote golfo méxico', 'pescadores veracruz',
+      'contaminación litoral méxico', 'derrame pemex', 'pescadores tabasco'
+    ],
+    'pesca-o-granja-la-decision-que-definira-el-mar-de-mexico': [
+      'acuicultura méxico', 'pesca en méxico', 'industria pesquera méxico',
+      'salario pescadores méxico', 'acuacultura vs pesca', 'pesca artesanal méxico'
+    ],
+    'los-cabos-84-hospedaje-estatal-depende-un-municipio': [
+      'turismo los cabos', 'hoteles baja california sur', 'economía los cabos',
+      'empleo hotelero méxico', 'turismo bcs datos', 'hospedaje los cabos'
+    ],
+    'mapa-vulnerabilidad-municipios-crisis-sectorial': [
+      'municipios vulnerables méxico', 'crisis económica municipios',
+      'empleo por sector méxico', 'diversificación económica municipal',
+      'concentración económica municipios'
+    ],
+    'seguros-en-mexico-oligopolio-datos-ocultos': [
+      'seguros en méxico', 'mercado asegurador méxico', 'aseguradoras méxico',
+      'industria seguros datos', 'seguros méxico estadísticas'
+    ],
+    'trabajar-en-salud-no-garantiza-salario-digno': [
+      'sueldos sector salud méxico', 'salario enfermeras méxico',
+      'empleo salud méxico', 'cuánto gana un enfermero', 'salarios médicos méxico'
+    ],
+    'tres-ciudades-tres-estrategias-mapa-industrial-frontera': [
+      'maquiladoras frontera norte', 'industria tijuana juárez',
+      'manufactura frontera méxico', 'empleo frontera norte', 'maquilas reynosa'
+    ],
+    'quien-gana-con-la-carne-en-mexico': [
+      'industria cárnica méxico', 'ganadería méxico datos',
+      'salarios industria carne', 'producción carne méxico', 'rastros en méxico'
+    ],
+    'mineria-oculta-sinaloa': [
+      'minería sinaloa', 'minas oro sinaloa', 'minería méxico datos',
+      'oro plata sinaloa', 'sector minero méxico'
+    ],
+    'que-heredo-diego-rivera-analisis-financiero-tequila': [
+      'finanzas tequila jalisco', 'deuda municipio tequila',
+      'presupuesto municipal jalisco', 'finanzas públicas jalisco'
+    ],
+    'tijuana-proyecciones-demograficas-2040': [
+      'población tijuana', 'crecimiento poblacional tijuana',
+      'demografía tijuana', 'proyecciones población méxico',
+      'envejecimiento poblacional méxico'
+    ],
+    'ia-empresarial-tres-niveles-gobierno': [
+      'inteligencia artificial gobierno', 'IA sector público méxico',
+      'transformación digital gobierno', 'microsoft fabric gobierno',
+      'datos gobierno méxico'
+    ],
+    'ia-datos-oficiales-municipios': [
+      'datos INEGI municipios', 'municipios inteligentes',
+      'consultar datos INEGI', 'CONEVAL datos municipales',
+      'inteligencia artificial municipios'
+    ],
+    'renacer-ferroviario-mexico': [
+      'ferrocarril méxico', 'trenes de carga méxico',
+      'industria ferroviaria méxico', 'transporte ferroviario datos',
+      'tren interoceánico datos'
+    ],
+    'mexico-hackeado-crisis-ciberseguridad': [
+      'hackeo gobierno méxico', 'ciberseguridad méxico',
+      'ataques cibernéticos gobierno', 'datos hackeados gobierno',
+      'seguridad informática gobierno'
+    ],
+    'toluca-finanzas-publicas-2024': [
+      'finanzas toluca', 'presupuesto toluca', 'deuda toluca',
+      'gasto público toluca', 'finanzas estado de méxico'
+    ],
+    'tijuana-municipio-mas-endeudado': [
+      'deuda tijuana', 'finanzas públicas tijuana',
+      'municipios endeudados méxico', 'deuda pública municipal',
+      'presupuesto tijuana'
+    ],
+    'uruapan-falla-tecnica-deuda-heredada': [
+      'deuda uruapan', 'finanzas uruapan michoacán',
+      'municipios endeudados michoacán', 'deuda pública uruapan',
+      'crisis financiera municipal'
+    ],
   };
 
-  var slugWords = (post.slug || '').split('-').filter(function (w) {
-    return w.length > 2 && !stopWords[w];
-  });
-
-  // Extraer palabras clave del título (más ricas que el slug)
-  var titleWords = (post.title || '').toLowerCase()
-    .replace(/[¿¡!?".:,;()]/g, '')
-    .split(/\s+/)
-    .filter(function (w) {
-      return w.length > 2 && !stopWords[w];
-    });
-
-  var topic = '';
-  if (slugWords.length >= 2) {
-    topic = slugWords.slice(0, 3).join(' ');
-  } else if (titleWords.length >= 2) {
-    topic = titleWords.slice(0, 3).join(' ');
-  }
-
-  var phrases = [];
-
-  // --- Frases derivadas del slug ---
-  if (slugWords.length >= 2) {
-    phrases.push(slugWords.slice(0, 3).join(' '));
-    phrases.push(slugWords.slice(0, 2).join(' '));
-  }
-
-  // --- Frases derivadas del título ---
-  if (titleWords.length >= 2) {
-    phrases.push(titleWords.slice(0, 4).join(' '));
-    phrases.push(titleWords.slice(0, 2).join(' '));
-  }
-
-  // --- Plantillas por categoría ---
-  var category = (post.category || '').toLowerCase();
-  if (category === 'alerta') {
-    phrases.push('alerta ' + topic + ' méxico');
-    phrases.push('crisis ' + topic);
-  } else if (category === 'economía' || category === 'economia') {
-    phrases.push('economía ' + topic + ' méxico');
-    phrases.push('análisis económico ' + topic);
-  } else if (category === 'finanzas municipales') {
-    phrases.push('finanzas municipales ' + topic);
-    phrases.push('deuda municipal ' + topic);
-  } else if (category === 'tecnologia' || category === 'tecnología') {
-    phrases.push('tecnología gobierno ' + topic);
-    phrases.push('transformación digital gobierno');
-  }
-
-  // --- Genéricas por categoría (si existe) ---
-  if (post.category) {
-    phrases.push(category + ' méxico');
-    phrases.push('análisis ' + category);
-  }
-
-  // --- Baseline siempre presente ---
-  phrases.push('datos abiertos méxico');
+  // Usar keywords manuales si existen, sino generar automáticas básicas
+  var phrases = KEYWORD_MAP[post.slug] || generateFallbackKeywords(post);
 
   var seen = {};
   var successCount = 0;
@@ -323,6 +345,36 @@ function addKeywords(adGroup, post) {
   }
 
   Logger.log('  📊 Keywords resumen: ' + successCount + ' añadidas, ' + failCount + ' fallidas');
+}
+
+// Fallback para posts futuros que no están en KEYWORD_MAP
+function generateFallbackKeywords(post) {
+  var stopWords = {
+    'de': 1, 'la': 1, 'el': 1, 'en': 1, 'y': 1, 'a': 1, 'que': 1, 'los': 1,
+    'las': 1, 'un': 1, 'una': 1, 'del': 1, 'al': 1, 'para': 1, 'con': 1,
+    'por': 1, 'lo': 1, 'mas': 1, 'no': 1, 'es': 1, 'se': 1, 'sin': 1,
+    'como': 1, 'sus': 1, 'les': 1, 'nos': 1, 'este': 1, 'esta': 1,
+    'cuando': 1, 'entre': 1, 'sobre': 1, 'tres': 1, 'cual': 1,
+  };
+  var titleWords = (post.title || '').toLowerCase()
+    .replace(/[¿¡!?".:,;()%0-9]/g, '')
+    .split(/\s+/)
+    .filter(function (w) { return w.length > 3 && !stopWords[w]; });
+
+  var phrases = [];
+  // Primeras 2 palabras significativas del título + "méxico"
+  if (titleWords.length >= 2) {
+    phrases.push(titleWords[0] + ' ' + titleWords[1] + ' méxico');
+    phrases.push(titleWords[0] + ' ' + titleWords[1]);
+  }
+  // Categoría + méxico
+  var cat = (post.category || '').toLowerCase();
+  if (cat) {
+    phrases.push(cat + ' méxico datos');
+    phrases.push('análisis ' + cat + ' méxico');
+  }
+  phrases.push('datos públicos méxico');
+  return phrases;
 }
 
 function formatKeyword(text, matchType) {
