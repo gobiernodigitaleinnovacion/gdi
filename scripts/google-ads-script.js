@@ -32,7 +32,7 @@ var CONFIG = {
   SITE_BASE_URL: 'https://gobiernodigitaleinnovacion.com',
   DAYS_LOOKBACK: 30,           // solo procesa posts de los últimos N días
   MAX_CPC_BID_MICROS: 3000000, // 3 MXN máximo por clic (3 * 1,000,000)
-  KEYWORD_MATCH_TYPE: 'BROAD', // BROAD | PHRASE | EXACT
+  KEYWORD_MATCH_TYPE: 'PHRASE', // BROAD | PHRASE | EXACT
   DEFAULT_PATH_1: 'blog',
   DEFAULT_PATH_2: 'analisis',
 };
@@ -201,8 +201,8 @@ function buildDescriptions(post) {
   var excerpt = (post.excerpt || '').replace(/\s+/g, ' ').trim();
   var raw = [
     truncate(excerpt, 90),
-    'Análisis basado en datos oficiales del INEGI y fuentes públicas. Lee el reporte completo en GDI.',
-    'Gobierno Digital e Innovación: análisis de datos para tomar mejores decisiones públicas.',
+    'Análisis con datos oficiales del INEGI y fuentes públicas. Lee el reporte en GDI.',
+    'Gobierno Digital e Innovación: análisis de datos para mejores decisiones públicas.',
     truncate('Categoría: ' + (post.category || 'Análisis') + '. ' + excerpt, 90),
   ];
   var seen = {};
@@ -219,39 +219,97 @@ function buildDescriptions(post) {
 }
 
 function addKeywords(adGroup, post) {
-  // Keywords derivadas del slug + categoría + términos base
+  // Keywords derivadas del slug, título, categoría + plantillas por categoría
   var stopWords = {
     'de': 1, 'la': 1, 'el': 1, 'en': 1, 'y': 1, 'a': 1, 'que': 1, 'los': 1,
     'las': 1, 'un': 1, 'una': 1, 'del': 1, 'al': 1, 'para': 1, 'con': 1,
     'por': 1, 'lo': 1, 'mas': 1, 'no': 1, 'es': 1, 'se': 1, 'sin': 1,
+    'como': 1, 'sus': 1, 'les': 1, 'nos': 1, 'este': 1, 'esta': 1,
   };
+
   var slugWords = (post.slug || '').split('-').filter(function (w) {
     return w.length > 2 && !stopWords[w];
   });
 
-  var phrases = [];
+  // Extraer palabras clave del título (más ricas que el slug)
+  var titleWords = (post.title || '').toLowerCase()
+    .replace(/[¿¡!?".:,;()]/g, '')
+    .split(/\s+/)
+    .filter(function (w) {
+      return w.length > 2 && !stopWords[w];
+    });
+
+  var topic = '';
   if (slugWords.length >= 2) {
-    phrases.push(slugWords.slice(0, 3).join(' '));      // primeras 3 palabras
-    phrases.push(slugWords.slice(0, 2).join(' '));      // primeras 2
+    topic = slugWords.slice(0, 3).join(' ');
+  } else if (titleWords.length >= 2) {
+    topic = titleWords.slice(0, 3).join(' ');
   }
+
+  var phrases = [];
+
+  // --- Frases derivadas del slug ---
+  if (slugWords.length >= 2) {
+    phrases.push(slugWords.slice(0, 3).join(' '));
+    phrases.push(slugWords.slice(0, 2).join(' '));
+  }
+
+  // --- Frases derivadas del título ---
+  if (titleWords.length >= 2) {
+    phrases.push(titleWords.slice(0, 4).join(' '));
+    phrases.push(titleWords.slice(0, 2).join(' '));
+  }
+
+  // --- Plantillas por categoría ---
+  var category = (post.category || '').toLowerCase();
+  if (category === 'alerta') {
+    phrases.push('alerta ' + topic + ' méxico');
+    phrases.push('crisis ' + topic);
+  } else if (category === 'economía' || category === 'economia') {
+    phrases.push('economía ' + topic + ' méxico');
+    phrases.push('análisis económico ' + topic);
+  } else if (category === 'finanzas municipales') {
+    phrases.push('finanzas municipales ' + topic);
+    phrases.push('deuda municipal ' + topic);
+  } else if (category === 'tecnologia' || category === 'tecnología') {
+    phrases.push('tecnología gobierno ' + topic);
+    phrases.push('transformación digital gobierno');
+  }
+
+  // --- Genéricas por categoría (si existe) ---
   if (post.category) {
-    phrases.push(post.category.toLowerCase() + ' méxico');
-    phrases.push('análisis ' + post.category.toLowerCase());
+    phrases.push(category + ' méxico');
+    phrases.push('análisis ' + category);
   }
+
+  // --- Baseline siempre presente ---
   phrases.push('datos abiertos méxico');
 
   var seen = {};
+  var successCount = 0;
+  var failCount = 0;
+
   for (var i = 0; i < phrases.length; i++) {
     var kw = phrases[i].toLowerCase().trim();
     if (!kw || seen[kw]) continue;
     seen[kw] = true;
     var formatted = formatKeyword(kw, CONFIG.KEYWORD_MATCH_TYPE);
     try {
-      adGroup.newKeywordBuilder().withText(formatted).build();
+      var op = adGroup.newKeywordBuilder().withText(formatted).build();
+      if (op.isSuccessful()) {
+        Logger.log('  ✅ Keyword añadida: ' + formatted);
+        successCount++;
+      } else {
+        Logger.log('  ❌ Keyword rechazada "' + formatted + '": ' + op.getErrors().join(', '));
+        failCount++;
+      }
     } catch (e) {
-      Logger.log('  ⚠️  No se pudo agregar keyword "' + formatted + '": ' + e);
+      Logger.log('  ⚠️  Excepción al agregar keyword "' + formatted + '": ' + e);
+      failCount++;
     }
   }
+
+  Logger.log('  📊 Keywords resumen: ' + successCount + ' añadidas, ' + failCount + ' fallidas');
 }
 
 function formatKeyword(text, matchType) {
