@@ -41,7 +41,7 @@ Para que cuenten como conversión: marcar `generate_lead` como evento clave en G
 - **Campaña automatizada:** `Blog GDI - Auto`
   - Tipo: Search · Presupuesto: MXN 10/día · Estrategia: Maximizar clics · CPC max MXN 3
   - Ubicación: México · Idioma: Español
-  - campaignId: `23727837354`
+  - campaignId: `23727842049`
 - **Script de auto-creación:** `scripts/google-ads-script.js`
   - Vive dentro de Google Ads (Herramientas → Acciones masivas → Secuencias de comandos)
   - Lee `https://gobiernodigitaleinnovacion.com/blog/posts.json`

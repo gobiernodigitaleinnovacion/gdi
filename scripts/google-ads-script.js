@@ -63,15 +63,23 @@ function main() {
 
   var created = 0;
   var skipped = 0;
+  var repaired = 0;
   var errors = 0;
 
   for (var i = 0; i < recent.length; i++) {
     var post = recent[i];
     try {
       var adGroupName = 'Post: ' + post.slug;
-      if (adGroupExists(campaign, adGroupName)) {
-        Logger.log('⏭️  Ya existe: ' + adGroupName);
-        skipped++;
+      var existingAdGroup = getAdGroup(campaign, adGroupName);
+      if (existingAdGroup) {
+        if (!adGroupHasKeywords(existingAdGroup)) {
+          Logger.log('🔧 Reparando keywords: ' + adGroupName);
+          addKeywords(existingAdGroup, post);
+          repaired++;
+        } else {
+          Logger.log('⏭️  Ya existe y tiene keywords: ' + adGroupName);
+          skipped++;
+        }
         continue;
       }
       var adGroup = createAdGroup(campaign, adGroupName);
@@ -86,7 +94,7 @@ function main() {
   }
 
   Logger.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  Logger.log('Resumen: ' + created + ' creados · ' + skipped + ' ya existían · ' + errors + ' errores');
+  Logger.log('Resumen: ' + created + ' creados · ' + repaired + ' reparados · ' + skipped + ' ya existían · ' + errors + ' errores');
   Logger.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
 }
 
@@ -122,11 +130,16 @@ function filterRecent(posts, days) {
   });
 }
 
-function adGroupExists(campaign, name) {
+function getAdGroup(campaign, name) {
   var iter = campaign.adGroups()
     .withCondition('Name = "' + name.replace(/"/g, '\\"') + '"')
     .get();
-  return iter.hasNext();
+  return iter.hasNext() ? iter.next() : null;
+}
+
+function adGroupHasKeywords(adGroup) {
+  var iter = adGroup.keywords().get();
+  return iter.totalNumEntities() > 0;
 }
 
 function createAdGroup(campaign, name) {
