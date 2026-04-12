@@ -72,10 +72,14 @@ function main() {
       var adGroupName = 'Post: ' + post.slug;
       var existingAdGroup = getAdGroup(campaign, adGroupName);
       if (existingAdGroup) {
-        removeAllKeywords(existingAdGroup);
-        Logger.log('🔄 Reemplazando keywords: ' + adGroupName);
-        addKeywords(existingAdGroup, post);
-        repaired++;
+        if (!adGroupHasKeywords(existingAdGroup)) {
+          Logger.log('🔧 Reparando keywords: ' + adGroupName);
+          addKeywords(existingAdGroup, post);
+          repaired++;
+        } else {
+          Logger.log('⏭️  Ya existe y tiene keywords: ' + adGroupName);
+          skipped++;
+        }
         continue;
       }
       var adGroup = createAdGroup(campaign, adGroupName);
@@ -141,6 +145,11 @@ function removeAllKeywords(adGroup) {
     count++;
   }
   Logger.log('  🗑️ Eliminadas ' + count + ' keywords viejas');
+}
+
+function adGroupHasKeywords(adGroup) {
+  var iter = adGroup.keywords().get();
+  return iter.totalNumEntities() > 0;
 }
 
 function createAdGroup(campaign, name) {
@@ -318,7 +327,7 @@ function addKeywords(adGroup, post) {
   };
 
   // Usar keywords manuales si existen, sino generar automáticas básicas
-  var phrases = KEYWORD_MAP[post.slug] || generateFallbackKeywords(post);
+  var phrases = (post.keywords && post.keywords.length > 0) ? post.keywords : (KEYWORD_MAP[post.slug] || generateFallbackKeywords(post));
 
   var seen = {};
   var successCount = 0;

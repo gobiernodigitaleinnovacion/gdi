@@ -46,6 +46,7 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
   - Alerta: `linear-gradient(135deg, #ef4444 0%, #dc2626 100%)`
   - Economía: `linear-gradient(135deg, #10b981 0%, #059669 100%)`
   - Tecnología: `linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)`
+- **Tags de tracking (OBLIGATORIO en el `<head>`):** Incluir GA4 (`G-6ZDGM6LM7J`), Google Ads (`AW-3373421209`) y TikTok Pixel (`D5MHUKBC77UEK8Q4I9B0`) — copiar el bloque de scripts de cualquier artículo existente que ya los tenga
 
 ### 2. Actualizar posts.json
 
@@ -63,9 +64,19 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
   "excerpt": "Resumen de 2-3 líneas (máximo 200 caracteres)",
   "url": "blog/articulos/YYYY-MM-DD-slug.html",
   "readTime": "X min",
-  "featured": true
+  "featured": true,
+  "keywords": ["keyword 1", "keyword 2", "keyword 3", "keyword 4", "keyword 5"]
 }
 ```
+
+**Keywords para Google Ads (OBLIGATORIO):**
+- 5-6 frases que la gente REALMENTE busca en Google relacionadas al tema
+- NO extraer palabras del slug mecánicamente
+- Pensar: "¿qué escribiría alguien en Google para encontrar este artículo?"
+- Incluir ubicación (ej: "deuda tijuana", "minería sinaloa") cuando el artículo habla de un lugar específico
+- Incluir el sector/industria + "méxico" (ej: "seguros en méxico", "industria cárnica méxico")
+- Máximo 4-5 palabras por keyword
+- Los scripts de Google Ads leen este campo automáticamente
 
 ### 3. Actualizar index.html
 
@@ -173,19 +184,23 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 - **Ir al grano** con el dato más impactante
 - Terminar con bandera 🇲🇽
 
-### 6. Regenerar sitemap.xml y notificar a buscadores
+### 6. Regenerar sitemap, notificar buscadores y crear Google Ad
 
-**OBLIGATORIO antes del commit.** El sitemap se regenera desde `posts.json`
-y se hace ping a IndexNow (Bing/Yandex) + se actualiza `lastmod` para que
-Google re-rastree rápido vía robots.txt.
+**OBLIGATORIO antes del commit.** Ejecutar en orden:
 
 ```bash
 cd "C:\paginas\GDI"
 node scripts/generate-sitemap.js
 node scripts/ping-search-engines.js
+node scripts/google-ads-publish.js
 ```
 
+- `generate-sitemap.js` — regenera sitemap.xml desde posts.json
+- `ping-search-engines.js` — ping IndexNow (Bing/Yandex)
+- `google-ads-publish.js` — crea Ad Group + RSA + Keywords en Google Ads para el último post
+
 Si alguno falla, NO abortes el commit — repórtalo al usuario pero continúa.
+Si `.env` no existe o le faltan variables, `google-ads-publish.js` imprime error y sigue.
 
 ### 7. Git commit y push
 
@@ -205,6 +220,7 @@ git push origin main
 - [ ] Borrador Twitter/X UN solo tweet
 - [ ] sitemap.xml regenerado (node scripts/generate-sitemap.js)
 - [ ] Ping a IndexNow ejecutado (node scripts/ping-search-engines.js)
+- [ ] Google Ad creado (node scripts/google-ads-publish.js)
 - [ ] Git commit y push completado
 
 ## Respuesta al usuario
@@ -212,7 +228,8 @@ git push origin main
 Al terminar, mostrar:
 1. Archivos creados/modificados
 2. URL del artículo
-3. Recordatorio de publicar en LinkedIn y Twitter/X manualmente
+3. Google Ad creado (o error si falló)
+4. Recordatorio de publicar en LinkedIn y Twitter/X manualmente
 
 ## Diferencias con LokusData
 
