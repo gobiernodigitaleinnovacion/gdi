@@ -89,10 +89,15 @@ const STOP_WORDS = new Set([
   'para','con','por','lo','mas','no','es','se','sin','como','sus',
 ]);
 
+const GENERIC_KEYWORDS = [
+  'datos inegi', 'datos abiertos méxico', 'análisis de datos',
+  'gobierno digital', 'estadísticas méxico', 'datos públicos méxico',
+];
+
 function buildKeywords(post) {
-  // Use keywords from posts.json if available
+  // Use keywords from posts.json if available + append generics
   if (post.keywords && post.keywords.length > 0) {
-    return post.keywords;
+    return [...post.keywords, ...GENERIC_KEYWORDS];
   }
   // Fallback for posts without keywords field
   const cat = (post.category || '').toLowerCase();
@@ -109,7 +114,7 @@ function buildKeywords(post) {
     phrases.push(`${cat} méxico datos`);
     phrases.push(`análisis ${cat} méxico`);
   }
-  phrases.push('datos públicos méxico');
+  phrases.push(...GENERIC_KEYWORDS);
   const seen = new Set();
   return phrases.filter(kw => {
     const k = kw.toLowerCase().trim();
@@ -125,7 +130,7 @@ async function addKeywords(customer, adGroupResource, post) {
     try {
       await customer.adGroupCriteria.create([{
         ad_group: adGroupResource,
-        keyword: { text: kw, match_type: 'PHRASE' },
+        keyword: { text: kw, match_type: 'BROAD' },
         status: 'ENABLED',
       }]);
       console.log(`  🔑 Keyword: ${kw}`);
@@ -161,7 +166,10 @@ function pickPosts(posts, { slug, all, published }) {
 }
 
 async function publishOne(post, { dryRun, customer, campaignResource, published }) {
-  const finalUrl = `${SITE}/${post.url}`;
+  // URL canónica: sin .html (coincide con sitemap.xml y con google-ads-script.js).
+  // Si el ad usa .html y la página tiene <link rel="canonical"> sin .html,
+  // AdsBot detecta mismatch y rechaza el anuncio con "Destino no operativo".
+  const finalUrl = `${SITE}/${post.url.replace(/\.html$/, '')}`;
 
   const headlines = buildHeadlines(post);
   const descriptions = buildDescriptions(post);
