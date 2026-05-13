@@ -142,15 +142,50 @@ async function addKeywords(customer, adGroupResource, post) {
 
 // ---------- Ad Group + RSA creation ----------
 
-async function createAdGroup(customer, campaignResource, name) {
-  const result = await customer.adGroups.create([{
-    campaign: campaignResource,
-    name,
-    status: 'ENABLED',
-    type: 'SEARCH_STANDARD',
-    cpc_bid_micros: 3_000_000, // $3 MXN max CPC
-  }]);
-  return result.results?.[0]?.resource_name;
+async function findAdGroupByName(customer, campaignResource, name) {
+  const campaignId = campaignResource.split('/').pop();
+  const escaped = name.replace(/'/g, "\\'");
+  const rows = await customer.query(`
+    SELECT ad_group.resource_name
+    FROM ad_group
+    WHERE ad_group.name = '${escaped}'
+      AND campaign.id = ${campaignId}
+      AND ad_group.status != 'REMOVED'
+    LIMIT 1
+  `);
+  return rows[0]?.ad_group?.resource_name || null;
+}
+
+async function adGroupHasActiveAd(customer, adGroupResource) {
+  const adGroupId = adGroupResource.split('/').pop();
+  const rows = await customer.query(`
+    SELECT ad_group_ad.resource_name
+    FROM ad_group_ad
+    WHERE ad_group.id = ${adGroupId}
+      AND ad_group_ad.status != 'REMOVED'
+    LIMIT 1
+  `);
+  return rows.length > 0;
+}
+
+async function getOrCreateAdGroup(customer, campaignResource, name) {
+  try {
+    const result = await customer.adGroups.create([{
+      campaign: campaignResource,
+      name,
+      status: 'ENABLED',
+      type: 'SEARCH_STANDARD',
+      cpc_bid_micros: 3_000_000, // $3 MXN max CPC
+    }]);
+    return { resource: result.results?.[0]?.resource_name, reused: false };
+  } catch (e) {
+    const msg = e.errors?.[0]?.message || e.message || '';
+    if (/already exists/i.test(msg)) {
+      const existing = await findAdGroupByName(customer, campaignResource, name);
+      if (existing) return { resource: existing, reused: true };
+    }
+    throw e;
+  }
 }
 
 function pickPosts(posts, { slug, all, published }) {
@@ -191,9 +226,20 @@ async function publishOne(post, { dryRun, customer, campaignResource, published 
   }
 
   const adGroupName = truncate(`Post: ${post.slug}`, 255);
-  console.log(`  📂 Creando ad group: ${adGroupName}`);
-  const adGroupResource = await createAdGroup(customer, campaignResource, adGroupName);
-  console.log(`  📂 Ad group: ${adGroupResource}`);
+  console.log(`  📂 Ad group: ${adGroupName}`);
+  const { resource: adGroupResource, reused } = await getOrCreateAdGroup(customer, campaignResource, adGroupName);
+  console.log(`  📂 ${reused ? '♻️  Reusando existente' : '✨ Creado'}: ${adGroupResource}`);
+
+  if (reused && await adGroupHasActiveAd(customer, adGroupResource)) {
+    console.log('  ✅ Ad group ya tiene anuncio activo; no se duplica.');
+    published[post.slug] = {
+      ad_group: adGroupResource,
+      note: 'pre-existing-ad',
+      created_at: new Date().toISOString(),
+      url: finalUrl,
+    };
+    return { ok: true, skipped: true };
+  }
 
   try {
     const result = await customer.adGroupAds.create([{
