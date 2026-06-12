@@ -32,7 +32,7 @@ var CONFIG = {
   SITE_BASE_URL: 'https://gobiernodigitaleinnovacion.com',
   DAYS_LOOKBACK: 30,           // solo procesa posts de los últimos N días
   MAX_CPC_BID_MICROS: 3000000, // 3 MXN máximo por clic (3 * 1,000,000)
-  KEYWORD_MATCH_TYPE: 'PHRASE', // BROAD | PHRASE | EXACT
+  KEYWORD_MATCH_TYPE: 'BROAD', // BROAD | PHRASE | EXACT
   DEFAULT_PATH_1: 'blog',
   DEFAULT_PATH_2: 'analisis',
 };
@@ -326,8 +326,15 @@ function addKeywords(adGroup, post) {
     ],
   };
 
-  // Usar keywords manuales si existen, sino generar automáticas básicas
-  var phrases = (post.keywords && post.keywords.length > 0) ? post.keywords : (KEYWORD_MAP[post.slug] || generateFallbackKeywords(post));
+  // Keywords genéricas de alto volumen — siempre se añaden
+  var GENERIC_KEYWORDS = [
+    'datos inegi', 'datos abiertos méxico', 'análisis de datos',
+    'gobierno digital', 'estadísticas méxico', 'datos públicos méxico'
+  ];
+
+  // Usar keywords manuales si existen, sino generar automáticas básicas + genéricas
+  var specific = (post.keywords && post.keywords.length > 0) ? post.keywords : (KEYWORD_MAP[post.slug] || generateFallbackKeywords(post));
+  var phrases = specific.concat(GENERIC_KEYWORDS);
 
   var seen = {};
   var successCount = 0;
