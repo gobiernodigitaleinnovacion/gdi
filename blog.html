@@ -3,716 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - GDI | Análisis de Finanzas Públicas Municipales</title>
-    <meta name="description" content="Análisis de finanzas públicas municipales basados en datos oficiales del INEGI. Transparencia fiscal y rendición de cuentas.">
+    <title>Blog — GDI | Análisis de finanzas públicas y datos territoriales</title>
+    <meta name="description" content="Análisis de finanzas públicas y datos territoriales basados en cifras oficiales del INEGI. Transparencia fiscal y rendición de cuentas para el sector público.">
+
+    <!-- LOKUS-SEO-V1 -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Gobierno Digital e Innovación">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog.html">
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Blog — GDI | Análisis de finanzas públicas">
+    <meta property="og:description" content="Análisis de finanzas públicas y datos territoriales con cifras oficiales del INEGI.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Gobdigitale">
+    <meta name="twitter:title" content="Blog — GDI">
+    <meta name="twitter:description" content="Análisis de finanzas públicas y datos territoriales con cifras oficiales del INEGI.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                fontFamily: {
+                    display: ['"Space Grotesk"', 'sans-serif'],
+                    sans: ['Inter', 'sans-serif'],
+                    mono: ['"JetBrains Mono"', 'monospace'],
+                },
+                colors: {
+                    ink: '#0A1626', ink2: '#0F2238', paper: '#F6F3EC', bone: '#EDE8DD',
+                    gdi: '#7C5CFF', blue: '#3B82F6', amber: '#E8A33D', green: '#2FA86A',
+                }
+            }}
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #5a67d8;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
-            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
-            --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background: var(--light-gray);
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-img {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--primary-color);
-        }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-light);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Hero Blog */
-        .blog-hero {
-            background: var(--gradient-primary);
-            padding: 8rem 0 4rem 0;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .blog-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .blog-hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .blog-hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Blog Grid */
-        .blog-section {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .section-title i {
-            color: var(--primary-color);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Article Card */
-        .article-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .article-image {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-image.finanzas {
-            background: var(--gradient-primary);
-        }
-
-        .article-image.alerta {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-        }
-
-        .article-image.economia {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        }
-
-        .article-image.tecnologia {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-        }
-
-        .article-image i {
-            font-size: 4rem;
-            color: white;
-            opacity: 0.9;
-        }
-
-        .article-content {
-            padding: 1.5rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
-        }
-
-        .article-category {
-            background: rgba(102, 126, 234, 0.1);
-            color: var(--primary-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-date {
-            color: var(--medium-gray);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .article-title a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s ease;
-        }
-
-        .article-title a:hover {
-            color: var(--primary-color);
-        }
-
-        .article-excerpt {
-            color: var(--medium-gray);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .read-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover {
-            gap: 0.75rem;
-            color: var(--secondary-color);
-        }
-
-        /* Newsletter */
-        .newsletter-section {
-            background: var(--gradient-primary);
-            padding: 4rem 0;
-            text-align: center;
-            color: white;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter-content h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-content p {
-            font-size: 1.125rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .newsletter-form input {
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            min-width: 300px;
-            outline: none;
-        }
-
-        .newsletter-form button {
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 4rem 0 2rem 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            margin-bottom: 0.75rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-logo-img {
-            height: 40px;
-            margin-bottom: 1rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        /* Filters */
-        .filters-bar {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: white;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            color: var(--medium-gray);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .filter-btn.active {
-            background: var(--gradient-primary);
-            color: white;
-            border-color: transparent;
-        }
-
-        .posts-info {
-            margin-left: auto;
-            font-size: 0.875rem;
-            color: var(--medium-gray);
-        }
-
-        /* Pagination */
-        .pagination {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 3rem;
-        }
-
-        .page-btn {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            background: white;
-            color: var(--dark-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        .page-btn:hover:not(.disabled) {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-light);
-        }
-
-        .page-btn.active {
-            background: var(--gradient-primary);
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        .page-btn.disabled {
-            opacity: 0.4;
-            cursor: default;
-        }
-
-        .page-btn.arrow {
-            width: auto;
-            padding: 0 1rem;
-            gap: 0.5rem;
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--medium-gray);
-        }
-
-        .no-results i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.5;
-        }
-
-        .no-results p {
-            font-size: 1.1rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .blog-hero h1 {
-                font-size: 2rem;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-form input {
-                min-width: 100%;
-            }
-
-            .filters-bar {
-                gap: 0.5rem;
-            }
-
-            .filter-btn {
-                padding: 0.4rem 1rem;
-                font-size: 0.8rem;
-            }
-
-            .posts-info {
-                width: 100%;
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-
-            .page-btn.arrow span {
-                display: none;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; }
+        h1,h2,h3,h4,.font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .topo { background-image:
+            radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+            radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%); }
+        .topo-lines { background-image:
+            repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+            repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px); }
+        .grid-ticks { background-image:
+            linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px; }
+        .coord { letter-spacing: .12em; }
+        .card-rise { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+        .card-rise:hover { transform: translateY(-6px); }
+        ::selection { background: #7C5CFF; color: #fff; }
+        html { scroll-behavior: smooth; }
     </style>
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZDGM6LM7J');
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+<body class="bg-paper text-ink antialiased">
+
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gdi text-white"><i class="fas fa-landmark"></i></span>
+                    <span class="text-xl font-display font-bold tracking-tight">GDI</span>
+                    <span class="hidden lg:inline text-xs text-ink/45 mono coord uppercase border-l border-ink/15 pl-2.5">Gobierno Digital</span>
                 </a>
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="index.html#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="index.html#nosotros" class="hover:text-ink transition">Nosotros</a>
+                    <a href="blog.html" class="text-ink font-semibold">Blog</a>
+                    <a href="index.html#contacto-form" class="hover:text-ink transition">Contacto</a>
+                    <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="bg-gdi text-white px-5 py-2 rounded-full hover:brightness-110 transition font-semibold"><i class="fas fa-rocket text-xs mr-1"></i> Ir a la App</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-ink" aria-label="Menú">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
             </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="index.html#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="index.html#nosotros" class="block px-3 py-2 rounded hover:bg-bone">Nosotros</a>
+                <a href="blog.html" class="block px-3 py-2 rounded bg-bone font-semibold">Blog</a>
+                <a href="index.html#contacto-form" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
-            <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#productos">Productos</a></li>
-                <li><a href="index.html#nosotros">Nosotros</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="index.html#contacto-form">Contacto</a></li>
-            </ul>
-
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i>
-                Ir a la App
-            </a>
-        </nav>
-    </header>
-
-    <!-- Blog Hero -->
-    <section class="blog-hero">
-        <div class="blog-hero-content">
-            <h1><i class="fas fa-newspaper"></i> Blog GDI</h1>
-            <p>Análisis de finanzas públicas municipales basados en datos oficiales del INEGI. Transparencia fiscal y rendición de cuentas para el sector público.</p>
+    <!-- ============ HERO ============ -->
+    <section class="relative bg-ink text-paper overflow-hidden topo">
+        <div class="absolute inset-0 topo-lines opacity-60"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 relative z-10">
+            <div class="flex items-center gap-3 mb-5">
+                <span class="h-px w-8 bg-gdi"></span>
+                <span class="mono text-xs coord text-gdi uppercase">Transparencia con datos</span>
+            </div>
+            <h1 class="font-display font-bold text-4xl sm:text-6xl leading-[1.04] max-w-3xl">
+                Análisis de <span class="text-gdi">finanzas públicas.</span>
+            </h1>
+            <p class="mt-6 text-lg text-paper/70 max-w-2xl leading-relaxed">
+                Datos oficiales del INEGI analizados para la transparencia fiscal municipal, la
+                rendición de cuentas y la lectura territorial del sector público.
+            </p>
         </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section class="blog-section">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-fire"></i>
-                Artículos Recientes
-            </h2>
-
-            <div class="filters-bar" id="filters-bar">
-                <!-- Filtros se generan dinámicamente -->
-            </div>
-
-            <div class="blog-grid" id="blog-grid">
-                <!-- Los artículos se cargan dinámicamente desde posts.json -->
-            </div>
-
-            <div class="pagination" id="pagination">
-                <!-- Paginación se genera dinámicamente -->
-            </div>
+    <!-- ============ ARTÍCULOS ============ -->
+    <section class="py-16 bg-paper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 flex-wrap mb-8" id="filters-bar"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" id="blog-grid"></div>
+            <div class="flex items-center justify-center gap-2 mt-12" id="pagination"></div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2><i class="fas fa-envelope"></i> Suscríbete al Newsletter</h2>
-                <p>Recibe análisis de finanzas públicas municipales directamente en tu correo</p>
-                <form class="newsletter-form" name="newsletter-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="bg-bone grid-ticks py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-paper rounded-3xl border border-ink/10 p-8 md:p-10 text-center">
+                <span class="mono text-xs coord uppercase text-ink/50"><i class="fas fa-envelope mr-1"></i> Newsletter</span>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl mt-3 mb-2">Suscríbete al newsletter</h2>
+                <p class="text-ink/60 mb-6">Recibe los análisis de finanzas públicas directamente en tu correo.</p>
+                <form name="newsletter-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
                     <input type="hidden" name="form-name" value="newsletter-gdi">
-                    <p style="display: none;"><input name="bot-field"></p>
-                    <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit">
-                        <i class="fas fa-paper-plane"></i> Suscribirse
+                    <p class="hidden"><input name="bot-field"></p>
+                    <input type="email" name="email" required placeholder="Tu correo electrónico"
+                           class="flex-1 px-4 py-3 rounded-full border border-ink/15 bg-bone focus:ring-2 focus:ring-gdi focus:border-transparent outline-none">
+                    <button type="submit" class="bg-ink text-paper px-6 py-3 rounded-full font-semibold hover:bg-ink2 transition whitespace-nowrap">
+                        <i class="fas fa-paper-plane mr-1"></i> Suscribirse
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="footer-logo-img">
-                    <p>
-                        Startup mexicana especializada en transformación digital del sector público.
-                        "La Información es Poder"
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/Gobdigitale" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.youtube.com/@Gobidigital_IA" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-ink text-paper/70 py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-3">
+                        <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gdi text-white"><i class="fas fa-landmark"></i></span>
+                        <span class="text-xl font-display font-bold text-paper">GDI</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">Startup mexicana de transformación digital del sector público. "La información es poder."</p>
+                    <div class="flex gap-4 mt-4 text-paper/50">
+                        <a href="https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/" target="_blank" class="hover:text-gdi"><i class="fab fa-linkedin text-lg"></i></a>
+                        <a href="https://x.com/Gobdigitale" target="_blank" class="hover:text-paper"><i class="fab fa-x-twitter text-lg"></i></a>
+                        <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank" class="hover:text-paper"><i class="fab fa-github text-lg"></i></a>
+                        <a href="https://www.youtube.com/@Gobidigital_IA" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube text-lg"></i></a>
                     </div>
                 </div>
-
-                <div class="footer-section">
-                    <h3>Productos</h3>
-                    <a href="https://portalinteligente.netlify.app/" target="_blank">Portal Inteligente</a>
-                    <a href="https://gobiernodigitalinnovacion.github.io/GobiAsistente/gobiasistente.html" target="_blank">Copilots México</a>
-                    <a href="https://www.faisbienestar.com/" target="_blank">Portal FAIS</a>
+                <div>
+                    <h3 class="font-display font-semibold mb-4 text-paper">Productos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="hover:text-gdi">Lokus Gov</a></li>
+                        <li><a href="https://centinela.gdidata.com/landing.html" target="_blank" class="hover:text-paper">CENTINELA</a></li>
+                        <li><a href="https://atalaya.gdidata.com/" target="_blank" class="hover:text-paper">ATALAYA</a></li>
+                        <li><a href="https://gdidata.com/" target="_blank" class="hover:text-paper">GDIDATA</a></li>
+                    </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3>Recursos</h3>
-                    <a href="blog.html">Blog</a>
-                    <a href="index.html#contacto-form">Contacto</a>
+                <div>
+                    <h3 class="font-display font-semibold mb-4 text-paper">Recursos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="blog.html" class="hover:text-paper">Blog</a></li>
+                        <li><a href="index.html#productos" class="hover:text-paper">Demos en vivo</a></li>
+                        <li><a href="index.html#contacto-form" class="hover:text-paper">Contacto</a></li>
+                    </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <p><strong>Juan Heriberto Rosas</strong></p>
-                    <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
+                <div>
+                    <h3 class="font-display font-semibold mb-4 text-paper">Contacto</h3>
+                    <p class="text-sm mb-2"><strong class="text-paper">Juan Heriberto Rosas</strong><br>Fundador y Director Técnico</p>
+                    <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" class="text-sm hover:text-paper break-all"><i class="fas fa-envelope mr-1"></i> juanheriberto.rosas@gobiernodigitaleinnovacion.com</a>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+            <div class="border-t border-paper/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+                <p class="text-sm">© 2026 GDI — Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+                <p class="text-sm mono coord">GOV-TECH · MÉXICO</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        const POSTS_PER_PAGE = 6;
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    </script>
+
+    <script>
+        const POSTS_PER_PAGE = 9;
         let allPosts = [];
         let filteredPosts = [];
         let currentPage = 1;
         let currentFilter = 'Todos';
 
+        // Identidad por categoría (acento + ícono) para el placeholder de marca
+        const catMeta = {
+            'Alerta':     { hex:'#E8A33D', text:'text-amber', icon:'fa-triangle-exclamation' },
+            'Economía':   { hex:'#2FA86A', text:'text-green', icon:'fa-chart-line' },
+            'Tecnologia': { hex:'#3B82F6', text:'text-blue',  icon:'fa-microchip' },
+            'Tecnología': { hex:'#3B82F6', text:'text-blue',  icon:'fa-microchip' },
+            'Finanzas':   { hex:'#7C5CFF', text:'text-gdi',   icon:'fa-coins' }
+        };
+        const metaFor = c => catMeta[c] || { hex:'#7C5CFF', text:'text-gdi', icon:'fa-coins' };
+
         async function init() {
             try {
                 const response = await fetch('blog/posts.json');
                 allPosts = await response.json();
+                allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 filteredPosts = allPosts;
                 renderFilters();
                 renderPage();
             } catch (error) {
                 console.error('Error cargando posts:', error);
+                document.getElementById('blog-grid').innerHTML =
+                    '<p class="text-ink/50 col-span-full text-center py-12">No se pudieron cargar los artículos.</p>';
             }
         }
 
         function renderFilters() {
             const bar = document.getElementById('filters-bar');
             const categories = ['Todos', ...new Set(allPosts.map(p => p.category))];
-
-            bar.innerHTML = categories.map(cat =>
-                `<button class="filter-btn ${cat === currentFilter ? 'active' : ''}" onclick="setFilter('${cat}')">${cat}</button>`
-            ).join('') + '<span class="posts-info" id="posts-info"></span>';
+            bar.innerHTML = categories.map(cat => {
+                const on = cat === currentFilter;
+                return `<button onclick="setFilter('${cat}')"
+                    class="px-4 py-2 rounded-full text-sm font-medium transition border ${on
+                        ? 'bg-ink text-paper border-ink'
+                        : 'bg-paper text-ink/65 border-ink/15 hover:border-gdi hover:text-gdi'}">${cat}</button>`;
+            }).join('') + '<span id="posts-info" class="ml-auto text-sm text-ink/50 mono"></span>';
         }
 
         function setFilter(category) {
@@ -733,45 +279,38 @@
                 `${filteredPosts.length} artículo${filteredPosts.length !== 1 ? 's' : ''}`;
 
             if (pagePosts.length === 0) {
-                grid.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No hay artículos en esta categoría</p></div>';
+                grid.innerHTML = '<div class="col-span-full text-center py-16 text-ink/50"><i class="fas fa-search text-3xl mb-3 block opacity-40"></i><p>No hay artículos en esta categoría.</p></div>';
                 document.getElementById('pagination').innerHTML = '';
                 return;
             }
 
             grid.innerHTML = pagePosts.map(post => {
-                let imageClass = 'finanzas';
-                if (post.categoryColor === 'red') imageClass = 'alerta';
-                if (post.categoryColor === 'green') imageClass = 'economia';
-                if (post.categoryColor === 'blue') imageClass = 'tecnologia';
-
-                let icon = 'fa-coins';
-                if (post.category === 'Alerta') icon = 'fa-exclamation-triangle';
-                if (post.category === 'Economía') icon = 'fa-chart-line';
-                if (post.category === 'Tecnologia') icon = 'fa-microchip';
-
+                const m = metaFor(post.category);
+                const cover = post.image
+                    ? `<img src="${post.image}" alt="${post.title}" class="w-full h-44 object-cover">`
+                    : `<div class="relative h-44 bg-gradient-to-br from-ink2 to-ink overflow-hidden">
+                           <div class="absolute inset-0 topo-lines opacity-70"></div>
+                           <div class="absolute inset-0" style="background: radial-gradient(58% 78% at 50% 40%, ${m.hex}26, transparent 70%)"></div>
+                           <div class="absolute inset-0 flex items-center justify-center"><i class="fas ${m.icon} text-4xl" style="color:${m.hex}"></i></div>
+                           <div class="absolute bottom-4 left-5 mono text-[11px] coord uppercase ${m.text}">${post.category} · MX</div>
+                       </div>`;
                 return `
-                    <article class="article-card">
-                        <div class="article-image ${imageClass}">
-                            <i class="fas ${icon}"></i>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="article-category">${post.category}</span>
-                                <span class="article-date">
-                                    <i class="far fa-calendar"></i>
-                                    ${formatDate(post.date)}
-                                </span>
+                    <article class="card-rise bg-paper rounded-2xl border border-ink/10 overflow-hidden flex flex-col">
+                        ${cover}
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-2 mono text-[11px] coord uppercase text-ink/45 mb-3">
+                                <span class="${m.text}">${post.category}</span><span>·</span><span>${formatDate(post.date)}</span>
                             </div>
-                            <h3 class="article-title">
-                                <a href="${post.url}">${post.title}</a>
+                            <h3 class="font-display text-lg font-semibold text-ink mb-3 leading-snug">
+                                <a href="${post.url}" class="hover:text-gdi transition">${post.title}</a>
                             </h3>
-                            <p class="article-excerpt">${post.excerpt}</p>
-                            <a href="${post.url}" class="read-more">
-                                Leer análisis <i class="fas fa-arrow-right"></i>
+                            <p class="text-ink/60 text-sm mb-5 flex-1 leading-relaxed">${post.excerpt}</p>
+                            <a href="${post.url}" class="inline-flex items-center gap-2 font-semibold text-ink hover:text-gdi transition mt-auto">
+                                Leer análisis
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                             </a>
                         </div>
-                    </article>
-                `;
+                    </article>`;
             }).join('');
 
             renderPagination(totalPages);
@@ -780,19 +319,15 @@
         function renderPagination(totalPages) {
             const container = document.getElementById('pagination');
             if (totalPages <= 1) { container.innerHTML = ''; return; }
-
-            let html = `<button class="page-btn arrow ${currentPage === 1 ? 'disabled' : ''}" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
-                <i class="fas fa-chevron-left"></i> <span>Anterior</span>
-            </button>`;
-
-            for (let i = 1; i <= totalPages; i++) {
-                html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
-            }
-
-            html += `<button class="page-btn arrow ${currentPage === totalPages ? 'disabled' : ''}" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
-                <span>Siguiente</span> <i class="fas fa-chevron-right"></i>
-            </button>`;
-
+            const btn = (label, page, disabled, active) =>
+                `<button onclick="goToPage(${page})" ${disabled ? 'disabled' : ''}
+                    class="min-w-[42px] h-[42px] px-3 rounded-lg text-sm font-semibold border transition ${active
+                        ? 'bg-ink text-paper border-ink'
+                        : disabled ? 'border-ink/10 text-ink/30 cursor-default'
+                        : 'bg-paper text-ink/70 border-ink/15 hover:border-gdi hover:text-gdi'}">${label}</button>`;
+            let html = btn('<i class="fas fa-chevron-left"></i>', currentPage - 1, currentPage === 1, false);
+            for (let i = 1; i <= totalPages; i++) html += btn(i, i, false, i === currentPage);
+            html += btn('<i class="fas fa-chevron-right"></i>', currentPage + 1, currentPage === totalPages, false);
             container.innerHTML = html;
         }
 
@@ -806,8 +341,7 @@
 
         function formatDate(dateStr) {
             const date = new Date(dateStr + 'T00:00:00');
-            const options = { day: 'numeric', month: 'long', year: 'numeric' };
-            return date.toLocaleDateString('es-MX', options);
+            return date.toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
         }
 
         document.addEventListener('DOMContentLoaded', init);
