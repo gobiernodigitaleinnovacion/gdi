@@ -3,10 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDI - Gobierno Digital e Innovación | Transformación Digital del Sector Público</title>
-    <meta name="description" content="Startup mexicana especializada en transformación digital gubernamental. Productos innovadores: Portal Inteligente, Copilots México y Portal FAIS Bienestar.">
+    <title>GDI — Gobierno Digital e Innovación | Instituciones públicas inteligentes</title>
+    <meta name="description" content="Startup mexicana de gov-tech. Plataformas con IA y datos oficiales para gobiernos: Lokus Gov, CENTINELA, ATALAYA, GDIDATA, Portal Inteligente, Copilots México, FAIS Bienestar e IA Electoral.">
+
+    <!-- LOKUS-SEO-V1 -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Gobierno Digital e Innovación">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/">
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="GDI — Gobierno Digital e Innovación | Instituciones públicas inteligentes">
+    <meta property="og:description" content="Plataformas con IA y datos oficiales para transformar el sector público mexicano.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Gobdigitale">
+    <meta name="twitter:title" content="GDI — Gobierno Digital e Innovación">
+    <meta name="twitter:description" content="Plataformas con IA y datos oficiales para transformar el sector público mexicano.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        ink: '#0A1626', ink2: '#0F2238',
+                        paper: '#F6F3EC', bone: '#EDE8DD',
+                        gdi: '#7C5CFF',        // violeta — marca GDI
+                        blue: '#3B82F6', amber: '#E8A33D', teal: '#2FA88E', green: '#2FA86A',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1,h2,h3,h4,.font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .topo { background-image:
+            radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+            radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%); }
+        .topo-lines { background-image:
+            repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+            repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px); }
+        .grid-ticks { background-image:
+            linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px; }
+        .coord { letter-spacing: .12em; }
+        .card-rise { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+        .card-rise:hover { transform: translateY(-6px); }
+        ::selection { background: #7C5CFF; color: #fff; }
+        html { scroll-behavior: smooth; }
+    </style>
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -38,2751 +108,617 @@
     }(window, document, 'ttq');
     </script>
     <!-- TikTok Pixel Code End -->
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1d4ed8;
-            --accent-color: #3b82f6;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
-            --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-img {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .contact-info i {
-            color: var(--primary-color);
-        }
-
-        .cta-button {
-            background: var(--gradient-secondary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-light);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Nav CTA buttons wrapper */
-        .nav-cta-buttons {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .mobile-cta {
-            display: none;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 3px 0;
-            transition: all 0.3s ease;
-            border-radius: 3px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text {
-            color: white;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-color);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .hero-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 1.5rem;
-            text-align: center;
-            color: white;
-            transition: transform 0.3s ease;
-        }
-
-        .hero-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .hero-card:nth-child(1) { transform: translateY(-20px); }
-        .hero-card:nth-child(4) { transform: translateY(-20px); }
-
-        .hero-card i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .hero-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-card p {
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--medium-gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .product-image {
-            height: 200px;
-            background: var(--gradient-primary);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
-        }
-
-        .product-icon {
-            font-size: 4rem;
-            color: white;
-            z-index: 2;
-            position: relative;
-        }
-
-        .product-content {
-            padding: 2rem;
-        }
-
-        .product-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-
-        .product-description {
-            color: var(--medium-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .product-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .product-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .product-features li i {
-            color: var(--primary-color);
-            font-size: 0.8rem;
-        }
-
-        .product-buttons {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-demo, .btn-info, .btn-video {
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .btn-demo {
-            background: var(--gradient-secondary);
-            color: white;
-            box-shadow: var(--shadow-light);
-        }
-
-        .btn-demo:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .btn-info {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-info:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .btn-video {
-            background: transparent;
-            color: #ff0000;
-            border: 2px solid #ff0000;
-        }
-
-        .btn-video:hover {
-            background: #ff0000;
-            color: white;
-        }
-
-        .video-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 4rem 0;
-            background: var(--light-gray);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: var(--shadow-light);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-secondary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem auto;
-        }
-
-        .stat-icon i {
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--medium-gray);
-            font-weight: 500;
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            font-size: 1.125rem;
-            color: var(--medium-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .founder-card {
-            background: var(--light-gray);
-            border-radius: 20px;
-            padding: 2rem;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .founder-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .founder-avatar {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .founder-details h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-
-        .founder-details p {
-            color: var(--medium-gray);
-            font-size: 0.9rem;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--medium-gray);
-            font-size: 0.9rem;
-        }
-
-        .contact-item i {
-            color: var(--primary-color);
-            width: 16px;
-        }
-
-        .about-features {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--light-gray);
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateX(10px);
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-secondary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .feature-icon i {
-            color: white;
-            font-size: 1.25rem;
-        }
-
-        .feature-content h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-content p {
-            color: var(--medium-gray);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 6rem 0;
-            background: var(--gradient-primary);
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            opacity: 0.3;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-description {
-            font-size: 1.125rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 4rem 0 2rem 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            margin-bottom: 0.75rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-logo-img {
-            height: 40px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-cta-buttons {
-                display: none;
-            }
-
-            .mobile-cta {
-                display: block;
-            }
-
-            .mobile-cta .cta-button {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .contact-info {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .product-buttons {
-                flex-direction: column;
-            }
-        }
-
-        /* Enhanced mobile responsiveness */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .hero-content {
-                padding: 0 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .product-content {
-                padding: 1.5rem;
-            }
-
-            .btn-primary, .btn-secondary, .btn-demo, .btn-info, .btn-video {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .founder-card {
-                padding: 1.5rem;
-            }
-
-            .contact-item {
-                font-size: 0.8rem;
-                word-break: break-all;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .cta-title {
-                font-size: 2rem;
-            }
-
-            .logo-img {
-                height: 35px;
-            }
-
-            .footer-logo-img {
-                height: 30px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Scroll animations will be handled by AOS library */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading animation */
-        .loading {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        /* Mobile Menu Styles */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 70px);
-                overflow-y: auto;
-                background: white;
-                flex-direction: column;
-                padding: 1rem 1.5rem 2rem;
-                box-shadow: var(--shadow-heavy);
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
-                z-index: 999;
-            }
-
-            .nav-menu.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-menu li {
-                margin: 0.25rem 0;
-            }
-
-            .nav-menu a {
-                font-size: 1.1rem;
-                padding: 0.75rem 0;
-                display: block;
-                color: var(--dark-color) !important;
-                opacity: 1 !important;
-            }
-
-            .mobile-cta .cta-button {
-                color: white !important;
-                opacity: 1 !important;
-                font-size: 1rem;
-                padding: 0.75rem 1.5rem;
-            }
-        }
-
-        /* Additional optimizations */
-        .nav-menu a {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card:hover .product-icon {
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
-        }
-
-        /* Loading states */
-        .product-card {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .product-card:nth-child(1) { animation-delay: 0.1s; }
-        .product-card:nth-child(2) { animation-delay: 0.2s; }
-        .product-card:nth-child(3) { animation-delay: 0.3s; }
-        .product-card:nth-child(4) { animation-delay: 0.4s; }
-        .product-card:nth-child(5) { animation-delay: 0.5s; }
-
-        /* Focus states for accessibility */
-        .btn-primary:focus,
-        .btn-secondary:focus,
-        .btn-demo:focus,
-        .btn-info:focus,
-        .btn-video:focus,
-        .cta-button:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .hero {
-                background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-            }
-            
-            .product-image {
-                background: var(--primary-color);
-            }
-        }
-
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-
-            .float-animation {
-                animation: none;
-            }
-        }
-
-        /* Video Section */
-        .video-section {
-            padding: 6rem 0;
-            background: white;
-            position: relative;
-        }
-
-        .video-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 24px;
-            box-shadow: var(--shadow-heavy);
-            background: var(--dark-color);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 24px;
-        }
-
-        .related-videos {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--light-gray);
-            border-radius: 20px;
-        }
-
-        .related-videos h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .related-videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .related-video-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-light);
-        }
-
-        .related-video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .related-video-thumbnail {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            overflow: hidden;
-            background: var(--dark-color);
-        }
-
-        .related-video-thumbnail img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .related-video-card:hover .related-video-thumbnail img {
-            transform: scale(1.05);
-        }
-
-        .play-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 4rem;
-            opacity: 0.9;
-            transition: all 0.3s ease;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .related-video-card:hover .play-overlay {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .related-video-card h4 {
-            padding: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            text-align: center;
-        }
-
-        /* Responsive Design for Video Section */
-        @media (max-width: 768px) {
-            .video-section {
-                padding: 4rem 0;
-            }
-
-            .related-videos {
-                padding: 1.5rem;
-            }
-
-            .related-videos-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .play-overlay {
-                font-size: 3rem;
-            }
-        }
-
-        /* Contact Form Section */
-        .contact-form-section {
-            padding: 6rem 0;
-            background: var(--light-gray);
-            position: relative;
-        }
-
-        .contact-form-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-        }
-
-        .contact-form-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .contact-form-info {
-            padding: 2rem 0;
-        }
-
-        .contact-form-info h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-
-        .contact-form-info p {
-            font-size: 1.125rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .contact-info-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-info-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: var(--shadow-light);
-            transition: transform 0.3s ease;
-        }
-
-        .contact-info-card:hover {
-            transform: translateX(10px);
-        }
-
-        .contact-info-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-secondary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-info-icon i {
-            color: white;
-            font-size: 1.25rem;
-        }
-
-        .contact-info-text h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-info-text p {
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-            margin: 0;
-        }
-
-        .contact-info-text a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info-text a:hover {
-            color: var(--secondary-color);
-        }
-
-        .contact-form-wrapper {
-            background: white;
-            padding: 3rem;
-            border-radius: 24px;
-            box-shadow: var(--shadow-medium);
-            border: 1px solid rgba(37, 99, 235, 0.1);
-        }
-
-        .contact-form-wrapper h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-form-wrapper p {
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .form-group label .required {
-            color: #ef4444;
-            margin-left: 0.25rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .submit-button {
-            background: var(--gradient-secondary);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .submit-button:active {
-            transform: translateY(0);
-        }
-
-        .submit-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .form-message {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 12px;
-            display: none;
-        }
-
-        .form-message.success {
-            background: #d1fae5;
-            color: #065f46;
-            border: 1px solid #6ee7b7;
-            display: block;
-        }
-
-        .form-message.error {
-            background: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fca5a5;
-            display: block;
-        }
-
-        /* Responsive Design for Contact Form */
-        @media (max-width: 1024px) {
-            .contact-form-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-form-wrapper {
-                padding: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form-wrapper {
-                padding: 1.5rem;
-            }
-
-            .contact-form-info h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            .header,
-            .hero-visual,
-            .cta-section,
-            .footer {
-                display: none;
-            }
-            
-            .hero {
-                background: white;
-                color: black;
-                min-height: auto;
-                padding: 2rem 0;
-            }
-            
-            .hero-text {
-                color: black;
-            }
-            
-            .product-card,
-            .stat-item,
-            .feature-item {
-                break-inside: avoid;
-                box-shadow: none;
-                border: 1px solid #ccc;
-            }
-        }
-
-        /* Dark mode disabled - site designed for light mode only */
-    </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav-container">
-            <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="#contacto-form">Contacto</a></li>
-                <!-- CTA buttons inside menu for mobile -->
-                <li class="mobile-cta"><a href="https://datosestados.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');"><i class="fas fa-chart-bar"></i> Datos Estatales</a></li>
-                <li class="mobile-cta"><a href="https://iaelectoralmx.com/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);" onclick="ttq.track('ClickButton');"><i class="fas fa-vote-yea"></i> IA Electoral</a></li>
-                <li class="mobile-cta"><a href="https://gdidata.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');"><i class="fas fa-chart-line"></i> GDIDATA</a></li>
-                <li class="mobile-cta"><a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');"><i class="fas fa-rocket"></i> Ir a la App</a></li>
-            </ul>
+<body class="bg-paper text-ink antialiased">
 
-            <div class="nav-cta-buttons">
-                <a href="https://datosestados.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
-                    <i class="fas fa-chart-bar"></i>
-                    Datos Estatales
+    <!-- ============ NAV ============ -->
+    <nav class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center gap-2.5">
+                    <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gdi text-white"><i class="fas fa-landmark"></i></span>
+                    <span class="text-xl font-display font-bold tracking-tight">GDI</span>
+                    <span class="hidden lg:inline text-xs text-ink/45 mono coord uppercase border-l border-ink/15 pl-2.5">Gobierno Digital</span>
                 </a>
-                <a href="https://iaelectoralmx.com/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);" onclick="ttq.track('ClickButton');">
-                    <i class="fas fa-vote-yea"></i>
-                    IA Electoral
-                </a>
-                <a href="https://gdidata.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
-                    <i class="fas fa-chart-line"></i>
-                    GDIDATA
-                </a>
-                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="cta-button" onclick="ttq.track('ClickButton');">
-                    <i class="fas fa-rocket"></i>
-                    Ir a la App
-                </a>
-            </div>
 
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <div class="hero-text" data-aos="fade-right">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    Startup Mexicana Innovadora
-                </div>
-                <h1>Transformación Digital del Sector Público</h1>
-                <p class="hero-subtitle">
-                    "La Información es Poder" - Revolucionamos las instituciones públicas 
-                    con tecnología avanzada. Productos funcionales listos para implementar.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#productos" class="btn-primary" onclick="ttq.track('ClickButton');">
-                        <i class="fas fa-rocket"></i>
-                        Ver Productos en Vivo
-                    </a>
-                    <a href="#contacto-form" class="btn-secondary" onclick="ttq.track('ClickButton');">
-                        <i class="fas fa-envelope"></i>
-                        Contactar
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-ink/70">
+                    <a href="#productos" class="hover:text-ink transition">Productos</a>
+                    <a href="#nosotros" class="hover:text-ink transition">Nosotros</a>
+                    <a href="blog.html" class="hover:text-ink transition">Blog</a>
+                    <a href="#contacto-form" class="hover:text-ink transition">Contacto</a>
+                    <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" onclick="ttq.track('ClickButton');"
+                       class="bg-gdi text-white px-5 py-2 rounded-full hover:brightness-110 transition font-semibold">
+                        <i class="fas fa-rocket text-xs mr-1"></i> Ir a la App
                     </a>
                 </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-ink" aria-label="Menú">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
             </div>
-            
-            <div class="hero-visual" data-aos="fade-left">
-                <div class="hero-cards">
-                    <div class="hero-card float-animation">
-                        <i class="fas fa-city"></i>
-                        <h3>Municipios</h3>
-                        <p>Digitales Inteligentes</p>
-                    </div>
-                    <div class="hero-card">
-                        <i class="fas fa-robot"></i>
-                        <h3>IA</h3>
-                        <p>Copilots Estatales</p>
-                    </div>
-                    <div class="hero-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Participación</h3>
-                        <p>Ciudadana Digital</p>
-                    </div>
-                    <div class="hero-card float-animation">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Datos</h3>
-                        <p>para Decisiones</p>
-                    </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-ink/10">
+            <div class="px-4 pt-3 pb-4 space-y-1 text-ink/80">
+                <a href="#productos" class="block px-3 py-2 rounded hover:bg-bone">Productos</a>
+                <a href="#nosotros" class="block px-3 py-2 rounded hover:bg-bone">Nosotros</a>
+                <a href="blog.html" class="block px-3 py-2 rounded hover:bg-bone">Blog</a>
+                <a href="#contacto-form" class="block px-3 py-2 rounded hover:bg-bone">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" onclick="ttq.track('ClickButton');" class="block px-3 py-2 rounded bg-gdi text-white font-semibold">Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section id="inicio" class="relative bg-ink text-paper overflow-hidden topo">
+        <div class="absolute inset-0 topo-lines opacity-60"></div>
+        <div class="absolute top-6 right-6 hidden sm:block mono text-[11px] text-paper/30 coord text-right leading-relaxed">
+            <div>GOV-TECH · MX</div><div>DATA → DECISIÓN PÚBLICA</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="h-px w-8 bg-gdi"></span>
+                <span class="mono text-xs coord text-gdi uppercase">Startup mexicana de gov-tech</span>
+            </div>
+            <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl leading-[1.03] max-w-4xl">
+                Instituciones públicas
+                <span class="text-gdi">inteligentes.</span>
+            </h1>
+            <p class="mt-7 text-lg sm:text-xl text-paper/70 max-w-2xl leading-relaxed">
+                "La información es poder." Plataformas con inteligencia artificial y datos
+                oficiales de México que modernizan a gobiernos, dependencias y campañas —de la
+                gestión territorial al monitoreo de medios. Productos funcionales, listos para implementar.
+            </p>
+            <div class="mt-9 flex flex-col sm:flex-row gap-4">
+                <a href="#productos" onclick="ttq.track('ClickButton');"
+                   class="inline-flex items-center justify-center gap-2 bg-gdi text-white px-7 py-4 rounded-full font-semibold hover:brightness-110 transition">
+                    Ver los productos
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="#contacto-form" onclick="ttq.track('ClickButton');"
+                   class="inline-flex items-center justify-center gap-2 border border-paper/25 text-paper px-7 py-4 rounded-full font-semibold hover:bg-paper/10 transition">
+                    Contactar
+                </a>
+            </div>
+            <div class="mt-14 pt-8 border-t border-paper/10">
+                <p class="mono text-[11px] coord uppercase text-paper/40 mb-4">Fuentes oficiales que integramos</p>
+                <div class="flex flex-wrap gap-x-8 gap-y-3 text-paper/60 font-display font-medium">
+                    <span>INEGI</span><span>CONAPO</span><span>CONEVAL</span><span>SHCP / Hacienda</span><span>Censo Económico</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-badge">
-                    <i class="fas fa-play-circle"></i>
-                    Conócenos
-                </div>
-                <h2 class="section-title">Descubre Nuestra Visión</h2>
-                <p class="section-subtitle">
-                    Mira cómo estamos transformando el sector público con tecnología innovadora
+    <!-- ============ STATS ============ -->
+    <section class="py-14 bg-bone grid-ticks">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="border-l-2 border-gdi pl-4">
+                <div class="font-display font-bold text-4xl">8</div>
+                <div class="mono text-[11px] coord uppercase text-ink/50">productos funcionales</div>
+            </div>
+            <div class="border-l-2 border-blue pl-4">
+                <div class="font-display font-bold text-4xl">32</div>
+                <div class="mono text-[11px] coord uppercase text-ink/50">estados cubiertos</div>
+            </div>
+            <div class="border-l-2 border-amber pl-4">
+                <div class="font-display font-bold text-4xl">GPT-4o</div>
+                <div class="mono text-[11px] coord uppercase text-ink/50">IA contextualizada</div>
+            </div>
+            <div class="border-l-2 border-teal pl-4">
+                <div class="font-display font-bold text-4xl">100%</div>
+                <div class="mono text-[11px] coord uppercase text-ink/50">datos oficiales</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRODUCTOS ============ -->
+    <section id="productos" class="py-20 bg-paper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <span class="mono text-xs coord uppercase text-ink/50">Productos innovadores</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl mt-3 mb-4">Soluciones tecnológicas funcionales</h2>
+                <p class="text-ink/70 text-lg leading-relaxed">
+                    Desarrolladas y listas para implementar en instituciones públicas. Cada una con demo en vivo.
                 </p>
             </div>
 
-            <div class="video-container" data-aos="fade-up" data-aos-delay="100">
-                <div class="video-wrapper">
-                    <div id="main-video-player"></div>
-                </div>
-
-                <div class="related-videos" id="related-videos" style="display: none;">
-                    <h3>Videos Relacionados de GDI</h3>
-                    <div class="related-videos-grid">
-                        <div class="related-video-card" onclick="loadVideo('8TULGL-OMd4')">
-                            <div class="related-video-thumbnail">
-                                <img src="https://img.youtube.com/vi/8TULGL-OMd4/maxresdefault.jpg" alt="Copilots México">
-                                <div class="play-overlay">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                            </div>
-                            <h4>Copilots México</h4>
+            <!-- LOKUS GOV — destacado -->
+            <div class="card-rise rounded-3xl overflow-hidden border border-gdi/30 bg-ink text-paper mb-6 relative topo" style="box-shadow:0 30px 60px -28px rgba(124,92,255,.4)">
+                <div class="absolute inset-0 topo-lines opacity-40"></div>
+                <div class="relative z-10 grid lg:grid-cols-5">
+                    <div class="lg:col-span-3 p-8 sm:p-12">
+                        <div class="flex items-center gap-3 mb-5">
+                            <span class="mono text-[11px] coord uppercase bg-gdi text-white px-2.5 py-1 rounded-full font-semibold">Nuevo</span>
+                            <span class="mono text-xs coord uppercase text-paper/50"><i class="fas fa-map-location-dot mr-1"></i> Inteligencia territorial</span>
                         </div>
-                        <div class="related-video-card" onclick="loadVideo('wD8wPkDqSgI')">
-                            <div class="related-video-thumbnail">
-                                <img src="https://img.youtube.com/vi/wD8wPkDqSgI/maxresdefault.jpg" alt="Portal Inteligente">
-                                <div class="play-overlay">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                            </div>
-                            <h4>Portal Inteligente</h4>
-                        </div>
-                        <div class="related-video-card" onclick="loadVideo('JAp0H-zXOdo')">
-                            <div class="related-video-thumbnail">
-                                <img src="https://img.youtube.com/vi/JAp0H-zXOdo/maxresdefault.jpg" alt="FAIS Dashboard">
-                                <div class="play-overlay">
-                                    <i class="fas fa-play-circle"></i>
-                                </div>
-                            </div>
-                            <h4>Portal FAIS Dashboard</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid" data-aos="fade-up">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Productos Funcionales</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <div class="stat-number">32</div>
-                    <div class="stat-label">Estados Cubiertos</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="stat-number">AI</div>
-                    <div class="stat-label">Tecnología Avanzada</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Datos Oficiales</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="nosotros" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <h2>Sobre GDI</h2>
-                    <p>
-                        <strong>Gobierno Digital e Innovación (GDI)</strong> es una startup mexicana dedicada a 
-                        revolucionar el sector público mediante la integración de tecnologías avanzadas.
-                    </p>
-                    <p>
-                        Fundada con la visión de empoderar a las instituciones públicas a través de la 
-                        digitalización, la inteligencia artificial y el análisis de datos, GDI nace de la 
-                        pasión por la innovación y el compromiso con el progreso social.
-                    </p>
-                    <p>
-                        Aunque somos una startup nueva, contamos con productos funcionales desarrollados 
-                        y listos para implementar, demostrando nuestras capacidades técnicas y visión innovadora.
-                    </p>
-
-                    <div class="founder-card">
-                        <div class="founder-info">
-                            <div class="founder-avatar">JHR</div>
-                            <div class="founder-details">
-                                <h3>Juan Heriberto Rosas</h3>
-                                <p>Fundador y Director Técnico</p>
-                            </div>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>juanheriberto.rosas@gobiernodigitaleinnovacion.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-features" data-aos="fade-left">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Innovación Constante</h3>
-                            <p>Desarrollamos soluciones de vanguardia utilizando las últimas tecnologías en IA, análisis de datos y automatización.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Transparencia Total</h3>
-                            <p>Todos nuestros productos priorizan la transparencia gubernamental y el acceso ciudadano a la información pública.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Compromiso Social</h3>
-                            <p>Creemos en el poder transformador de la tecnología para mejorar la vida de las personas y fortalecer las instituciones.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Productos Funcionales</h3>
-                            <p>No solo teoría: tenemos productos desarrollados, probados y listos para implementar en instituciones públicas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="productos" class="products">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-badge">
-                    <i class="fas fa-tools"></i>
-                    Productos Innovadores
-                </div>
-                <h2 class="section-title">Soluciones Tecnológicas Funcionales</h2>
-                <p class="section-subtitle">
-                    Productos desarrollados y listos para implementar en instituciones públicas.
-                    Prueba nuestras demos completamente funcionales.
-                </p>
-            </div>
-
-            <div class="products-grid">
-                <!-- GDIDATA -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-chart-line"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">GDIDATA</h3>
-                        <p class="product-description">
-                            Plataforma de análisis socioeconómico automatizado con Inteligencia Artificial, basada en datos oficiales de INEGI, CONAPO y otras fuentes. Convierte datos complejos en decisiones inteligentes con dashboards interactivos y reportes profesionales.
+                        <h3 class="font-display font-bold text-3xl sm:text-4xl mb-4">Lokus Gov</h3>
+                        <p class="text-paper/70 text-lg leading-relaxed mb-7">
+                            Plataforma de inteligencia territorial de México con datos oficiales a nivel
+                            nacional, estatal y municipal: cientos de variables con fuente, asistente de IA
+                            trazable, reportes PDF y estudios de consultoría. Para gobiernos, OSCs, academia y periodistas.
                         </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Análisis socioeconómico con IA en segundos</li>
-                            <li><i class="fas fa-check"></i> Dashboards interactivos con Microsoft Fabric</li>
-                            <li><i class="fas fa-check"></i> Reportes PDF con branding corporativo</li>
-                            <li><i class="fas fa-check"></i> Módulos: ENIGH 2024, Pobreza, Demografía, Finanzas Públicas</li>
-                            <li><i class="fas fa-check"></i> Datos oficiales de INEGI y CONAPO</li>
+                        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-paper/70 mb-8">
+                            <li><i class="fas fa-check text-gdi mr-2"></i>9 bases oficiales (INEGI, CONAPO, CONEVAL, SHCP)</li>
+                            <li><i class="fas fa-check text-gdi mr-2"></i>Chat IA con respuestas trazables</li>
+                            <li><i class="fas fa-check text-gdi mr-2"></i>Reportes territoriales PDF bajo demanda</li>
+                            <li><i class="fas fa-check text-gdi mr-2"></i>Estudios tipo despacho (40–80 págs)</li>
+                            <li><i class="fas fa-check text-gdi mr-2"></i>Vocero y Lokus Ciudadano</li>
+                            <li><i class="fas fa-check text-gdi mr-2"></i>Cobertura nacional, estatal y municipal</li>
                         </ul>
-                        <div class="product-buttons">
-                            <a href="https://gdidata.com/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Plataforma
+                        <div class="flex flex-wrap items-center gap-3">
+                            <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" onclick="ttq.track('ClickButton');"
+                               class="inline-flex items-center gap-2 bg-gdi text-white px-6 py-3 rounded-full font-semibold hover:brightness-110 transition">
+                                <i class="fas fa-external-link-alt text-xs"></i> Ver plataforma
                             </a>
+                            <a href="https://app.gobiernodigitaleinnovacion.com/presentacion" target="_blank"
+                               class="inline-flex items-center gap-2 border border-paper/25 px-5 py-3 rounded-full font-semibold hover:bg-paper/10 transition"><i class="fas fa-desktop text-xs"></i> Presentación</a>
+                            <a href="https://app.gobiernodigitaleinnovacion.com/login" target="_blank"
+                               class="inline-flex items-center gap-2 border border-paper/25 px-5 py-3 rounded-full font-semibold hover:bg-paper/10 transition"><i class="fas fa-sign-in-alt text-xs"></i> Iniciar sesión</a>
                         </div>
                     </div>
+                    <div class="lg:col-span-2 border-t lg:border-t-0 lg:border-l border-paper/10 p-8 sm:p-12 flex flex-col justify-center bg-ink2/40">
+                        <p class="mono text-[11px] coord uppercase text-paper/40 mb-4">Pregunta tipo</p>
+                        <p class="font-display text-xl leading-snug mb-6">"Dame el perfil socioeconómico de mi municipio y un PDF listo para el informe de gobierno."</p>
+                        <div class="h-px bg-gdi/40 mb-6"></div>
+                        <p class="mono text-[11px] coord uppercase text-paper/40">app.gobiernodigitaleinnovacion.com</p>
+                    </div>
                 </div>
+            </div>
 
-                <!-- LOKUS GOV (App de Inteligencia Territorial) -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="25">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-map-location-dot"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Lokus Gov</h3>
-                        <p class="product-description">
-                            Plataforma de inteligencia territorial de México: datos oficiales de INEGI, CONAPO, CONEVAL y SHCP a nivel nacional, estatal y municipal, con consultas de cientos de variables, asistente de IA especializado, reportes PDF, estudios de consultoría y generación de contenidos. Pensada para gobiernos, OSCs, academia y periodistas.
-                        </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> 9 bases oficiales (INEGI, CONAPO, CONEVAL, SHCP)</li>
-                            <li><i class="fas fa-check"></i> Consulta de cientos de variables con fuente y comparativos</li>
-                            <li><i class="fas fa-check"></i> Chat IA especializado con respuestas trazables</li>
-                            <li><i class="fas fa-check"></i> Reportes territoriales en PDF bajo demanda</li>
-                            <li><i class="fas fa-check"></i> Estudios de consultoría tipo despacho (40-80 páginas)</li>
-                            <li><i class="fas fa-check"></i> Vocero y Lokus Ciudadano</li>
-                            <li><i class="fas fa-check"></i> Cobertura nacional, estatal y municipal</li>
-                        </ul>
-                        <div class="product-buttons">
-                            <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Plataforma
-                            </a>
-                            <a href="https://app.gobiernodigitaleinnovacion.com/presentacion" target="_blank" class="btn-info">
-                                <i class="fas fa-desktop"></i>
-                                Ver Presentación
-                            </a>
-                            <a href="https://app.gobiernodigitaleinnovacion.com/login" target="_blank" class="btn-info">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Iniciar Sesión
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <!-- GRID resto de productos -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- CENTINELA -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-shield-alt"></i>
+                <div class="card-rise rounded-2xl border border-ink/10 bg-paper p-7 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-blue/10 text-blue text-lg"><i class="fas fa-shield-halved"></i></span>
+                        <span class="mono text-[11px] coord uppercase text-ink/40">Gobierno</span>
                     </div>
-                    <div class="product-content">
-                        <h3 class="product-title">CENTINELA</h3>
-                        <p class="product-description">
-                            Plataforma SaaS de inteligencia gubernamental con IA que permite a gobernadores, secretarios de estado y presidentes municipales monitorear indicadores con semáforos en tiempo real, gestionar proyectos estratégicos, consultar agentes de IA por dependencia y recibir alertas críticas. Arquitectura multi-tenant con aislamiento total de datos por estado.
-                        </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Indicadores con semáforos rojo/amarillo/verde en tiempo real</li>
-                            <li><i class="fas fa-check"></i> Agente de IA por dependencia (RAG con GPT-4o)</li>
-                            <li><i class="fas fa-check"></i> Gestión documental inteligente con resúmenes automáticos</li>
-                            <li><i class="fas fa-check"></i> Seguimiento de compromisos, acuerdos y obras públicas</li>
-                            <li><i class="fas fa-check"></i> Eventos críticos con geolocalización</li>
-                            <li><i class="fas fa-check"></i> Solicitudes ciudadanas con formulario público</li>
-                            <li><i class="fas fa-check"></i> 8 roles jerárquicos (Gobernador a Servidor Operativo)</li>
-                            <li><i class="fas fa-check"></i> Multi-tenant con Row-Level Security en Azure SQL</li>
-                            <li><i class="fas fa-check"></i> PWA instalable con alertas en tiempo real</li>
-                        </ul>
-                        <div class="product-buttons">
-                            <a href="https://centinela.gdidata.com/landing.html" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Plataforma
-                            </a>
-                            <a href="https://centinela.gdidata.com/presentacion/" target="_blank" class="btn-info">
-                                <i class="fas fa-desktop"></i>
-                                Ver Presentación
-                            </a>
-                            <a href="https://centinela.gdidata.com/auth/login" target="_blank" class="btn-info">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Iniciar Sesión
-                            </a>
-                        </div>
+                    <h3 class="font-display font-bold text-xl mb-2">CENTINELA</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4 flex-1">Inteligencia gubernamental con IA: semáforos de indicadores en tiempo real, gestión de proyectos y agentes de IA por dependencia. Multi-tenant con aislamiento por estado.</p>
+                    <ul class="text-xs text-ink/55 space-y-1.5 mb-5">
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>Semáforos rojo/amarillo/verde en vivo</li>
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>Agente IA por dependencia (RAG GPT-4o)</li>
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>8 roles jerárquicos · Row-Level Security</li>
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>PWA con alertas en tiempo real</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://centinela.gdidata.com/landing.html" target="_blank" class="text-sm font-semibold text-ink hover:text-blue transition"><i class="fas fa-external-link-alt text-xs mr-1"></i>Plataforma</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://centinela.gdidata.com/presentacion/" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-blue transition">Presentación</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://centinela.gdidata.com/auth/login" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-blue transition">Login</a>
                     </div>
                 </div>
 
                 <!-- ATALAYA -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="75">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-tower-observation"></i>
+                <div class="card-rise rounded-2xl border border-ink/10 bg-paper p-7 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-amber/10 text-amber text-lg"><i class="fas fa-tower-observation"></i></span>
+                        <span class="mono text-[11px] coord uppercase text-ink/40">Narrativa</span>
                     </div>
-                    <div class="product-content">
-                        <h3 class="product-title">ATALAYA</h3>
-                        <p class="product-description">
-                            Plataforma SaaS de inteligencia de narrativa pública con IA que permite a gobernadores, directivos corporativos, figuras públicas y organizaciones monitorear en tiempo real prensa, columnistas y fuentes abiertas. Detecta temas, postura y riesgo reputacional con GPT-4o contextualizado al perfil del cliente. Arquitectura multi-tenant con cuatro verticales: gobierno, corporate, personal y organización.
-                        </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Monitoreo continuo de +150 medios, columnistas y canales de YouTube</li>
-                            <li><i class="fas fa-check"></i> Análisis de postura (a favor / neutral / en contra) con IA contextualizada</li>
-                            <li><i class="fas fa-check"></i> Score de riesgo reputacional 0-100 con anclas explícitas</li>
-                            <li><i class="fas fa-check"></i> Detección de narrativas emergentes por clustering semántico</li>
-                            <li><i class="fas fa-check"></i> Sala de crisis en vivo con auto-refresh cada 10 minutos</li>
-                            <li><i class="fas fa-check"></i> Boletín ejecutivo diario con resumen estructurado por IA</li>
-                            <li><i class="fas fa-check"></i> Alertas configurables por reglas del tenant (email + push)</li>
-                            <li><i class="fas fa-check"></i> Chat RAG sobre tu prensa con citas obligatorias</li>
-                            <li><i class="fas fa-check"></i> Multi-tenant con Row-Level Security en Azure SQL</li>
-                        </ul>
-                        <div class="product-buttons">
-                            <a href="https://atalaya.gdidata.com/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Plataforma
-                            </a>
-                            <a href="https://atalaya.gdidata.com/deck" target="_blank" class="btn-info">
-                                <i class="fas fa-desktop"></i>
-                                Ver Presentación
-                            </a>
-                            <a href="https://atalaya.gdidata.com/auth/login" target="_blank" class="btn-info">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Iniciar Sesión
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=vH6_wNM1SdY" target="_blank" class="btn-video">
-                                <i class="fab fa-youtube"></i>
-                                Ver Video
-                            </a>
-                        </div>
+                    <h3 class="font-display font-bold text-xl mb-2">ATALAYA</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4 flex-1">Inteligencia de narrativa pública con IA: monitorea prensa, columnistas y fuentes abiertas en tiempo real. Detecta temas, postura y riesgo reputacional contextualizado.</p>
+                    <ul class="text-xs text-ink/55 space-y-1.5 mb-5">
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>+150 medios, columnistas y canales</li>
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>Postura (a favor/neutral/en contra) con IA</li>
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>Score de riesgo reputacional 0-100</li>
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>Sala de crisis + boletín ejecutivo diario</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://atalaya.gdidata.com/" target="_blank" class="text-sm font-semibold text-ink hover:text-amber transition"><i class="fas fa-external-link-alt text-xs mr-1"></i>Plataforma</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://atalaya.gdidata.com/deck" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-amber transition">Deck</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://www.youtube.com/watch?v=vH6_wNM1SdY" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-amber transition"><i class="fab fa-youtube text-xs"></i> Video</a>
                     </div>
                 </div>
 
-                <!-- Portal Inteligente -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-brain"></i>
+                <!-- GDIDATA -->
+                <div class="card-rise rounded-2xl border border-ink/10 bg-paper p-7 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-teal/10 text-teal text-lg"><i class="fas fa-chart-line"></i></span>
+                        <span class="mono text-[11px] coord uppercase text-ink/40">Análisis</span>
                     </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Portal Inteligente</h3>
-                        <p class="product-description">
-                            Una solución digital avanzada que transforma la gestión de información gubernamental mediante dashboards interactivos, análisis de datos inteligente y asistencia virtual, diseñada específicamente para empoderar a estados y municipios con herramientas de visualización y consulta que optimizan la toma de decisiones basada en más de 359 indicadores socioeconómicos oficiales de INEGI y CONEVAL.
-                        </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Dashboards interactivos multiplataforma</li>
-                            <li><i class="fas fa-check"></i> Análisis inteligente de datos</li>
-                            <li><i class="fas fa-check"></i> Asistente virtual de consulta</li>
-                            <li><i class="fas fa-check"></i> Acceso centralizado multiplataforma</li>
-                            <li><i class="fas fa-check"></i> Modernización de gestión gubernamental</li>
-                            <li><i class="fas fa-check"></i> Modelo escalable por uso</li>
-                        </ul>
-                        <div class="product-buttons">
-                            <a href="https://portal-nezahualcoyotl.azurewebsites.net/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo Nezahualcoyotl
-                            </a>
-                            <a href="https://portal-izcalli.azurewebsites.net/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo Cuautitlán Izcalli
-                            </a>
-                            <a href="https://portal-ecatepec.azurewebsites.net/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo Ecatepec
-                            </a>
-                            <a href="https://portalinteligente.netlify.app/" target="_blank" class="btn-info">
-                                <i class="fas fa-info-circle"></i>
-                                Más Info
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=8TULGL-OMd4" target="_blank" class="btn-video">
-                                <i class="fab fa-youtube"></i>
-                                Ver Video
-                            </a>
-                        </div>
+                    <h3 class="font-display font-bold text-xl mb-2">GDIDATA</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4 flex-1">Análisis socioeconómico automatizado con IA sobre datos de INEGI y CONAPO. Convierte datos complejos en decisiones con dashboards interactivos y reportes profesionales.</p>
+                    <ul class="text-xs text-ink/55 space-y-1.5 mb-5">
+                        <li><i class="fas fa-check text-teal mr-1.5"></i>Análisis socioeconómico con IA en segundos</li>
+                        <li><i class="fas fa-check text-teal mr-1.5"></i>Dashboards con Microsoft Fabric</li>
+                        <li><i class="fas fa-check text-teal mr-1.5"></i>Reportes PDF con branding corporativo</li>
+                        <li><i class="fas fa-check text-teal mr-1.5"></i>ENIGH 2024, Pobreza, Demografía, Finanzas</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://gdidata.com/" target="_blank" class="text-sm font-semibold text-ink hover:text-teal transition"><i class="fas fa-external-link-alt text-xs mr-1"></i>Ver plataforma</a>
                     </div>
                 </div>
 
-                <!-- Copilots México -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-robot"></i>
+                <!-- IA ELECTORAL -->
+                <div class="card-rise rounded-2xl border border-ink/10 bg-paper p-7 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-gdi/10 text-gdi text-lg"><i class="fas fa-check-to-slot"></i></span>
+                        <span class="mono text-[11px] coord uppercase text-ink/40">Campañas</span>
                     </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Copilots México</h3>
-                        <p class="product-description">
-                            Asistentes de IA especializados para cada estado de México con datos
-                            oficiales de INEGI, CONEVAL y Hacienda.
-                        </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> 32 copilots estatales</li>
-                            <li><i class="fas fa-check"></i> Datos oficiales verificados</li>
-                            <li><i class="fas fa-check"></i> Interfaz conversacional</li>
-                            <li><i class="fas fa-check"></i> Análisis demográfico</li>
-                            <li><i class="fas fa-check"></i> Indicadores de pobreza</li>
-                            <li><i class="fas fa-check"></i> Finanzas públicas</li>
-                        </ul>
-                        <div class="product-buttons">
-                            <a href="https://gobiernodigitalinnovacion.github.io/GobiAsistente/gobiasistente.html" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Demo
-                            </a>
-                            <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/copilotsmx.html" target="_blank" class="btn-info">
-                                <i class="fas fa-info-circle"></i>
-                                Más Info
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=8TULGL-OMd4" target="_blank" class="btn-video">
-                                <i class="fab fa-youtube"></i>
-                                Ver Video
-                            </a>
-                        </div>
+                    <h3 class="font-display font-bold text-xl mb-2">IA Electoral</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4 flex-1">SaaS multi-tenant para campañas con IA: encuestas con GPS, solicitudes ciudadanas, eventos y mapas interactivos, desde el móvil con soporte offline.</p>
+                    <ul class="text-xs text-ink/55 space-y-1.5 mb-5">
+                        <li><i class="fas fa-check text-gdi mr-1.5"></i>Dashboard operativo en tiempo real</li>
+                        <li><i class="fas fa-check text-gdi mr-1.5"></i>Encuestas con geolocalización GPS</li>
+                        <li><i class="fas fa-check text-gdi mr-1.5"></i>Eventos con check-in QR y conteo por IA</li>
+                        <li><i class="fas fa-check text-gdi mr-1.5"></i>PWA instalable con modo offline</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://iaelectoralmx.com/" target="_blank" class="text-sm font-semibold text-ink hover:text-gdi transition"><i class="fas fa-external-link-alt text-xs mr-1"></i>Ver demo</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://iaelectoralmx.com/login" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-gdi transition">Login</a>
                     </div>
                 </div>
 
-                <!-- Portal FAIS Bienestar -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-hands-helping"></i>
+                <!-- PORTAL INTELIGENTE -->
+                <div class="card-rise rounded-2xl border border-ink/10 bg-paper p-7 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-blue/10 text-blue text-lg"><i class="fas fa-brain"></i></span>
+                        <span class="mono text-[11px] coord uppercase text-ink/40">Municipios</span>
                     </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Portal FAIS Bienestar</h3>
-                        <p class="product-description">
-                            Una plataforma digital integral especializada en la administración inteligente del Fondo de Aportaciones para la Infraestructura Social (FAIS), que combina análisis de datos avanzados, asistencia virtual y herramientas de gestión para optimizar la asignación y seguimiento de recursos destinados al desarrollo de infraestructura social en México.
-                        </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Dashboard de análisis Ramo 33 - Visualización interactiva de datos actualizados trimestralmente</li>
-                            <li><i class="fas fa-check"></i> Asistente virtual GobiFAIS - Copiloto experto disponible 24/7</li>
-                            <li><i class="fas fa-check"></i> Generación de informes automatizados - Herramienta para crear reportes detallados</li>
-                            <li><i class="fas fa-check"></i> Gestión normativa integrada - Acceso centralizado a toda la regulación</li>
-                            <li><i class="fas fa-check"></i> Transparencia y seguimiento en tiempo real - Monitoreo continuo</li>
-                            <li><i class="fas fa-check"></i> Interfaz especializada para gobierno - Diseñada para funcionarios públicos</li>
-                        </ul>
-                        <div class="product-buttons">
-                            <a href="https://www.faisbienestar.com/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Demo
-                            </a>
-                            <div class="video-group">
-                                <a href="https://www.youtube.com/watch?v=JAp0H-zXOdo" target="_blank" class="btn-video">
-                                    <i class="fab fa-youtube"></i>
-                                    Ver Video: Dashboard
-                                </a>
-                                <a href="https://www.youtube.com/watch?v=VT2_AYkrej8" target="_blank" class="btn-video">
-                                    <i class="fab fa-youtube"></i>
-                                    Ver Video: GobiFAIS
-                                </a>
-                                <a href="https://www.youtube.com/watch?v=UKpcwb3TrTw" target="_blank" class="btn-video">
-                                    <i class="fab fa-youtube"></i>
-                                    Ver Video: Informes FAIS
-                                </a>
-                            </div>
-                        </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Portal Inteligente</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4 flex-1">Transforma la gestión de información gubernamental con dashboards interactivos y asistencia virtual sobre 359+ indicadores oficiales de INEGI y CONEVAL. Para estados y municipios.</p>
+                    <ul class="text-xs text-ink/55 space-y-1.5 mb-5">
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>Dashboards interactivos multiplataforma</li>
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>Asistente virtual de consulta</li>
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>359+ indicadores socioeconómicos</li>
+                        <li><i class="fas fa-check text-blue mr-1.5"></i>Modelo escalable por uso</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://portal-nezahualcoyotl.azurewebsites.net/" target="_blank" class="text-sm font-semibold text-ink hover:text-blue transition">Demo Neza</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://portal-ecatepec.azurewebsites.net/" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-blue transition">Ecatepec</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://www.youtube.com/watch?v=8TULGL-OMd4" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-blue transition"><i class="fab fa-youtube text-xs"></i> Video</a>
                     </div>
                 </div>
 
-                <!-- IA Electoral -->
-                <div class="product-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="product-image">
-                        <i class="product-icon fas fa-vote-yea"></i>
+                <!-- COPILOTS MÉXICO -->
+                <div class="card-rise rounded-2xl border border-ink/10 bg-paper p-7 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-amber/10 text-amber text-lg"><i class="fas fa-robot"></i></span>
+                        <span class="mono text-[11px] coord uppercase text-ink/40">Asistentes IA</span>
                     </div>
-                    <div class="product-content">
-                        <h3 class="product-title">IA Electoral</h3>
-                        <p class="product-description">
-                            Plataforma SaaS multi-tenant para gestión de campañas electorales con inteligencia artificial.
-                            Permite a candidatos y equipos de campaña capturar encuestas, gestionar solicitudes ciudadanas,
-                            organizar eventos y visualizar datos en mapas interactivos, todo desde dispositivos móviles con soporte offline.
-                        </p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Dashboard operativo y analítico en tiempo real</li>
-                            <li><i class="fas fa-check"></i> Encuestas con geolocalización GPS automática</li>
-                            <li><i class="fas fa-check"></i> Gestión de solicitudes ciudadanas con seguimiento</li>
-                            <li><i class="fas fa-check"></i> Eventos con check-in QR y conteo de asistentes por IA</li>
-                            <li><i class="fas fa-check"></i> Mapa interactivo con heatmaps y filtros</li>
-                            <li><i class="fas fa-check"></i> Generación de mensajes con GPT-4o</li>
-                            <li><i class="fas fa-check"></i> PWA instalable con modo offline</li>
-                            <li><i class="fas fa-check"></i> Notificaciones por Email y SMS</li>
-                            <li><i class="fas fa-check"></i> Sistema de roles y permisos jerárquico</li>
-                        </ul>
-                        <div class="product-buttons">
-                            <a href="https://iaelectoralmx.com/" target="_blank" class="btn-demo">
-                                <i class="fas fa-external-link-alt"></i>
-                                Ver Demo
-                            </a>
-                            <a href="https://iaelectoralmx.com/login" target="_blank" class="btn-info">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Iniciar Sesión
-                            </a>
-                        </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Copilots México</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4 flex-1">Asistentes de IA especializados para cada estado de México con datos oficiales de INEGI, CONEVAL y Hacienda. Interfaz conversacional sobre datos verificados.</p>
+                    <ul class="text-xs text-ink/55 space-y-1.5 mb-5">
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>32 copilots estatales</li>
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>Datos oficiales verificados</li>
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>Análisis demográfico y de pobreza</li>
+                        <li><i class="fas fa-check text-amber mr-1.5"></i>Finanzas públicas</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://gobiernodigitalinnovacion.github.io/GobiAsistente/gobiasistente.html" target="_blank" class="text-sm font-semibold text-ink hover:text-amber transition">Ver demo</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://www.youtube.com/watch?v=8TULGL-OMd4" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-amber transition"><i class="fab fa-youtube text-xs"></i> Video</a>
+                    </div>
+                </div>
+
+                <!-- PORTAL FAIS BIENESTAR -->
+                <div class="card-rise rounded-2xl border border-ink/10 bg-paper p-7 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-green/10 text-green text-lg"><i class="fas fa-hands-holding-circle"></i></span>
+                        <span class="mono text-[11px] coord uppercase text-ink/40">FAIS · Ramo 33</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Portal FAIS Bienestar</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4 flex-1">Administración inteligente del Fondo de Aportaciones para la Infraestructura Social (FAIS): análisis de datos, asistente virtual y gestión para optimizar la asignación de recursos.</p>
+                    <ul class="text-xs text-ink/55 space-y-1.5 mb-5">
+                        <li><i class="fas fa-check text-green mr-1.5"></i>Dashboard Ramo 33 actualizado trimestral</li>
+                        <li><i class="fas fa-check text-green mr-1.5"></i>Asistente GobiFAIS 24/7</li>
+                        <li><i class="fas fa-check text-green mr-1.5"></i>Informes automatizados</li>
+                        <li><i class="fas fa-check text-green mr-1.5"></i>Gestión normativa integrada</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://www.faisbienestar.com/" target="_blank" class="text-sm font-semibold text-ink hover:text-green transition">Ver demo</a>
+                        <span class="text-ink/20">·</span>
+                        <a href="https://www.youtube.com/watch?v=JAp0H-zXOdo" target="_blank" class="text-sm font-semibold text-ink/70 hover:text-green transition"><i class="fab fa-youtube text-xs"></i> Video</a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Recursos Adicionales -->
-            <div class="section-header" style="margin-top: 4rem;" data-aos="fade-up">
-                <div class="section-badge">
-                    <i class="fas fa-book"></i>
-                    Recursos Técnicos
+            <!-- Recurso: Modelo IPI -->
+            <div class="mt-12 rounded-3xl border border-ink/10 bg-bone p-8 sm:p-10 flex flex-col md:flex-row items-center gap-8 grid-ticks">
+                <div class="flex-1">
+                    <span class="mono text-xs coord uppercase text-ink/50"><i class="fas fa-book mr-1"></i> Recurso técnico</span>
+                    <h3 class="font-display font-bold text-2xl mt-2 mb-2">Modelo de Instituciones Públicas Inteligentes (IPI)</h3>
+                    <p class="text-ink/60 leading-relaxed">Marco teórico completo sobre la transformación digital gubernamental desarrollado por GDI.</p>
                 </div>
-                <h3 class="section-title" style="font-size: 2rem;">Documentación y Marco Teórico</h3>
-            </div>
-
-            <div class="resource-card" data-aos="fade-up" style="max-width: 800px; margin: 0 auto; background: var(--light-gray); border-radius: 20px; padding: 2rem; text-align: center;">
-                <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark-color);">
-                    Modelo de Instituciones Públicas Inteligentes (IPI)
-                </h3>
-                <p style="color: var(--medium-gray); margin-bottom: 2rem; line-height: 1.6;">
-                    Marco teórico completo sobre la transformación digital gubernamental y el modelo
-                    de instituciones públicas inteligentes desarrollado por GDI.
-                </p>
                 <a href="https://drive.google.com/file/d/1zjqz9x7_Rbwgomitl-_nEd6YTdrOg4qa/view" target="_blank"
-                   style="background: var(--gradient-secondary); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;"
-                   onmouseover="this.style.transform='translateY(-2px)'"
-                   onmouseout="this.style.transform='translateY(0)'">
-                    <i class="fas fa-download"></i>
-                    Descargar Documento
+                   class="inline-flex items-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-semibold hover:bg-ink2 transition whitespace-nowrap">
+                    <i class="fas fa-download"></i> Descargar PDF
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section" style="padding: 6rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
-                <div class="section-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(102, 126, 234, 0.1); padding: 0.5rem 1rem; border-radius: 50px; margin-bottom: 1rem;">
-                    <i class="fas fa-newspaper" style="color: #667eea;"></i>
-                    <span style="color: #667eea; font-weight: 600;">Blog</span>
+    <!-- ============ NOSOTROS ============ -->
+    <section id="nosotros" class="py-20 bg-ink text-paper topo relative overflow-hidden">
+        <div class="absolute inset-0 topo-lines opacity-40"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12">
+            <div>
+                <span class="mono text-xs coord uppercase text-gdi">Sobre GDI</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl mt-3 mb-5">Tecnología al servicio de lo público</h2>
+                <div class="space-y-4 text-paper/70 leading-relaxed">
+                    <p><strong class="text-paper">Gobierno Digital e Innovación (GDI)</strong> es una startup mexicana dedicada a revolucionar el sector público con tecnologías avanzadas.</p>
+                    <p>Empoderamos a las instituciones públicas mediante digitalización, inteligencia artificial y análisis de datos. Productos funcionales, desarrollados y listos para implementar.</p>
                 </div>
-                <h2 style="font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 1rem;">Análisis de Finanzas Públicas</h2>
-                <p style="font-size: 1.125rem; color: #64748b; max-width: 600px; margin: 0 auto;">
-                    Datos oficiales del INEGI analizados para promover la transparencia fiscal municipal
-                </p>
+                <div class="mt-8 flex items-center gap-4 p-5 rounded-2xl bg-ink2/60 border border-paper/10">
+                    <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gdi text-white font-display font-bold">JHR</span>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg">Juan Heriberto Rosas</h3>
+                        <p class="text-sm text-paper/55">Fundador y Director Técnico</p>
+                        <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="ttq.track('Contact'); gtag('event', 'contact', {method: 'email'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'email'});" class="text-sm text-gdi hover:underline break-all">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a>
+                    </div>
+                </div>
             </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;">
-                <!-- Blog Post 1: Dependencia manufacturera Chihuahua y BC -->
-                <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -3px rgba(0,0,0,0.1); border: 1px solid rgba(102,126,234,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="height: 180px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-industry" style="font-size: 4rem; color: white; opacity: 0.9;"></i>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem;">
-                            <span style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-weight: 600;">Alerta</span>
-                            <span style="color: #64748b;"><i class="far fa-calendar"></i> 12 jun 2026</span>
-                        </div>
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 0.75rem; line-height: 1.3;">
-                            <a href="blog/articulos/2026-06-12-chihuahua-baja-california-dependencia-manufactura.html" style="text-decoration: none; color: inherit;">Chihuahua y Baja California: casi la mitad de su economia depende de la manufactura</a>
-                        </h3>
-                        <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1rem;">Chihuahua tiene 49.5% de su empleo formal en manufactura; Coahuila 47% y Baja California 44.6%. El mapa de vulnerabilidad arancelaria por estado. Censo Economico INEGI 2024.</p>
-                        <a href="blog/articulos/2026-06-12-chihuahua-baja-california-dependencia-manufactura.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #667eea; font-weight: 600; text-decoration: none;">
-                            Leer analisis <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2: Wrangler crisis textil Coahuila -->
-                <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -3px rgba(0,0,0,0.1); border: 1px solid rgba(102,126,234,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="height: 180px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-scissors" style="font-size: 4rem; color: white; opacity: 0.9;"></i>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem;">
-                            <span style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-weight: 600;">Alerta</span>
-                            <span style="color: #64748b;"><i class="far fa-calendar"></i> 5 jun 2026</span>
-                        </div>
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 0.75rem; line-height: 1.3;">
-                            <a href="blog/articulos/2026-06-05-wrangler-crisis-textil-coahuila-20-anos.html" style="text-decoration: none; color: inherit;">Wrangler se fue, pero la crisis textil de Coahuila lleva 20 anos</a>
-                        </h3>
-                        <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1rem;">El empleo textil en Coahuila cayo 63% entre 2004 y 2024 (de 38,770 a 14,193 plazas). Wrangler no causo la crisis: llego al final. San Pedro de las Colonias depende en 16.2% del sector. Censo INEGI.</p>
-                        <a href="blog/articulos/2026-06-05-wrangler-crisis-textil-coahuila-20-anos.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #667eea; font-weight: 600; text-decoration: none;">
-                            Leer analisis <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3: Mapa real del nearshoring -->
-                <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -3px rgba(0,0,0,0.1); border: 1px solid rgba(102,126,234,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="height: 180px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-industry" style="font-size: 4rem; color: white; opacity: 0.9;"></i>
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem;">
-                            <span style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-weight: 600;">Economia</span>
-                            <span style="color: #64748b;"><i class="far fa-calendar"></i> 29 may 2026</span>
-                        </div>
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 0.75rem; line-height: 1.3;">
-                            <a href="blog/articulos/2026-05-29-mapa-real-nearshoring-manufactura-2019-2024.html" style="text-decoration: none; color: inherit;">El mapa real del nearshoring: que entidades sumaron manufactura 2019-2024 (y cual se desindustrializo)</a>
-                        </h3>
-                        <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1rem;">La CDMX perdio 29,354 empleos manufactureros 2019-2024: unica entidad que retrocedio. El nearshoring no es fronterizo, es el corredor Monterrey-Bajio-Edomex. Censo Economico INEGI.</p>
-                        <a href="blog/articulos/2026-05-29-mapa-real-nearshoring-manufactura-2019-2024.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #667eea; font-weight: 600; text-decoration: none;">
-                            Leer analisis <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
+            <div class="grid sm:grid-cols-2 gap-5">
+                <div class="p-6 rounded-2xl bg-ink2/50 border border-paper/10">
+                    <i class="fas fa-lightbulb text-gdi text-xl mb-3"></i>
+                    <h3 class="font-display font-semibold text-lg mb-1">Innovación constante</h3>
+                    <p class="text-sm text-paper/55">Soluciones de vanguardia en IA, datos y automatización.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-ink2/50 border border-paper/10">
+                    <i class="fas fa-shield-halved text-gdi text-xl mb-3"></i>
+                    <h3 class="font-display font-semibold text-lg mb-1">Transparencia total</h3>
+                    <p class="text-sm text-paper/55">Priorizamos la transparencia y el acceso ciudadano a la información.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-ink2/50 border border-paper/10">
+                    <i class="fas fa-users text-gdi text-xl mb-3"></i>
+                    <h3 class="font-display font-semibold text-lg mb-1">Compromiso social</h3>
+                    <p class="text-sm text-paper/55">Tecnología para mejorar vidas y fortalecer instituciones.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-ink2/50 border border-paper/10">
+                    <i class="fas fa-gears text-gdi text-xl mb-3"></i>
+                    <h3 class="font-display font-semibold text-lg mb-1">Productos funcionales</h3>
+                    <p class="text-sm text-paper/55">No solo teoría: productos probados y listos para implementar.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="blog.html" style="display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <i class="fas fa-newspaper"></i>
-                    Ver todos los artículos
+    <!-- ============ VIDEO ============ -->
+    <section class="py-20 bg-bone grid-ticks">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="mono text-xs coord uppercase text-ink/50"><i class="fas fa-play-circle mr-1"></i> Conócenos</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl mt-3">Descubre nuestra visión</h2>
+            </div>
+            <div id="video-box" class="relative rounded-3xl overflow-hidden border border-ink/10 bg-ink cursor-pointer group" style="aspect-ratio:16/9" onclick="loadHeroVideo()">
+                <img src="https://img.youtube.com/vi/uDpAcpMWCHo/maxresdefault.jpg" alt="Video GDI" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gdi text-white text-2xl shadow-xl group-hover:scale-110 transition"><i class="fas fa-play ml-1"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="py-16 bg-ink text-paper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-gdi/30 p-8 sm:p-12 text-center topo relative overflow-hidden" style="box-shadow:0 30px 60px -30px rgba(124,92,255,.4)">
+                <div class="absolute inset-0 topo-lines opacity-40"></div>
+                <div class="relative z-10">
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl mb-4">¿Listo para modernizar tu institución?</h2>
+                    <p class="text-lg text-paper/70 max-w-2xl mx-auto mb-8">Prueba nuestros productos funcionales y descubre cómo GDI transforma al sector público con tecnología de vanguardia.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://portal-ecatepec.azurewebsites.net/" target="_blank" onclick="ttq.track('ClickButton');"
+                           class="bg-gdi text-white px-8 py-4 rounded-full font-semibold text-lg hover:brightness-110 transition"><i class="fas fa-play mr-2"></i>Probar demos ahora</a>
+                        <a href="#contacto-form" onclick="ttq.track('ClickButton');"
+                           class="border border-paper/25 text-paper px-8 py-4 rounded-full font-semibold text-lg hover:bg-paper/10 transition"><i class="fas fa-envelope mr-2"></i>Enviar mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BLOG ============ -->
+    <section id="blog" class="py-20 bg-paper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+                <div>
+                    <span class="mono text-xs coord uppercase text-ink/50"><i class="fas fa-newspaper mr-1"></i> Blog</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl mt-3">Análisis de finanzas públicas</h2>
+                    <p class="text-ink/60 mt-2">Datos oficiales del INEGI para la transparencia fiscal y territorial.</p>
+                </div>
+                <a href="blog.html" class="inline-flex items-center gap-2 font-semibold text-ink hover:text-gdi transition">
+                    Ver todo el blog
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="blog/articulos/2026-06-12-chihuahua-baja-california-dependencia-manufactura.html" class="card-rise bg-paper rounded-2xl border border-ink/10 p-7 block">
+                    <span class="mono text-[11px] coord uppercase text-amber">Alerta · 12 jun 2026</span>
+                    <h3 class="font-display font-semibold text-lg mt-3 mb-2 leading-snug">Chihuahua y Baja California: casi la mitad de su economía depende de la manufactura</h3>
+                    <p class="text-ink/55 text-sm leading-relaxed">El mapa de vulnerabilidad arancelaria por estado. Censo Económico INEGI 2024.</p>
+                </a>
+                <a href="blog/articulos/2026-06-05-wrangler-crisis-textil-coahuila-20-anos.html" class="card-rise bg-paper rounded-2xl border border-ink/10 p-7 block">
+                    <span class="mono text-[11px] coord uppercase text-amber">Alerta · 5 jun 2026</span>
+                    <h3 class="font-display font-semibold text-lg mt-3 mb-2 leading-snug">Wrangler se fue, pero la crisis textil de Coahuila lleva 20 años</h3>
+                    <p class="text-ink/55 text-sm leading-relaxed">El empleo textil cayó 63% entre 2004 y 2024. Wrangler llegó al final, no causó la crisis.</p>
+                </a>
+                <a href="blog/articulos/2026-05-29-mapa-real-nearshoring-manufactura-2019-2024.html" class="card-rise bg-paper rounded-2xl border border-ink/10 p-7 block">
+                    <span class="mono text-[11px] coord uppercase text-green">Economía · 29 may 2026</span>
+                    <h3 class="font-display font-semibold text-lg mt-3 mb-2 leading-snug">El mapa real del nearshoring 2019–2024</h3>
+                    <p class="text-ink/55 text-sm leading-relaxed">La CDMX fue la única entidad que retrocedió. El corredor Monterrey–Bajío–Edomex lidera.</p>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content" data-aos="fade-up">
-                <h2 class="cta-title">¿Listo para Modernizar tu Institución?</h2>
-                <p class="cta-description">
-                    Prueba nuestros productos funcionales y descubre cómo GDI puede transformar
-                    tu institución pública con tecnología de vanguardia.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://portal-ecatepec.azurewebsites.net/" target="_blank" class="btn-primary" onclick="ttq.track('ClickButton');">
-                        <i class="fas fa-play"></i>
-                        Probar Demos Ahora
-                    </a>
-                    <a href="#contacto-form" class="btn-secondary" onclick="ttq.track('ClickButton');">
-                        <i class="fas fa-envelope"></i>
-                        Enviar Mensaje
-                    </a>
+    <!-- ============ CONTACTO ============ -->
+    <section id="contacto-form" class="py-20 bg-bone grid-ticks">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+                <span class="mono text-xs coord uppercase text-ink/50"><i class="fas fa-envelope mr-1"></i> Contáctanos</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl mt-3 mb-4">Transformemos juntos tu institución</h2>
+                <p class="text-ink/65 leading-relaxed mb-8">Completa el formulario y nos pondremos en contacto a la brevedad para discutir cómo nuestras soluciones pueden transformar tu organización.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gdi/10 text-gdi"><i class="fas fa-envelope"></i></span>
+                        <div>
+                            <p class="mono text-[11px] coord uppercase text-ink/45">Email</p>
+                            <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="ttq.track('Contact'); gtag('event', 'contact', {method: 'email'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'email'});" class="text-ink font-medium hover:text-gdi break-all">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gdi/10 text-gdi"><i class="fas fa-map-marker-alt"></i></span>
+                        <div>
+                            <p class="mono text-[11px] coord uppercase text-ink/45">Ubicación</p>
+                            <p class="text-ink font-medium">Ciudad de México, México</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gdi/10 text-gdi"><i class="fas fa-clock"></i></span>
+                        <div>
+                            <p class="mono text-[11px] coord uppercase text-ink/45">Horario</p>
+                            <p class="text-ink font-medium">Lun a Vie · 9:00 AM – 6:00 PM</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Netlify Form (preservado) -->
+            <div class="bg-paper rounded-3xl border border-ink/10 p-8">
+                <h3 class="font-display font-bold text-xl mb-1">Solicita información</h3>
+                <p class="text-ink/55 text-sm mb-6">Completa el formulario y te responderemos pronto.</p>
+                <form name="contacto-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="ttq.track('SubmitForm'); gtag('event', 'generate_lead', {currency: 'MXN', value: 10.0, lead_source: 'contact_form'}); gtag('event', 'form_submit', {form_name: 'contacto-gdi'});">
+                    <input type="hidden" name="form-name" value="contacto-gdi">
+                    <p class="hidden"><label>No llenes esto si eres humano: <input name="bot-field" /></label></p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="nombre" class="block text-sm font-semibold text-ink/70 mb-2">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez"
+                                   class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-gdi focus:border-transparent outline-none">
+                        </div>
+                        <div>
+                            <label for="telefono" class="block text-sm font-semibold text-ink/70 mb-2">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678"
+                                   class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-gdi focus:border-transparent outline-none">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-semibold text-ink/70 mb-2">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com"
+                               class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-gdi focus:border-transparent outline-none">
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="institucion" class="block text-sm font-semibold text-ink/70 mb-2">Tipo de institución *</label>
+                            <select id="institucion" name="institucion" required
+                                    class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-gdi focus:border-transparent outline-none">
+                                <option value="">Selecciona una opción</option>
+                                <option value="Gobierno Municipal">Gobierno Municipal</option>
+                                <option value="Gobierno Estatal">Gobierno Estatal</option>
+                                <option value="Gobierno Federal">Gobierno Federal</option>
+                                <option value="Organismo Autónomo">Organismo Autónomo</option>
+                                <option value="Empresa Privada">Empresa Privada</option>
+                                <option value="Organización Civil">Organización Civil</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="producto" class="block text-sm font-semibold text-ink/70 mb-2">Producto de interés *</label>
+                            <select id="producto" name="producto" required
+                                    class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-gdi focus:border-transparent outline-none">
+                                <option value="">Selecciona una opción</option>
+                                <option value="Lokus Gov">Lokus Gov</option>
+                                <option value="CENTINELA">CENTINELA</option>
+                                <option value="ATALAYA">ATALAYA</option>
+                                <option value="GDIDATA">GDIDATA</option>
+                                <option value="IA Electoral">IA Electoral</option>
+                                <option value="Portal Inteligente">Portal Inteligente</option>
+                                <option value="Copilots México">Copilots México</option>
+                                <option value="Portal FAIS Bienestar">Portal FAIS Bienestar</option>
+                                <option value="Todos los productos">Todos los productos</option>
+                                <option value="Consultoría personalizada">Consultoría personalizada</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="mensaje" class="block text-sm font-semibold text-ink/70 mb-2">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos sobre tu proyecto o necesidades…"
+                                  class="w-full px-4 py-3 rounded-lg border border-ink/15 bg-bone focus:ring-2 focus:ring-gdi focus:border-transparent outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-ink text-paper px-8 py-4 rounded-full font-semibold text-lg hover:bg-ink2 transition">
+                        <i class="fas fa-paper-plane mr-2"></i>Enviar mensaje
+                    </button>
+                    <div id="form-message"></div>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contacto-form" class="contact-form-section">
-        <div class="container">
-            <div class="contact-form-container">
-                <!-- Contact Info -->
-                <div class="contact-form-info" data-aos="fade-right">
-                    <div class="section-badge">
-                        <i class="fas fa-envelope"></i>
-                        Contáctanos
+    <!-- ============ FOOTER ============ -->
+    <footer id="contacto" class="bg-ink text-paper/70 py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-3">
+                        <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gdi text-white"><i class="fas fa-landmark"></i></span>
+                        <span class="text-xl font-display font-bold text-paper">GDI</span>
                     </div>
-                    <h2>Transformemos Juntos tu Institución</h2>
-                    <p>
-                        ¿Listo para llevar tu institución al siguiente nivel? Completa el formulario
-                        y nos pondremos en contacto contigo a la brevedad para discutir cómo nuestras
-                        soluciones pueden transformar tu organización.
-                    </p>
-
-                    <div class="contact-info-cards">
-                        <div class="contact-info-card">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h4>Email</h4>
-                                <p><a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="ttq.track('Contact'); gtag('event', 'contact', {method: 'email'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'email'});">juanheriberto.rosas@gobiernodigitaleinnovacion.com</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-info-card">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h4>Ubicación</h4>
-                                <p>Ciudad de México, México</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-info-card">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h4>Horario de Atención</h4>
-                                <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
+                    <p class="text-sm leading-relaxed">Startup mexicana de transformación digital del sector público. "La información es poder."</p>
+                    <div class="flex gap-4 mt-4 text-paper/50">
+                        <a href="https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/" target="_blank" class="hover:text-gdi"><i class="fab fa-linkedin text-lg"></i></a>
+                        <a href="https://x.com/Gobdigitale" target="_blank" class="hover:text-paper"><i class="fab fa-x-twitter text-lg"></i></a>
+                        <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank" class="hover:text-paper"><i class="fab fa-github text-lg"></i></a>
+                        <a href="https://www.youtube.com/@Gobidigital_IA" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube text-lg"></i></a>
+                        <a href="https://www.instagram.com/gobiernodigitalinnovacion/" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="https://www.tiktok.com/@gobierno.digital6" target="_blank" class="hover:text-paper"><i class="fab fa-tiktok text-lg"></i></a>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper" data-aos="fade-left">
-                    <h3>Solicita Información</h3>
-                    <p>Completa el formulario y te responderemos pronto</p>
-
-                    <form name="contacto-gdi" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="ttq.track('SubmitForm'); gtag('event', 'generate_lead', {currency: 'MXN', value: 10.0, lead_source: 'contact_form'}); gtag('event', 'form_submit', {form_name: 'contacto-gdi'});">
-                        <!-- Honeypot for spam protection -->
-                        <input type="hidden" name="form-name" value="contacto-gdi">
-                        <p style="display: none;">
-                            <label>No llenes esto si eres humano: <input name="bot-field" /></label>
-                        </p>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nombre">
-                                    Nombre Completo<span class="required">*</span>
-                                </label>
-                                <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="telefono">
-                                    Teléfono<span class="required">*</span>
-                                </label>
-                                <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">
-                                Email<span class="required">*</span>
-                            </label>
-                            <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="institucion">
-                                    Tipo de Institución<span class="required">*</span>
-                                </label>
-                                <select id="institucion" name="institucion" required>
-                                    <option value="">Selecciona una opción</option>
-                                    <option value="Gobierno Municipal">Gobierno Municipal</option>
-                                    <option value="Gobierno Estatal">Gobierno Estatal</option>
-                                    <option value="Gobierno Federal">Gobierno Federal</option>
-                                    <option value="Organismo Autónomo">Organismo Autónomo</option>
-                                    <option value="Empresa Privada">Empresa Privada</option>
-                                    <option value="Organización Civil">Organización Civil</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="producto">
-                                    Producto de Interés<span class="required">*</span>
-                                </label>
-                                <select id="producto" name="producto" required>
-                                    <option value="">Selecciona una opción</option>
-                                    <option value="Portal Inteligente">Portal Inteligente</option>
-                                    <option value="Copilots México">Copilots México</option>
-                                    <option value="Portal FAIS Bienestar">Portal FAIS Bienestar</option>
-                                    <option value="Todos los productos">Todos los productos</option>
-                                    <option value="Consultoría personalizada">Consultoría personalizada</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mensaje">
-                                Mensaje<span class="required">*</span>
-                            </label>
-                            <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos sobre tu proyecto o necesidades..."></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-button">
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar Mensaje
-                        </button>
-
-                        <div id="form-message" class="form-message"></div>
-                    </form>
+                <div>
+                    <h3 class="font-display font-semibold mb-4 text-paper">Productos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="hover:text-gdi">Lokus Gov</a></li>
+                        <li><a href="https://centinela.gdidata.com/landing.html" target="_blank" class="hover:text-paper">CENTINELA</a></li>
+                        <li><a href="https://atalaya.gdidata.com/" target="_blank" class="hover:text-paper">ATALAYA</a></li>
+                        <li><a href="https://gdidata.com/" target="_blank" class="hover:text-paper">GDIDATA</a></li>
+                        <li><a href="https://iaelectoralmx.com/" target="_blank" class="hover:text-paper">IA Electoral</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-display font-semibold mb-4 text-paper">Recursos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="blog.html" class="hover:text-paper">Blog</a></li>
+                        <li><a href="#productos" class="hover:text-paper">Demos en vivo</a></li>
+                        <li><a href="https://drive.google.com/file/d/1zjqz9x7_Rbwgomitl-_nEd6YTdrOg4qa/view" target="_blank" class="hover:text-paper">Modelo IPI (PDF)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-display font-semibold mb-4 text-paper">Contacto</h3>
+                    <p class="text-sm mb-2"><strong class="text-paper">Juan Heriberto Rosas</strong><br>Fundador y Director Técnico</p>
+                    <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="gtag('event', 'contact', {method: 'email_footer'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'email_footer'});" class="text-sm hover:text-paper break-all"><i class="fas fa-envelope mr-1"></i> juanheriberto.rosas@gobiernodigitaleinnovacion.com</a>
+                    <p class="text-sm mt-2"><i class="fas fa-map-marker-alt mr-1"></i> Ciudad de México, México</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contacto" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="footer-logo-img">
-                    </div>
-                    <p>
-                        Startup mexicana especializada en transformación digital del sector público. 
-                        "La Información es Poder" - Datos para mejores decisiones.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/Gobdigitale" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.youtube.com/@Gobidigital_IA" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/gobiernodigitalinnovacion/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@gobierno.digital6" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Productos</h3>
-                    <a href="https://portalinteligente.netlify.app/" target="_blank">Portal Inteligente</a>
-                    <a href="https://gobiernodigitalinnovacion.github.io/GobiAsistente/gobiasistente.html" target="_blank">Copilots México</a>
-                    <a href="https://www.faisbienestar.com/" target="_blank">Portal FAIS Bienestar</a>
-                    <a href="https://drive.google.com/file/d/1zjqz9x7_Rbwgomitl-_nEd6YTdrOg4qa/view" target="_blank">Modelo IPI</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Recursos</h3>
-                    <a href="https://gobiernodigitaleinnovacion.github.io/imagenes/copilotsmx.html" target="_blank">Info Copilots</a>
-                    <a href="#productos">Demos en Vivo</a>
-                    <a href="https://drive.google.com/file/d/1zjqz9x7_Rbwgomitl-_nEd6YTdrOg4qa/view" target="_blank">Modelo IPI (PDF)</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <p><strong>Juan Heriberto Rosas</strong><br>Fundador y Director Técnico</p>
-                    <a href="mailto:juanheriberto.rosas@gobiernodigitaleinnovacion.com" onclick="gtag('event', 'contact', {method: 'email_footer'}); gtag('event', 'generate_lead', {currency: 'MXN', value: 1.0, lead_source: 'email_footer'});">
-                        <i class="fas fa-envelope"></i> juanheriberto.rosas@gobiernodigitaleinnovacion.com
-                    </a>
-                    <p style="margin-top: 1rem;"><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
-                    <a href="#contacto-form" style="display: inline-block; margin-top: 1rem; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 8px; transition: opacity 0.3s;">
-                        <i class="fas fa-envelope"></i> Formulario de Contacto
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2025 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
-                <p>Startup mexicana comprometida con la transformación digital del sector público.</p>
+            <div class="border-t border-paper/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+                <p class="text-sm">© 2026 GDI — Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+                <p class="text-sm mono coord">GOV-TECH · MÉXICO</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            offset: 100,
-            once: true
-        });
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            var header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        var mobileToggle = document.querySelector('.mobile-menu-toggle');
-        var navMenu = document.querySelector('.nav-menu');
-
-        if (mobileToggle) {
-            mobileToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                
-                // Animate hamburger
-                var spans = this.querySelectorAll('span');
-                if (this.classList.contains('active')) {
-                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    spans[1].style.opacity = '0';
-                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                } else {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            });
-        }
-
-        // Smooth scrolling for navigation links
-        var navLinks = document.querySelectorAll('a[href^="#"]');
-        for (var i = 0; i < navLinks.length; i++) {
-            navLinks[i].addEventListener('click', function(e) {
-                e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navMenu.classList.contains('active')) {
-                        mobileToggle.click();
-                    }
-                }
-            });
-        }
-
-        // Add loading animation to elements
-        function addLoadingAnimations() {
-            var elements = document.querySelectorAll('.product-card, .stat-item, .feature-item');
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.animationDelay = (i * 0.1) + 's';
-                elements[i].classList.add('loading');
-            }
-        }
-
-        // Counter animation for stats
-        function animateCounters() {
-            var counters = document.querySelectorAll('.stat-number');
-            
-            for (var i = 0; i < counters.length; i++) {
-                var counter = counters[i];
-                var target = counter.textContent;
-                
-                if (!isNaN(target)) {
-                    var targetNum = parseInt(target);
-                    var increment = targetNum / 50;
-                    var current = 0;
-                    
-                    var timer = setInterval(function() {
-                        current += increment;
-                        if (current >= targetNum) {
-                            counter.textContent = targetNum;
-                            clearInterval(timer);
-                        } else {
-                            counter.textContent = Math.floor(current);
-                        }
-                    }, 30);
-                }
-            }
-        }
-
-        // Intersection Observer for counter animation
-        var statsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        var statsSection = document.querySelector('.stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', function() {
-            var scrolled = window.pageYOffset;
-            var parallax = document.querySelector('.hero');
-            if (parallax) {
-                var speed = scrolled * 0.5;
-                parallax.style.transform = 'translateY(' + speed + 'px)';
-            }
-        });
-
-        // Enhanced hover effects for product cards
-        var productCards = document.querySelectorAll('.product-card');
-        for (var i = 0; i < productCards.length; i++) {
-            productCards[i].addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
-                this.style.boxShadow = 'var(--shadow-heavy)';
-            });
-            
-            productCards[i].addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = 'var(--shadow-light)';
-            });
-        }
-
-        // Click tracking for analytics
-        function trackClicks() {
-            var links = document.querySelectorAll('a[href*="powerappsportals"], a[href*="github.io"], a[href*="drive.google.com"], a[href*="faisbienestar.com"], a[href*="sites.google.com"], a[href*="youtube.com"]');
-            for (var i = 0; i < links.length; i++) {
-                links[i].addEventListener('click', function() {
-                    console.log('Demo/Resource/Video accessed:', this.href);
-                    // Integrate with analytics service here
-                });
-            }
-        }
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            addLoadingAnimations();
-            trackClicks();
-            
-            // Add subtle entrance animation to hero content
-            setTimeout(function() {
-                var heroText = document.querySelector('.hero-text');
-                var heroVisual = document.querySelector('.hero-visual');
-                if (heroText) heroText.style.opacity = '1';
-                if (heroVisual) heroVisual.style.opacity = '1';
-            }, 100);
-        });
-
-        // Performance optimization: Lazy load non-critical images
-        if ('IntersectionObserver' in window) {
-            var lazyImages = document.querySelectorAll('img[data-src]');
-            var imageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        var img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            for (var i = 0; i < lazyImages.length; i++) {
-                imageObserver.observe(lazyImages[i]);
-            }
-        }
-
-        console.log('🚀 GDI - Gobierno Digital e Innovación | Sitio web cargado exitosamente');
-        console.log('📱 Productos funcionales disponibles para demostración');
-        console.log('🔗 Contacto: juanheriberto.rosas@gobiernodigitaleinnovacion.com');
-
-        // YouTube Player API
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        var currentVideoId = 'uDpAcpMWCHo'; // Video principal de la empresa
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('main-video-player', {
-                height: '100%',
-                width: '100%',
-                videoId: currentVideoId,
-                playerVars: {
-                    'playsinline': 1,
-                    'rel': 0, // No mostrar videos relacionados de YouTube
-                    'modestbranding': 1,
-                    'controls': 1,
-                    'showinfo': 0,
-                    'fs': 1,
-                    'cc_load_policy': 0,
-                    'iv_load_policy': 3,
-                    'autohide': 1
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            console.log('Video player ready');
-        }
-
-        function onPlayerStateChange(event) {
-            // Cuando el video termina (estado 0), mostrar videos relacionados
-            if (event.data == YT.PlayerState.ENDED) {
-                showRelatedVideos();
-            }
-        }
-
-        function showRelatedVideos() {
-            var relatedVideosSection = document.getElementById('related-videos');
-            if (relatedVideosSection) {
-                relatedVideosSection.style.display = 'block';
-                // Smooth scroll to related videos
-                relatedVideosSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        }
-
-        function loadVideo(videoId) {
-            if (player && player.loadVideoById) {
-                player.loadVideoById(videoId);
-                currentVideoId = videoId;
-
-                // Scroll back to video player
-                var videoWrapper = document.querySelector('.video-wrapper');
-                if (videoWrapper) {
-                    videoWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-
-                // Hide related videos while playing new video
-                var relatedVideosSection = document.getElementById('related-videos');
-                if (relatedVideosSection) {
-                    relatedVideosSection.style.display = 'none';
-                }
-            }
-        }
-
-        // Track video views for analytics
-        function trackVideoView(videoId) {
-            console.log('Video viewed:', videoId);
-            // Integrate with analytics service here
+        // Video lite-embed (click para cargar)
+        function loadHeroVideo() {
+            const box = document.getElementById('video-box');
+            box.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/uDpAcpMWCHo?autoplay=1&rel=0&modestbranding=1" title="Video GDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+            box.style.cursor = 'default';
+            if (window.ttq) ttq.track('ViewContent', {content_name: 'Video GDI'});
         }
     </script>
-
-    <!-- Additional Meta Tags for SEO -->
-    <meta property="og:title" content="GDI - Gobierno Digital e Innovación | Transformación Digital del Sector Público">
-    <meta property="og:description" content="Startup mexicana especializada en transformación digital gubernamental. Productos innovadores: Portal Inteligente, Copilots México y Portal FAIS Bienestar.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.gobiernodigitaleinnovacion.com">
-    <meta property="og:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GDI - Gobierno Digital e Innovación">
-    <meta name="twitter:description" content="Transformación Digital del Sector Público - Portal Inteligente, Copilots México y Portal FAIS">
-    
-    <meta name="keywords" content="gobierno digital, transformación digital, municipios inteligentes, inteligencia artificial, sector público, México, GDI, copilots, participación ciudadana, bienestar social, portal inteligente">
-    <meta name="author" content="Juan Heriberto Rosas">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GDI - Gobierno Digital e Innovación",
-      "description": "Startup mexicana especializada en transformación digital del sector público",
-      "url": "https://www.gobiernodigitaleinnovacion.com",
-      "logo": "https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "juanheriberto.rosas@gobiernodigitaleinnovacion.com"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Juan Heriberto Rosas",
-        "email": "juanheriberto.rosas@gobiernodigitaleinnovacion.com"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ciudad de México",
-        "addressCountry": "México"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/",
-        "https://x.com/Gobdigitale",
-        "https://github.com/gobiernodigitaleinnovacion",
-        "https://www.youtube.com/@Gobidigital_IA"
-      ]
-    }
-    </script>
-
-    <!-- Performance Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//municipiodigitalinteligente.powerappsportals.com">
-    <link rel="dns-prefetch" href="//gobiernodigitaleinnovacion.github.io">
-    <link rel="dns-prefetch" href="//propuestasciudadanaspiloto.powerappsportals.com">
-    <link rel="dns-prefetch" href="//www.faisbienestar.com">
-    <link rel="dns-prefetch" href="//atalaya.gdidata.com">
-    <link rel="dns-prefetch" href="//centinela.gdidata.com">
-    <link rel="dns-prefetch" href="//sites.google.com">
-    <link rel="dns-prefetch" href="//www.youtube.com">
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Additional Performance Enhancements -->
-    <meta name="theme-color" content="#2563eb">
-    <meta name="msapplication-TileColor" content="#2563eb">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="GDI">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" as="script">
-    <link rel="preload" href="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" as="image">
 </body>
 </html>
