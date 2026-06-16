@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Inteligente - Propuesta Comercial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            font-size: 12px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 10mm;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section h2 {
+            color: #2a5298;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #2a5298;
+            padding-bottom: 5px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 14px;
+            margin-bottom: 8px;
+            margin-top: 15px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+            margin-bottom: 10px;
+        }
+        
+        .card h4 {
+            color: #2a5298;
+            font-size: 12px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .card p {
+            font-size: 10px;
+            line-height: 1.3;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .stat-item {
+            background: #2a5298;
+            color: white;
+            padding: 15px 10px;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 9px;
+        }
+        
+        .module-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .module-card h4 {
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: white;
+        }
+        
+        .module-card p {
+            font-size: 10px;
+            line-height: 1.3;
+        }
+        
+        .portales-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .portal-card {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #2a5298;
+            text-align: center;
+        }
+        
+        .portal-card h4 {
+            color: #2a5298;
+            font-size: 11px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .portal-card p {
+            font-size: 9px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        
+        .portal-link {
+            color: #2a5298;
+            font-size: 8px;
+            font-weight: bold;
+            word-break: break-all;
+        }
+        
+        .benefits-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .benefit-item h4 {
+            font-size: 11px;
+            margin-bottom: 5px;
+            color: #2a5298;
+        }
+        
+        .benefit-item p {
+            font-size: 9px;
+            line-height: 1.2;
+        }
+        
+        .contact-section {
+            background: #2a5298;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            border-bottom: 2px solid white;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .contact-info div {
+            text-align: left;
+        }
+        
+        .contact-info p {
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .step {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid #2a5298;
+        }
+        
+        .step-number {
+            background: #2a5298;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .step h4 {
+            font-size: 10px;
+            margin-bottom: 5px;
+            color: #2a5298;
+        }
+        
+        .step p {
+            font-size: 8px;
+            line-height: 1.2;
+        }
+        
+        .video-section {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .github-section {
+            background: #24292e;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .github-section h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .github-section p {
+            font-size: 10px;
+            line-height: 1.3;
+        }
+        
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .tech-badge {
+            background: #2a5298;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 9px;
+            font-weight: bold;
+        }
+        
+        ul {
+            margin-left: 15px;
+        }
+        
+        li {
+            font-size: 10px;
+            margin-bottom: 3px;
+            line-height: 1.2;
+        }
+        
+        .footer-note {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            font-size: 9px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media print {
+            body { 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
+            .section { page-break-inside: avoid; }
+            .card { page-break-inside: avoid; }
+            .module-card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Portal Inteligente</h1>
+            <p class="subtitle">Solución Digital Integral para la Transformación Gubernamental</p>
+            <div class="badges">
+                <span class="badge">✨ Tecnología de Vanguardia</span>
+                <span class="badge">🚀 Implementación Inmediata</span>
+                <span class="badge">📊 400+ Indicadores Oficiales</span>
+                <span class="badge">🤖 IA con Internet</span>
+            </div>
+        </header>
+
+        <!-- Introducción -->
+        <section class="section">
+            <h2>Revolucione su Administración Pública</h2>
+            <div class="highlight">
+                <p style="font-size: 11px; text-align: center; margin-bottom: 10px;">
+                    <strong>"La Información es Poder"</strong> - Transforme su municipio o estado con el Portal Inteligente, 
+                    una plataforma digital integral que combina análisis de datos avanzados, inteligencia artificial y 
+                    herramientas de gestión para optimizar la toma de decisiones gubernamentales.
+                </p>
+            </div>
+            
+            <div class="tech-badges">
+                <span class="tech-badge">Inteligencia Artificial</span>
+                <span class="tech-badge">Análisis de Big Data</span>
+                <span class="tech-badge">Dashboards Interactivos</span>
+                <span class="tech-badge">Chat IA con Internet</span>
+                <span class="tech-badge">Reportes PDF Automáticos</span>
+                <span class="tech-badge">+400 Indicadores INEGI/CONEVAL</span>
+            </div>
+        </section>
+
+        <!-- Estadísticas Clave -->
+        <section class="section">
+            <h2>Capacidades del Sistema</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">400+</span>
+                    <p class="stat-label">Indicadores por Portal</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <p class="stat-label">Disponibilidad</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <p class="stat-label">Portales Activos</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <p class="stat-label">Datos Oficiales</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Características Principales -->
+        <section class="section">
+            <h2>Características del Portal Inteligente</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Gestión Integral de Datos</h4>
+                    <p>Centraliza y analiza más de 400 indicadores socioeconómicos oficiales de INEGI, CONEVAL y Hacienda.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🤖 GobiAsistente IA</h4>
+                    <p>Asistente virtual inteligente con búsqueda en internet y consulta de documentos internos 24/7.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>📊 Dashboards Dinámicos</h4>
+                    <p>Visualizaciones interactivas para monitorear pobreza, finanzas, FAIS y demografía en tiempo real.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>📄 Reportes PDF Automatizados</h4>
+                    <p>Generación automática de reportes ejecutivos y análisis técnicos listos para presentaciones.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🔗 Eliminación de Silos</h4>
+                    <p>Integra información dispersa en diferentes dependencias, creando una fuente única de verdad.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🔍 Búsqueda Inteligente</h4>
+                    <p>Sistema de búsqueda avanzado para encontrar información específica de manera instantánea.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulos Especializados -->
+        <section class="section">
+            <h2>Módulos Especializados</h2>
+            
+            <div class="module-card">
+                <h4>📈 Módulo de Pobreza y Rezago Social</h4>
+                <p>Analiza indicadores de pobreza multidimensional, carencias sociales y rezago educativo. Identifica zonas prioritarias para programas sociales utilizando metodologías oficiales de CONEVAL.</p>
+            </div>
+            
+            <div class="module-card">
+                <h4>💰 Módulo de Finanzas Públicas</h4>
+                <p>Monitoreo en tiempo real de ingresos, egresos, deuda pública e indicadores financieros. Genera proyecciones presupuestales y análisis de sostenibilidad fiscal.</p>
+            </div>
+            
+            <div class="module-card">
+                <h4>🏗️ Módulo FAIS (Fondo de Infraestructura Social)</h4>
+                <p>Gestión integral del Fondo de Aportaciones para la Infraestructura Social con seguimiento de proyectos, análisis de impacto social y cumplimiento normativo.</p>
+            </div>
+            
+            <div class="module-card">
+                <h4>👥 Módulo Demográfico</h4>
+                <p>Análisis poblacional completo con proyecciones demográficas, pirámides poblacionales, migración interna y crecimiento urbano.</p>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="section">
+            <h2>Beneficios para Servidores Públicos y Ciudadanía</h2>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="benefit-icon">⚡</span>
+                    <h4>Decisiones Basadas en Datos</h4>
+                    <p>Elimina la toma de decisiones intuitiva, proporcionando evidencia sólida para cada política pública.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">🎯</span>
+                    <h4>Eficiencia Operativa</h4>
+                    <p>Reduce el tiempo de búsqueda de información de horas a segundos, liberando recursos estratégicos.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔄</span>
+                    <h4>Coordinación Interinstitucional</h4>
+                    <p>Facilita la colaboración entre dependencias con una fuente única de información actualizada.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">📱</span>
+                    <h4>Acceso 24/7</h4>
+                    <p>Disponibilidad total desde cualquier dispositivo, permitiendo consultas urgentes fuera del horario.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">🏆</span>
+                    <h4>Transparencia y Rendición</h4>
+                    <p>Facilita la generación de informes para organismos fiscalizadores y ciudadanía.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <span class="benefit-icon">💡</span>
+                    <h4>Innovación Gubernamental</h4>
+                    <p>Posiciona a la administración como líder en gobierno digital e innovación tecnológica.</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h3 style="color: #2a5298; margin-bottom: 10px;">🌟 Impacto Directo en la Ciudadanía</h3>
+                <ul style="font-size: 10px;">
+                    <li><strong>Mejores Servicios:</strong> Servicios más eficientes basados en análisis de necesidades reales</li>
+                    <li><strong>Mayor Transparencia:</strong> Acceso ciudadano a información pública de manera comprensible</li>
+                    <li><strong>Participación Informada:</strong> Ciudadanía participa con información técnica accesible</li>
+                    <li><strong>Respuesta Rápida:</strong> Atención más ágil mediante análisis predictivo</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Video y Tecnologías -->
+        <section class="section">
+            <div class="grid-2">
+                <div class="video-section">
+                    <h3>🎥 Video Demostración</h3>
+                    <p style="font-size: 10px; margin-bottom: 8px;">Vea el Portal en acción con dashboards reales y funcionalidades de GobiAsistente.</p>
+                    <p style="font-size: 9px; color: #666;">🔗 YouTube: youtube.com/watch?v=gzYcbgQ_Ny0</p>
+                </div>
+                
+                <div class="github-section">
+                    <h3>💻 Arquitectura Tecnológica</h3>
+                    <p style="font-size: 9px;">Stack tecnológico profesional: Google Sites + Microsoft Copilot Studio + Power BI + APIs oficiales (INEGI/CONEVAL).</p>
+                    <p style="font-size: 8px; margin-top: 5px; color: #ccc;">📄 Documentación: github.com/gobiernodigitaleinnovacion/portalinteligente</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portales Reales -->
+        <section class="section">
+            <h2>Portales Implementados - Casos de Éxito Reales</h2>
+            <div class="portales-grid">
+                <div class="portal-card">
+                    <h4>🌐 Portal Ecatepec Inteligente</h4>
+                    <p>Municipio más grande de México. +400 indicadores especializados en análisis urbano y gestión metropolitana.</p>
+                    <p class="portal-link">sites.google.com/view/portal-ecatepec-inteligente</p>
+                </div>
+                
+                <div class="portal-card">
+                    <h4>🌐 Portal Cuautitlán Izcalli</h4>
+                    <p>Portal activo con dashboards interactivos y estudios PDF basados en datos oficiales INEGI y CONEVAL.</p>
+                    <p class="portal-link">sites.google.com/view/portal-cizcalli-inteligente</p>
+                </div>
+                
+                <div class="portal-card">
+                    <h4>🌐 Portal Nezahualcóyotl</h4>
+                    <p>Portal operativo para desarrollo sostenible con +400 indicadores socioeconómicos del municipio.</p>
+                    <p class="portal-link">sites.google.com/view/nezahualcoyolt-inteligente</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3 style="color: #2a5298; margin-bottom: 10px;">✅ Portales Completamente Funcionales</h3>
+                <p style="font-size: 10px;"><strong>Estos no son mockups:</strong> Son portales reales, operativos y activos que proporcionan valor a las administraciones municipales en este momento.</p>
+                <ul style="margin-top: 8px;">
+                    <li><strong>Dashboards Interactivos:</strong> Visualizaciones dinámicas de datos municipales</li>
+                    <li><strong>Estudios PDF:</strong> Análisis detallados generados automáticamente</li>
+                    <li><strong>+400 Indicadores:</strong> Datos oficiales de INEGI y CONEVAL</li>
+                    <li><strong>Acceso Público:</strong> Información transparente para ciudadanos y funcionarios</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Implementación -->
+        <section class="section">
+            <h2>Proceso de Implementación</h2>
+            <div class="highlight">
+                <p style="font-size: 11px; margin-bottom: 15px;"><strong>🚀 Productos desarrollados, probados y funcionales</strong> listos para implementación inmediata. A diferencia de otros proveedores que ofrecen solo conceptos.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Configuración</h4>
+                    <p>Adaptación del portal a imagen institucional y necesidades específicas (1-2 semanas)</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Migración</h4>
+                    <p>Integración de bases de datos existentes y configuración de fuentes oficiales (1 semana)</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Capacitación</h4>
+                    <p>Entrenamiento del personal en el uso completo del sistema (1 semana)</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Activación</h4>
+                    <p>Puesta en producción y activación completa del sistema (1 día)</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 15px; font-weight: bold; color: #2a5298;">⏱️ Tiempo Total: 3-4 semanas desde contratación hasta operación completa</p>
+        </section>
+
+        <!-- Contacto -->
+        <section class="contact-section">
+            <h2>Transforme su Administración Hoy</h2>
+            <p style="font-size: 12px; margin-bottom: 15px;">
+                Únase a la revolución del gobierno inteligente. Contrate el Portal Inteligente 
+                y posicione su administración a la vanguardia tecnológica.
+            </p>
+            
+            <div class="contact-info">
+                <div>
+                    <h3 style="color: white; font-size: 14px; margin-bottom: 10px;">Gobierno Digital e Innovación</h3>
+                    <p><strong>Startup mexicana especializada en transformación digital gubernamental</strong></p>
+                    <p>🌐 Web: gobiernodigitaleinnovacion.com</p>
+                </div>
+                <div>
+                    <h3 style="color: white; font-size: 14px; margin-bottom: 10px;">Contacto Directo</h3>
+                    <p>📧 juanheriberto.rosas@gobiernodigitaleinnovacion.com</p>
+                    <p>📧 juanheriberto.rosas@jhrjdata.com</p>
+                    <p style="margin-top: 10px;">📞 Consultoría gratuita | 🎯 Implementación en 4 semanas</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-note">
+            &copy; 2025 Gobierno Digital e Innovación - "Productos funcionales listos para implementar - No solo teoría, sino soluciones reales"
+        </div>
+    </div>
+</body>
+</html>
