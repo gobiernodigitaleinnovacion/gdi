@@ -10,7 +10,7 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Gobierno Digital e Innovación">
     <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog.html">
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+    <link rel="icon" type="image/jpeg" href="images/gdi-logo.jpg">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -19,17 +19,17 @@
     <meta property="og:title" content="Blog — GDI | Análisis de finanzas públicas">
     <meta property="og:description" content="Análisis de finanzas públicas y datos territoriales con cifras oficiales del INEGI.">
     <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog.html">
-    <meta property="og:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Gobdigitale">
     <meta name="twitter:title" content="Blog — GDI">
     <meta name="twitter:description" content="Análisis de finanzas públicas y datos territoriales con cifras oficiales del INEGI.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg">
+    <meta name="twitter:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <!-- Fonts -->
@@ -37,41 +37,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: { extend: {
-                fontFamily: {
-                    display: ['"Space Grotesk"', 'sans-serif'],
-                    sans: ['Inter', 'sans-serif'],
-                    mono: ['"JetBrains Mono"', 'monospace'],
-                },
-                colors: {
-                    ink: '#0A1626', ink2: '#0F2238', paper: '#F6F3EC', bone: '#EDE8DD',
-                    gdi: '#7C5CFF', blue: '#3B82F6', amber: '#E8A33D', green: '#2FA86A',
-                }
-            }}
-        }
-    </script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1,h2,h3,h4,.font-display { font-family: 'Space Grotesk', sans-serif; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .topo { background-image:
-            radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
-            radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%); }
-        .topo-lines { background-image:
-            repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
-            repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px); }
-        .grid-ticks { background-image:
-            linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
-            background-size: 44px 44px; }
-        .coord { letter-spacing: .12em; }
-        .card-rise { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
-        .card-rise:hover { transform: translateY(-6px); }
-        ::selection { background: #7C5CFF; color: #fff; }
-        html { scroll-behavior: smooth; }
-    </style>
+    <!-- Estilos compilados (Tailwind CLI + sistema cartográfico) -->
+    <link rel="stylesheet" href="assets/styles.css">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -173,10 +140,10 @@
                     </div>
                     <p class="text-sm leading-relaxed">Startup mexicana de transformación digital del sector público. "La información es poder."</p>
                     <div class="flex gap-4 mt-4 text-paper/50">
-                        <a href="https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/" target="_blank" class="hover:text-gdi"><i class="fab fa-linkedin text-lg"></i></a>
-                        <a href="https://x.com/Gobdigitale" target="_blank" class="hover:text-paper"><i class="fab fa-x-twitter text-lg"></i></a>
-                        <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank" class="hover:text-paper"><i class="fab fa-github text-lg"></i></a>
-                        <a href="https://www.youtube.com/@Gobidigital_IA" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/gobierno-digital-e-innovaci%C3%B3n/" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-gdi"><i class="fab fa-linkedin text-lg"></i></a>
+                        <a href="https://x.com/Gobdigitale" target="_blank" rel="noopener" aria-label="X / Twitter" class="hover:text-paper"><i class="fab fa-x-twitter text-lg"></i></a>
+                        <a href="https://github.com/gobiernodigitaleinnovacion" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-paper"><i class="fab fa-github text-lg"></i></a>
+                        <a href="https://www.youtube.com/@Gobidigital_IA" target="_blank" rel="noopener" aria-label="YouTube" class="hover:text-red-500"><i class="fab fa-youtube text-lg"></i></a>
                     </div>
                 </div>
                 <div>

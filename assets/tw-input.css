@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Sistema visual cartográfico GDI (custom) ── */
+body { font-family: 'Inter', sans-serif; }
+h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+.topo {
+  background-image:
+    radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+    radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+}
+.topo-lines {
+  background-image:
+    repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+    repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+}
+.grid-ticks {
+  background-image:
+    linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.coord { letter-spacing: .12em; }
+.card-rise { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+.card-rise:hover { transform: translateY(-6px); }
+::selection { background: #7C5CFF; color: #fff; }
+html { scroll-behavior: smooth; }

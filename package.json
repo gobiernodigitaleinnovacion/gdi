@@ -4,10 +4,14 @@
   "scripts": {
     "ads:publish": "node scripts/google-ads-publish.js",
     "sitemap": "node scripts/generate-sitemap.js",
-    "ping": "node scripts/ping-search-engines.js"
+    "ping": "node scripts/ping-search-engines.js",
+    "build:css": "tailwindcss -c tailwind.config.js -i assets/tw-input.css -o assets/styles.css --minify"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
     "google-ads-api": "^23.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
   }
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1200px;height:630px;overflow:hidden;}
+  .card{width:1200px;height:630px;position:relative;background:#0A1626;
+    font-family:'Space Grotesk',sans-serif;color:#F6F3EC;padding:72px 80px;
+    display:flex;flex-direction:column;justify-content:space-between;}
+  .card::before{content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 88% -10%, rgba(124,92,255,.26), transparent 55%),
+      radial-gradient(100% 80% at -8% 115%, rgba(59,130,246,.16), transparent 55%);}
+  .card::after{content:'';position:absolute;inset:0;
+    background:
+      repeating-radial-gradient(circle at 84% 22%, rgba(255,255,255,.055) 0 1px, transparent 1px 52px),
+      repeating-radial-gradient(circle at 10% 88%, rgba(255,255,255,.045) 0 1px, transparent 1px 64px);}
+  .layer{position:relative;z-index:2;}
+  .top{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:16px;}
+  .mark{width:56px;height:56px;border-radius:14px;background:#7C5CFF;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;}
+  .wm{font-size:34px;font-weight:700;letter-spacing:-.5px;}
+  .wm small{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;color:rgba(246,243,236,.45);text-transform:uppercase;margin-top:2px;}
+  .coord{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.14em;color:rgba(246,243,236,.42);text-align:right;line-height:1.7;}
+  .kicker{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+  .kicker .bar{width:42px;height:3px;background:#7C5CFF;}
+  .kicker .lbl{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:#7C5CFF;}
+  h1{font-size:66px;line-height:1.04;font-weight:700;letter-spacing:-1px;max-width:1000px;}
+  h1 .v{color:#7C5CFF;}
+  .sources{display:flex;align-items:center;gap:26px;font-size:21px;font-weight:600;color:rgba(246,243,236,.62);}
+  .bottom{display:flex;align-items:center;justify-content:space-between;}
+  .prods{display:flex;gap:20px;align-items:center;}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.05em;display:flex;align-items:center;gap:8px;color:rgba(246,243,236,.7);}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="layer top">
+      <div class="brand">
+        <span class="mark"><i class="fas fa-landmark"></i></span>
+        <span class="wm">GDI<small>Gobierno Digital e Innovación</small></span>
+      </div>
+      <div class="coord">GOV-TECH · MX<br>DATA → DECISIÓN PÚBLICA</div>
+    </div>
+
+    <div class="layer">
+      <div class="kicker"><span class="bar"></span><span class="lbl">Startup mexicana de gov-tech</span></div>
+      <h1>Instituciones públicas<br><span class="v">inteligentes.</span></h1>
+    </div>
+
+    <div class="layer bottom">
+      <div class="sources"><span>INEGI</span><span>·</span><span>CONAPO</span><span>·</span><span>CONEVAL</span><span>·</span><span>SHCP</span></div>
+      <div class="prods">
+        <span class="chip"><span class="dot" style="background:#7C5CFF"></span>Lokus Gov</span>
+        <span class="chip"><span class="dot" style="background:#3B82F6"></span>CENTINELA</span>
+        <span class="chip"><span class="dot" style="background:#E8A33D"></span>ATALAYA</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
