@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wrangler se fue, pero la crisis textil de Coahuila lleva 20 a&ntilde;os - GDI</title>
-    <meta name="description" content="La industria de prendas de vestir en Coahuila perdi&oacute; 63% de su empleo entre 2004 y 2024. Wrangler no caus&oacute; la crisis: lleg&oacute; al final de ella. San Pedro de las Colonias, con 16.2% de dependencia textil, es el municipio m&aacute;s vulnerable. Censo Econ&oacute;mico INEGI.">
+    <title>Wrangler se fue, pero la crisis textil de Coahuila lleva 20 años - GDI</title>
+    <meta name="description" content="La industria de prendas de vestir en Coahuila perdió 63% de su empleo entre 2004 y 2024. Wrangler no causó la crisis: llegó al final de ella. San Pedro de las Colonias, con 16.2% de dependencia textil, es el municipio más vulnerable. Censo Económico INEGI.">
     <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-06-05-wrangler-crisis-textil-coahuila-20-anos">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Wrangler se fue, pero la crisis textil de Coahuila lleva 20 años">
+    <meta property="og:description" content="La industria de prendas de vestir en Coahuila perdió 63% de su empleo entre 2004 y 2024. Wrangler no causó la crisis: llegó al final de ella. San Pedro de las Colonias, con 16.2% de dependencia textil, es el municipio más vulnerable. Censo Económico INEGI.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-06-05-wrangler-crisis-textil-coahuila-20-anos">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -40,374 +56,317 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --alert-color: #ef4444;
-            --alert-dark: #dc2626;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-alert: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #E8A33D;
+            --accent-dark: #b45309;
+            --accent-soft: rgba(232, 163, 61, 0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--alert-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-alert);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-alert);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--alert-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .data-table th {
-            background: var(--gradient-alert);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
         }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
         }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
 
-        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-        .success-cell { color: #10b981; font-weight: 700; }
-        .warning-cell { color: #f59e0b; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-alert);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
+        /* ===== Stat grid (barras verticales) ===== */
         .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
         }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
         }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
 
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--alert-color);
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
         }
-
-        .stat-card .label {
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
-            border-left: 4px solid var(--alert-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-alert);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--alert-dark);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
             .stat-grid { grid-template-columns: 1fr; }
-            .data-table { font-size: 0.85rem; }
+            .data-table { font-size: 0.82rem; }
             .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-triangle-exclamation"></i> Alerta</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 5 Jun 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 13 min</span>
+            </div>
+            <h1>Wrangler se fue, pero la crisis textil de Coahuila lleva <span style="color:var(--accent)">20 años</span></h1>
+            <p class="hero-subtitle">San Pedro de las Colonias, Torreón y Matamoros: el mapa de una industria que perdió 24 mil empleos antes del cierre. Wrangler no causó la crisis. Llegó al final de ella.</p>
+        </div>
     </header>
 
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-triangle-exclamation"></i> Alerta</span>
-            <span><i class="far fa-calendar"></i> 5 de junio de 2026</span>
-            <span><i class="far fa-clock"></i> 13 min de lectura</span>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Alerta · Economía Local · Desarrollo Regional · Fecha de análisis: Junio 2026
         </div>
 
-        <h1 class="article-title">Wrangler se fue, pero la crisis textil de Coahuila lleva 20 a&ntilde;os</h1>
-        <p class="article-subtitle">San Pedro de las Colonias, Torre&oacute;n y Matamoros: el mapa de una industria que perdi&oacute; 24 mil empleos antes del cierre. Wrangler no caus&oacute; la crisis. Lleg&oacute; al final de ella.</p>
-
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-scissors"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">&minus;63% de empleo textil en 20 a&ntilde;os</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">De 38,770 a 14,193 empleos en prendas de vestir &middot; Coahuila 2004-2024 &middot; Censo Econ&oacute;mico INEGI</p>
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(232,163,61,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">&minus;63%</div>
+                <p>de empleo textil en 20 años. De 38,770 a 14,193 empleos en prendas de vestir · Coahuila 2004-2024 · Censo Económico INEGI</p>
             </div>
         </div>
 
-        <div class="article-content">
-            <p><strong>Etiqueta:</strong> Alerta &middot; Econom&iacute;a Local &middot; Desarrollo Regional &middot; <strong>Fecha de an&aacute;lisis:</strong> Junio 2026</p>
+        <p>Cuando Wrangler (Kontoor Brands) anunció el cierre de sus cuatro plantas en Coahuila entre agosto y octubre de 2025, los titulares apuntaron a la reestructuración global de la empresa como causa. Los datos del Censo Económico 2024 cuentan una historia distinta: la industria de fabricación de prendas de vestir (SCIAN 315) en Coahuila ya había perdido el <strong>63% de sus empleos en los 20 años anteriores</strong>. Wrangler no causó la crisis. Llegó al final de ella.</p>
 
-            <p>Cuando Wrangler (Kontoor Brands) anunci&oacute; el cierre de sus cuatro plantas en Coahuila entre agosto y octubre de 2025, los titulares apuntaron a la reestructuraci&oacute;n global de la empresa como causa. Los datos del Censo Econ&oacute;mico 2024 cuentan una historia distinta: la industria de fabricaci&oacute;n de prendas de vestir (SCIAN 315) en Coahuila ya hab&iacute;a perdido el <strong>63% de sus empleos en los 20 a&ntilde;os anteriores</strong>. Wrangler no caus&oacute; la crisis. Lleg&oacute; al final de ella.</p>
+        <h2>Radiografía de un colapso silencioso</h2>
 
-            <h2>Radiograf&iacute;a de un colapso silencioso</h2>
+        <p>En 2004, la industria de prendas de vestir en Coahuila empleaba a 38,770 personas en 282 unidades económicas. Para 2024, esa cifra había caído a 14,193 empleados en 474 unidades. Más establecimientos, mucho menos empleo: el sector se fragmentó en talleres pequeños mientras las grandes plantas de costura industrial desaparecían una a una.</p>
 
-            <p>En 2004, la industria de prendas de vestir en Coahuila empleaba a 38,770 personas en 282 unidades econ&oacute;micas. Para 2024, esa cifra hab&iacute;a ca&iacute;do a 14,193 empleados en 474 unidades. M&aacute;s establecimientos, mucho menos empleo: el sector se fragment&oacute; en talleres peque&ntilde;os mientras las grandes plantas de costura industrial desaparec&iacute;an una a una.</p>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>A&ntilde;o</th>
-                        <th>Unidades econ&oacute;micas</th>
+                        <th>Año</th>
+                        <th>Unidades económicas</th>
                         <th>Empleo (SCIAN 315)</th>
                         <th>Cambio empleo</th>
                     </tr>
@@ -423,54 +382,55 @@
                         <td><strong>2009</strong></td>
                         <td>416</td>
                         <td>23,146</td>
-                        <td class="danger-cell">-40.3%</td>
+                        <td class="neg">-40.3%</td>
                     </tr>
                     <tr>
                         <td><strong>2014</strong></td>
                         <td>322</td>
                         <td>16,072</td>
-                        <td class="danger-cell">-30.6%</td>
+                        <td class="neg">-30.6%</td>
                     </tr>
                     <tr>
                         <td><strong>2019</strong></td>
                         <td>454</td>
                         <td>20,514</td>
-                        <td class="success-cell">+27.7%</td>
+                        <td class="pos">+27.7%</td>
                     </tr>
-                    <tr style="background: rgba(239, 68, 68, 0.08);">
+                    <tr class="row-accent">
                         <td><strong>2024</strong></td>
                         <td>474</td>
                         <td>14,193</td>
-                        <td class="danger-cell">-30.8%</td>
+                        <td class="neg">-30.8%</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">Fuente: Censo Económico INEGI 2004-2024, SCIAN 315, nivel subsector, Coahuila.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><em>Fuente: Censo Econ&oacute;mico INEGI 2004-2024, SCIAN 315, nivel subsector, Coahuila.</em></p>
+        <p>La pequeña recuperación de 2014 a 2019 coincidió con la expansión de Wrangler en la región. Su salida en 2025 simplemente aceleró una tendencia que los datos ya mostraban.</p>
 
-            <p>La peque&ntilde;a recuperaci&oacute;n de 2014 a 2019 coincidi&oacute; con la expansi&oacute;n de Wrangler en la regi&oacute;n. Su salida en 2025 simplemente aceler&oacute; una tendencia que los datos ya mostraban.</p>
-
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="number">38,770</div>
-                    <div class="label">Empleos textiles en Coahuila en 2004</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">14,193</div>
-                    <div class="label">Empleos textiles en 2024 (&minus;63%)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">24,577</div>
-                    <div class="label">Plazas perdidas en dos d&eacute;cadas</div>
-                </div>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">38,770</div>
+                <div class="lbl">Empleos textiles en Coahuila en 2004</div>
             </div>
+            <div class="stat-card">
+                <div class="num">14,193</div>
+                <div class="lbl">Empleos textiles en 2024 (&minus;63%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">24,577</div>
+                <div class="lbl">Plazas perdidas en dos décadas</div>
+            </div>
+        </div>
 
-            <h2>Qui&eacute;n carga el peso: San Pedro de las Colonias, no Torre&oacute;n</h2>
+        <h2>Quién carga el peso: San Pedro de las Colonias, no Torreón</h2>
 
-            <p>El an&aacute;lisis municipal del Censo Econ&oacute;mico 2024 revela una trampa de concentraci&oacute;n que el gobierno estatal debe atender con urgencia. Aunque Torre&oacute;n tiene el mayor n&uacute;mero absoluto de empleos textiles (7,300), su dependencia sectorial es del <strong>3.2% del empleo total municipal</strong> &mdash; manejable para una econom&iacute;a diversificada.</p>
+        <p>El análisis municipal del Censo Económico 2024 revela una trampa de concentración que el gobierno estatal debe atender con urgencia. Aunque Torreón tiene el mayor número absoluto de empleos textiles (7,300), su dependencia sectorial es del <strong>3.2% del empleo total municipal</strong> &mdash; manejable para una economía diversificada.</p>
 
-            <p>El caso cr&iacute;tico es <strong>San Pedro de las Colonias</strong>: con 2,430 empleos textiles sobre un total de 14,959, el <strong>16.2% de su econom&iacute;a formal</strong> depende del sector. Le sigue San Juan de Sabinas con 13.2% de dependencia. Estos municipios no tienen la base econ&oacute;mica de Torre&oacute;n para absorber un shock de esta magnitud.</p>
+        <p>El caso crítico es <strong>San Pedro de las Colonias</strong>: con 2,430 empleos textiles sobre un total de 14,959, el <strong>16.2% de su economía formal</strong> depende del sector. Le sigue San Juan de Sabinas con 13.2% de dependencia. Estos municipios no tienen la base económica de Torreón para absorber un shock de esta magnitud.</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -481,113 +441,129 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="background: rgba(239, 68, 68, 0.08);">
+                    <tr class="row-accent">
                         <td><strong>San Pedro de las Colonias</strong></td>
                         <td>2,430</td>
                         <td>14,959</td>
-                        <td class="danger-cell">16.2%</td>
+                        <td class="neg">16.2%</td>
                     </tr>
                     <tr>
                         <td><strong>San Juan de Sabinas</strong></td>
                         <td>964</td>
                         <td>7,291</td>
-                        <td class="danger-cell">13.2%</td>
+                        <td class="neg">13.2%</td>
                     </tr>
                     <tr>
                         <td><strong>Matamoros</strong></td>
                         <td>1,729</td>
                         <td>29,215</td>
-                        <td class="warning-cell">5.9%</td>
+                        <td class="warn">5.9%</td>
                     </tr>
                     <tr>
-                        <td><strong>Torre&oacute;n</strong></td>
+                        <td><strong>Torreón</strong></td>
                         <td>7,300</td>
                         <td>231,518</td>
-                        <td class="success-cell">3.2%</td>
+                        <td class="pos">3.2%</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">Fuente: Censo Económico INEGI 2024, SCIAN 313-315, nivel subsector, municipios de Coahuila.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><em>Fuente: Censo Econ&oacute;mico INEGI 2024, SCIAN 313-315, nivel subsector, municipios de Coahuila.</em></p>
+        <p>Las plantas de Wrangler operaban precisamente en San Pedro de las Colonias y Matamoros (ejido El Coyote), dos de los municipios con mayor dependencia relativa. Para San Pedro, perder las plantas de costura equivale a que desaparezca <strong>uno de cada seis empleos formales</strong> del municipio.</p>
 
-            <p>Las plantas de Wrangler operaban precisamente en San Pedro de las Colonias y Matamoros (ejido El Coyote), dos de los municipios con mayor dependencia relativa. Para San Pedro, perder las plantas de costura equivale a que desaparezca <strong>uno de cada seis empleos formales</strong> del municipio.</p>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> La trampa de la concentración</strong>
+            Torreón absorbe el golpe; San Pedro no. La cifra absoluta de empleos engaña: el riesgo no está donde hay más plazas, sino donde el sector pesa más sobre una economía pequeña. Un municipio que depende en 16% de un solo sector en declive estructural es una emergencia de planeación, no un dato secundario.
+        </div>
 
-            <div class="callout callout-danger">
-                <strong><i class="fas fa-exclamation-triangle"></i> La trampa de la concentraci&oacute;n</strong>
-                Torre&oacute;n absorbe el golpe; San Pedro no. La cifra absoluta de empleos enga&ntilde;a: el riesgo no est&aacute; donde hay m&aacute;s plazas, sino donde el sector pesa m&aacute;s sobre una econom&iacute;a peque&ntilde;a. Un municipio que depende en 16% de un solo sector en declive estructural es una emergencia de planeaci&oacute;n, no un dato secundario.
+        <h2>La señal que nadie leyó: el DENUE 2025-2026</h2>
+
+        <p>El Directorio Estadístico Nacional de Unidades Económicas (DENUE versión 05_2026 vs 05_2025) muestra que Coahuila no tiene un municipio con crecimiento neto relevante de empresas. Los municipios de La Laguna registran variaciones mínimas o negativas en el total de unidades económicas, sin que ningún sector esté compensando la salida de la manufactura textil. San Juan de Sabinas registra <strong>cero variación neta</strong> &mdash; ni crecimiento ni reemplazo visible.</p>
+
+        <h2>Lo que los datos también dicen: una reconversión silenciosa</h2>
+
+        <p>No todo es pérdida. El subsector SCIAN 314 (fabricación de productos textiles excepto prendas &mdash; lonas, cobertores, ropa de cama industrial) creció de 2,496 empleos en 2004 a <strong>5,450 en 2024</strong>, casi duplicándose. Este segmento de menor visibilidad mediática muestra que parte del ecosistema textil coahuilense sí encontró un nicho de supervivencia. El reto del gobierno estatal es si puede convertir esa señal en política de reconversión productiva deliberada.</p>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(232,163,61,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">+118%</div>
+                <p>Creció el subsector de productos textiles técnicos (SCIAN 314) entre 2004 y 2024: de 2,496 a 5,450 empleos. Mientras la costura de prendas colapsaba, el textil de mayor valor agregado encontró nicho.</p>
             </div>
+        </div>
 
-            <h2>La se&ntilde;al que nadie ley&oacute;: el DENUE 2025-2026</h2>
+        <h2>Implicaciones para la gestión pública</h2>
 
-            <p>El Directorio Estad&iacute;stico Nacional de Unidades Econ&oacute;micas (DENUE versi&oacute;n 05_2026 vs 05_2025) muestra que Coahuila no tiene un municipio con crecimiento neto relevante de empresas. Los municipios de La Laguna registran variaciones m&iacute;nimas o negativas en el total de unidades econ&oacute;micas, sin que ning&uacute;n sector est&eacute; compensando la salida de la manufactura textil. San Juan de Sabinas registra <strong>cero variaci&oacute;n neta</strong> &mdash; ni crecimiento ni reemplazo visible.</p>
+        <h3>Para el gobierno estatal</h3>
 
-            <h2>Lo que los datos tambi&eacute;n dicen: una reconversi&oacute;n silenciosa</h2>
+        <ul>
+            <li>El Plan Estatal de Desarrollo debe reconocer que la crisis textil de La Laguna es <strong>estructural, no coyuntural</strong>. Las políticas de reactivación deben apuntar a reconversión, no a recuperar empleos de costura de bajo costo que ya no son competitivos globalmente.</li>
+            <li>El subsector 314 (productos técnicos textiles) ofrece una ruta de mayor valor agregado que merece incentivos fiscales y programas de capacitación diferenciados.</li>
+        </ul>
 
-            <p>No todo es p&eacute;rdida. El subsector SCIAN 314 (fabricaci&oacute;n de productos textiles excepto prendas &mdash; lonas, cobertores, ropa de cama industrial) creci&oacute; de 2,496 empleos en 2004 a <strong>5,450 en 2024</strong>, casi duplic&aacute;ndose. Este segmento de menor visibilidad medi&aacute;tica muestra que parte del ecosistema textil coahuilense s&iacute; encontr&oacute; un nicho de supervivencia. El reto del gobierno estatal es si puede convertir esa se&ntilde;al en pol&iacute;tica de reconversi&oacute;n productiva deliberada.</p>
+        <h3>Para los gobiernos municipales de San Pedro y San Juan de Sabinas</h3>
 
-            <div class="stat-highlight">
-                <div class="number">+118%</div>
-                <p style="font-size: 1.1rem; margin-top: 0.5rem;">Creci&oacute; el subsector de productos textiles t&eacute;cnicos (SCIAN 314) entre 2004 y 2024: de 2,496 a 5,450 empleos. Mientras la costura de prendas colapsaba, el textil de mayor valor agregado encontr&oacute; nicho.</p>
+        <ul>
+            <li>La dependencia sectorial superior al 13% exige planes de contingencia laboral inmediatos: bolsas de trabajo, reentrenamiento, vinculación con sectores en expansión.</li>
+            <li>El FAIS y los recursos del Ramo 33 deben orientarse a infraestructura que atraiga actividad económica diversificada, no solo a obra social.</li>
+        </ul>
+
+        <h3>Para el gobierno federal</h3>
+
+        <ul>
+            <li>Los programas de reconversión laboral (STPS) deben tener presencia activa en municipios de menos de 30,000 habitantes donde la dependencia sectorial es crítica pero la visibilidad política es baja.</li>
+        </ul>
+
+        <div class="callout callout-info">
+            <strong><i class="fas fa-lightbulb"></i> El error de leer solo los titulares</strong>
+            Atribuir la crisis a Wrangler convierte un problema de veinte años en una noticia de un día. Si la administración estatal trata el cierre como un evento aislado, diseñará una respuesta para el evento equivocado. Los censos económicos permiten ver la tendencia; la pregunta es si alguien la usa antes del próximo cierre.
+        </div>
+
+        <h2>Conclusión</h2>
+
+        <p>Los cierres de Wrangler en 2025 pusieron en los titulares una crisis que los censos económicos documentaban desde 2004. El empleo en fabricación de prendas de vestir en Coahuila cayó 63% en dos décadas. Lo que los datos revelan hoy no es una emergencia repentina: es la cuenta pendiente de veinte años de desindustrialización textil que ninguna administración convirtió en política pública.</p>
+
+        <div class="quote-box">
+            La pregunta que le corresponde responder a la actual administración estatal es si Coahuila tiene una estrategia para lo que viene después de la aguja &mdash; o si volverá a esperar al próximo cierre para reaccionar.
+        </div>
+
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
+                <h3><i class="fas fa-chart-bar"></i> ¿Quieres ver la dependencia sectorial de tu municipio?</h3>
+                <p>En GDI Data cruzamos el Censo Económico y el DENUE del INEGI para medir qué tan expuesto está cada municipio a un solo sector: empleo, unidades económicas y vulnerabilidad por SCIAN.</p>
+                <a href="https://gdidata.com/" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar datos</a>
             </div>
+        </div>
 
-            <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
+        <h2>Datos técnicos</h2>
 
-            <h3>Para el gobierno estatal</h3>
-
-            <ul>
-                <li>El Plan Estatal de Desarrollo debe reconocer que la crisis textil de La Laguna es <strong>estructural, no coyuntural</strong>. Las pol&iacute;ticas de reactivaci&oacute;n deben apuntar a reconversi&oacute;n, no a recuperar empleos de costura de bajo costo que ya no son competitivos globalmente.</li>
-                <li>El subsector 314 (productos t&eacute;cnicos textiles) ofrece una ruta de mayor valor agregado que merece incentivos fiscales y programas de capacitaci&oacute;n diferenciados.</li>
-            </ul>
-
-            <h3>Para los gobiernos municipales de San Pedro y San Juan de Sabinas</h3>
-
-            <ul>
-                <li>La dependencia sectorial superior al 13% exige planes de contingencia laboral inmediatos: bolsas de trabajo, reentrenamiento, vinculaci&oacute;n con sectores en expansi&oacute;n.</li>
-                <li>El FAIS y los recursos del Ramo 33 deben orientarse a infraestructura que atraiga actividad econ&oacute;mica diversificada, no solo a obra social.</li>
-            </ul>
-
-            <h3>Para el gobierno federal</h3>
-
-            <ul>
-                <li>Los programas de reconversi&oacute;n laboral (STPS) deben tener presencia activa en municipios de menos de 30,000 habitantes donde la dependencia sectorial es cr&iacute;tica pero la visibilidad pol&iacute;tica es baja.</li>
-            </ul>
-
-            <div class="callout callout-info">
-                <strong><i class="fas fa-lightbulb"></i> El error de leer solo los titulares</strong>
-                Atribuir la crisis a Wrangler convierte un problema de veinte a&ntilde;os en una noticia de un d&iacute;a. Si la administraci&oacute;n estatal trata el cierre como un evento aislado, dise&ntilde;ar&aacute; una respuesta para el evento equivocado. Los censos econ&oacute;micos permiten ver la tendencia; la pregunta es si alguien la usa antes del pr&oacute;ximo cierre.
-            </div>
-
-            <h2>Conclusi&oacute;n</h2>
-
-            <p>Los cierres de Wrangler en 2025 pusieron en los titulares una crisis que los censos econ&oacute;micos documentaban desde 2004. El empleo en fabricaci&oacute;n de prendas de vestir en Coahuila cay&oacute; 63% en dos d&eacute;cadas. Lo que los datos revelan hoy no es una emergencia repentina: es la cuenta pendiente de veinte a&ntilde;os de desindustrializaci&oacute;n textil que ninguna administraci&oacute;n convirti&oacute; en pol&iacute;tica p&uacute;blica.</p>
-
-            <div class="quote-box">
-                La pregunta que le corresponde responder a la actual administraci&oacute;n estatal es si Coahuila tiene una estrategia para lo que viene despu&eacute;s de la aguja &mdash; o si volver&aacute; a esperar al pr&oacute;ximo cierre para reaccionar.
-            </div>
-
-            <div class="cta-box">
-                <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres ver la dependencia sectorial de tu municipio?</h3>
-                <p>En GDI Data cruzamos el Censo Econ&oacute;mico y el DENUE del INEGI para medir qu&eacute; tan expuesto est&aacute; cada municipio a un solo sector: empleo, unidades econ&oacute;micas y vulnerabilidad por SCIAN.</p>
-                <a href="https://gdidata.com/" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar datos
-                </a>
-            </div>
-
-            <h2>Datos t&eacute;cnicos</h2>
-
-            <div class="source-box">
-                <p><strong>Fuentes:</strong> Censo Econ&oacute;mico INEGI 2004, 2009, 2014, 2019 y 2024. DENUE versi&oacute;n 05_2025 y 05_2026.</p>
-                <p style="margin-top: 0.75rem;"><strong>C&oacute;digos SCIAN:</strong> 313 (Fabricaci&oacute;n de insumos textiles); 314 (Fabricaci&oacute;n de productos textiles excepto prendas de vestir); 315 (Fabricaci&oacute;n de prendas de vestir).</p>
-                <p style="margin-top: 0.75rem;"><strong>Cobertura:</strong> estado de Coahuila a nivel subsector y municipios de la regi&oacute;n Laguna y carbon&iacute;fera (Torre&oacute;n, Matamoros, San Pedro de las Colonias, San Juan de Sabinas).</p>
-                <p style="margin-top: 0.75rem;"><strong>Nota:</strong> el levantamiento de cada Censo Econ&oacute;mico mide la actividad del a&ntilde;o fiscal previo. La dependencia textil municipal se calcula sobre empleo formal de los subsectores 313-315 respecto al empleo total municipal censado.</p>
-                <p style="margin-top: 0.75rem;"><strong>Fuente:</strong> INEGI. An&aacute;lisis y visualizaci&oacute;n: GDI &mdash; Gobierno Digital e Innovaci&oacute;n.</p>
-                <p style="margin-top: 0.5rem;"><strong>Fecha de an&aacute;lisis:</strong> Junio 2026 | gobiernodigitaleinnovacion.com</p>
-            </div>
+        <div class="source-box">
+            <p><strong>Fuentes:</strong> Censo Económico INEGI 2004, 2009, 2014, 2019 y 2024. DENUE versión 05_2025 y 05_2026.</p>
+            <p><strong>Códigos SCIAN:</strong> 313 (Fabricación de insumos textiles); 314 (Fabricación de productos textiles excepto prendas de vestir); 315 (Fabricación de prendas de vestir).</p>
+            <p><strong>Cobertura:</strong> estado de Coahuila a nivel subsector y municipios de la región Laguna y carbonífera (Torreón, Matamoros, San Pedro de las Colonias, San Juan de Sabinas).</p>
+            <p><strong>Nota:</strong> el levantamiento de cada Censo Económico mide la actividad del año fiscal previo. La dependencia textil municipal se calcula sobre empleo formal de los subsectores 313-315 respecto al empleo total municipal censado.</p>
+            <p><strong>Fuente:</strong> INEGI. Análisis y visualización: GDI &mdash; Gobierno Digital e Innovación.</p>
+            <p><strong>Fecha de análisis:</strong> Junio 2026 | gobiernodigitaleinnovacion.com</p>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

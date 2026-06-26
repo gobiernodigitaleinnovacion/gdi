@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabajar en Salud No Garantiza un Salario Digno: La Brecha que el Gobierno Debe Atender - GDI</title>
     <meta name="description" content="El sector salud privado emplea a 871,560 personas en Mexico y la mayoria gana por debajo del salario minimo. Analisis del Censo Economico 2024.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-03-07-trabajar-en-salud-no-garantiza-salario-digno">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Trabajar en Salud No Garantiza un Salario Digno: La Brecha que el Gobierno Debe Atender">
+    <meta property="og:description" content="El sector salud privado emplea a 871,560 personas en Mexico y la mayoria gana por debajo del salario minimo. Analisis del Censo Economico 2024.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-03-07-trabajar-en-salud-no-garantiza-salario-digno">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -29,7 +46,7 @@
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
       ttq.load('D5MHUKBC77UEK8Q4I9B0');
@@ -39,390 +56,322 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --danger-color: #ef4444;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #E8A33D;
+            --accent-dark: #b45309;
+            --accent-soft: rgba(232,163,61,0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-danger);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-danger);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--danger-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .data-table th {
-            background: var(--gradient-danger);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
         }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
         }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
 
-        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-        .success-cell { color: #10b981; font-weight: 700; }
-        .warning-cell { color: #f59e0b; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-danger);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
+        /* ===== Stat grid (barras verticales) ===== */
         .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
         }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
         }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
 
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--danger-color);
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
         }
-
-        .stat-card .label {
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
-            border-left: 4px solid var(--danger-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
             .stat-grid { grid-template-columns: 1fr; }
-            .data-table { font-size: 0.85rem; }
+            .data-table { font-size: 0.82rem; }
             .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-triangle-exclamation"></i> Alerta</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 7 Mar 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 15 min de lectura</span>
+            </div>
+            <h1>Trabajar en Salud No Garantiza un <span style="color:var(--accent)">Salario Digno</span>: La Brecha que el Gobierno Debe Atender</h1>
+            <p class="hero-subtitle">El sector salud privado emplea a 871,560 personas en Mexico &mdash; y la mayoria gana por debajo del salario minimo. Censo Economico 2024, INEGI.</p>
+        </div>
     </header>
 
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <h2>Un sector que crece&hellip; pero no reparte</h2>
 
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
-            <span><i class="far fa-calendar"></i> 7 de marzo de 2026</span>
-            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+        <p>Mexico tiene <strong>245,034 establecimientos de salud privada</strong>. Generan <strong>$312,844 millones de pesos</strong> en produccion y emplean a casi <strong>872,000 personas</strong>. En papel, es uno de los sectores de servicios mas grandes del pais.</p>
+
+        <p>Pero detras de esa cifra hay una realidad que los datos del Censo Economico 2024 revelan con claridad: la remuneracion promedio anual en el sector es de <strong>$74,820 pesos</strong> &mdash; el <strong>66% del salario minimo general</strong> vigente en 2026 ($113,464 anuales). El sector que cuida la salud de los mexicanos no garantiza condiciones laborales dignas para quienes trabajan en el.</p>
+
+        <div class="callout callout-warning">
+            <strong>El dato central:</strong>
+            La remuneracion promedio en el sector salud privado es de $74,820 anuales &mdash; solo el 66% del salario minimo. Esta no es una anomalia menor: es una senal estructural que las administraciones municipales, estatales y federales deben incorporar en sus agendas de desarrollo economico y bienestar laboral.
         </div>
 
-        <h1 class="article-title">Trabajar en Salud No Garantiza un Salario Digno: La Brecha que el Gobierno Debe Atender</h1>
-        <p class="article-subtitle">El sector salud privado emplea a 871,560 personas en Mexico &mdash; y la mayoria gana por debajo del salario minimo. Censo Economico 2024, INEGI.</p>
-
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-heartbeat"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Brecha Salarial en Salud</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Economico 2024 | INEGI</p>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">245,034</div>
+                <div class="lbl">Establecimientos</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">871,560</div>
+                <div class="lbl">Empleos</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">$312,844M</div>
+                <div class="lbl">Produccion (MDP)</div>
             </div>
         </div>
 
-        <div class="article-content">
-            <h2>Un sector que crece&hellip; pero no reparte</h2>
+        <h2>Radiografia del sector: consultorios vs hospitales</h2>
 
-            <p>Mexico tiene <strong>245,034 establecimientos de salud privada</strong>. Generan <strong>$312,844 millones de pesos</strong> en produccion y emplean a casi <strong>872,000 personas</strong>. En papel, es uno de los sectores de servicios mas grandes del pais.</p>
+        <p>El sector 62 (Servicios de salud y de asistencia social) se divide en cuatro grandes subsectores con dinamicas muy distintas:</p>
 
-            <p>Pero detras de esa cifra hay una realidad que los datos del Censo Economico 2024 revelan con claridad: la remuneracion promedio anual en el sector es de <strong>$74,820 pesos</strong> &mdash; el <strong>66% del salario minimo general</strong> vigente en 2026 ($113,464 anuales). El sector que cuida la salud de los mexicanos no garantiza condiciones laborales dignas para quienes trabajan en el.</p>
-
-            <div class="callout callout-danger">
-                <strong>El dato central:</strong>
-                La remuneracion promedio en el sector salud privado es de $74,820 anuales &mdash; solo el 66% del salario minimo. Esta no es una anomalia menor: es una senal estructural que las administraciones municipales, estatales y federales deben incorporar en sus agendas de desarrollo economico y bienestar laboral.
-            </div>
-
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="number">245,034</div>
-                    <div class="label">Establecimientos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">871,560</div>
-                    <div class="label">Empleos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">$312,844M</div>
-                    <div class="label">Produccion (MDP)</div>
-                </div>
-            </div>
-
-            <h2>Radiografia del sector: consultorios vs hospitales</h2>
-
-            <p>El sector 62 (Servicios de salud y de asistencia social) se divide en cuatro grandes subsectores con dinamicas muy distintas:</p>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -437,7 +386,7 @@
                 <tbody>
                     <tr>
                         <td>621 Consulta externa</td>
-                        <td class="highlight-cell">213,193</td>
+                        <td>213,193</td>
                         <td>87.0%</td>
                         <td>535,504</td>
                         <td>$186,866</td>
@@ -445,7 +394,7 @@
                     </tr>
                     <tr>
                         <td>622 Hospitales</td>
-                        <td class="highlight-cell">3,090</td>
+                        <td>3,090</td>
                         <td>1.3%</td>
                         <td>171,320</td>
                         <td>$105,013</td>
@@ -453,7 +402,7 @@
                     </tr>
                     <tr>
                         <td>624 Asistencia social</td>
-                        <td class="highlight-cell">24,822</td>
+                        <td>24,822</td>
                         <td>10.1%</td>
                         <td>133,166</td>
                         <td>$14,353</td>
@@ -461,15 +410,15 @@
                     </tr>
                     <tr>
                         <td>623 Residencias</td>
-                        <td class="highlight-cell">3,929</td>
+                        <td>3,929</td>
                         <td>1.6%</td>
                         <td>31,570</td>
                         <td>$6,613</td>
                         <td>2.1%</td>
                     </tr>
-                    <tr style="background: rgba(239, 68, 68, 0.05); font-weight: 700;">
+                    <tr class="row-accent">
                         <td><strong>Total</strong></td>
-                        <td class="highlight-cell">245,034</td>
+                        <td>245,034</td>
                         <td>100%</td>
                         <td>871,560</td>
                         <td>$312,844</td>
@@ -477,18 +426,20 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p>El <strong>87% de los establecimientos</strong> son consultorios de consulta externa &mdash; medicos generales, dentistas, psicologos, optometristas. Son micronegocios en su mayoria, con alta proporcion de trabajo familiar no remunerado o informal. Los hospitales, en cambio, representan apenas el <strong>1.3% de los establecimientos</strong> pero concentran el <strong>33.6% de toda la produccion</strong> del sector.</p>
+        <p>El <strong>87% de los establecimientos</strong> son consultorios de consulta externa &mdash; medicos generales, dentistas, psicologos, optometristas. Son micronegocios en su mayoria, con alta proporcion de trabajo familiar no remunerado o informal. Los hospitales, en cambio, representan apenas el <strong>1.3% de los establecimientos</strong> pero concentran el <strong>33.6% de toda la produccion</strong> del sector.</p>
 
-            <div class="callout callout-warning">
-                <strong>Implicacion para politica publica:</strong>
-                Las condiciones laborales en los 213,000 consultorios son radicalmente distintas a las de los 3,090 hospitales. Las politicas de inspeccion, formalizacion e incentivos deben reconocer esa diferencia.
-            </div>
+        <div class="callout callout-warning">
+            <strong>Implicacion para politica publica:</strong>
+            Las condiciones laborales en los 213,000 consultorios son radicalmente distintas a las de los 3,090 hospitales. Las politicas de inspeccion, formalizacion e incentivos deben reconocer esa diferencia.
+        </div>
 
-            <h2>La brecha salarial por rama: de $8,102 a $223,263 anuales</h2>
+        <h2>La brecha salarial por rama: de $8,102 a $223,263 anuales</h2>
 
-            <p>Dentro del sector, la dispersion de remuneraciones es alarmante:</p>
+        <p>Dentro del sector, la dispersion de remuneraciones es alarmante:</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -500,57 +451,62 @@
                 <tbody>
                     <tr>
                         <td>Enfermeria a domicilio (6216)</td>
-                        <td class="highlight-cell">$223,263</td>
-                        <td class="success-cell">197% &#10004;</td>
+                        <td>$223,263</td>
+                        <td class="pos">197% &#10004;</td>
                     </tr>
                     <tr>
                         <td>Hospitales psiquiatricos (6222)</td>
-                        <td class="highlight-cell">$150,017</td>
-                        <td class="success-cell">132% &#10004;</td>
+                        <td>$150,017</td>
+                        <td class="pos">132% &#10004;</td>
                     </tr>
                     <tr>
                         <td>Hospitales de especialidades (6223)</td>
-                        <td class="highlight-cell">$149,121</td>
-                        <td class="success-cell">131% &#10004;</td>
+                        <td>$149,121</td>
+                        <td class="pos">131% &#10004;</td>
                     </tr>
                     <tr>
                         <td>Hospitales generales (6221)</td>
-                        <td class="highlight-cell">$133,538</td>
-                        <td class="success-cell">118% &#10004;</td>
+                        <td>$133,538</td>
+                        <td class="pos">118% &#10004;</td>
                     </tr>
                     <tr>
                         <td>Laboratorios de diagnostico (6215)</td>
-                        <td class="highlight-cell">$120,938</td>
-                        <td class="success-cell">107% &#10004;</td>
+                        <td>$120,938</td>
+                        <td class="pos">107% &#10004;</td>
                     </tr>
                     <tr>
                         <td>Consultorios medicos (6211)</td>
-                        <td class="highlight-cell">$53,567</td>
-                        <td class="danger-cell">47% &#10060;</td>
+                        <td>$53,567</td>
+                        <td class="neg">47% &#10060;</td>
                     </tr>
                     <tr>
                         <td>Consultorios dentales (6212)</td>
-                        <td class="highlight-cell">$37,998</td>
-                        <td class="danger-cell">33% &#10060;</td>
+                        <td>$37,998</td>
+                        <td class="neg">33% &#10060;</td>
                     </tr>
-                    <tr style="background: rgba(239, 68, 68, 0.1);">
+                    <tr class="row-accent">
                         <td>Orientacion y trabajo social (6241)</td>
-                        <td class="highlight-cell">$8,102</td>
-                        <td class="danger-cell">7% &#10060;</td>
+                        <td>$8,102</td>
+                        <td class="neg">7% &#10060;</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="stat-highlight">
-                <p>Trabajadores de orientacion y trabajo social</p>
-                <p class="number">$8,102 anuales</p>
-                <p>Solo el 7% del salario minimo &mdash; la gran mayoria trabaja de forma voluntaria o sin remuneracion formal</p>
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(232,163,61,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">$8,102 anuales</div>
+                <p>Trabajadores de orientacion y trabajo social. Solo el 7% del salario minimo &mdash; la gran mayoria trabaja de forma voluntaria o sin remuneracion formal</p>
             </div>
+        </div>
 
-            <h2>La geografia de la desigualdad: norte vs sur</h2>
+        <h2>La geografia de la desigualdad: norte vs sur</h2>
 
-            <p>La brecha salarial no es solo sectorial &mdash; es profundamente territorial:</p>
+        <p>La brecha salarial no es solo sectorial &mdash; es profundamente territorial:</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -561,21 +517,21 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="highlight-cell">Nuevo Leon</td>
+                        <td>Nuevo Leon</td>
                         <td>$108,405</td>
-                        <td class="success-cell">95.5%</td>
+                        <td class="pos">95.5%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Ciudad de Mexico</td>
+                        <td>Ciudad de Mexico</td>
                         <td>$98,103</td>
                         <td>86.5%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Baja California</td>
+                        <td>Baja California</td>
                         <td>$93,126</td>
                         <td>82.1%</td>
                     </tr>
-                    <tr style="background: rgba(102, 126, 234, 0.05);">
+                    <tr class="row-accent">
                         <td><strong>Promedio nacional</strong></td>
                         <td><strong>$74,820</strong></td>
                         <td><strong>66.0%</strong></td>
@@ -583,80 +539,93 @@
                     <tr>
                         <td>Guerrero</td>
                         <td>$45,750</td>
-                        <td class="danger-cell">40.3% &#10060;</td>
+                        <td class="neg">40.3% &#10060;</td>
                     </tr>
                     <tr>
                         <td>Chiapas</td>
                         <td>$45,711</td>
-                        <td class="danger-cell">40.3% &#10060;</td>
+                        <td class="neg">40.3% &#10060;</td>
                     </tr>
                     <tr>
                         <td>Oaxaca</td>
                         <td>$44,467</td>
-                        <td class="danger-cell">39.2% &#10060;</td>
+                        <td class="neg">39.2% &#10060;</td>
                     </tr>
-                    <tr style="background: rgba(239, 68, 68, 0.1);">
+                    <tr class="row-accent">
                         <td>Tlaxcala</td>
                         <td>$39,018</td>
-                        <td class="danger-cell">34.4% &#10060;</td>
+                        <td class="neg">34.4% &#10060;</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="callout callout-danger">
-                <strong>Brecha territorial: 2.8 veces</strong>
-                Un trabajador del sector salud en Nuevo Leon gana en promedio 2.8 veces mas que uno en Tlaxcala. En el norte predominan hospitales y clinicas de mayor escala; en el sur, consultorios de subsistencia y organizaciones de asistencia social con financiamiento precario.
-            </div>
+        <div class="callout callout-warning">
+            <strong>Brecha territorial: 2.8 veces</strong>
+            Un trabajador del sector salud en Nuevo Leon gana en promedio 2.8 veces mas que uno en Tlaxcala. En el norte predominan hospitales y clinicas de mayor escala; en el sur, consultorios de subsistencia y organizaciones de asistencia social con financiamiento precario.
+        </div>
 
-            <h2>Alertas para la gestion publica</h2>
+        <h2>Alertas para la gestion publica</h2>
 
-            <h3>1. Informalidad estructural en consultorios</h3>
+        <h3>1. Informalidad estructural en consultorios</h3>
 
-            <p>La remuneracion promedio de <strong>$53,567 en consultorios medicos</strong> y <strong>$37,998 en dentales</strong> sugiere que una proporcion significativa del personal trabaja sin contrato formal, por honorarios irregulares o como ayuda familiar no remunerada. Las inspecciones laborales del IMSS e ISSSTE deben priorizar este segmento.</p>
+        <p>La remuneracion promedio de <strong>$53,567 en consultorios medicos</strong> y <strong>$37,998 en dentales</strong> sugiere que una proporcion significativa del personal trabaja sin contrato formal, por honorarios irregulares o como ayuda familiar no remunerada. Las inspecciones laborales del IMSS e ISSSTE deben priorizar este segmento.</p>
 
-            <h3>2. Asistencia social: voluntariado disfrazado de empleo</h3>
+        <h3>2. Asistencia social: voluntariado disfrazado de empleo</h3>
 
-            <p>Los <strong>75,667 trabajadores de orientacion social</strong> con remuneracion promedio de <strong>$8,102 anuales</strong> representan una alarma de politica social. Muchas organizaciones de asistencia operan con recursos insuficientes, transfiriendo el costo a sus trabajadores. Los gobiernos estatales y municipales que financian o certifican estas organizaciones deben revisar sus esquemas de compensacion.</p>
+        <p>Los <strong>75,667 trabajadores de orientacion social</strong> con remuneracion promedio de <strong>$8,102 anuales</strong> representan una alarma de politica social. Muchas organizaciones de asistencia operan con recursos insuficientes, transfiriendo el costo a sus trabajadores. Los gobiernos estatales y municipales que financian o certifican estas organizaciones deben revisar sus esquemas de compensacion.</p>
 
-            <h3>3. Concentracion geografica como riesgo de acceso</h3>
+        <h3>3. Concentracion geografica como riesgo de acceso</h3>
 
-            <p>Cinco estados &mdash; CDMX, Estado de Mexico, Jalisco, Nuevo Leon y Baja California &mdash; concentran el <strong>47.2% de toda la produccion de salud privada</strong> del pais. Los 27 estados restantes se distribuyen el 52.8%, con entidades como Tlaxcala ($1,134 MDP), Campeche ($1,515 MDP) y Colima ($2,166 MDP) con infraestructura privada muy limitada. Para la poblacion de bajos ingresos en estos estados, la salud privada es practicamente inaccesible, lo que incrementa la presion sobre los servicios publicos.</p>
+        <p>Cinco estados &mdash; CDMX, Estado de Mexico, Jalisco, Nuevo Leon y Baja California &mdash; concentran el <strong>47.2% de toda la produccion de salud privada</strong> del pais. Los 27 estados restantes se distribuyen el 52.8%, con entidades como Tlaxcala ($1,134 MDP), Campeche ($1,515 MDP) y Colima ($2,166 MDP) con infraestructura privada muy limitada. Para la poblacion de bajos ingresos en estos estados, la salud privada es practicamente inaccesible, lo que incrementa la presion sobre los servicios publicos.</p>
 
-            <h3>4. El sur necesita politica diferenciada</h3>
+        <h3>4. El sur necesita politica diferenciada</h3>
 
-            <p>Chiapas, Oaxaca y Guerrero tienen respectivamente 7,354, 8,478 y 5,161 unidades economicas de salud &mdash; no es ausencia de oferta, es oferta de muy baja escala y productividad. La politica publica en estos estados no debe enfocarse solo en construir mas consultorios, sino en <strong>fortalecer los existentes</strong>: financiamiento, equipamiento, formalizacion laboral y esquemas de referencia hacia hospitales regionales.</p>
+        <p>Chiapas, Oaxaca y Guerrero tienen respectivamente 7,354, 8,478 y 5,161 unidades economicas de salud &mdash; no es ausencia de oferta, es oferta de muy baja escala y productividad. La politica publica en estos estados no debe enfocarse solo en construir mas consultorios, sino en <strong>fortalecer los existentes</strong>: financiamiento, equipamiento, formalizacion laboral y esquemas de referencia hacia hospitales regionales.</p>
 
-            <h2>Datos tecnicos</h2>
+        <h2>Datos tecnicos</h2>
 
-            <div class="source-box">
-                <p><strong>Fuente:</strong> Censo Economico 2024, INEGI</p>
-                <p style="margin-top: 0.5rem;"><strong>Codigos SCIAN:</strong> 62 (Sector), 621, 622, 623, 624 (Subsectores), 6211, 6212, 6213, 6215, 6216, 6221, 6222, 6223, 6241 (Ramas)</p>
-                <p style="margin-top: 0.5rem;"><strong>Salario minimo de referencia:</strong> $113,464 anuales (general 2026, $315.04/dia)</p>
-                <p style="margin-top: 0.5rem;"><strong>Universo:</strong> Establecimientos del sector privado registrados en el Censo Economico 2024</p>
-            </div>
+        <div class="source-box">
+            <p><strong>Fuente:</strong> Censo Economico 2024, INEGI</p>
+            <p><strong>Codigos SCIAN:</strong> 62 (Sector), 621, 622, 623, 624 (Subsectores), 6211, 6212, 6213, 6215, 6216, 6221, 6222, 6223, 6241 (Ramas)</p>
+            <p><strong>Salario minimo de referencia:</strong> $113,464 anuales (general 2026, $315.04/dia)</p>
+            <p><strong>Universo:</strong> Establecimientos del sector privado registrados en el Censo Economico 2024</p>
+        </div>
 
-            <h2>Conclusion: datos para gobernar, no solo para reportar</h2>
+        <h2>Conclusion: datos para gobernar, no solo para reportar</h2>
 
-            <p>El sector salud privado en Mexico es grande, pero profundamente desigual. La concentracion geografica en cinco estados, la brecha salarial entre hospitales y consultorios, y la precariedad del trabajo en asistencia social no son fatalidades &mdash; son problemas con soluciones de politica publica identificables.</p>
+        <p>El sector salud privado en Mexico es grande, pero profundamente desigual. La concentracion geografica en cinco estados, la brecha salarial entre hospitales y consultorios, y la precariedad del trabajo en asistencia social no son fatalidades &mdash; son problemas con soluciones de politica publica identificables.</p>
 
-            <p>Los gobiernos municipales y estatales que usan estos datos no solo rinden mejor cuentas: toman mejores decisiones sobre donde invertir en infraestructura de salud publica, que programas de formalizacion laboral priorizar y como complementar la oferta privada con servicios publicos donde el mercado no llega.</p>
+        <p>Los gobiernos municipales y estatales que usan estos datos no solo rinden mejor cuentas: toman mejores decisiones sobre donde invertir en infraestructura de salud publica, que programas de formalizacion laboral priorizar y como complementar la oferta privada con servicios publicos donde el mercado no llega.</p>
 
-            <div class="quote-box">
-                La informacion es poder. Usarla es responsabilidad.
-            </div>
+        <div class="quote-box">
+            La informacion es poder. Usarla es responsabilidad.
+        </div>
 
-            <div class="cta-box">
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
                 <h3><i class="fas fa-chart-bar"></i> Analiza los datos del Censo Economico</h3>
                 <p>Descubre las brechas salariales y la estructura del sector salud en tu estado con nuestras herramientas de analisis de datos.</p>
-                <a href="https://gdidata.com" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar GDI Data
-                </a>
+                <a href="https://gdidata.com" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar GDI Data</a>
             </div>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

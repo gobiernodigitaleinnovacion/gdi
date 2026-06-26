@@ -6,7 +6,23 @@
     <title>Raz&oacute;n de dependencia 2040: los estados donde cada vez menos trabajadores sostendr&aacute;n a m&aacute;s adultos mayores - GDI</title>
     <meta name="description" content="Entre 2026 y 2040 M&eacute;xico sumar&aacute; 10.2 millones de adultos mayores. Coahuila pasa de 49.4 a 51.3 y Nuevo Le&oacute;n de 46.8 a 50.3 en raz&oacute;n de dependencia. Proyecciones CONAPO.">
     <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-05-23-razon-dependencia-2040-estados-envejecimiento">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Razón de dependencia 2040: los estados donde cada vez menos trabajadores sostendrán a más adultos mayores">
+    <meta property="og:description" content="Entre 2026 y 2040 México sumará 10.2 millones de adultos mayores. Coahuila pasa de 49.4 a 51.3 y Nuevo León de 46.8 a 50.3 en razón de dependencia. Proyecciones CONAPO.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-05-23-razon-dependencia-2040-estados-envejecimiento">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -40,391 +56,328 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #7C5CFF;
+            --accent-dark: #5b3fd1;
+            --accent-soft: rgba(124,92,255,0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-primary);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .data-table th {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
         }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
         }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
 
-        .data-table tr:hover { background: rgba(102, 126, 234, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-        .success-cell { color: #10b981; font-weight: 700; }
-        .warning-cell { color: #f59e0b; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
+        /* ===== Stat grid (barras verticales) ===== */
         .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
         }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
         }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
 
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-color);
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
         }
-
-        .stat-card .label {
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
             .stat-grid { grid-template-columns: 1fr; }
-            .data-table { font-size: 0.85rem; }
+            .data-table { font-size: 0.82rem; }
             .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-coins"></i> Finanzas Municipales</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 23 May 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 14 min</span>
+            </div>
+            <h1>Raz&oacute;n de dependencia 2040: los estados donde cada vez menos trabajadores <span style="color:var(--accent)">sostendr&aacute;n a m&aacute;s adultos mayores</span></h1>
+            <p class="hero-subtitle">Coahuila pasar&aacute; de 49.4 a 51.3 y Nuevo Le&oacute;n de 46.8 a 50.3. La presi&oacute;n fiscal que ning&uacute;n Plan Estatal de Desarrollo est&aacute; midiendo.</p>
+        </div>
     </header>
 
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-users"></i> Finanzas Municipales</span>
-            <span><i class="far fa-calendar"></i> 23 de mayo de 2026</span>
-            <span><i class="far fa-clock"></i> 14 min de lectura</span>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Alerta &middot; Finanzas P&uacute;blicas &middot; Demograf&iacute;a &middot; Fecha de an&aacute;lisis: Mayo 2026
         </div>
 
-        <h1 class="article-title">Raz&oacute;n de dependencia 2040: los estados donde cada vez menos trabajadores sostendr&aacute;n a m&aacute;s adultos mayores</h1>
-        <p class="article-subtitle">Coahuila pasar&aacute; de 49.4 a 51.3 y Nuevo Le&oacute;n de 46.8 a 50.3. La presi&oacute;n fiscal que ning&uacute;n Plan Estatal de Desarrollo est&aacute; midiendo.</p>
+        <p>M&eacute;xico envejece, pero no lo hace al mismo ritmo en todos lados, ni con las mismas finanzas para enfrentarlo. Entre 2026 y 2040, la poblaci&oacute;n de 60 a&ntilde;os y m&aacute;s del pa&iacute;s crecer&aacute; <strong>57.3 por ciento</strong>: pasar&aacute; de 17.8 a 28.0 millones de personas en apenas catorce a&ntilde;os, seg&uacute;n las proyecciones del CONAPO. Detr&aacute;s de ese promedio nacional se esconde una verdad inc&oacute;moda para la planeaci&oacute;n estatal: los estados que hoy presumen prosperidad econ&oacute;mica son, en muchos casos, los que enfrentar&aacute;n la transici&oacute;n m&aacute;s abrupta. Y ninguno la est&aacute; midiendo donde duele: en la <strong>raz&oacute;n de dependencia</strong>.</p>
 
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-hourglass-half"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">+57.3% adultos mayores al 2040</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">De 17.8 a 28.0 millones de personas &middot; Proyecciones CONAPO</p>
+        <h2>Qu&eacute; es la raz&oacute;n de dependencia y por qu&eacute; importa para gobernar</h2>
+
+        <p>La raz&oacute;n de dependencia mide cu&aacute;ntas personas en edad no productiva &mdash;menores de 15 y mayores de 64 a&ntilde;os&mdash; hay por cada cien personas en edad de trabajar. Es, en esencia, el term&oacute;metro de cu&aacute;nta carga social recae sobre quienes generan ingreso, cotizan a la seguridad social y pagan impuestos. Cuando sube, significa que la base productiva que sostiene servicios de salud, pensiones y programas sociales se estrecha frente a una poblaci&oacute;n dependiente que se ensancha.</p>
+
+        <p>Para un gobierno estatal esto no es una abstracci&oacute;n demogr&aacute;fica: es la diferencia entre un sistema de salud sostenible y uno desbordado, entre un esquema de pensiones viable y uno en crisis. <strong>La raz&oacute;n de dependencia es la variable que conecta la pir&aacute;mide poblacional con las finanzas p&uacute;blicas.</strong></p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">17.8 M</div>
+                <div class="lbl">Poblaci&oacute;n 60+ en 2026</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">28.0 M</div>
+                <div class="lbl">Poblaci&oacute;n 60+ proyectada al 2040</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">+57.3%</div>
+                <div class="lbl">Crecimiento absoluto en 14 a&ntilde;os</div>
             </div>
         </div>
 
-        <div class="article-content">
-            <p><strong>Etiqueta:</strong> Alerta &middot; Finanzas P&uacute;blicas &middot; Demograf&iacute;a &middot; <strong>Fecha de an&aacute;lisis:</strong> Mayo 2026</p>
+        <h2>Radiograf&iacute;a: el norte pr&oacute;spero ante el reloj demogr&aacute;fico</h2>
 
-            <p>M&eacute;xico envejece, pero no lo hace al mismo ritmo en todos lados, ni con las mismas finanzas para enfrentarlo. Entre 2026 y 2040, la poblaci&oacute;n de 60 a&ntilde;os y m&aacute;s del pa&iacute;s crecer&aacute; <strong>57.3 por ciento</strong>: pasar&aacute; de 17.8 a 28.0 millones de personas en apenas catorce a&ntilde;os, seg&uacute;n las proyecciones del CONAPO. Detr&aacute;s de ese promedio nacional se esconde una verdad inc&oacute;moda para la planeaci&oacute;n estatal: los estados que hoy presumen prosperidad econ&oacute;mica son, en muchos casos, los que enfrentar&aacute;n la transici&oacute;n m&aacute;s abrupta. Y ninguno la est&aacute; midiendo donde duele: en la <strong>raz&oacute;n de dependencia</strong>.</p>
+        <p>Los datos del CONAPO revelan un patr&oacute;n que rompe la intuici&oacute;n. Los estados con mayor velocidad de envejecimiento no son los m&aacute;s rezagados, sino <strong>los m&aacute;s pr&oacute;speros y los de mayor atracci&oacute;n migratoria</strong>. Quintana Roo encabeza el pa&iacute;s: su poblaci&oacute;n de 60 y m&aacute;s crecer&aacute; 115.6 por ciento al 2040, pr&aacute;cticamente se duplica. Le siguen Baja California Sur (+91.4 %), Quer&eacute;taro (+89.5 %), Baja California (+84.1 %) y Nuevo Le&oacute;n (+72.5 %).</p>
 
-            <h2>Qu&eacute; es la raz&oacute;n de dependencia y por qu&eacute; importa para gobernar</h2>
+        <p>Estos territorios comparten un rasgo: recibieron oleadas de poblaci&oacute;n joven hace dos d&eacute;cadas &mdash;atra&iacute;da por turismo, manufactura de exportaci&oacute;n y calidad de vida&mdash; y esa generaci&oacute;n est&aacute; madurando ahora en bloque. <strong>El bono demogr&aacute;fico que los hizo crecer se convertir&aacute; en su mayor reto de gesti&oacute;n.</strong></p>
 
-            <p>La raz&oacute;n de dependencia mide cu&aacute;ntas personas en edad no productiva &mdash;menores de 15 y mayores de 64 a&ntilde;os&mdash; hay por cada cien personas en edad de trabajar. Es, en esencia, el term&oacute;metro de cu&aacute;nta carga social recae sobre quienes generan ingreso, cotizan a la seguridad social y pagan impuestos. Cuando sube, significa que la base productiva que sostiene servicios de salud, pensiones y programas sociales se estrecha frente a una poblaci&oacute;n dependiente que se ensancha.</p>
+        <p>La raz&oacute;n de dependencia confirma la alerta. En el norte industrial, donde la base productiva parec&iacute;a s&oacute;lida, los indicadores se deterioran:</p>
 
-            <p>Para un gobierno estatal esto no es una abstracci&oacute;n demogr&aacute;fica: es la diferencia entre un sistema de salud sostenible y uno desbordado, entre un esquema de pensiones viable y uno en crisis. <strong>La raz&oacute;n de dependencia es la variable que conecta la pir&aacute;mide poblacional con las finanzas p&uacute;blicas.</strong></p>
-
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="number">17.8 M</div>
-                    <div class="label">Poblaci&oacute;n 60+ en 2026</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">28.0 M</div>
-                    <div class="label">Poblaci&oacute;n 60+ proyectada al 2040</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">+57.3%</div>
-                    <div class="label">Crecimiento absoluto en 14 a&ntilde;os</div>
-                </div>
-            </div>
-
-            <h2>Radiograf&iacute;a: el norte pr&oacute;spero ante el reloj demogr&aacute;fico</h2>
-
-            <p>Los datos del CONAPO revelan un patr&oacute;n que rompe la intuici&oacute;n. Los estados con mayor velocidad de envejecimiento no son los m&aacute;s rezagados, sino <strong>los m&aacute;s pr&oacute;speros y los de mayor atracci&oacute;n migratoria</strong>. Quintana Roo encabeza el pa&iacute;s: su poblaci&oacute;n de 60 y m&aacute;s crecer&aacute; 115.6 por ciento al 2040, pr&aacute;cticamente se duplica. Le siguen Baja California Sur (+91.4 %), Quer&eacute;taro (+89.5 %), Baja California (+84.1 %) y Nuevo Le&oacute;n (+72.5 %).</p>
-
-            <p>Estos territorios comparten un rasgo: recibieron oleadas de poblaci&oacute;n joven hace dos d&eacute;cadas &mdash;atra&iacute;da por turismo, manufactura de exportaci&oacute;n y calidad de vida&mdash; y esa generaci&oacute;n est&aacute; madurando ahora en bloque. <strong>El bono demogr&aacute;fico que los hizo crecer se convertir&aacute; en su mayor reto de gesti&oacute;n.</strong></p>
-
-            <p>La raz&oacute;n de dependencia confirma la alerta. En el norte industrial, donde la base productiva parec&iacute;a s&oacute;lida, los indicadores se deterioran:</p>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -437,98 +390,103 @@
                 <tbody>
                     <tr>
                         <td><strong>Coahuila</strong></td>
-                        <td class="highlight-cell">49.4</td>
-                        <td class="danger-cell">51.3</td>
-                        <td class="warning-cell">+68.4%</td>
+                        <td>49.4</td>
+                        <td class="neg">51.3</td>
+                        <td class="warn">+68.4%</td>
                     </tr>
-                    <tr style="background: rgba(239, 68, 68, 0.08);">
+                    <tr class="row-accent">
                         <td><strong>Nuevo Le&oacute;n</strong></td>
-                        <td class="highlight-cell">46.8</td>
-                        <td class="danger-cell">50.3</td>
-                        <td class="danger-cell">+72.5%</td>
+                        <td>46.8</td>
+                        <td class="neg">50.3</td>
+                        <td class="neg">+72.5%</td>
                     </tr>
                     <tr>
                         <td><strong>Sonora</strong></td>
-                        <td class="highlight-cell">46.3</td>
-                        <td class="danger-cell">49.9</td>
-                        <td class="warning-cell">+60.4%</td>
+                        <td>46.3</td>
+                        <td class="neg">49.9</td>
+                        <td class="warn">+60.4%</td>
                     </tr>
                     <tr>
                         <td><strong>Tamaulipas</strong></td>
-                        <td class="highlight-cell">46.5</td>
-                        <td class="danger-cell">49.9</td>
-                        <td class="warning-cell">+61.4%</td>
+                        <td>46.5</td>
+                        <td class="neg">49.9</td>
+                        <td class="warn">+61.4%</td>
                     </tr>
                     <tr>
                         <td><strong>Baja California</strong></td>
-                        <td class="highlight-cell">40.4</td>
-                        <td class="warning-cell">42.8</td>
-                        <td class="danger-cell">+84.1%</td>
+                        <td>40.4</td>
+                        <td class="warn">42.8</td>
+                        <td class="neg">+84.1%</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">Fuente: Proyecciones de poblaci&oacute;n CONAPO, cortes 2026 y 2040.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><em>Fuente: Proyecciones de poblaci&oacute;n CONAPO, cortes 2026 y 2040.</em></p>
+        <p>Nuevo Le&oacute;n es el caso emblem&aacute;tico: una de las econom&iacute;as m&aacute;s fuertes del pa&iacute;s ver&aacute; subir su raz&oacute;n de dependencia 3.5 puntos en catorce a&ntilde;os, mientras su poblaci&oacute;n mayor crece casi tres cuartas partes. La pregunta de rendici&oacute;n de cuentas es directa: <strong>&iquest;qu&eacute; administraci&oacute;n estatal est&aacute; reservando hoy los recursos para la presi&oacute;n que llegar&aacute; ma&ntilde;ana?</strong></p>
 
-            <p>Nuevo Le&oacute;n es el caso emblem&aacute;tico: una de las econom&iacute;as m&aacute;s fuertes del pa&iacute;s ver&aacute; subir su raz&oacute;n de dependencia 3.5 puntos en catorce a&ntilde;os, mientras su poblaci&oacute;n mayor crece casi tres cuartas partes. La pregunta de rendici&oacute;n de cuentas es directa: <strong>&iquest;qu&eacute; administraci&oacute;n estatal est&aacute; reservando hoy los recursos para la presi&oacute;n que llegar&aacute; ma&ntilde;ana?</strong></p>
-
-            <div class="stat-highlight">
-                <div class="number">+115.6%</div>
-                <p style="font-size: 1.1rem; margin-top: 0.5rem;">Quintana Roo casi duplica su poblaci&oacute;n mayor al 2040. El estado m&aacute;s joven del pa&iacute;s en los noventa enfrenta la transici&oacute;n m&aacute;s veloz, sin infraestructura geri&aacute;trica que la respalde.</p>
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(124,92,255,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">+115.6%</div>
+                <p>Quintana Roo casi duplica su poblaci&oacute;n mayor al 2040. El estado m&aacute;s joven del pa&iacute;s en los noventa enfrenta la transici&oacute;n m&aacute;s veloz, sin infraestructura geri&aacute;trica que la respalde.</p>
             </div>
+        </div>
 
-            <h2>Hallazgos clave (alertas)</h2>
+        <h2>Hallazgos clave (alertas)</h2>
 
-            <h3>Alerta 1 &middot; La curva del envejecimiento dibuja una U que castiga al centro</h3>
+        <h3>Alerta 1 &middot; La curva del envejecimiento dibuja una U que castiga al centro</h3>
 
-            <p>Los estados que envejecen m&aacute;s r&aacute;pido est&aacute;n en plena maduraci&oacute;n demogr&aacute;fica (Quintana Roo, BCS, Quer&eacute;taro). En los extremos, el ritmo es lento por razones opuestas: <strong>la Ciudad de M&eacute;xico ya envejeci&oacute;</strong> &mdash;edad mediana 37.4 a&ntilde;os, la m&aacute;s alta del pa&iacute;s, y crecimiento 60+ de apenas 37.8 por ciento&mdash;, mientras <strong>Guerrero sigue siendo joven y pobre</strong> &mdash;edad mediana 28.4 a&ntilde;os, crecimiento 60+ de 33.8 por ciento, el m&aacute;s bajo del pa&iacute;s. El reto agudo est&aacute; en el medio de la curva, donde la transici&oacute;n es m&aacute;s veloz.</p>
+        <p>Los estados que envejecen m&aacute;s r&aacute;pido est&aacute;n en plena maduraci&oacute;n demogr&aacute;fica (Quintana Roo, BCS, Quer&eacute;taro). En los extremos, el ritmo es lento por razones opuestas: <strong>la Ciudad de M&eacute;xico ya envejeci&oacute;</strong> &mdash;edad mediana 37.4 a&ntilde;os, la m&aacute;s alta del pa&iacute;s, y crecimiento 60+ de apenas 37.8 por ciento&mdash;, mientras <strong>Guerrero sigue siendo joven y pobre</strong> &mdash;edad mediana 28.4 a&ntilde;os, crecimiento 60+ de 33.8 por ciento, el m&aacute;s bajo del pa&iacute;s. El reto agudo est&aacute; en el medio de la curva, donde la transici&oacute;n es m&aacute;s veloz.</p>
 
-            <div class="callout callout-warning">
-                <strong><i class="fas fa-chart-line"></i> El reto no es para todos al mismo tiempo</strong>
-                Los estados que entran a la transici&oacute;n entre 2026 y 2040 son la cohorte cr&iacute;tica de gesti&oacute;n: ya tienen ingreso para preparar el sistema y todav&iacute;a tienen ventana para hacerlo. Si no act&uacute;an esta d&eacute;cada, llegar&aacute;n al 2040 con la curva por delante y sin presupuesto reservado.
-            </div>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-chart-line"></i> El reto no es para todos al mismo tiempo</strong>
+            Los estados que entran a la transici&oacute;n entre 2026 y 2040 son la cohorte cr&iacute;tica de gesti&oacute;n: ya tienen ingreso para preparar el sistema y todav&iacute;a tienen ventana para hacerlo. Si no act&uacute;an esta d&eacute;cada, llegar&aacute;n al 2040 con la curva por delante y sin presupuesto reservado.
+        </div>
 
-            <h3>Alerta 2 &middot; La paradoja del rezago</h3>
+        <h3>Alerta 2 &middot; La paradoja del rezago</h3>
 
-            <p>Guerrero, el estado con mayor pobreza del pa&iacute;s &mdash;58.1 por ciento seg&uacute;n CONEVAL 2024&mdash;, envejece m&aacute;s lento que casi cualquier otro. Chiapas, con 66.0 por ciento de pobreza &mdash;la m&aacute;s alta nacional&mdash; mantiene la edad mediana m&aacute;s baja (25.5 a&ntilde;os). <strong>La pobreza, cruelmente, &ldquo;rejuvenece&rdquo; las pir&aacute;mides</strong>: mayor natalidad y menor esperanza de vida frenan el envejecimiento. No es una buena noticia; es la radiograf&iacute;a de una desigualdad que se expresa hasta en la estructura de edades.</p>
+        <p>Guerrero, el estado con mayor pobreza del pa&iacute;s &mdash;58.1 por ciento seg&uacute;n CONEVAL 2024&mdash;, envejece m&aacute;s lento que casi cualquier otro. Chiapas, con 66.0 por ciento de pobreza &mdash;la m&aacute;s alta nacional&mdash; mantiene la edad mediana m&aacute;s baja (25.5 a&ntilde;os). <strong>La pobreza, cruelmente, &ldquo;rejuvenece&rdquo; las pir&aacute;mides</strong>: mayor natalidad y menor esperanza de vida frenan el envejecimiento. No es una buena noticia; es la radiograf&iacute;a de una desigualdad que se expresa hasta en la estructura de edades.</p>
 
-            <div class="quote-box">
-                Los estados que envejecen m&aacute;s r&aacute;pido son los que tienen con qu&eacute; pagar la cuenta. Los que envejecen m&aacute;s lento llegar&aacute;n a la transici&oacute;n con d&eacute;cadas de retraso y la mitad de los recursos por hogar.
-            </div>
+        <div class="quote-box">
+            Los estados que envejecen m&aacute;s r&aacute;pido son los que tienen con qu&eacute; pagar la cuenta. Los que envejecen m&aacute;s lento llegar&aacute;n a la transici&oacute;n con d&eacute;cadas de retraso y la mitad de los recursos por hogar.
+        </div>
 
-            <h3>Alerta 3 &middot; La concentraci&oacute;n de la masa</h3>
+        <h3>Alerta 3 &middot; La concentraci&oacute;n de la masa</h3>
 
-            <p>En t&eacute;rminos absolutos, el Estado de M&eacute;xico sumar&aacute; <strong>casi 1.5 millones de adultos mayores nuevos</strong> &mdash;de 2.3 a 3.8 millones&mdash;, y la Ciudad de M&eacute;xico llegar&aacute; a 2.3 millones. El porcentaje de crecimiento puede ser menor en estas entidades, pero el <strong>volumen absoluto</strong> que deber&aacute;n atender sus sistemas de salud es colosal. La presi&oacute;n sobre IMSS, ISSSTE e infraestructura geri&aacute;trica metropolitana no se va a sentir como un porcentaje: se va a sentir como millones de personas haciendo fila.</p>
+        <p>En t&eacute;rminos absolutos, el Estado de M&eacute;xico sumar&aacute; <strong>casi 1.5 millones de adultos mayores nuevos</strong> &mdash;de 2.3 a 3.8 millones&mdash;, y la Ciudad de M&eacute;xico llegar&aacute; a 2.3 millones. El porcentaje de crecimiento puede ser menor en estas entidades, pero el <strong>volumen absoluto</strong> que deber&aacute;n atender sus sistemas de salud es colosal. La presi&oacute;n sobre IMSS, ISSSTE e infraestructura geri&aacute;trica metropolitana no se va a sentir como un porcentaje: se va a sentir como millones de personas haciendo fila.</p>
 
-            <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
+        <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
 
-            <p>La transici&oacute;n demogr&aacute;fica no es un evento que ocurrir&aacute;: <strong>ya est&aacute; en marcha y es irreversible</strong> en el horizonte de planeaci&oacute;n. Las implicaciones para los gobiernos estatales son concretas:</p>
+        <p>La transici&oacute;n demogr&aacute;fica no es un evento que ocurrir&aacute;: <strong>ya est&aacute; en marcha y es irreversible</strong> en el horizonte de planeaci&oacute;n. Las implicaciones para los gobiernos estatales son concretas:</p>
 
-            <h3>Salud</h3>
+        <h3>Salud</h3>
 
-            <p>Los estados de envejecimiento acelerado deben reorientar su infraestructura sanitaria hacia la atenci&oacute;n de enfermedades cr&oacute;nico-degenerativas, que son intensivas en costo y de largo plazo. Quintana Roo, que casi duplicar&aacute; su poblaci&oacute;n mayor, parte de una <strong>infraestructura geri&aacute;trica pr&aacute;cticamente inexistente</strong>. Las salas oncol&oacute;gicas, las unidades de hemodi&aacute;lisis y los modelos de cuidados domiciliarios deber&iacute;an proyectarse ya con la pir&aacute;mide del 2040, no con la del 2020.</p>
+        <p>Los estados de envejecimiento acelerado deben reorientar su infraestructura sanitaria hacia la atenci&oacute;n de enfermedades cr&oacute;nico-degenerativas, que son intensivas en costo y de largo plazo. Quintana Roo, que casi duplicar&aacute; su poblaci&oacute;n mayor, parte de una <strong>infraestructura geri&aacute;trica pr&aacute;cticamente inexistente</strong>. Las salas oncol&oacute;gicas, las unidades de hemodi&aacute;lisis y los modelos de cuidados domiciliarios deber&iacute;an proyectarse ya con la pir&aacute;mide del 2040, no con la del 2020.</p>
 
-            <h3>Finanzas y pensiones</h3>
+        <h3>Finanzas y pensiones</h3>
 
-            <p>El aumento en la raz&oacute;n de dependencia presiona los ingresos propios y obliga a repensar el gasto. Un estado con base productiva que se estrecha ver&aacute; crecer el gasto social mientras su capacidad recaudatoria se mantiene o cae. <strong>La vulnerabilidad financiera no vendr&aacute; de un mal manejo coyuntural, sino de una tendencia estructural que hoy no se contabiliza.</strong> Los pasivos contingentes de pensiones estatales &mdash;magisterio, burocracia, polic&iacute;a&mdash; son la bomba silenciosa que detonar&aacute; entre 2030 y 2040 en los estados pr&oacute;speros del norte.</p>
+        <p>El aumento en la raz&oacute;n de dependencia presiona los ingresos propios y obliga a repensar el gasto. Un estado con base productiva que se estrecha ver&aacute; crecer el gasto social mientras su capacidad recaudatoria se mantiene o cae. <strong>La vulnerabilidad financiera no vendr&aacute; de un mal manejo coyuntural, sino de una tendencia estructural que hoy no se contabiliza.</strong> Los pasivos contingentes de pensiones estatales &mdash;magisterio, burocracia, polic&iacute;a&mdash; son la bomba silenciosa que detonar&aacute; entre 2030 y 2040 en los estados pr&oacute;speros del norte.</p>
 
-            <h3>Planeaci&oacute;n territorial</h3>
+        <h3>Planeaci&oacute;n territorial</h3>
 
-            <p>Los Planes Estatales de Desarrollo deben incorporar la proyecci&oacute;n demogr&aacute;fica al 2040 como variable central, no como ap&eacute;ndice. Reservar suelo para infraestructura de cuidados, adaptar el transporte p&uacute;blico y redise&ntilde;ar los espacios urbanos para una poblaci&oacute;n mayor son <strong>decisiones que deben tomarse esta d&eacute;cada, no la siguiente</strong>.</p>
+        <p>Los Planes Estatales de Desarrollo deben incorporar la proyecci&oacute;n demogr&aacute;fica al 2040 como variable central, no como ap&eacute;ndice. Reservar suelo para infraestructura de cuidados, adaptar el transporte p&uacute;blico y redise&ntilde;ar los espacios urbanos para una poblaci&oacute;n mayor son <strong>decisiones que deben tomarse esta d&eacute;cada, no la siguiente</strong>.</p>
 
-            <h3>Programas sociales</h3>
+        <h3>Programas sociales</h3>
 
-            <p>Los apoyos a adultos mayores &mdash;hoy un componente significativo del gasto federal y estatal&mdash; escalar&aacute;n en demanda. Los estados de envejecimiento veloz enfrentar&aacute;n el mayor incremento en el padr&oacute;n de beneficiarios y, simult&aacute;neamente, la mayor presi&oacute;n para cofinanciar con recursos propios.</p>
+        <p>Los apoyos a adultos mayores &mdash;hoy un componente significativo del gasto federal y estatal&mdash; escalar&aacute;n en demanda. Los estados de envejecimiento veloz enfrentar&aacute;n el mayor incremento en el padr&oacute;n de beneficiarios y, simult&aacute;neamente, la mayor presi&oacute;n para cofinanciar con recursos propios.</p>
 
-            <div class="callout callout-danger">
-                <strong><i class="fas fa-exclamation-triangle"></i> El c&aacute;lculo que no hace nadie</strong>
-                Cuando un estado proyecta su presupuesto a tres a&ntilde;os, la raz&oacute;n de dependencia parece est&aacute;tica. Cuando lo proyecta a catorce, cambia todo: ingreso por habitante que se mantiene plano, padr&oacute;n de pensionados que crece 60 por ciento, demanda de servicios geri&aacute;tricos que se duplica. La distancia entre una proyecci&oacute;n de mediano plazo y una de largo plazo es la diferencia entre prevenir y rescatar.
-            </div>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> El c&aacute;lculo que no hace nadie</strong>
+            Cuando un estado proyecta su presupuesto a tres a&ntilde;os, la raz&oacute;n de dependencia parece est&aacute;tica. Cuando lo proyecta a catorce, cambia todo: ingreso por habitante que se mantiene plano, padr&oacute;n de pensionados que crece 60 por ciento, demanda de servicios geri&aacute;tricos que se duplica. La distancia entre una proyecci&oacute;n de mediano plazo y una de largo plazo es la diferencia entre prevenir y rescatar.
+        </div>
 
-            <h2>Datos complementarios: norte rico, sur joven</h2>
+        <h2>Datos complementarios: norte rico, sur joven</h2>
 
-            <p>El cruce con indicadores sociales matiza el panorama. Mientras el norte pr&oacute;spero &mdash;Nuevo Le&oacute;n, Coahuila, Chihuahua, Baja California, Sonora&mdash; promedia <strong>12.4 por ciento de pobreza</strong> (CONEVAL 2024) y un ingreso corriente trimestral de <strong>$98,592 pesos</strong> (ENIGH 2024 estatal), el sur &mdash;Chiapas, Guerrero, Oaxaca&mdash; promedia <strong>58.5 por ciento de pobreza</strong> y apenas <strong>$47,219 pesos</strong> de ingreso trimestral. El norte tiene con qu&eacute; financiar su transici&oacute;n; el sur la enfrentar&aacute; m&aacute;s tarde, pero con la mitad de recursos por hogar.</p>
+        <p>El cruce con indicadores sociales matiza el panorama. Mientras el norte pr&oacute;spero &mdash;Nuevo Le&oacute;n, Coahuila, Chihuahua, Baja California, Sonora&mdash; promedia <strong>12.4 por ciento de pobreza</strong> (CONEVAL 2024) y un ingreso corriente trimestral de <strong>$98,592 pesos</strong> (ENIGH 2024 estatal), el sur &mdash;Chiapas, Guerrero, Oaxaca&mdash; promedia <strong>58.5 por ciento de pobreza</strong> y apenas <strong>$47,219 pesos</strong> de ingreso trimestral. El norte tiene con qu&eacute; financiar su transici&oacute;n; el sur la enfrentar&aacute; m&aacute;s tarde, pero con la mitad de recursos por hogar.</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -541,52 +499,65 @@
                 <tbody>
                     <tr>
                         <td>Norte pr&oacute;spero (NL, COA, CHIH, BC, SON)</td>
-                        <td class="success-cell">12.4%</td>
-                        <td class="success-cell">$98,592</td>
-                        <td class="danger-cell">+71.0%</td>
+                        <td class="pos">12.4%</td>
+                        <td class="pos">$98,592</td>
+                        <td class="neg">+71.0%</td>
                     </tr>
                     <tr>
                         <td>Sur rezagado (CHIS, GRO, OAX)</td>
-                        <td class="danger-cell">58.5%</td>
-                        <td class="danger-cell">$47,219</td>
-                        <td class="warning-cell">+38.2%</td>
+                        <td class="neg">58.5%</td>
+                        <td class="neg">$47,219</td>
+                        <td class="warn">+38.2%</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p>Esta asimetr&iacute;a exige que el dise&ntilde;o de transferencias federales y la coordinaci&oacute;n fiscal consideren <strong>no solo el nivel de pobreza actual, sino la trayectoria demogr&aacute;fica de cada entidad</strong>. La f&oacute;rmula del Ramo 33 fue dise&ntilde;ada para un M&eacute;xico que ya no existe.</p>
+        <p>Esta asimetr&iacute;a exige que el dise&ntilde;o de transferencias federales y la coordinaci&oacute;n fiscal consideren <strong>no solo el nivel de pobreza actual, sino la trayectoria demogr&aacute;fica de cada entidad</strong>. La f&oacute;rmula del Ramo 33 fue dise&ntilde;ada para un M&eacute;xico que ya no existe.</p>
 
-            <h2>Conclusi&oacute;n: la m&eacute;trica que nadie menciona y todos van a sentir</h2>
+        <h2>Conclusi&oacute;n: la m&eacute;trica que nadie menciona y todos van a sentir</h2>
 
-            <p>La raz&oacute;n de dependencia es la m&eacute;trica que ning&uacute;n discurso de campa&ntilde;a menciona y que toda planeaci&oacute;n responsable deber&iacute;a encabezar. M&eacute;xico tiene una ventana de catorce a&ntilde;os para preparar sus sistemas de salud, pensiones y cuidados ante una poblaci&oacute;n mayor que crecer&aacute; 57.3 por ciento. Los estados pr&oacute;speros del norte &mdash;Coahuila, Nuevo Le&oacute;n, Sonora&mdash; ver&aacute;n deteriorarse sus indicadores de dependencia mientras su poblaci&oacute;n mayor se dispara, y Quintana Roo enfrentar&aacute; la transici&oacute;n m&aacute;s abrupta del pa&iacute;s <strong>sin infraestructura para ello</strong>.</p>
+        <p>La raz&oacute;n de dependencia es la m&eacute;trica que ning&uacute;n discurso de campa&ntilde;a menciona y que toda planeaci&oacute;n responsable deber&iacute;a encabezar. M&eacute;xico tiene una ventana de catorce a&ntilde;os para preparar sus sistemas de salud, pensiones y cuidados ante una poblaci&oacute;n mayor que crecer&aacute; 57.3 por ciento. Los estados pr&oacute;speros del norte &mdash;Coahuila, Nuevo Le&oacute;n, Sonora&mdash; ver&aacute;n deteriorarse sus indicadores de dependencia mientras su poblaci&oacute;n mayor se dispara, y Quintana Roo enfrentar&aacute; la transici&oacute;n m&aacute;s abrupta del pa&iacute;s <strong>sin infraestructura para ello</strong>.</p>
 
-            <div class="quote-box">
-                En un horizonte donde cada vez menos trabajadores sostendr&aacute;n a m&aacute;s adultos mayores, la pregunta de rendici&oacute;n de cuentas es ineludible: &iquest;qu&eacute; est&aacute;n reservando hoy las administraciones estatales para una factura que ya tiene fecha?
-            </div>
+        <div class="quote-box">
+            En un horizonte donde cada vez menos trabajadores sostendr&aacute;n a m&aacute;s adultos mayores, la pregunta de rendici&oacute;n de cuentas es ineludible: &iquest;qu&eacute; est&aacute;n reservando hoy las administraciones estatales para una factura que ya tiene fecha?
+        </div>
 
-            <div class="cta-box">
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
                 <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres ver la proyecci&oacute;n demogr&aacute;fica al 2040 de tu estado?</h3>
                 <p>En GDI Data tenemos las proyecciones CONAPO 2024 listas para consulta: poblaci&oacute;n por grupo de edad, raz&oacute;n de dependencia y edad mediana estado por estado.</p>
-                <a href="https://gdidata.com/" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar datos
-                </a>
+                <a href="https://gdidata.com/" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar datos</a>
             </div>
+        </div>
 
-            <h2>Nota metodol&oacute;gica</h2>
+        <h2>Nota metodol&oacute;gica</h2>
 
-            <div class="source-box">
-                <p><strong>Datos:</strong> Proyecciones de poblaci&oacute;n CONAPO 2024 (cortes 2026 y 2040): poblaci&oacute;n 60+, edad mediana y raz&oacute;n de dependencia total a nivel estatal.</p>
-                <p style="margin-top: 0.75rem;"><strong>Indicadores sociales:</strong> CONEVAL 2024 para porcentaje de poblaci&oacute;n en situaci&oacute;n de pobreza estatal; ENIGH 2024 (nivel estatal) para ingreso corriente promedio trimestral por hogar.</p>
-                <p style="margin-top: 0.75rem;"><strong>Definici&oacute;n:</strong> la raz&oacute;n de dependencia total se calcula como (poblaci&oacute;n menor de 15 + poblaci&oacute;n de 65 y m&aacute;s) / poblaci&oacute;n de 15 a 64 a&ntilde;os &times; 100.</p>
-                <p style="margin-top: 0.75rem;"><strong>Nivel de an&aacute;lisis:</strong> estatal (32 entidades federativas). Los promedios por bloque (norte pr&oacute;spero / sur rezagado) son aritm&eacute;ticos simples, sin ponderar por poblaci&oacute;n.</p>
-                <p style="margin-top: 0.75rem;"><strong>Fuente:</strong> CONAPO, CONEVAL e INEGI. An&aacute;lisis y visualizaci&oacute;n: GDI &mdash; Gobierno Digital e Innovaci&oacute;n.</p>
-                <p style="margin-top: 0.5rem;"><strong>Fecha de an&aacute;lisis:</strong> Mayo 2026 | gobiernodigitaleinnovacion.com</p>
-            </div>
+        <div class="source-box">
+            <p><strong>Datos:</strong> Proyecciones de poblaci&oacute;n CONAPO 2024 (cortes 2026 y 2040): poblaci&oacute;n 60+, edad mediana y raz&oacute;n de dependencia total a nivel estatal.</p>
+            <p><strong>Indicadores sociales:</strong> CONEVAL 2024 para porcentaje de poblaci&oacute;n en situaci&oacute;n de pobreza estatal; ENIGH 2024 (nivel estatal) para ingreso corriente promedio trimestral por hogar.</p>
+            <p><strong>Definici&oacute;n:</strong> la raz&oacute;n de dependencia total se calcula como (poblaci&oacute;n menor de 15 + poblaci&oacute;n de 65 y m&aacute;s) / poblaci&oacute;n de 15 a 64 a&ntilde;os &times; 100.</p>
+            <p><strong>Nivel de an&aacute;lisis:</strong> estatal (32 entidades federativas). Los promedios por bloque (norte pr&oacute;spero / sur rezagado) son aritm&eacute;ticos simples, sin ponderar por poblaci&oacute;n.</p>
+            <p><strong>Fuente:</strong> CONAPO, CONEVAL e INEGI. An&aacute;lisis y visualizaci&oacute;n: GDI &mdash; Gobierno Digital e Innovaci&oacute;n.</p>
+            <p><strong>Fecha de an&aacute;lisis:</strong> Mayo 2026 | gobiernodigitaleinnovacion.com</p>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quien Gana con la Carne en Mexico? El Mapa de la Desigualdad Salarial Carnica - GDI</title>
     <meta name="description" content="De $23,723 en Oaxaca a $234,909 en Chihuahua: 10 veces de diferencia salarial en la misma industria carnica. Analisis del Censo Economico 2024 con 529,306 empleos y medio billon de pesos.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-02-21-quien-gana-con-la-carne-en-mexico">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Quien Gana con la Carne en Mexico? El Mapa de la Desigualdad Salarial Carnica">
+    <meta property="og:description" content="De $23,723 en Oaxaca a $234,909 en Chihuahua: 10 veces de diferencia salarial en la misma industria carnica. Analisis del Censo Economico 2024 con 529,306 empleos y medio billon de pesos.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-02-21-quien-gana-con-la-carne-en-mexico">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -29,7 +46,7 @@
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
       ttq.load('D5MHUKBC77UEK8Q4I9B0');
@@ -39,394 +56,325 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --economy-color: #10b981;
-            --economy-dark: #059669;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-economy: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #2FA86A;
+            --accent-dark: #1f7d4e;
+            --accent-soft: rgba(47, 168, 106, 0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-economy);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--economy-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout-economy {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: var(--economy-color);
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .data-table th {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
         }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
         }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
 
-        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-        .success-cell { color: #10b981; font-weight: 700; }
-        .warning-cell { color: #f59e0b; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
+        /* ===== Stat grid (barras verticales) ===== */
         .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
         }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
         }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
 
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--economy-color);
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
         }
-
-        .stat-card .label {
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
-            border-left: 4px solid var(--economy-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
             .stat-grid { grid-template-columns: 1fr; }
-            .data-table { font-size: 0.85rem; }
-            .data-table td, .data-table th { padding: 0.6rem; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-chart-line"></i> Economía</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 21 Feb 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 15 min</span>
+            </div>
+            <h1>Quien Gana con la Carne en Mexico? El Mapa de la <span style="color:var(--accent)">Desigualdad Salarial</span> Carnica</h1>
+            <p class="hero-subtitle">De $23,723 en Oaxaca a $234,909 en Chihuahua &mdash; 10 veces de diferencia en el mismo sector. 529,306 empleos y casi medio billon de pesos en produccion bruta.</p>
+        </div>
     </header>
 
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-chart-line"></i> Economia</span>
-            <span><i class="far fa-calendar"></i> 21 de febrero de 2026</span>
-            <span><i class="far fa-clock"></i> 15 min de lectura</span>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Desigualdad Salarial Carnica · Censo Economico 2024 · INEGI
         </div>
 
-        <h1 class="article-title">Quien Gana con la Carne en Mexico? El Mapa de la Desigualdad Salarial Carnica</h1>
-        <p class="article-subtitle">De $23,723 en Oaxaca a $234,909 en Chihuahua &mdash; 10 veces de diferencia en el mismo sector. 529,306 empleos y casi medio billon de pesos en produccion bruta.</p>
+        <h2>El hallazgo</h2>
 
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-drumstick-bite"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Desigualdad Salarial Carnica</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Economico 2024 | INEGI</p>
+        <p>La cadena de valor de la carne en Mexico genera <strong>529,306 empleos</strong> y casi <strong>medio billon de pesos</strong> en produccion bruta. Es una de las cadenas productivas mas grandes del pais, mas que toda la industria automotriz en terminos de empleo. Pero detras de estas cifras agregadas se esconde una realidad que deberia preocupar a cualquier gobierno estatal o municipal: la brecha salarial dentro del mismo sector varia hasta <strong>10 veces</strong> dependiendo del territorio.</p>
+
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> El dato critico:</strong>
+            Un trabajador de la industria carnica en Chihuahua gana $234,909 al a&ntilde;o; uno en Oaxaca, $23,723. Misma industria, mismo pais, mundos distintos.
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">529,306</div>
+                <div class="lbl">Empleos en la cadena carnica</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">~$500B</div>
+                <div class="lbl">Produccion bruta total</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">10x</div>
+                <div class="lbl">Brecha salarial territorial</div>
             </div>
         </div>
 
-        <div class="article-content">
-            <h2>El hallazgo</h2>
+        <h2>La cadena: tres eslabones, tres realidades</h2>
 
-            <p>La cadena de valor de la carne en Mexico genera <strong>529,306 empleos</strong> y casi <strong>medio billon de pesos</strong> en produccion bruta. Es una de las cadenas productivas mas grandes del pais, mas que toda la industria automotriz en terminos de empleo. Pero detras de estas cifras agregadas se esconde una realidad que deberia preocupar a cualquier gobierno estatal o municipal: la brecha salarial dentro del mismo sector varia hasta <strong>10 veces</strong> dependiendo del territorio.</p>
+        <p>La cadena carnica se estructura en tres grandes eslabones, y cada uno tiene un perfil laboral radicalmente distinto:</p>
 
-            <div class="callout callout-danger">
-                <strong><i class="fas fa-exclamation-triangle"></i> El dato critico:</strong>
-                Un trabajador de la industria carnica en Chihuahua gana $234,909 al a&ntilde;o; uno en Oaxaca, $23,723. Misma industria, mismo pais, mundos distintos.
-            </div>
-
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="number">529,306</div>
-                    <div class="label">Empleos en la cadena carnica</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">~$500B</div>
-                    <div class="label">Produccion bruta total</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">10x</div>
-                    <div class="label">Brecha salarial territorial</div>
-                </div>
-            </div>
-
-            <h2>La cadena: tres eslabones, tres realidades</h2>
-
-            <p>La cadena carnica se estructura en tres grandes eslabones, y cada uno tiene un perfil laboral radicalmente distinto:</p>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -440,43 +388,45 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="highlight-cell">Matanza, empacado y procesamiento</td>
+                        <td><strong>Matanza, empacado y procesamiento</strong></td>
                         <td>3116</td>
                         <td>5,199</td>
-                        <td class="highlight-cell">132,735</td>
+                        <td><strong>132,735</strong></td>
                         <td>$291,192</td>
-                        <td class="success-cell">$168,061</td>
+                        <td class="pos">$168,061</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Comercio al por mayor</td>
+                        <td><strong>Comercio al por mayor</strong></td>
                         <td>4311</td>
                         <td>22,860</td>
-                        <td class="highlight-cell">40,681</td>
+                        <td><strong>40,681</strong></td>
                         <td>$48,249</td>
-                        <td class="warning-cell">$132,185</td>
+                        <td class="warn">$132,185</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Carnicerías (menudeo)</td>
+                        <td><strong>Carnicerías (menudeo)</strong></td>
                         <td>46112</td>
                         <td>147,925</td>
-                        <td class="highlight-cell">355,890</td>
+                        <td><strong>355,890</strong></td>
                         <td>$130,438</td>
-                        <td class="danger-cell">$43,998</td>
+                        <td class="neg">$43,998</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="callout callout-danger">
-                <strong><i class="fas fa-exclamation-circle"></i> El dato mas alarmante:</strong>
-                Las carnicerias concentran el <strong>67% del empleo</strong> de toda la cadena, pero pagan en promedio $43,998 al a&ntilde;o &mdash; apenas el <strong>39% del salario minimo anual general</strong> ($113,464). El eslabon que mas empleo genera es tambien el que peores condiciones laborales ofrece.
-            </div>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-circle"></i> El dato mas alarmante:</strong>
+            Las carnicerias concentran el <strong>67% del empleo</strong> de toda la cadena, pero pagan en promedio $43,998 al a&ntilde;o &mdash; apenas el <strong>39% del salario minimo anual general</strong> ($113,464). El eslabon que mas empleo genera es tambien el que peores condiciones laborales ofrece.
+        </div>
 
-            <p>En contraste, la industria de embutidos y conservas (SCIAN 311613), con 50,898 empleos, paga <strong>$198,567</strong> promedio &mdash; casi <strong>4.5 veces mas</strong> que una carniceria.</p>
+        <p>En contraste, la industria de embutidos y conservas (SCIAN 311613), con 50,898 empleos, paga <strong>$198,567</strong> promedio &mdash; casi <strong>4.5 veces mas</strong> que una carniceria.</p>
 
-            <h2>La geografia de la desigualdad</h2>
+        <h2>La geografia de la desigualdad</h2>
 
-            <p>La brecha no es solo entre eslabones, sino entre territorios. En el eslabon industrial (3116), las diferencias son dramaticas:</p>
+        <p>La brecha no es solo entre eslabones, sino entre territorios. En el eslabon industrial (3116), las diferencias son dramaticas:</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -489,95 +439,101 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="highlight-cell">Chihuahua</td>
+                        <td><strong>Chihuahua</strong></td>
                         <td>4,357</td>
                         <td>$9,962</td>
-                        <td class="success-cell">$234,909</td>
-                        <td class="success-cell">207%</td>
+                        <td class="pos">$234,909</td>
+                        <td class="pos">207%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Estado de Mexico</td>
+                        <td><strong>Estado de Mexico</strong></td>
                         <td>13,426</td>
                         <td>$23,494</td>
-                        <td class="success-cell">$233,888</td>
-                        <td class="success-cell">206%</td>
+                        <td class="pos">$233,888</td>
+                        <td class="pos">206%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Nuevo Leon</td>
+                        <td><strong>Nuevo Leon</strong></td>
                         <td>11,326</td>
                         <td>$35,710</td>
-                        <td class="success-cell">$220,690</td>
-                        <td class="success-cell">195%</td>
+                        <td class="pos">$220,690</td>
+                        <td class="pos">195%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Jalisco</td>
+                        <td><strong>Jalisco</strong></td>
                         <td>20,684</td>
                         <td>$34,054</td>
-                        <td class="success-cell">$211,921</td>
-                        <td class="success-cell">187%</td>
+                        <td class="pos">$211,921</td>
+                        <td class="pos">187%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Guanajuato</td>
+                        <td><strong>Guanajuato</strong></td>
                         <td>7,733</td>
                         <td>$19,738</td>
-                        <td class="success-cell">$183,967</td>
-                        <td class="success-cell">162%</td>
+                        <td class="pos">$183,967</td>
+                        <td class="pos">162%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Sonora</td>
+                        <td><strong>Sonora</strong></td>
                         <td>9,570</td>
                         <td>$18,279</td>
-                        <td class="warning-cell">$133,139</td>
-                        <td class="warning-cell">117%</td>
+                        <td class="warn">$133,139</td>
+                        <td class="warn">117%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Yucatan</td>
+                        <td><strong>Yucatan</strong></td>
                         <td>9,487</td>
                         <td>$16,601</td>
-                        <td class="warning-cell">$106,464</td>
-                        <td class="danger-cell">94%</td>
+                        <td class="warn">$106,464</td>
+                        <td class="neg">94%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Veracruz</td>
+                        <td><strong>Veracruz</strong></td>
                         <td>4,344</td>
                         <td>$5,667</td>
-                        <td class="warning-cell">$111,537</td>
-                        <td class="danger-cell">98%</td>
+                        <td class="warn">$111,537</td>
+                        <td class="neg">98%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Oaxaca</td>
+                        <td><strong>Oaxaca</strong></td>
                         <td>1,857</td>
                         <td>$868</td>
-                        <td class="danger-cell">$23,723</td>
-                        <td class="danger-cell">21%</td>
+                        <td class="neg">$23,723</td>
+                        <td class="neg">21%</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="stat-highlight">
-                <div class="number">$23,723 vs $234,909</div>
-                <p style="margin-top: 0.5rem; font-size: 1.1rem;">Oaxaca vs Chihuahua: 10 veces de diferencia en el mismo sector industrial</p>
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(47,168,106,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">$23,723 vs $234,909</div>
+                <p>Oaxaca vs Chihuahua: 10 veces de diferencia en el mismo sector industrial</p>
             </div>
+        </div>
 
-            <p><strong>Oaxaca</strong> es el caso mas critico. Con 702 unidades economicas &mdash; el estado con mas empresas carnicas del pais &mdash; apenas genera $868 MDP en produccion y paga $23,723 promedio anual. Eso es el <strong>21% del salario minimo</strong>. La explicacion: atomizacion extrema de microempresas, muchas de ellas en condiciones de informalidad, con alto porcentaje de trabajo no remunerado.</p>
+        <p><strong>Oaxaca</strong> es el caso mas critico. Con 702 unidades economicas &mdash; el estado con mas empresas carnicas del pais &mdash; apenas genera $868 MDP en produccion y paga $23,723 promedio anual. Eso es el <strong>21% del salario minimo</strong>. La explicacion: atomizacion extrema de microempresas, muchas de ellas en condiciones de informalidad, con alto porcentaje de trabajo no remunerado.</p>
 
-            <p><strong>Veracruz</strong> presenta un patron similar: 469 empresas pero solo $5,667 MDP de produccion, con remuneraciones apenas en el umbral del salario minimo. Ambos estados tienen muchas unidades economicas pero de muy baja productividad y precarias condiciones laborales.</p>
+        <p><strong>Veracruz</strong> presenta un patron similar: 469 empresas pero solo $5,667 MDP de produccion, con remuneraciones apenas en el umbral del salario minimo. Ambos estados tienen muchas unidades economicas pero de muy baja productividad y precarias condiciones laborales.</p>
 
-            <p>En contraste, <strong>Nuevo Leon</strong> opera con un modelo industrial integrado: 117 empresas que generan $35,710 MDP y pagan $220,690 promedio. Plantas grandes, capitalizadas, con cadenas de frio y estandares de exportacion.</p>
+        <p>En contraste, <strong>Nuevo Leon</strong> opera con un modelo industrial integrado: 117 empresas que generan $35,710 MDP y pagan $220,690 promedio. Plantas grandes, capitalizadas, con cadenas de frio y estandares de exportacion.</p>
 
-            <h2>Yucatan: mucho empleo, bajas remuneraciones</h2>
+        <h2>Yucatan: mucho empleo, bajas remuneraciones</h2>
 
-            <p>Yucatan merece atencion particular. Con <strong>9,487 empleos</strong> es el quinto estado en personal ocupado de la industria carnica, pero su remuneracion promedio ($106,464) esta <strong>6% por debajo del salario minimo</strong>. Tiene casi tantos empleados como Nuevo Leon (11,326), pero paga la mitad.</p>
+        <p>Yucatan merece atencion particular. Con <strong>9,487 empleos</strong> es el quinto estado en personal ocupado de la industria carnica, pero su remuneracion promedio ($106,464) esta <strong>6% por debajo del salario minimo</strong>. Tiene casi tantos empleados como Nuevo Leon (11,326), pero paga la mitad.</p>
 
-            <div class="callout callout-warning">
-                <strong><i class="fas fa-exclamation-triangle"></i> Modelo de produccion cuestionable:</strong>
-                Yucatan sugiere un modelo de produccion intensivo en mano de obra barata, concentrado en Kanasin (4,624 empleos, probablemente una o dos grandes plantas avicolas) que, si bien genera empleo masivo, lo hace en condiciones que el gobierno estatal deberia monitorear.
-            </div>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> Modelo de produccion cuestionable:</strong>
+            Yucatan sugiere un modelo de produccion intensivo en mano de obra barata, concentrado en Kanasin (4,624 empleos, probablemente una o dos grandes plantas avicolas) que, si bien genera empleo masivo, lo hace en condiciones que el gobierno estatal deberia monitorear.
+        </div>
 
-            <h2>Los municipios: concentracion y dependencia</h2>
+        <h2>Los municipios: concentracion y dependencia</h2>
 
-            <p>A nivel municipal, la concentracion es notable:</p>
+        <p>A nivel municipal, la concentracion es notable:</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -589,89 +545,102 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="highlight-cell">Culiacan</td>
+                        <td><strong>Culiacan</strong></td>
                         <td>Sinaloa</td>
                         <td>5,976</td>
-                        <td class="success-cell">$16,194</td>
+                        <td class="pos">$16,194</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Celaya</td>
+                        <td><strong>Celaya</strong></td>
                         <td>Guanajuato</td>
                         <td>2,942</td>
-                        <td class="success-cell">$12,375</td>
+                        <td class="pos">$12,375</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Gomez Palacio</td>
+                        <td><strong>Gomez Palacio</strong></td>
                         <td>Durango</td>
                         <td>4,419</td>
-                        <td class="success-cell">$10,829</td>
+                        <td class="pos">$10,829</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Chihuahua</td>
+                        <td><strong>Chihuahua</strong></td>
                         <td>Chihuahua</td>
                         <td>3,214</td>
-                        <td class="success-cell">$8,523</td>
+                        <td class="pos">$8,523</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Ecatepec</td>
+                        <td><strong>Ecatepec</strong></td>
                         <td>Estado de Mexico</td>
                         <td>5,842</td>
-                        <td class="warning-cell">$8,330</td>
+                        <td class="warn">$8,330</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Guadalajara</td>
+                        <td><strong>Guadalajara</strong></td>
                         <td>Jalisco</td>
                         <td>6,474</td>
-                        <td class="warning-cell">$4,911</td>
+                        <td class="warn">$4,911</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p><strong>Culiacan</strong> encabeza la produccion nacional con $16,194 MDP &mdash; mas que Monterrey, Guadalajara o cualquier otro municipio. Para el gobierno municipal de Culiacan, esto implica que una porcion significativa de su economia depende de la industria carnica, una dependencia sectorial que debe evaluarse en el Plan Municipal de Desarrollo.</p>
+        <p><strong>Culiacan</strong> encabeza la produccion nacional con $16,194 MDP &mdash; mas que Monterrey, Guadalajara o cualquier otro municipio. Para el gobierno municipal de Culiacan, esto implica que una porcion significativa de su economia depende de la industria carnica, una dependencia sectorial que debe evaluarse en el Plan Municipal de Desarrollo.</p>
 
-            <p><strong>Gomez Palacio</strong> (Durango) presenta un caso similar: 4,419 empleos en matanza y procesamiento representan una dependencia importante para un municipio de esa escala.</p>
+        <p><strong>Gomez Palacio</strong> (Durango) presenta un caso similar: 4,419 empleos en matanza y procesamiento representan una dependencia importante para un municipio de esa escala.</p>
 
-            <h2>Que debe hacer el gobierno?</h2>
+        <h2>Que debe hacer el gobierno?</h2>
 
-            <p>Los datos del Censo 2024 revelan al menos cuatro lineas de accion urgentes:</p>
+        <p>Los datos del Censo 2024 revelan al menos cuatro lineas de accion urgentes:</p>
 
-            <h3>1. Formalizacion del eslabon minorista</h3>
-            <p>Las 147,925 carnicerias del pais emplean a 355,890 personas en condiciones mayoritariamente precarias. Los gobiernos municipales, que otorgan los permisos de operacion, tienen la capacidad de vincular la formalizacion con acceso a programas de capacitacion y financiamiento.</p>
+        <h3>1. Formalizacion del eslabon minorista</h3>
+        <p>Las 147,925 carnicerias del pais emplean a 355,890 personas en condiciones mayoritariamente precarias. Los gobiernos municipales, que otorgan los permisos de operacion, tienen la capacidad de vincular la formalizacion con acceso a programas de capacitacion y financiamiento.</p>
 
-            <h3>2. Monitoreo laboral en Oaxaca, Veracruz y Guerrero</h3>
-            <p>Las remuneraciones por debajo del salario minimo en la industria carnica de estos estados sugieren condiciones de informalidad que requieren inspeccion laboral y programas de regularizacion.</p>
+        <h3>2. Monitoreo laboral en Oaxaca, Veracruz y Guerrero</h3>
+        <p>Las remuneraciones por debajo del salario minimo en la industria carnica de estos estados sugieren condiciones de informalidad que requieren inspeccion laboral y programas de regularizacion.</p>
 
-            <h3>3. Evaluacion de dependencia sectorial municipal</h3>
-            <p>Municipios como Culiacan, Gomez Palacio y Kanasin tienen una concentracion elevada en la industria carnica. Los gobiernos municipales deben incluir en sus diagnosticos economicos el riesgo de depender de un solo sector &mdash; una crisis sanitaria, un cierre de planta o un cambio regulatorio podrian impactar miles de empleos.</p>
+        <h3>3. Evaluacion de dependencia sectorial municipal</h3>
+        <p>Municipios como Culiacan, Gomez Palacio y Kanasin tienen una concentracion elevada en la industria carnica. Los gobiernos municipales deben incluir en sus diagnosticos economicos el riesgo de depender de un solo sector &mdash; una crisis sanitaria, un cierre de planta o un cambio regulatorio podrian impactar miles de empleos.</p>
 
-            <h3>4. Politica de valor agregado</h3>
-            <p>La brecha entre matanza ($143,535 de remuneracion) y embutidos ($198,567) demuestra que la transformacion industrial genera mejores empleos. Los gobiernos estatales con fuerte presencia de matanza pero poca industrializacion (Sinaloa, Sonora, Yucatan) tienen la oportunidad de incentivar la diversificacion hacia procesamiento y valor agregado.</p>
+        <h3>4. Politica de valor agregado</h3>
+        <p>La brecha entre matanza ($143,535 de remuneracion) y embutidos ($198,567) demuestra que la transformacion industrial genera mejores empleos. Los gobiernos estatales con fuerte presencia de matanza pero poca industrializacion (Sinaloa, Sonora, Yucatan) tienen la oportunidad de incentivar la diversificacion hacia procesamiento y valor agregado.</p>
 
-            <h2>Conclusion</h2>
+        <h2>Conclusion</h2>
 
-            <div class="quote-box">
-                <p>La cadena de la carne en Mexico es un espejo de las desigualdades territoriales del pais. El mismo sector que paga $234,909 en Chihuahua paga $23,723 en Oaxaca. El mismo tipo de empleo que en Nuevo Leon viene con seguridad social y cadena de frio, en Guerrero viene sin remuneracion formal.</p>
-            </div>
+        <div class="quote-box">
+            La cadena de la carne en Mexico es un espejo de las desigualdades territoriales del pais. El mismo sector que paga $234,909 en Chihuahua paga $23,723 en Oaxaca. El mismo tipo de empleo que en Nuevo Leon viene con seguridad social y cadena de frio, en Guerrero viene sin remuneracion formal.
+        </div>
 
-            <p>Los datos estan sobre la mesa: <strong>medio billon de pesos y 529 mil empleos</strong> que necesitan una politica publica a la altura de su importancia economica.</p>
+        <p>Los datos estan sobre la mesa: <strong>medio billon de pesos y 529 mil empleos</strong> que necesitan una politica publica a la altura de su importancia economica.</p>
 
-            <div class="source-box">
-                <p><strong>Fuente:</strong> Censo Economico 2024, INEGI | <strong>Codigos SCIAN:</strong> 3116, 311611, 311612, 311613, 311614, 43112, 46112</p>
-                <p style="margin-top: 0.5rem;"><strong>Cobertura:</strong> Nacional, estatal y municipal | <strong>Analisis:</strong> GDI | Febrero 2026</p>
-            </div>
+        <div class="source-box">
+            <p><strong>Fuente:</strong> Censo Economico 2024, INEGI | <strong>Codigos SCIAN:</strong> 3116, 311611, 311612, 311613, 311614, 43112, 46112</p>
+            <p><strong>Cobertura:</strong> Nacional, estatal y municipal | <strong>Analisis:</strong> GDI | Febrero 2026</p>
+        </div>
 
-            <div class="cta-box">
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
                 <h3><i class="fas fa-chart-bar"></i> Analiza los datos del Censo Economico</h3>
                 <p>Explora la cadena de valor carnica y otras industrias con datos oficiales de INEGI en nuestra plataforma.</p>
-                <a href="https://gdidata.com" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar GDI Data
-                </a>
+                <a href="https://gdidata.com" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar GDI Data</a>
             </div>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

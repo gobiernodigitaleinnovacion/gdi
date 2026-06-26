@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seguros en Mexico: Un Oligopolio con Datos Ocultos - GDI</title>
     <meta name="description" content="El mercado asegurador mexicano mueve $239,030 MDP al ano. 85% de la produccion se concentra en CDMX y las cifras clave de 74 aseguradoras estan bajo reserva de INEGI.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-03-14-seguros-en-mexico-oligopolio-datos-ocultos">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Seguros en Mexico: Un Oligopolio con Datos Ocultos">
+    <meta property="og:description" content="El mercado asegurador mexicano mueve $239,030 MDP al ano. 85% de la produccion se concentra en CDMX y las cifras clave de 74 aseguradoras estan bajo reserva de INEGI.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-03-14-seguros-en-mexico-oligopolio-datos-ocultos">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -29,7 +46,7 @@
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
       ttq.load('D5MHUKBC77UEK8Q4I9B0');
@@ -39,372 +56,303 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #10b981;
-            --accent-dark: #059669;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-accent: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #2FA86A;
+            --accent-dark: #1f7d4e;
+            --accent-soft: rgba(47, 168, 106, 0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-accent);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-accent);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout-success {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: var(--accent-color);
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .data-table th {
-            background: var(--gradient-accent);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
         }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
         }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
 
-        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-        .success-cell { color: #10b981; font-weight: 700; }
-        .warning-cell { color: #f59e0b; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-accent);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
+        /* ===== Stat grid (barras verticales) ===== */
         .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
         }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
         }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
 
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent-color);
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
         }
-
-        .stat-card .label {
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
-            border-left: 4px solid var(--accent-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
             .stat-grid { grid-template-columns: 1fr; }
-            .data-table { font-size: 0.85rem; }
+            .data-table { font-size: 0.82rem; }
             .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
-    </header>
-
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-chart-line"></i> Economia</span>
-            <span><i class="far fa-calendar"></i> 14 de marzo de 2026</span>
-            <span><i class="far fa-clock"></i> 15 min de lectura</span>
-        </div>
-
-        <h1 class="article-title">Seguros en Mexico: Un Oligopolio con Datos Ocultos</h1>
-        <p class="article-subtitle">85% de la produccion en CDMX y cifras clave bajo reserva de INEGI. El mercado asegurador mueve $239,030 MDP al ano &mdash; pero sus principales actores operan bajo confidencialidad estadistica.</p>
-
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-shield-alt"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Mercado Asegurador Mexicano</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Economico 2024 | INEGI</p>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
             </div>
         </div>
+    </nav>
 
-        <div class="article-content">
-            <p>El mercado asegurador mexicano mueve <strong>$239,030 millones de pesos al ano</strong> y emplea a <strong>139,806 personas</strong> &mdash; pero su dato mas relevante para cualquier gobierno esta blindado: las 74 companias aseguradoras que controlan el corazon del sector tienen sus cifras clasificadas como <strong>confidenciales por INEGI</strong>. Para un servidor publico que necesita entender la estructura economica de su territorio, esto no es un detalle tecnico &mdash; es una alerta sobre el tipo de mercado que opera en Mexico.</p>
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-chart-line"></i> Economía</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 14 Mar 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 15 min</span>
+            </div>
+            <h1>Seguros en Mexico: Un Oligopolio con <span style="color:var(--accent)">Datos Ocultos</span></h1>
+            <p class="hero-subtitle">85% de la produccion en CDMX y cifras clave bajo reserva de INEGI. El mercado asegurador mueve $239,030 MDP al ano &mdash; pero sus principales actores operan bajo confidencialidad estadistica.</p>
+        </div>
+    </header>
 
-            <h2>Contexto: &iquest;De que tamano es este sector?</h2>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Economía · Sector Financiero · México · Marzo 2026
+        </div>
 
-            <p>El sector 524 (Companias de seguros, fianzas y administracion de fondos) es uno de los pilares del sistema financiero mexicano. Con datos del Censo Economico 2024 de INEGI, el panorama es el siguiente:</p>
+        <p>El mercado asegurador mexicano mueve <strong>$239,030 millones de pesos al ano</strong> y emplea a <strong>139,806 personas</strong> &mdash; pero su dato mas relevante para cualquier gobierno esta blindado: las 74 companias aseguradoras que controlan el corazon del sector tienen sus cifras clasificadas como <strong>confidenciales por INEGI</strong>. Para un servidor publico que necesita entender la estructura economica de su territorio, esto no es un detalle tecnico &mdash; es una alerta sobre el tipo de mercado que opera en Mexico.</p>
 
+        <h2>Contexto: &iquest;De que tamano es este sector?</h2>
+
+        <p>El sector 524 (Companias de seguros, fianzas y administracion de fondos) es uno de los pilares del sistema financiero mexicano. Con datos del Censo Economico 2024 de INEGI, el panorama es el siguiente:</p>
+
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -415,83 +363,85 @@
                 <tbody>
                     <tr>
                         <td>Unidades economicas</td>
-                        <td class="highlight-cell">5,088</td>
+                        <td><strong>5,088</strong></td>
                     </tr>
                     <tr>
                         <td>Personal ocupado</td>
-                        <td class="highlight-cell">139,806</td>
+                        <td><strong>139,806</strong></td>
                     </tr>
                     <tr>
                         <td>Produccion bruta total</td>
-                        <td class="highlight-cell">$239,030 MDP</td>
+                        <td><strong>$239,030 MDP</strong></td>
                     </tr>
                     <tr>
                         <td>Valor agregado</td>
-                        <td class="highlight-cell">$190,054 MDP</td>
+                        <td><strong>$190,054 MDP</strong></td>
                     </tr>
                     <tr>
                         <td>Remuneracion promedio anual</td>
-                        <td class="highlight-cell">$228,125</td>
+                        <td><strong>$228,125</strong></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="number">5,088</div>
-                    <div class="label">Unidades economicas</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">139,806</div>
-                    <div class="label">Empleos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">$239,030M</div>
-                    <div class="label">Produccion (MDP)</div>
-                </div>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">5,088</div>
+                <div class="lbl">Unidades economicas</div>
             </div>
-
-            <p>Para ponerlo en perspectiva dentro del sistema financiero: el sector asegurador representa el <strong>13.8% de la produccion del sector financiero completo</strong>, por debajo de la banca ($1,483,569 MDP) pero por encima de las actividades bursatiles ($57,570 MDP).</p>
-
-            <h2>Radiografia Economica: Una Cadena con Tres Eslabones</h2>
-
-            <p>El sector no es homogeneo. Tiene tres capas con logicas muy distintas:</p>
-
-            <h3>1. Las aseguradoras y afianzadoras (5241) &mdash; El nucleo opaco</h3>
-
-            <ul>
-                <li><strong>74 companias de seguros (52411):</strong> datos de empleo y produccion confidenciales</li>
-                <li><strong>12 companias afianzadoras (52413):</strong> datos confidenciales</li>
-                <li><strong>109 fondos de aseguramiento campesino (52412):</strong> 524 empleos, $277 MDP &mdash; el unico segmento visible, y el mas pequeno</li>
-            </ul>
-
-            <div class="callout callout-warning">
-                <strong><i class="fas fa-lock"></i> &iquest;Por que son confidenciales?</strong>
-                Los datos de las companias de seguros son confidenciales porque el bajo numero de establecimientos (74 empresas a nivel nacional) haria posible identificar la situacion financiera de empresas especificas, lo que INEGI no puede publicar por ley.
+            <div class="stat-card">
+                <div class="num">139,806</div>
+                <div class="lbl">Empleos</div>
             </div>
+            <div class="stat-card">
+                <div class="num">$239,030M</div>
+                <div class="lbl">Produccion (MDP)</div>
+            </div>
+        </div>
 
-            <h3>2. Los agentes, ajustadores y gestores (52421) &mdash; La red visible</h3>
+        <p>Para ponerlo en perspectiva dentro del sistema financiero: el sector asegurador representa el <strong>13.8% de la produccion del sector financiero completo</strong>, por debajo de la banca ($1,483,569 MDP) pero por encima de las actividades bursatiles ($57,570 MDP).</p>
 
-            <ul>
-                <li><strong>4,883 establecimientos</strong> &mdash; el 96% de todas las unidades del sector</li>
-                <li><strong>36,978 empleos</strong></li>
-                <li>Produccion: <strong>$24,967 MDP</strong></li>
-                <li>Remuneracion promedio: <strong>$157,186/ano</strong></li>
-            </ul>
+        <h2>Radiografia Economica: Una Cadena con Tres Eslabones</h2>
 
-            <h3>3. Las AFOREs (52422) &mdash; Pocas empresas, gran impacto social</h3>
+        <p>El sector no es homogeneo. Tiene tres capas con logicas muy distintas:</p>
 
-            <ul>
-                <li>Solo <strong>10 establecimientos</strong> en todo el pais</li>
-                <li><strong>27,303 empleos</strong> &mdash; casi tantos como todos los agentes de seguros</li>
-                <li>Produccion: <strong>$31,273 MDP</strong></li>
-                <li>Remuneracion promedio: <strong>$218,728/ano</strong></li>
-            </ul>
+        <h3>1. Las aseguradoras y afianzadoras (5241) &mdash; El nucleo opaco</h3>
 
-            <h2>Hallazgos Clave: Las Alertas para la Gestion Publica</h2>
+        <ul>
+            <li><strong>74 companias de seguros (52411):</strong> datos de empleo y produccion confidenciales</li>
+            <li><strong>12 companias afianzadoras (52413):</strong> datos confidenciales</li>
+            <li><strong>109 fondos de aseguramiento campesino (52412):</strong> 524 empleos, $277 MDP &mdash; el unico segmento visible, y el mas pequeno</li>
+        </ul>
 
-            <h3><span style="color: #ef4444;">&#128308;</span> Alerta 1: Concentracion extrema en CDMX</h3>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-lock"></i> &iquest;Por que son confidenciales?</strong>
+            Los datos de las companias de seguros son confidenciales porque el bajo numero de establecimientos (74 empresas a nivel nacional) haria posible identificar la situacion financiera de empresas especificas, lo que INEGI no puede publicar por ley.
+        </div>
 
+        <h3>2. Los agentes, ajustadores y gestores (52421) &mdash; La red visible</h3>
+
+        <ul>
+            <li><strong>4,883 establecimientos</strong> &mdash; el 96% de todas las unidades del sector</li>
+            <li><strong>36,978 empleos</strong></li>
+            <li>Produccion: <strong>$24,967 MDP</strong></li>
+            <li>Remuneracion promedio: <strong>$157,186/ano</strong></li>
+        </ul>
+
+        <h3>3. Las AFOREs (52422) &mdash; Pocas empresas, gran impacto social</h3>
+
+        <ul>
+            <li>Solo <strong>10 establecimientos</strong> en todo el pais</li>
+            <li><strong>27,303 empleos</strong> &mdash; casi tantos como todos los agentes de seguros</li>
+            <li>Produccion: <strong>$31,273 MDP</strong></li>
+            <li>Remuneracion promedio: <strong>$218,728/ano</strong></li>
+        </ul>
+
+        <h2>Hallazgos Clave: Las Alertas para la Gestion Publica</h2>
+
+        <h3><span style="color: #ef4444;">&#128308;</span> Alerta 1: Concentracion extrema en CDMX</h3>
+
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -504,35 +454,35 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="highlight-cell">Ciudad de Mexico</td>
+                        <td><strong>Ciudad de Mexico</strong></td>
                         <td>100,820</td>
-                        <td class="danger-cell">72.1%</td>
+                        <td class="neg">72.1%</td>
                         <td>$203,913</td>
-                        <td class="danger-cell">85.3%</td>
+                        <td class="neg">85.3%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Nuevo Leon</td>
+                        <td><strong>Nuevo Leon</strong></td>
                         <td>8,451</td>
                         <td>6.0%</td>
                         <td>$7,684</td>
                         <td>3.2%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Coahuila</td>
+                        <td><strong>Coahuila</strong></td>
                         <td>3,278</td>
                         <td>2.3%</td>
                         <td>$6,643</td>
                         <td>2.8%</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Estado de Mexico</td>
+                        <td><strong>Estado de Mexico</strong></td>
                         <td>3,098</td>
                         <td>2.2%</td>
                         <td>$4,275</td>
                         <td>1.8%</td>
                     </tr>
-                    <tr style="background: rgba(16, 185, 129, 0.05);">
-                        <td class="highlight-cell">Resto del pais</td>
+                    <tr class="row-accent">
+                        <td><strong>Resto del pais</strong></td>
                         <td>22,159</td>
                         <td>15.8%</td>
                         <td>$16,515</td>
@@ -540,17 +490,22 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="stat-highlight">
-                <p>Concentracion de produccion en CDMX</p>
-                <p class="number">85.3%</p>
-                <p>85 de cada 100 pesos que produce el sector asegurador se generan en la Ciudad de Mexico</p>
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(47,168,106,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">85.3%</div>
+                <p>Concentracion de produccion en CDMX: 85 de cada 100 pesos que produce el sector asegurador se generan en la Ciudad de Mexico.</p>
             </div>
+        </div>
 
-            <p>Para cualquier gobierno estatal o municipal fuera de la CDMX, esto significa que las decisiones sobre primas, cobertura y acceso al seguro se toman a distancia &mdash; y los ingresos fiscales derivados del sector tambien se quedan en la capital.</p>
+        <p>Para cualquier gobierno estatal o municipal fuera de la CDMX, esto significa que las decisiones sobre primas, cobertura y acceso al seguro se toman a distancia &mdash; y los ingresos fiscales derivados del sector tambien se quedan en la capital.</p>
 
-            <h3><span style="color: #ef4444;">&#128308;</span> Alerta 2: Brecha salarial territorial severa</h3>
+        <h3><span style="color: #ef4444;">&#128308;</span> Alerta 2: Brecha salarial territorial severa</h3>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -560,64 +515,66 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="highlight-cell">Coahuila</td>
-                        <td class="success-cell">$272,987</td>
+                        <td><strong>Coahuila</strong></td>
+                        <td class="pos">$272,987</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Estado de Mexico</td>
-                        <td class="success-cell">$262,738</td>
+                        <td><strong>Estado de Mexico</strong></td>
+                        <td class="pos">$262,738</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Ciudad de Mexico</td>
-                        <td class="success-cell">$251,352</td>
+                        <td><strong>Ciudad de Mexico</strong></td>
+                        <td class="pos">$251,352</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Veracruz</td>
-                        <td class="danger-cell">$74,644</td>
+                        <td><strong>Veracruz</strong></td>
+                        <td class="neg">$74,644</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">Oaxaca</td>
-                        <td class="danger-cell">$86,904</td>
+                        <td><strong>Oaxaca</strong></td>
+                        <td class="neg">$86,904</td>
                     </tr>
-                    <tr style="background: rgba(239, 68, 68, 0.1);">
-                        <td class="highlight-cell">Morelos</td>
-                        <td class="danger-cell">$64,622</td>
+                    <tr class="row-accent">
+                        <td><strong>Morelos</strong></td>
+                        <td class="neg">$64,622</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="callout callout-danger">
-                <strong>Brecha salarial: 4.2 veces</strong>
-                La diferencia entre el estado mejor pagado (Coahuila, $272,987) y el peor (Morelos, $64,622) es de 4.2 veces. En estados como Veracruz, Oaxaca y Morelos, los trabajadores del sector asegurador ganan por debajo del salario minimo anual de 2026 ($113,464) &mdash; lo que sugiere trabajo informal, comisiones variables o registros parciales en el Censo.
-            </div>
+        <div class="callout callout-warning">
+            <strong>Brecha salarial: 4.2 veces</strong>
+            La diferencia entre el estado mejor pagado (Coahuila, $272,987) y el peor (Morelos, $64,622) es de 4.2 veces. En estados como Veracruz, Oaxaca y Morelos, los trabajadores del sector asegurador ganan por debajo del salario minimo anual de 2026 ($113,464) &mdash; lo que sugiere trabajo informal, comisiones variables o registros parciales en el Censo.
+        </div>
 
-            <h3><span style="color: #ef4444;">&#128308;</span> Alerta 3: El dato mas importante no esta disponible</h3>
+        <h3><span style="color: #ef4444;">&#128308;</span> Alerta 3: El dato mas importante no esta disponible</h3>
 
-            <p>Las 74 companias aseguradoras que dominan el mercado &mdash; donde se fijan las primas de gastos medicos mayores, seguros de vida y autos &mdash; tienen sus datos de empleo, produccion y remuneraciones clasificados como confidenciales. <strong>Ningun gobierno estatal puede saber con certeza cuanto produce o emplea en su territorio la industria aseguradora formal.</strong></p>
+        <p>Las 74 companias aseguradoras que dominan el mercado &mdash; donde se fijan las primas de gastos medicos mayores, seguros de vida y autos &mdash; tienen sus datos de empleo, produccion y remuneraciones clasificados como confidenciales. <strong>Ningun gobierno estatal puede saber con certeza cuanto produce o emplea en su territorio la industria aseguradora formal.</strong></p>
 
-            <h2>Implicaciones para la Gestion Publica</h2>
+        <h2>Implicaciones para la Gestion Publica</h2>
 
-            <h3>Para gobiernos estatales</h3>
+        <h3>Para gobiernos estatales</h3>
 
-            <ul>
-                <li>La dependencia del 85% en CDMX significa que los ingresos fiscales del sector (ISR, ISN) se concentran en la capital. Los estados con presencia de agentes y ajustadores pueden aprovechar el <strong>Impuesto Sobre Nomina</strong> como fuente de recaudacion propia &mdash; pero el margen es limitado fuera de CDMX y Nuevo Leon.</li>
-                <li>Los estados con remuneraciones por debajo del salario minimo en el sector deben investigar si el registro censal refleja <strong>trabajo informal o comisionistas no asalariados</strong>.</li>
-            </ul>
+        <ul>
+            <li>La dependencia del 85% en CDMX significa que los ingresos fiscales del sector (ISR, ISN) se concentran en la capital. Los estados con presencia de agentes y ajustadores pueden aprovechar el <strong>Impuesto Sobre Nomina</strong> como fuente de recaudacion propia &mdash; pero el margen es limitado fuera de CDMX y Nuevo Leon.</li>
+            <li>Los estados con remuneraciones por debajo del salario minimo en el sector deben investigar si el registro censal refleja <strong>trabajo informal o comisionistas no asalariados</strong>.</li>
+        </ul>
 
-            <h3>Para gobiernos municipales</h3>
+        <h3>Para gobiernos municipales</h3>
 
-            <ul>
-                <li>La red de <strong>4,883 agentes y ajustadores</strong> esta distribuida en todo el pais &mdash; estos son negocios locales que generan empleo y pagan predial. Identificar su concentracion en colonias y municipios permite focalizar apoyos a pequenos negocios de servicios financieros.</li>
-            </ul>
+        <ul>
+            <li>La red de <strong>4,883 agentes y ajustadores</strong> esta distribuida en todo el pais &mdash; estos son negocios locales que generan empleo y pagan predial. Identificar su concentracion en colonias y municipios permite focalizar apoyos a pequenos negocios de servicios financieros.</li>
+        </ul>
 
-            <h3>Para politica de desarrollo economico</h3>
+        <h3>Para politica de desarrollo economico</h3>
 
-            <ul>
-                <li>El sector asegurador es un empleador de remuneraciones altas (<strong>$228,125 promedio, 2x el salario minimo</strong>). Atraer operaciones administrativas o centros de atencion de aseguradoras representa una oportunidad de empleo de calidad para estados fuera de CDMX &mdash; Nuevo Leon ya lo esta aprovechando.</li>
-            </ul>
+        <ul>
+            <li>El sector asegurador es un empleador de remuneraciones altas (<strong>$228,125 promedio, 2x el salario minimo</strong>). Atraer operaciones administrativas o centros de atencion de aseguradoras representa una oportunidad de empleo de calidad para estados fuera de CDMX &mdash; Nuevo Leon ya lo esta aprovechando.</li>
+        </ul>
 
-            <h2>Datos Tecnicos</h2>
+        <h2>Datos Tecnicos</h2>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -627,67 +584,80 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="highlight-cell">524</td>
+                        <td><strong>524</strong></td>
                         <td>Companias de seguros, fianzas y administracion de fondos</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">5241</td>
+                        <td><strong>5241</strong></td>
                         <td>Companias de seguros y fianzas</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">52411</td>
+                        <td><strong>52411</strong></td>
                         <td>Companias de seguros (datos confidenciales)</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">52412</td>
+                        <td><strong>52412</strong></td>
                         <td>Fondos de aseguramiento campesino</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">52413</td>
+                        <td><strong>52413</strong></td>
                         <td>Companias afianzadoras (datos confidenciales)</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">5242</td>
+                        <td><strong>5242</strong></td>
                         <td>Servicios relacionados con seguros y fianzas</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">52421</td>
+                        <td><strong>52421</strong></td>
                         <td>Agentes, ajustadores y gestores</td>
                     </tr>
                     <tr>
-                        <td class="highlight-cell">52422</td>
+                        <td><strong>52422</strong></td>
                         <td>Administracion de fondos para el retiro (AFOREs)</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="source-box">
-                <p><strong>Fuente:</strong> Censo Economico 2024, INEGI</p>
-                <p style="margin-top: 0.5rem;"><strong>Nota sobre confidencialidad:</strong> Los datos marcados como confidenciales corresponden a actividades con muy pocas unidades economicas, cuya publicacion violaria el secreto estadistico establecido en la Ley del Sistema Nacional de Informacion Estadistica y Geografica.</p>
-            </div>
+        <div class="source-box">
+            <p><strong>Fuente:</strong> Censo Economico 2024, INEGI</p>
+            <p><strong>Nota sobre confidencialidad:</strong> Los datos marcados como confidenciales corresponden a actividades con muy pocas unidades economicas, cuya publicacion violaria el secreto estadistico establecido en la Ley del Sistema Nacional de Informacion Estadistica y Geografica.</p>
+        </div>
 
-            <h2>Conclusion</h2>
+        <h2>Conclusion</h2>
 
-            <p>El mercado asegurador mexicano es, desde la perspectiva de los datos publicos, un sector parcialmente invisible. Sus principales actores &mdash; 74 companias que concentran la mayor parte de los $239,030 MDP que mueve el sector &mdash; operan bajo confidencialidad estadistica. Lo que si puede verse es igualmente revelador: una concentracion del 85% en la Ciudad de Mexico, brechas salariales de 4x entre estados, y una red de casi 5,000 agentes distribuidos por todo el pais que son, en la practica, el unico eslabon del sector con presencia territorial real.</p>
+        <p>El mercado asegurador mexicano es, desde la perspectiva de los datos publicos, un sector parcialmente invisible. Sus principales actores &mdash; 74 companias que concentran la mayor parte de los $239,030 MDP que mueve el sector &mdash; operan bajo confidencialidad estadistica. Lo que si puede verse es igualmente revelador: una concentracion del 85% en la Ciudad de Mexico, brechas salariales de 4x entre estados, y una red de casi 5,000 agentes distribuidos por todo el pais que son, en la practica, el unico eslabon del sector con presencia territorial real.</p>
 
-            <p>Para los gobiernos estatales y municipales, el mensaje es claro: el sector asegurador esta en su territorio, pero sus decisiones y sus utilidades no. La politica publica debe enfocarse en aprovechar la red de distribucion local, vigilar las condiciones laborales de los trabajadores del sector y, donde sea posible, atraer funciones administrativas que generen empleo de calidad fuera de la capital.</p>
+        <p>Para los gobiernos estatales y municipales, el mensaje es claro: el sector asegurador esta en su territorio, pero sus decisiones y sus utilidades no. La politica publica debe enfocarse en aprovechar la red de distribucion local, vigilar las condiciones laborales de los trabajadores del sector y, donde sea posible, atraer funciones administrativas que generen empleo de calidad fuera de la capital.</p>
 
-            <div class="quote-box">
-                El sector asegurador esta en tu territorio, pero sus decisiones y sus utilidades no. La informacion es poder &mdash; usarla es responsabilidad.
-            </div>
+        <div class="quote-box">
+            El sector asegurador esta en tu territorio, pero sus decisiones y sus utilidades no. La informacion es poder &mdash; usarla es responsabilidad.
+        </div>
 
-            <div class="cta-box">
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
                 <h3><i class="fas fa-chart-bar"></i> Analiza los datos del sector asegurador</h3>
                 <p>Descubre la estructura del mercado de seguros en tu estado con nuestras herramientas de analisis de datos del Censo Economico 2024.</p>
-                <a href="https://gdidata.com" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar GDI Data
-                </a>
+                <a href="https://gdidata.com" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar GDI Data</a>
             </div>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento - GDI</title>
     <meta name="description" content="Análisis del Censo Económico 2024: 82,856 empleos y $323,305 millones en el ecosistema ferroviario mexicano. Construcción, manufactura y el desafío de la modernización digital.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-01-09-renacer-ferroviario-mexico">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento">
+    <meta property="og:description" content="Análisis del Censo Económico 2024: 82,856 empleos y $323,305 millones en el ecosistema ferroviario mexicano. Construcción, manufactura y el desafío de la modernización digital.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-01-09-renacer-ferroviario-mexico">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -29,7 +46,7 @@
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
       ttq.load('D5MHUKBC77UEK8Q4I9B0');
@@ -39,330 +56,303 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --economy-color: #10b981;
-            --economy-dark: #059669;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-economy: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #2FA86A;
+            --accent-dark: #1f7d4e;
+            --accent-soft: rgba(47, 168, 106, 0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-economy);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--economy-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-economy {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: #10b981;
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
+        }
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
+        }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
+
+        /* ===== Stat grid (barras verticales) ===== */
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
+        }
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
+        }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
+        }
         .data-table th {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
 
-        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .economy-cell { color: #10b981; font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
-        .cta-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
-        }
-
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
-            border-left: 4px solid var(--economy-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        /* ===== CTA ===== */
+        .cta-box {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
+        }
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
+        }
+        .cta-btn:hover { filter: brightness(1.08); }
+
+        /* ===== Source box ===== */
+        .source-box {
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
+        }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+        }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
+
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
-    </header>
-
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-chart-line"></i> Economía</span>
-            <span><i class="far fa-calendar"></i> 9 de enero de 2026</span>
-            <span><i class="far fa-clock"></i> 12 min de lectura</span>
-        </div>
-
-        <h1 class="article-title">El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento</h1>
-        <p class="article-subtitle">Construcción, Manufactura y el Desafío de la Modernización Digital. Análisis basado en Censo Económico 2024.</p>
-
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-train"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Censo Económico 2024</p>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
             </div>
         </div>
+    </nav>
 
-        <div class="article-content">
-            <h2>1. El Boom de la Construcción Ferroviaria</h2>
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-chart-line"></i> Economía</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 9 Ene 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 12 min</span>
+            </div>
+            <h1>El Renacer Ferroviario de México: Entre la Ambición y el <span style="color:var(--accent)">Descarrilamiento</span></h1>
+            <p class="hero-subtitle">Construcción, Manufactura y el Desafío de la Modernización Digital. Análisis basado en Censo Económico 2024.</p>
+        </div>
+    </header>
 
-            <p>México vive su mayor expansión ferroviaria en décadas. El Tren Maya, el Tren Interoceánico del Istmo de Tehuantepec, y diversos proyectos de trenes de pasajeros han detonado una industria que el Censo Económico 2024 permite dimensionar con precisión.</p>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Economía · Infraestructura · México · Enero 2026
+        </div>
 
-            <p>El subsector de <strong>construcción de obras para transporte eléctrico y ferroviario (237993)</strong> registra cifras extraordinarias:</p>
+        <h2>1. El Boom de la Construcción Ferroviaria</h2>
 
+        <p>México vive su mayor expansión ferroviaria en décadas. El Tren Maya, el Tren Interoceánico del Istmo de Tehuantepec, y diversos proyectos de trenes de pasajeros han detonado una industria que el Censo Económico 2024 permite dimensionar con precisión.</p>
+
+        <p>El subsector de <strong>construcción de obras para transporte eléctrico y ferroviario (237993)</strong> registra cifras extraordinarias:</p>
+
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -377,11 +367,11 @@
                     </tr>
                     <tr>
                         <td>Personal ocupado</td>
-                        <td class="economy-cell">58,409 empleos</td>
+                        <td class="pos">58,409 empleos</td>
                     </tr>
                     <tr>
                         <td>Producción bruta</td>
-                        <td class="economy-cell">$256,982 millones de pesos</td>
+                        <td class="pos">$256,982 millones de pesos</td>
                     </tr>
                     <tr>
                         <td>Valor agregado</td>
@@ -389,7 +379,7 @@
                     </tr>
                     <tr>
                         <td>Productividad</td>
-                        <td class="economy-cell">$1,254,080 por persona</td>
+                        <td class="pos">$1,254,080 por persona</td>
                     </tr>
                     <tr>
                         <td>Remuneración media</td>
@@ -397,21 +387,26 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p>Para dimensionar: este subsector representa el <strong>97% de la producción</strong> de toda la categoría "Otras construcciones de ingeniería civil" ($265,689 MDP). La construcción ferroviaria eclipsa a presas, represas, obras marítimas y cualquier otra infraestructura civil combinada.</p>
+        <p>Para dimensionar: este subsector representa el <strong>97% de la producción</strong> de toda la categoría "Otras construcciones de ingeniería civil" ($265,689 MDP). La construcción ferroviaria eclipsa a presas, represas, obras marítimas y cualquier otra infraestructura civil combinada.</p>
 
-            <div class="stat-highlight">
-                <p>Productividad por trabajador</p>
-                <p class="number">$1.25 M</p>
-                <p>Una de las más altas de toda la economía mexicana</p>
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(47,168,106,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">$1.25 M</div>
+                <p>Productividad por trabajador — una de las más altas de toda la economía mexicana.</p>
             </div>
+        </div>
 
-            <p>La productividad de <strong>$1.25 millones por trabajador</strong> es de las más altas de toda la economía, superando incluso a sectores como minería y servicios financieros. Las remuneraciones de $316,496 anuales —casi tres veces el salario mínimo— reflejan la especialización técnica requerida.</p>
+        <p>La productividad de <strong>$1.25 millones por trabajador</strong> es de las más altas de toda la economía, superando incluso a sectores como minería y servicios financieros. Las remuneraciones de $316,496 anuales —casi tres veces el salario mínimo— reflejan la especialización técnica requerida.</p>
 
-            <h2>2. La Concentración Geográfica: Todo Pasa por la Capital</h2>
+        <h2>2. La Concentración Geográfica: Todo Pasa por la Capital</h2>
 
-            <p>La distribución geográfica de la construcción ferroviaria revela una concentración extrema:</p>
+        <p>La distribución geográfica de la construcción ferroviaria revela una concentración extrema:</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -425,8 +420,8 @@
                     <tr>
                         <td>Ciudad de México</td>
                         <td>20</td>
-                        <td class="economy-cell">53,239</td>
-                        <td class="economy-cell">$223,281</td>
+                        <td class="pos">53,239</td>
+                        <td class="pos">$223,281</td>
                     </tr>
                     <tr>
                         <td>Resto del país (23 estados)</td>
@@ -436,20 +431,21 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">*Datos confidenciales para estados individuales, estimación por diferencia.</p>
 
-            <p style="font-size: 0.9rem; color: var(--medium-gray); font-style: italic;">*Datos confidenciales para estados individuales, estimación por diferencia.</p>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-map-marker-alt"></i> Concentración extrema</strong>
+            El 91% del empleo y 87% de la producción del sector se concentra en la Ciudad de México. Las empresas constructoras tienen sus matrices y nóminas registradas en la capital, aunque las obras se construyan en otros estados.
+        </div>
 
-            <div class="callout callout-economy">
-                <strong>Concentración extrema</strong>
-                El 91% del empleo y 87% de la producción del sector se concentra en la Ciudad de México. Las empresas constructoras tienen sus matrices y nóminas registradas en la capital, aunque las obras se construyan en otros estados.
-            </div>
+        <p>Estados donde hay presencia de construcción ferroviaria (aunque con datos confidenciales): Chiapas (7 empresas), Quintana Roo (5), Campeche (4), Tabasco (2), Yucatán (1). El corredor del Tren Maya está representado, pero la derrama económica real en esos estados queda opaca en los datos censales.</p>
 
-            <p>Estados donde hay presencia de construcción ferroviaria (aunque con datos confidenciales): Chiapas (7 empresas), Quintana Roo (5), Campeche (4), Tabasco (2), Yucatán (1). El corredor del Tren Maya está representado, pero la derrama económica real en esos estados queda opaca en los datos censales.</p>
+        <h2>3. Fabricación de Equipo Ferroviario: El Eslabón Industrial</h2>
 
-            <h2>3. Fabricación de Equipo Ferroviario: El Eslabón Industrial</h2>
+        <p>Paralelo a la construcción, México cuenta con una industria de <strong>fabricación de equipo ferroviario (336510)</strong> que produce locomotoras, vagones, carros de pasajeros y componentes:</p>
 
-            <p>Paralelo a la construcción, México cuenta con una industria de <strong>fabricación de equipo ferroviario (336510)</strong> que produce locomotoras, vagones, carros de pasajeros y componentes:</p>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -464,11 +460,11 @@
                     </tr>
                     <tr>
                         <td>Personal ocupado</td>
-                        <td class="economy-cell">24,447 empleos</td>
+                        <td class="pos">24,447 empleos</td>
                     </tr>
                     <tr>
                         <td>Producción bruta</td>
-                        <td class="economy-cell">$66,323 millones de pesos</td>
+                        <td class="pos">$66,323 millones de pesos</td>
                     </tr>
                     <tr>
                         <td>Valor agregado</td>
@@ -484,9 +480,11 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p>A diferencia de la construcción, la manufactura ferroviaria sí muestra dispersión geográfica industrial:</p>
+        <p>A diferencia de la construcción, la manufactura ferroviaria sí muestra dispersión geográfica industrial:</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -500,14 +498,14 @@
                     <tr>
                         <td>Coahuila</td>
                         <td>12</td>
-                        <td class="economy-cell">13,301</td>
+                        <td class="pos">13,301</td>
                         <td>$23,907</td>
                     </tr>
                     <tr>
                         <td>Hidalgo</td>
                         <td>3</td>
                         <td>5,993</td>
-                        <td class="economy-cell">$26,975</td>
+                        <td class="pos">$26,975</td>
                     </tr>
                     <tr>
                         <td>Nuevo León</td>
@@ -523,13 +521,15 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p><strong>Coahuila</strong> lidera en empleo (54% del total nacional) con su tradición manufacturera en Saltillo y Monclova. <strong>Hidalgo</strong> sorprende con la mayor producción, probablemente vinculada a plantas de ensamble de vagones para los nuevos trenes de pasajeros. El corredor industrial del norte (Coahuila, Nuevo León, San Luis Potosí) concentra la capacidad productiva ferroviaria del país.</p>
+        <p><strong>Coahuila</strong> lidera en empleo (54% del total nacional) con su tradición manufacturera en Saltillo y Monclova. <strong>Hidalgo</strong> sorprende con la mayor producción, probablemente vinculada a plantas de ensamble de vagones para los nuevos trenes de pasajeros. El corredor industrial del norte (Coahuila, Nuevo León, San Luis Potosí) concentra la capacidad productiva ferroviaria del país.</p>
 
-            <h2>4. El Ecosistema Ferroviario: 83,000 Empleos y $323,000 Millones</h2>
+        <h2>4. El Ecosistema Ferroviario: 83,000 Empleos y $323,000 Millones</h2>
 
-            <p>Sumando construcción y manufactura, el ecosistema ferroviario visible en el Censo representa:</p>
+        <p>Sumando construcción y manufactura, el ecosistema ferroviario visible en el Censo representa:</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -552,136 +552,152 @@
                         <td>24,447</td>
                         <td>$66,323</td>
                     </tr>
-                    <tr style="background: rgba(16, 185, 129, 0.1); font-weight: bold;">
+                    <tr class="row-accent">
                         <td>Total ecosistema</td>
                         <td>143</td>
-                        <td class="economy-cell">82,856</td>
-                        <td class="economy-cell">$323,305</td>
+                        <td class="pos">82,856</td>
+                        <td class="pos">$323,305</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p>Falta el eslabón operativo: el <strong>transporte por ferrocarril (482)</strong> aparece con solo 10 empresas y datos confidenciales. Estas son las grandes concesionarias de carga (Ferromex, Kansas City Southern de México, Ferrosur) y los nuevos operadores de pasajeros. La confidencialidad protege información comercial sensible de un oligopolio de facto.</p>
+        <p>Falta el eslabón operativo: el <strong>transporte por ferrocarril (482)</strong> aparece con solo 10 empresas y datos confidenciales. Estas son las grandes concesionarias de carga (Ferromex, Kansas City Southern de México, Ferrosur) y los nuevos operadores de pasajeros. La confidencialidad protege información comercial sensible de un oligopolio de facto.</p>
 
-            <h2>5. La Paradoja: Inversión Récord, Resultados Cuestionables</h2>
+        <h2>5. La Paradoja: Inversión Récord, Resultados Cuestionables</h2>
 
-            <p>Los más de <strong>$323,000 millones de pesos</strong> en producción del ecosistema ferroviario representan una apuesta histórica del Estado mexicano por el transporte férreo. Sin embargo, la implementación ha estado marcada por:</p>
+        <p>Los más de <strong>$323,000 millones de pesos</strong> en producción del ecosistema ferroviario representan una apuesta histórica del Estado mexicano por el transporte férreo. Sin embargo, la implementación ha estado marcada por:</p>
 
-            <h3>Sobrecostos documentados:</h3>
-            <ul>
-                <li>Tren Maya: presupuesto inicial de $150,000 MDP, estimaciones actuales superan $500,000 MDP</li>
-                <li>Tren Interoceánico: incrementos significativos sobre proyecciones originales</li>
-            </ul>
+        <h3>Sobrecostos documentados:</h3>
+        <ul>
+            <li>Tren Maya: presupuesto inicial de $150,000 MDP, estimaciones actuales superan $500,000 MDP</li>
+            <li>Tren Interoceánico: incrementos significativos sobre proyecciones originales</li>
+        </ul>
 
-            <h3>Problemas operativos:</h3>
-            <ul>
-                <li>Múltiples descarrilamientos en las primeras fases de operación</li>
-                <li>Incidentes de seguridad que han puesto en riesgo a pasajeros</li>
-                <li>Retrasos en la entrega de tramos completos</li>
-            </ul>
+        <h3>Problemas operativos:</h3>
+        <ul>
+            <li>Múltiples descarrilamientos en las primeras fases de operación</li>
+            <li>Incidentes de seguridad que han puesto en riesgo a pasajeros</li>
+            <li>Retrasos en la entrega de tramos completos</li>
+        </ul>
 
-            <h3>Cuestionamientos de rentabilidad:</h3>
-            <ul>
-                <li>Ocupación de trenes por debajo de proyecciones</li>
-                <li>Tarifas subsidiadas que no cubren costos operativos</li>
-                <li>Ausencia de estudios de demanda rigurosos previos a la construcción</li>
-            </ul>
+        <h3>Cuestionamientos de rentabilidad:</h3>
+        <ul>
+            <li>Ocupación de trenes por debajo de proyecciones</li>
+            <li>Tarifas subsidiadas que no cubren costos operativos</li>
+            <li>Ausencia de estudios de demanda rigurosos previos a la construcción</li>
+        </ul>
 
-            <div class="quote-box">
-                La inversión en infraestructura ferroviaria es, en principio, correcta: México tiene un rezago histórico en transporte de pasajeros por tren comparado con economías similares. El problema no es construir trenes, sino <strong>cómo se construyen, operan y mantienen</strong>.
+        <div class="quote-box">
+            La inversión en infraestructura ferroviaria es, en principio, correcta: México tiene un rezago histórico en transporte de pasajeros por tren comparado con economías similares. El problema no es construir trenes, sino <strong>cómo se construyen, operan y mantienen</strong>.
+        </div>
+
+        <h2>6. El Factor Crítico: Seguridad y Mantenimiento</h2>
+
+        <p>Los descarrilamientos y fallas operativas de los nuevos trenes de pasajeros no son accidentes aislados: son síntomas de un problema sistémico. La infraestructura ferroviaria moderna requiere:</p>
+
+        <ol>
+            <li><strong>Monitoreo en tiempo real</strong> de vías, señalización y material rodante</li>
+            <li><strong>Mantenimiento predictivo</strong> que anticipe fallas antes de que ocurran</li>
+            <li><strong>Gestión integrada de datos</strong> de sensores, operación y condiciones ambientales</li>
+            <li><strong>Análisis de patrones</strong> para identificar tramos o equipos de riesgo</li>
+        </ol>
+
+        <div class="callout callout-info">
+            <strong><i class="fas fa-lightbulb"></i> La realidad del siglo XXI</strong>
+            Los sistemas ferroviarios modernos no se operan con bitácoras en papel y revisiones visuales. Se operan con plataformas de datos inteligentes.
+        </div>
+
+        <h2>7. Microsoft Fabric: La Propuesta para un Ferrocarril Seguro</h2>
+
+        <p>La modernización del sistema ferroviario mexicano requiere una infraestructura de datos tan robusta como la infraestructura física. <strong>Microsoft Fabric</strong> ofrece una plataforma unificada que puede transformar la operación ferroviaria:</p>
+
+        <h3>Integración de Datos en Tiempo Real:</h3>
+        <ul>
+            <li>Sensores IoT en vías, puentes, túneles y vagones</li>
+            <li>Telemetría de locomotoras (temperatura, vibración, velocidad)</li>
+            <li>Datos meteorológicos y sísmicos</li>
+            <li>Información de sistemas de señalización</li>
+        </ul>
+
+        <h3>Lakehouse para Históricos Operativos:</h3>
+        <ul>
+            <li>Arquitectura medallón (Bronze, Silver, Gold) para datos de operación</li>
+            <li>Registro histórico de mantenimientos, incidentes y reparaciones</li>
+            <li>Trazabilidad completa del ciclo de vida de cada componente</li>
+        </ul>
+
+        <h3>Mantenimiento Predictivo con IA:</h3>
+        <ul>
+            <li>Modelos de Machine Learning entrenados con patrones de falla</li>
+            <li>Alertas tempranas cuando un componente muestra degradación</li>
+            <li>Optimización de calendarios de mantenimiento basada en uso real</li>
+            <li>Reducción de paros no programados y costos de emergencia</li>
+        </ul>
+
+        <h3>Seguridad Operativa:</h3>
+        <ul>
+            <li>Dashboards en tiempo real para centros de control</li>
+            <li>Detección de anomalías en patrones de operación</li>
+            <li>Correlación de variables (clima, carga, velocidad) con incidentes</li>
+            <li>Simulación de escenarios de riesgo</li>
+        </ul>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(47,168,106,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">Palenque &rarr; Cancún</div>
+                <p>Caso de uso concreto: un tren genera miles de datos por minuto. Fabric puede detectar vibración anormal en una rueda o deformación térmica en vía antes del incidente.</p>
             </div>
+        </div>
 
-            <h2>6. El Factor Crítico: Seguridad y Mantenimiento</h2>
+        <h2>8. Conclusiones: De la Infraestructura Física a la Infraestructura de Datos</h2>
 
-            <p>Los descarrilamientos y fallas operativas de los nuevos trenes de pasajeros no son accidentes aislados: son síntomas de un problema sistémico. La infraestructura ferroviaria moderna requiere:</p>
+        <p>México está invirtiendo cifras históricas en su sistema ferroviario: <strong>82,856 empleos</strong> y <strong>$323,305 millones de pesos</strong> en construcción y manufactura lo demuestran. Pero construir vías y comprar vagones es solo la mitad de la ecuación.</p>
 
-            <ol>
-                <li><strong>Monitoreo en tiempo real</strong> de vías, señalización y material rodante</li>
-                <li><strong>Mantenimiento predictivo</strong> que anticipe fallas antes de que ocurran</li>
-                <li><strong>Gestión integrada de datos</strong> de sensores, operación y condiciones ambientales</li>
-                <li><strong>Análisis de patrones</strong> para identificar tramos o equipos de riesgo</li>
-            </ol>
+        <p>Los descarrilamientos, sobrecostos y problemas operativos revelan que falta la otra mitad: <strong>la inteligencia para operar el sistema de manera segura y eficiente</strong>.</p>
 
-            <div class="callout callout-economy">
-                <strong>La realidad del siglo XXI</strong>
-                Los sistemas ferroviarios modernos no se operan con bitácoras en papel y revisiones visuales. Se operan con plataformas de datos inteligentes.
-            </div>
+        <p>Las economías que lideran en transporte ferroviario —Japón, Francia, Alemania, China— no solo tienen más kilómetros de vía: tienen <strong>ecosistemas de datos</strong> que monitorean cada componente, predicen fallas, optimizan operaciones y garantizan seguridad.</p>
 
-            <h2>7. Microsoft Fabric: La Propuesta para un Ferrocarril Seguro</h2>
+        <p>México tiene la oportunidad de dar ese salto. La infraestructura física ya se está construyendo. La pregunta es si tendremos la visión de construir, en paralelo, la infraestructura digital que la haga funcionar.</p>
 
-            <p>La modernización del sistema ferroviario mexicano requiere una infraestructura de datos tan robusta como la infraestructura física. <strong>Microsoft Fabric</strong> ofrece una plataforma unificada que puede transformar la operación ferroviaria:</p>
+        <div class="quote-box">
+            <strong>La inversión en fierro sin inversión en datos es construir el siglo XXI con herramientas del siglo XX.</strong>
+        </div>
 
-            <h3>Integración de Datos en Tiempo Real:</h3>
-            <ul>
-                <li>Sensores IoT en vías, puentes, túneles y vagones</li>
-                <li>Telemetría de locomotoras (temperatura, vibración, velocidad)</li>
-                <li>Datos meteorológicos y sísmicos</li>
-                <li>Información de sistemas de señalización</li>
-            </ul>
+        <p>Plataformas como <strong>Microsoft Fabric</strong> no son un lujo tecnológico: son el sistema nervioso que un ferrocarril moderno necesita para operar. Sin datos integrados, sin analítica predictiva, sin inteligencia artificial aplicada al mantenimiento, los trenes seguirán descarrilando y los sobrecostos seguirán acumulándose.</p>
 
-            <h3>Lakehouse para Históricos Operativos:</h3>
-            <ul>
-                <li>Arquitectura medallón (Bronze, Silver, Gold) para datos de operación</li>
-                <li>Registro histórico de mantenimientos, incidentes y reparaciones</li>
-                <li>Trazabilidad completa del ciclo de vida de cada componente</li>
-            </ul>
+        <div class="source-box">
+            <p><strong>Fuente:</strong> Censo Económico 2024, INEGI - Códigos 237993, 336510, 482</p>
+            <p><strong>Procesamiento:</strong> Microsoft Fabric + PySpark</p>
+            <p><strong>Fecha de análisis:</strong> Enero 2026</p>
+        </div>
 
-            <h3>Mantenimiento Predictivo con IA:</h3>
-            <ul>
-                <li>Modelos de Machine Learning entrenados con patrones de falla</li>
-                <li>Alertas tempranas cuando un componente muestra degradación</li>
-                <li>Optimización de calendarios de mantenimiento basada en uso real</li>
-                <li>Reducción de paros no programados y costos de emergencia</li>
-            </ul>
-
-            <h3>Seguridad Operativa:</h3>
-            <ul>
-                <li>Dashboards en tiempo real para centros de control</li>
-                <li>Detección de anomalías en patrones de operación</li>
-                <li>Correlación de variables (clima, carga, velocidad) con incidentes</li>
-                <li>Simulación de escenarios de riesgo</li>
-            </ul>
-
-            <div class="stat-highlight">
-                <p>Caso de uso concreto</p>
-                <p class="number" style="font-size: 1.5rem;">Palenque → Cancún</p>
-                <p>Un tren genera miles de datos por minuto. Fabric puede detectar vibración anormal en una rueda o deformación térmica en vía antes del incidente.</p>
-            </div>
-
-            <h2>8. Conclusiones: De la Infraestructura Física a la Infraestructura de Datos</h2>
-
-            <p>México está invirtiendo cifras históricas en su sistema ferroviario: <strong>82,856 empleos</strong> y <strong>$323,305 millones de pesos</strong> en construcción y manufactura lo demuestran. Pero construir vías y comprar vagones es solo la mitad de la ecuación.</p>
-
-            <p>Los descarrilamientos, sobrecostos y problemas operativos revelan que falta la otra mitad: <strong>la inteligencia para operar el sistema de manera segura y eficiente</strong>.</p>
-
-            <p>Las economías que lideran en transporte ferroviario —Japón, Francia, Alemania, China— no solo tienen más kilómetros de vía: tienen <strong>ecosistemas de datos</strong> que monitorean cada componente, predicen fallas, optimizan operaciones y garantizan seguridad.</p>
-
-            <p>México tiene la oportunidad de dar ese salto. La infraestructura física ya se está construyendo. La pregunta es si tendremos la visión de construir, en paralelo, la infraestructura digital que la haga funcionar.</p>
-
-            <div class="quote-box">
-                <strong>La inversión en fierro sin inversión en datos es construir el siglo XXI con herramientas del siglo XX.</strong>
-            </div>
-
-            <p>Plataformas como <strong>Microsoft Fabric</strong> no son un lujo tecnológico: son el sistema nervioso que un ferrocarril moderno necesita para operar. Sin datos integrados, sin analítica predictiva, sin inteligencia artificial aplicada al mantenimiento, los trenes seguirán descarrilando y los sobrecostos seguirán acumulándose.</p>
-
-            <div class="source-box">
-                <p><strong>Fuente:</strong> Censo Económico 2024, INEGI - Códigos 237993, 336510, 482</p>
-                <p style="margin-top: 0.5rem;"><strong>Procesamiento:</strong> Microsoft Fabric + PySpark</p>
-                <p style="margin-top: 0.5rem;"><strong>Fecha de análisis:</strong> Enero 2026</p>
-            </div>
-
-            <div class="cta-box">
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
                 <h3><i class="fas fa-train"></i> ¿Quieres modernizar la operación de infraestructura?</h3>
                 <p>Conoce cómo Microsoft Fabric puede implementar monitoreo predictivo y análisis de datos en tiempo real para el sector transporte.</p>
-                <a href="https://gdidata.com" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar Soluciones
-                </a>
+                <a href="https://gdidata.com" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar Soluciones</a>
             </div>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

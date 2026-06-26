@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Falla Técnica en Uruapan: Lo que los Datos Revelan - GDI</title>
     <meta name="description" content="El municipio de Uruapan enfrenta una 'falla técnica' por sobreendeudamiento. Los datos oficiales del INEGI revelan que Carlos Manzo heredó una bomba financiera.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2025-11-22-uruapan-falla-tecnica-deuda-heredada">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Falla Técnica en Uruapan: Lo que los Datos Revelan Sobre una Deuda Heredada">
+    <meta property="og:description" content="El municipio de Uruapan enfrenta una 'falla técnica' por sobreendeudamiento. Los datos oficiales del INEGI revelan que Carlos Manzo heredó una bomba financiera.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2025-11-22-uruapan-falla-tecnica-deuda-heredada">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -29,7 +46,7 @@
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
       ttq.load('D5MHUKBC77UEK8Q4I9B0');
@@ -39,441 +56,421 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --danger-color: #ef4444;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #E8A33D;
+            --accent-dark: #b45309;
+            --accent-soft: rgba(232,163,61,0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
+            overflow: hidden;
         }
-
-        .article-container {
-            max-width: 800px;
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
             margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
         }
-
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
+        }
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
+        }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
+
+        /* ===== Stat grid (barras verticales) ===== */
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
+        }
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
+        }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
+        }
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
+        }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
+
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
+        .quote-box {
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
-        .article-category {
-            background: var(--gradient-danger);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-danger);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--danger-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .verdict-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .verdict-box h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .verdict-box p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-
-        .timeline {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .timeline-item:last-child { border-bottom: none; }
-
-        .timeline-year {
-            font-weight: 700;
-            color: var(--primary-color);
-            min-width: 60px;
-        }
-
-        .timeline-value {
-            font-weight: 600;
-        }
-
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-triangle-exclamation"></i> Alerta</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 22 Nov 2025</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 10 min</span>
+            </div>
+            <h1>Falla Técnica en Uruapan: Lo que los Datos Revelan Sobre una <span style="color:var(--accent)">Deuda Heredada</span></h1>
+            <p class="hero-subtitle">El gobernador de Michoacán declaró que Uruapan enfrenta una "falla técnica" por sobreendeudamiento. ¿Es Carlos Manzo responsable de esta crisis?</p>
+        </div>
     </header>
 
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
-            <span><i class="far fa-calendar"></i> 22 de noviembre de 2025</span>
-            <span><i class="far fa-clock"></i> 10 min de lectura</span>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Alerta · Finanzas Municipales · Uruapan · Noviembre 2025
         </div>
 
-        <h1 class="article-title">Falla Técnica en Uruapan: Lo que los Datos Revelan Sobre una Deuda Heredada</h1>
-        <p class="article-subtitle">El gobernador de Michoacán declaró que Uruapan enfrenta una "falla técnica" por sobreendeudamiento. ¿Es Carlos Manzo responsable de esta crisis?</p>
+        <h2>El anuncio que encendió las alarmas</h2>
 
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-bomb"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">URUAPAN: DEUDA HEREDADA</p>
-            </div>
+        <p>El gobernador de Michoacán, Alfredo Ramírez Bedolla, declaró que el municipio de Uruapan enfrenta una "falla técnica" por sobreendeudamiento. El municipio solicitó más de 30 millones de pesos al gobierno federal para cubrir los pagos de fin de año.</p>
+
+        <p>La noticia llega apenas semanas después del asesinato del alcalde Carlos Manzo, quien asumió el cargo en septiembre de 2024. Pero, <strong>¿es Carlos Manzo responsable de esta crisis financiera?</strong></p>
+
+        <div class="callout callout-info">
+            <strong>Dato clave:</strong>
+            Los datos del presupuesto 2024 que Manzo heredó son contundentes: el municipio ya estaba en una situación financiera delicada mucho antes de que él llegara.
         </div>
 
-        <div class="article-content">
-            <h2>El anuncio que encendió las alarmas</h2>
+        <h2>Carlos Manzo: 4 meses en 2024, 14 meses en total</h2>
 
-            <p>El gobernador de Michoacán, Alfredo Ramírez Bedolla, declaró que el municipio de Uruapan enfrenta una "falla técnica" por sobreendeudamiento. El municipio solicitó más de 30 millones de pesos al gobierno federal para cubrir los pagos de fin de año.</p>
+        <p>Carlos Manzo tomó posesión el 1 de septiembre de 2024, tras ganar con el 66% de los votos como candidato independiente. Fue asesinado el 1 de noviembre de 2025. Durante 2024, <strong>solo estuvo al frente del municipio 4 meses</strong>, un período insuficiente para transformar una estructura financiera municipal.</p>
 
-            <p>La noticia llega apenas semanas después del asesinato del alcalde Carlos Manzo, quien asumió el cargo en septiembre de 2024. Pero, <strong>¿es Carlos Manzo responsable de esta crisis financiera?</strong></p>
+        <h2>Lo que los datos revelan: una crisis de años</h2>
 
-            <div class="callout callout-info">
-                <strong>Dato clave:</strong>
-                Los datos del presupuesto 2024 que Manzo heredó son contundentes: el municipio ya estaba en una situación financiera delicada mucho antes de que él llegara.
-            </div>
+        <h3>1. El presupuesto rígido: 63% ya comprometido</h3>
 
-            <h2>Carlos Manzo: 4 meses en 2024, 14 meses en total</h2>
+        <p>En 2024, el presupuesto de Uruapan ascendió a <strong>$1,339 millones de pesos</strong>. De este total:</p>
 
-            <p>Carlos Manzo tomó posesión el 1 de septiembre de 2024, tras ganar con el 66% de los votos como candidato independiente. Fue asesinado el 1 de noviembre de 2025. Durante 2024, <strong>solo estuvo al frente del municipio 4 meses</strong>, un período insuficiente para transformar una estructura financiera municipal.</p>
+        <ul>
+            <li><strong>38%</strong> ($509 millones) se destinó a servicios personales (nómina)</li>
+            <li><strong>14.14%</strong> ($189 millones) a transferencias y subsidios</li>
+            <li>Solo <strong>9.60%</strong> ($128 millones) a obra pública</li>
+        </ul>
 
-            <h2>Lo que los datos revelan: una crisis de años</h2>
+        <div class="callout callout-warning">
+            <strong>63.73% del presupuesto ya estaba comprometido en gastos rígidos antes de que Manzo pudiera tomar una sola decisión.</strong>
+        </div>
 
-            <h3>1. El presupuesto rígido: 63% ya comprometido</h3>
+        <h3>2. La bomba de las pensiones: +183% en 5 años</h3>
 
-            <p>En 2024, el presupuesto de Uruapan ascendió a <strong>$1,339 millones de pesos</strong>. De este total:</p>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Año</th><th>Pensiones</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>2019</strong></td><td>$37.9 millones</td></tr>
+                    <tr><td><strong>2023</strong></td><td>$94.4 millones (antes de Manzo)</td></tr>
+                    <tr><td><strong>2024</strong></td><td>$107.5 millones</td></tr>
+                    <tr class="row-accent"><td><strong>Total</strong></td><td class="neg">+183.94% de crecimiento</td></tr>
+                </tbody>
+            </table>
+        </div>
 
-            <ul>
-                <li><strong>38%</strong> ($509 millones) se destinó a servicios personales (nómina)</li>
-                <li><strong>14.14%</strong> ($189 millones) a transferencias y subsidios</li>
-                <li>Solo <strong>9.60%</strong> ($128 millones) a obra pública</li>
+        <p>El salto más dramático ocurrió en <strong>2023, con un aumento del 70.22% en un solo año</strong>, el año anterior a la llegada de Manzo.</p>
+
+        <h3>3. Dependencia federal: 7 de cada 10 pesos vienen de fuera</h3>
+
+        <p>El análisis revela que Uruapan depende en un <strong>70.85%</strong> de recursos federales y estatales:</p>
+
+        <ul>
+            <li><strong>36.70%</strong> de aportaciones federales/estatales</li>
+            <li><strong>34.15%</strong> de participaciones federales</li>
+            <li>Solo <strong>12.29%</strong> son ingresos propios del municipio</li>
+        </ul>
+
+        <h3>4. Obra pública abandonada: -20% en 5 años</h3>
+
+        <div class="callout callout-warning">
+            <ul style="list-style: none; margin: 0; padding: 0;">
+                <li><strong>2019:</strong> $162.3 millones en obra pública</li>
+                <li><strong>2021:</strong> mínimo histórico de $66.3 millones (-47.79%)</li>
+                <li><strong>2024:</strong> $128.5 millones</li>
+                <li><strong>Tendencia total:</strong> -20.81%</li>
             </ul>
+        </div>
 
-            <div class="callout callout-danger">
-                <strong>63.73% del presupuesto ya estaba comprometido en gastos rígidos antes de que Manzo pudiera tomar una sola decisión.</strong>
-            </div>
+        <p>El año más crítico fue <strong>2021, tres años antes de que Manzo asumiera</strong>.</p>
 
-            <h3>2. La bomba de las pensiones: +183% en 5 años</h3>
+        <h2>El problema real de Uruapan</h2>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-year">2019</span>
-                    <span class="timeline-value">$37.9 millones</span>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">2023</span>
-                    <span class="timeline-value">$94.4 millones (antes de Manzo)</span>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">2024</span>
-                    <span class="timeline-value">$107.5 millones</span>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-year">Total</span>
-                    <span class="timeline-value" style="color: #ef4444;">+183.94% de crecimiento</span>
-                </div>
-            </div>
+        <p>Los datos oficiales revelan que los problemas estructurales son:</p>
 
-            <p>El salto más dramático ocurrió en <strong>2023, con un aumento del 70.22% en un solo año</strong>, el año anterior a la llegada de Manzo.</p>
+        <ul>
+            <li><strong>Nómina inflada:</strong> 38% del presupuesto</li>
+            <li><strong>Pensiones descontroladas:</strong> crecimiento del 183% sin supervisión</li>
+            <li><strong>Dependencia externa:</strong> solo genera 12 de cada 100 pesos que gasta</li>
+            <li><strong>Inversión paralizada:</strong> obra pública cayó 20% en 5 años</li>
+        </ul>
 
-            <h3>3. Dependencia federal: 7 de cada 10 pesos vienen de fuera</h3>
+        <p>Carlos Manzo llegó con una promesa clara: <strong>combatir la inseguridad con "mano dura"</strong>. Su prioridad era la seguridad, no las finanzas. Con solo 4 meses en 2024 y enfocado en seguridad, no tuvo tiempo de reformar una estructura financiera destruida por gestiones anteriores.</p>
 
-            <p>El análisis revela que Uruapan depende en un <strong>70.85%</strong> de recursos federales y estatales:</p>
+        <h2>Conclusión: el veredicto de los datos</h2>
 
-            <ul>
-                <li><strong>36.70%</strong> de aportaciones federales/estatales</li>
-                <li><strong>34.15%</strong> de participaciones federales</li>
-                <li>Solo <strong>12.29%</strong> son ingresos propios del municipio</li>
-            </ul>
+        <div class="quote-box">
+            Carlos Manzo heredó una bomba financiera, no la creó. Con apenas 4 meses en 2024, el presupuesto que ejecutó ya estaba definido por la administración anterior.
+        </div>
 
-            <h3>4. Obra pública abandonada: -20% en 5 años</h3>
+        <div class="callout callout-info">
+            <strong>La pregunta no es si Manzo causó la crisis</strong>, sino: ¿quién permitió que la nómina creciera 17% mientras la obra pública caía 20%? ¿Por qué las pensiones saltaron 70% en un solo año?
+        </div>
 
-            <div class="callout callout-warning">
-                <ul style="list-style: none; margin: 0; padding: 0;">
-                    <li><strong>2019:</strong> $162.3 millones en obra pública</li>
-                    <li><strong>2021:</strong> mínimo histórico de $66.3 millones (-47.79%)</li>
-                    <li><strong>2024:</strong> $128.5 millones</li>
-                    <li><strong>Tendencia total:</strong> -20.81%</li>
-                </ul>
-            </div>
+        <p><strong>Uruapan necesita más que un rescate financiero:</strong> necesita transparencia, rendición de cuentas y una reforma estructural que ningún alcalde puede lograr en 14 meses.</p>
 
-            <p>El año más crítico fue <strong>2021, tres años antes de que Manzo asumiera</strong>.</p>
+        <div class="source-box">
+            <p><strong>Fuente:</strong> INEGI - Finanzas Públicas Estatales y Municipales | <strong>Análisis:</strong> GDI | Noviembre 2025</p>
+        </div>
 
-            <h2>El problema real de Uruapan</h2>
-
-            <p>Los datos oficiales revelan que los problemas estructurales son:</p>
-
-            <ul>
-                <li><strong>Nómina inflada:</strong> 38% del presupuesto</li>
-                <li><strong>Pensiones descontroladas:</strong> crecimiento del 183% sin supervisión</li>
-                <li><strong>Dependencia externa:</strong> solo genera 12 de cada 100 pesos que gasta</li>
-                <li><strong>Inversión paralizada:</strong> obra pública cayó 20% en 5 años</li>
-            </ul>
-
-            <p>Carlos Manzo llegó con una promesa clara: <strong>combatir la inseguridad con "mano dura"</strong>. Su prioridad era la seguridad, no las finanzas. Con solo 4 meses en 2024 y enfocado en seguridad, no tuvo tiempo de reformar una estructura financiera destruida por gestiones anteriores.</p>
-
-            <h2>Conclusión: el veredicto de los datos</h2>
-
-            <div class="verdict-box">
-                <h3>Carlos Manzo heredó una bomba financiera, no la creó.</h3>
-                <p>Con apenas 4 meses en 2024, el presupuesto que ejecutó ya estaba definido por la administración anterior.</p>
-            </div>
-
-            <div class="callout callout-info">
-                <strong>La pregunta no es si Manzo causó la crisis</strong>, sino: ¿quién permitió que la nómina creciera 17% mientras la obra pública caía 20%? ¿Por qué las pensiones saltaron 70% en un solo año?
-            </div>
-
-            <p><strong>Uruapan necesita más que un rescate financiero:</strong> necesita transparencia, rendición de cuentas y una reforma estructural que ningún alcalde puede lograr en 14 meses.</p>
-
-            <div class="source-box">
-                <p><strong>Fuente:</strong> INEGI - Finanzas Públicas Estatales y Municipales | <strong>Análisis:</strong> GDI | Noviembre 2025</p>
-            </div>
-
-            <div class="cta-box">
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
                 <h3><i class="fas fa-chart-bar"></i> Consulta las finanzas de tu municipio</h3>
                 <p>Accede a datos oficiales del INEGI: ingresos, egresos, deuda, pensiones y más.</p>
-                <a href="https://gdidata.com" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar Plataforma
-                </a>
+                <a href="https://gdidata.com" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar Plataforma</a>
             </div>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2025 GDI - Gobierno Digital e Innovación. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

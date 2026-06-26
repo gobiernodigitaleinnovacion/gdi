@@ -9,7 +9,9 @@
 ## Stack y hosting
 
 - **Hosting:** Netlify (`netlify.toml` + `netlify/functions/submission-created.js`)
-- **Sitio:** estático HTML/CSS inline (NO Tailwind, NO frameworks)
+- **Sitio:** estático. `index.html` y `blog.html` usan **Tailwind compilado** (`assets/styles.css`, build `npm run build:css`) + sistema visual cartográfico (`assets/tw-input.css`). Los **artículos del blog** usan **CSS inline autónomo** que reproduce ese mismo sistema (NO dependen del build).
+- **Sistema visual cartográfico:** fuentes Space Grotesk (títulos) / Inter (cuerpo) / JetBrains Mono (etiquetas `mono coord`). Paleta: `--ink #0A1626`, `--paper #F6F3EC` (crema), `--bone #EDE8DD`, `--gdi #7C5CFF` (morado marca). Texturas `.topo` / `.topo-lines` / `.grid-ticks`. Acento por categoría de artículo: Finanzas `#7C5CFF` · Alerta `#E8A33D` (ámbar) · Economía `#2FA86A` · Tecnología `#3B82F6`.
+- **Plantilla canónica de artículo:** `blog/articulos/2026-06-26-tequila-jalisco-concentracion-149-empresas.html`
 - **Blog:** archivos HTML en `blog/articulos/`, índice en `blog/posts.json`
 - **Forms:** Netlify Forms (`data-netlify="true"`)
 - **DNS:** apex `gobiernodigitaleinnovacion.com` es el canónico; `www.` redirige 301 al apex

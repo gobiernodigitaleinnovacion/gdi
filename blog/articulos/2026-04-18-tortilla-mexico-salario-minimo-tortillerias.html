@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Tortilla de M&eacute;xico: Ning&uacute;n Estado Paga el Salario M&iacute;nimo en las Tortiller&iacute;as - GDI</title>
     <meta name="description" content="Las 107,963 tortillerias de Mexico pagan $41,560 al ano en promedio: 36.6% del salario minimo 2026. Ningun estado alcanza el minimo legal. Censo Economico 2024.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-04-18-tortilla-mexico-salario-minimo-tortillerias">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="La Tortilla de México: Ningún Estado Paga el Salario Mínimo en las Tortillerías">
+    <meta property="og:description" content="Las 107,963 tortillerías de México pagan $41,560 al año en promedio: 36.6% del salario mínimo 2026. Ningún estado alcanza el mínimo legal. Censo Económico 2024.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-04-18-tortilla-mexico-salario-minimo-tortillerias">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -29,7 +46,7 @@
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
       ttq.load('D5MHUKBC77UEK8Q4I9B0');
@@ -39,431 +56,364 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --danger-color: #ef4444;
-            --danger-dark: #dc2626;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #E8A33D;
+            --accent-dark: #b45309;
+            --accent-soft: rgba(232,163,61,0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-danger);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-danger);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--danger-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: var(--danger-color);
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout-success {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: #10b981;
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .data-table th {
-            background: var(--gradient-danger);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
         }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
         }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
 
-        .data-table tr:hover { background: rgba(239, 68, 68, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-        .success-cell { color: #10b981; font-weight: 700; }
-        .warning-cell { color: #f59e0b; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-danger);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
+        /* ===== Stat grid (barras verticales) ===== */
         .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
         }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
         }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
 
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--danger-color);
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
         }
-
-        .stat-card .label {
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
-            border-left: 4px solid var(--danger-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
             .stat-grid { grid-template-columns: 1fr; }
-            .data-table { font-size: 0.85rem; }
+            .data-table { font-size: 0.82rem; }
             .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-triangle-exclamation"></i> Alerta</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 18 Abr 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 14 min</span>
+            </div>
+            <h1>La Tortilla de M&eacute;xico: <span style="color:var(--accent)">Ning&uacute;n Estado Paga el Salario M&iacute;nimo</span> en las Tortiller&iacute;as</h1>
+            <p class="hero-subtitle">Las 107,963 tortiller&iacute;as del pa&iacute;s pagan en promedio $41,560 anuales &mdash; apenas 36.6% del salario m&iacute;nimo legal 2026</p>
+        </div>
     </header>
 
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-exclamation-triangle"></i> Alerta</span>
-            <span><i class="far fa-calendar"></i> 18 de abril de 2026</span>
-            <span><i class="far fa-clock"></i> 14 min de lectura</span>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Alerta Social &middot; Econom&iacute;a Local &middot; Pol&iacute;tica Laboral &middot; Fecha de an&aacute;lisis: Abril 2026
         </div>
 
-        <h1 class="article-title">La Tortilla de M&eacute;xico: Ning&uacute;n Estado Paga el Salario M&iacute;nimo en las Tortiller&iacute;as</h1>
-        <p class="article-subtitle">Las 107,963 tortiller&iacute;as del pa&iacute;s pagan en promedio $41,560 anuales &mdash; apenas 36.6% del salario m&iacute;nimo legal 2026</p>
+        <h2>El hallazgo que obliga a mirar de nuevo al sector</h2>
 
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-bread-slice"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">Radiograf&iacute;a del sector tortillero</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">Censo Econ&oacute;mico 2024 | INEGI</p>
+        <p>El Censo Econ&oacute;mico 2024 del INEGI revela una realidad estructural que los titulares coyunturales sobre el precio de la tortilla no alcanzan a captar: <strong>ning&uacute;n estado de la Rep&uacute;blica Mexicana registra una remuneraci&oacute;n promedio que alcance el salario m&iacute;nimo legal en las tortiller&iacute;as</strong>. Ni uno.</p>
+
+        <p>La remuneraci&oacute;n promedio nacional del sector es de <strong>$41,560 pesos anuales</strong> por persona ocupada, equivalente al <strong>36.6% del salario m&iacute;nimo general</strong> vigente en 2026 ($113,464 anuales). Incluso Baja California, que encabeza el ranking nacional con $95,786 anuales, queda 15.6% por debajo del m&iacute;nimo legal.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">107,963</div>
+                <div class="lbl">Tortiller&iacute;as en todo M&eacute;xico</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">36.6%</div>
+                <div class="lbl">Del salario m&iacute;nimo legal 2026</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">48.4%</div>
+                <div class="lbl">Personal sin remuneraci&oacute;n</div>
             </div>
         </div>
 
-        <div class="article-content">
-            <p><strong>Etiqueta:</strong> Alerta Social &middot; Econom&iacute;a Local &middot; Pol&iacute;tica Laboral &middot; <strong>Fecha de an&aacute;lisis:</strong> Abril 2026</p>
+        <p>Detr&aacute;s de la inflaci&oacute;n del ma&iacute;z, el gas LP y la electricidad &mdash;los temas que dominan las protestas del sector&mdash; existe una precariedad estructural que el Censo 2024 permite mapear por primera vez con datos oficiales verificados.</p>
 
-            <h2>El hallazgo que obliga a mirar de nuevo al sector</h2>
+        <h2>Contexto territorial: una actividad presente en los 32 estados</h2>
 
-            <p>El Censo Econ&oacute;mico 2024 del INEGI revela una realidad estructural que los titulares coyunturales sobre el precio de la tortilla no alcanzan a captar: <strong>ning&uacute;n estado de la Rep&uacute;blica Mexicana registra una remuneraci&oacute;n promedio que alcance el salario m&iacute;nimo legal en las tortiller&iacute;as</strong>. Ni uno.</p>
+        <p>Las tortiller&iacute;as (SCIAN 311830) son uno de los giros econ&oacute;micos m&aacute;s distribuidos territorialmente del pa&iacute;s. Con <strong>107,963 unidades econ&oacute;micas</strong> y <strong>253,966 personas ocupadas</strong>, el sector est&aacute; presente desde los municipios m&aacute;s rurales hasta las alcald&iacute;as m&aacute;s densas de la Ciudad de M&eacute;xico.</p>
 
-            <p>La remuneraci&oacute;n promedio nacional del sector es de <strong>$41,560 pesos anuales</strong> por persona ocupada, equivalente al <strong>36.6% del salario m&iacute;nimo general</strong> vigente en 2026 ($113,464 anuales). Incluso Baja California, que encabeza el ranking nacional con $95,786 anuales, queda 15.6% por debajo del m&iacute;nimo legal.</p>
+        <p>Esta presencia no es menor: representan el <strong>1.97% de todas las unidades econ&oacute;micas</strong> del pa&iacute;s y el <strong>0.91% del empleo nacional</strong>. Para comparaci&oacute;n, son m&aacute;s establecimientos que todas las gasolineras o farmacias de M&eacute;xico juntas.</p>
 
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="number">107,963</div>
-                    <div class="label">Tortiller&iacute;as en todo M&eacute;xico</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">36.6%</div>
-                    <div class="label">Del salario m&iacute;nimo legal 2026</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">48.4%</div>
-                    <div class="label">Personal sin remuneraci&oacute;n</div>
-                </div>
+        <p>La administraci&oacute;n federal, los gobiernos estatales y los ayuntamientos comparten responsabilidad sobre un sector que, sin ser estrat&eacute;gico en t&eacute;rminos de PIB, lo es profundamente en t&eacute;rminos sociales: alimenta diariamente al pa&iacute;s.</p>
+
+        <h2>Radiograf&iacute;a econ&oacute;mica: el sector de las paradojas</h2>
+
+        <h3>Participaci&oacute;n y estructura</h3>
+        <ul>
+            <li><strong>107,963</strong> unidades econ&oacute;micas (1.97% del total nacional)</li>
+            <li><strong>253,966</strong> empleos (0.91% del empleo nacional)</li>
+            <li><strong>$87,205.92 MDP</strong> de producci&oacute;n bruta</li>
+            <li><strong>$34,685.91 MDP</strong> de valor agregado censal bruto</li>
+            <li><strong>$10,554.76 MDP</strong> de remuneraciones totales</li>
+        </ul>
+
+        <h3>El trabajo invisible: 48% sin sueldo</h3>
+
+        <p>De las 253,966 personas ocupadas en tortiller&iacute;as, <strong>122,795 (48.4%) son personal no remunerado</strong> &mdash; familiares que ayudan en el negocio sin recibir sueldo formal. Solo 129,521 personas (51%) reciben remuneraci&oacute;n.</p>
+
+        <p>Esta cifra reconfigura el an&aacute;lisis: casi la mitad del sector no opera bajo l&oacute;gica de empleo asalariado, sino de econom&iacute;a familiar de subsistencia. Sin el trabajo no remunerado de c&oacute;nyuges, hijos y padres, buena parte de las tortiller&iacute;as de M&eacute;xico no existir&iacute;an.</p>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(232,163,61,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">$41,560</div>
+                <p>es la remuneraci&oacute;n promedio anual en las tortiller&iacute;as de M&eacute;xico &mdash; $71,904 pesos por debajo del salario m&iacute;nimo legal 2026.</p>
             </div>
+        </div>
 
-            <p>Detr&aacute;s de la inflaci&oacute;n del ma&iacute;z, el gas LP y la electricidad &mdash;los temas que dominan las protestas del sector&mdash; existe una precariedad estructural que el Censo 2024 permite mapear por primera vez con datos oficiales verificados.</p>
+        <h3>La feminizaci&oacute;n del sector</h3>
 
-            <h2>Contexto territorial: una actividad presente en los 32 estados</h2>
+        <p>Mientras el promedio nacional de participaci&oacute;n femenina en el empleo es 43.2%, en las tortiller&iacute;as alcanza <strong>59.6%</strong> &mdash; 151,385 mujeres ocupadas. En <strong>Oaxaca la participaci&oacute;n sube a 79.1%</strong>, en Tlaxcala a 76% y en Puebla a 72.8%.</p>
 
-            <p>Las tortiller&iacute;as (SCIAN 311830) son uno de los giros econ&oacute;micos m&aacute;s distribuidos territorialmente del pa&iacute;s. Con <strong>107,963 unidades econ&oacute;micas</strong> y <strong>253,966 personas ocupadas</strong>, el sector est&aacute; presente desde los municipios m&aacute;s rurales hasta las alcald&iacute;as m&aacute;s densas de la Ciudad de M&eacute;xico.</p>
+        <p>El sector es un empleador masivo de mujeres, pero tambi&eacute;n es donde se concentra buena parte del trabajo femenino no remunerado: en los estados con mayor feminizaci&oacute;n del sector coinciden las mayores tasas de trabajo sin sueldo.</p>
 
-            <p>Esta presencia no es menor: representan el <strong>1.97% de todas las unidades econ&oacute;micas</strong> del pa&iacute;s y el <strong>0.91% del empleo nacional</strong>. Para comparaci&oacute;n, son m&aacute;s establecimientos que todas las gasolineras o farmacias de M&eacute;xico juntas.</p>
+        <h2>Hallazgos clave: alertas para la gesti&oacute;n p&uacute;blica</h2>
 
-            <p>La administraci&oacute;n federal, los gobiernos estatales y los ayuntamientos comparten responsabilidad sobre un sector que, sin ser estrat&eacute;gico en t&eacute;rminos de PIB, lo es profundamente en t&eacute;rminos sociales: alimenta diariamente al pa&iacute;s.</p>
+        <h3>Alerta 1: Los 32 estados debajo del salario m&iacute;nimo</h3>
 
-            <h2>Radiograf&iacute;a econ&oacute;mica: el sector de las paradojas</h2>
-
-            <h3>Participaci&oacute;n y estructura</h3>
-            <ul>
-                <li><strong>107,963</strong> unidades econ&oacute;micas (1.97% del total nacional)</li>
-                <li><strong>253,966</strong> empleos (0.91% del empleo nacional)</li>
-                <li><strong>$87,205.92 MDP</strong> de producci&oacute;n bruta</li>
-                <li><strong>$34,685.91 MDP</strong> de valor agregado censal bruto</li>
-                <li><strong>$10,554.76 MDP</strong> de remuneraciones totales</li>
-            </ul>
-
-            <h3>El trabajo invisible: 48% sin sueldo</h3>
-
-            <p>De las 253,966 personas ocupadas en tortiller&iacute;as, <strong>122,795 (48.4%) son personal no remunerado</strong> &mdash; familiares que ayudan en el negocio sin recibir sueldo formal. Solo 129,521 personas (51%) reciben remuneraci&oacute;n.</p>
-
-            <p>Esta cifra reconfigura el an&aacute;lisis: casi la mitad del sector no opera bajo l&oacute;gica de empleo asalariado, sino de econom&iacute;a familiar de subsistencia. Sin el trabajo no remunerado de c&oacute;nyuges, hijos y padres, buena parte de las tortiller&iacute;as de M&eacute;xico no existir&iacute;an.</p>
-
-            <div class="stat-highlight">
-                <div class="number">$41,560</div>
-                <p style="font-size: 1.1rem; margin-top: 0.5rem;">es la remuneraci&oacute;n promedio anual en las tortiller&iacute;as de M&eacute;xico &mdash; $71,904 pesos por debajo del salario m&iacute;nimo legal 2026.</p>
-            </div>
-
-            <h3>La feminizaci&oacute;n del sector</h3>
-
-            <p>Mientras el promedio nacional de participaci&oacute;n femenina en el empleo es 43.2%, en las tortiller&iacute;as alcanza <strong>59.6%</strong> &mdash; 151,385 mujeres ocupadas. En <strong>Oaxaca la participaci&oacute;n sube a 79.1%</strong>, en Tlaxcala a 76% y en Puebla a 72.8%.</p>
-
-            <p>El sector es un empleador masivo de mujeres, pero tambi&eacute;n es donde se concentra buena parte del trabajo femenino no remunerado: en los estados con mayor feminizaci&oacute;n del sector coinciden las mayores tasas de trabajo sin sueldo.</p>
-
-            <h2>Hallazgos clave: alertas para la gesti&oacute;n p&uacute;blica</h2>
-
-            <h3>Alerta 1: Los 32 estados debajo del salario m&iacute;nimo</h3>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -477,20 +427,20 @@
                     <tr>
                         <td>Mejor pagado</td>
                         <td>Baja California</td>
-                        <td class="highlight-cell">$95,786</td>
-                        <td class="warning-cell">84.4%</td>
+                        <td>$95,786</td>
+                        <td class="warn">84.4%</td>
                     </tr>
                     <tr>
                         <td>2&ordm;</td>
                         <td>Nuevo Le&oacute;n</td>
-                        <td class="highlight-cell">$72,221</td>
-                        <td class="warning-cell">63.7%</td>
+                        <td>$72,221</td>
+                        <td class="warn">63.7%</td>
                     </tr>
                     <tr>
                         <td>3&ordm;</td>
                         <td>Sonora</td>
-                        <td class="highlight-cell">$69,808</td>
-                        <td class="warning-cell">61.5%</td>
+                        <td>$69,808</td>
+                        <td class="warn">61.5%</td>
                     </tr>
                     <tr>
                         <td>&hellip;</td>
@@ -501,87 +451,88 @@
                     <tr>
                         <td>Pen&uacute;ltimo</td>
                         <td>Oaxaca</td>
-                        <td class="highlight-cell">$14,334</td>
-                        <td class="danger-cell">12.6%</td>
+                        <td>$14,334</td>
+                        <td class="neg">12.6%</td>
                     </tr>
                     <tr>
                         <td>&Uacute;ltimo</td>
                         <td>Tlaxcala</td>
-                        <td class="highlight-cell">$13,925</td>
-                        <td class="danger-cell">12.3%</td>
+                        <td>$13,925</td>
+                        <td class="neg">12.3%</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">Baja California Sur y Colima reportan dato confidencial (INEGI suprime cifras cuando el n&uacute;mero de establecimientos es muy bajo para proteger la identidad de las empresas).</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: -1rem;">Baja California Sur y Colima reportan dato confidencial (INEGI suprime cifras cuando el n&uacute;mero de establecimientos es muy bajo para proteger la identidad de las empresas).</p>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> La implicaci&oacute;n es directa:</strong>
+            el sector opera, estructuralmente, por debajo del marco legal laboral vigente. No es un problema de algunos estados rezagados: es una constante nacional.
+        </div>
 
-            <div class="callout callout-danger">
-                <strong><i class="fas fa-exclamation-triangle"></i> La implicaci&oacute;n es directa:</strong>
-                el sector opera, estructuralmente, por debajo del marco legal laboral vigente. No es un problema de algunos estados rezagados: es una constante nacional.
-            </div>
+        <h3>Alerta 2: Dos modelos de tortiller&iacute;a, dos realidades sociales</h3>
 
-            <h3>Alerta 2: Dos modelos de tortiller&iacute;a, dos realidades sociales</h3>
+        <p>Los datos revelan dos econom&iacute;as tortilleras que conviven en el mismo pa&iacute;s:</p>
 
-            <p>Los datos revelan dos econom&iacute;as tortilleras que conviven en el mismo pa&iacute;s:</p>
+        <p><strong>Modelo de subsistencia (sur):</strong></p>
+        <ul>
+            <li><strong>Oaxaca:</strong> 14,830 establecimientos, 1.5 empleos por unidad, 80.8% sin sueldo</li>
+            <li><strong>Tlaxcala:</strong> 3,920 establecimientos, 1.8 empleos por unidad, 76.5% sin sueldo</li>
+            <li><strong>Puebla:</strong> 12,120 establecimientos, 1.9 empleos por unidad, 69.4% sin sueldo</li>
+        </ul>
 
-            <p><strong>Modelo de subsistencia (sur):</strong></p>
-            <ul>
-                <li><strong>Oaxaca:</strong> 14,830 establecimientos, 1.5 empleos por unidad, 80.8% sin sueldo</li>
-                <li><strong>Tlaxcala:</strong> 3,920 establecimientos, 1.8 empleos por unidad, 76.5% sin sueldo</li>
-                <li><strong>Puebla:</strong> 12,120 establecimientos, 1.9 empleos por unidad, 69.4% sin sueldo</li>
-            </ul>
+        <p><strong>Modelo consolidado (norte):</strong></p>
+        <ul>
+            <li><strong>Baja California:</strong> 703 establecimientos, 5.58 empleos por unidad, 22% sin sueldo</li>
+            <li><strong>Nuevo Le&oacute;n:</strong> 1,623 establecimientos, 4.24 empleos por unidad, 26.8% sin sueldo</li>
+            <li><strong>Coahuila:</strong> 910 establecimientos, 3.73 empleos por unidad, 34.6% sin sueldo</li>
+        </ul>
 
-            <p><strong>Modelo consolidado (norte):</strong></p>
-            <ul>
-                <li><strong>Baja California:</strong> 703 establecimientos, 5.58 empleos por unidad, 22% sin sueldo</li>
-                <li><strong>Nuevo Le&oacute;n:</strong> 1,623 establecimientos, 4.24 empleos por unidad, 26.8% sin sueldo</li>
-                <li><strong>Coahuila:</strong> 910 establecimientos, 3.73 empleos por unidad, 34.6% sin sueldo</li>
-            </ul>
+        <p>Un estado tortillero del sur tiene en promedio <strong>10 veces m&aacute;s establecimientos</strong> que uno del norte, pero cada uno emplea a menos de 2 personas y paga salarios de subsistencia.</p>
 
-            <p>Un estado tortillero del sur tiene en promedio <strong>10 veces m&aacute;s establecimientos</strong> que uno del norte, pero cada uno emplea a menos de 2 personas y paga salarios de subsistencia.</p>
+        <h3>Alerta 3: Concentraci&oacute;n de precariedad en el sur</h3>
 
-            <h3>Alerta 3: Concentraci&oacute;n de precariedad en el sur</h3>
+        <p>Los estados con mayor n&uacute;mero de tortiller&iacute;as coinciden con los de mayores indicadores de pobreza: Oaxaca (14,830), Puebla (12,120), Guerrero (5,031), Chiapas (4,060). <strong>Cuatro entidades con altos &iacute;ndices de marginaci&oacute;n concentran 36,041 tortiller&iacute;as</strong> &mdash; m&aacute;s de una tercera parte del sector nacional.</p>
 
-            <p>Los estados con mayor n&uacute;mero de tortiller&iacute;as coinciden con los de mayores indicadores de pobreza: Oaxaca (14,830), Puebla (12,120), Guerrero (5,031), Chiapas (4,060). <strong>Cuatro entidades con altos &iacute;ndices de marginaci&oacute;n concentran 36,041 tortiller&iacute;as</strong> &mdash; m&aacute;s de una tercera parte del sector nacional.</p>
+        <p>Para los gobiernos municipales de estas entidades, las tortiller&iacute;as no son un giro econ&oacute;mico m&aacute;s: son el principal sost&eacute;n de ingreso de miles de familias que, seg&uacute;n estos datos, operan en la informalidad remunerativa.</p>
 
-            <p>Para los gobiernos municipales de estas entidades, las tortiller&iacute;as no son un giro econ&oacute;mico m&aacute;s: son el principal sost&eacute;n de ingreso de miles de familias que, seg&uacute;n estos datos, operan en la informalidad remunerativa.</p>
+        <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
 
-            <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
+        <p>Los datos del Censo 2024 obligan a repensar la mirada gubernamental sobre el sector:</p>
 
-            <p>Los datos del Censo 2024 obligan a repensar la mirada gubernamental sobre el sector:</p>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-balance-scale"></i> 1. Inspecci&oacute;n laboral diferenciada</strong>
+            Aplicar la normativa laboral est&aacute;ndar a un sector donde casi la mitad del personal es familia no remunerada generar&iacute;a cierre masivo de establecimientos. Se requiere un marco regulatorio que reconozca el trabajo familiar sin abandonar la protecci&oacute;n social.
+        </div>
 
-            <div class="callout callout-info">
-                <strong><i class="fas fa-balance-scale"></i> 1. Inspecci&oacute;n laboral diferenciada</strong>
-                Aplicar la normativa laboral est&aacute;ndar a un sector donde casi la mitad del personal es familia no remunerada generar&iacute;a cierre masivo de establecimientos. Se requiere un marco regulatorio que reconozca el trabajo familiar sin abandonar la protecci&oacute;n social.
-            </div>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-file-contract"></i> 2. Pol&iacute;ticas de formalizaci&oacute;n gradual</strong>
+            Los programas federales y estatales de formalizaci&oacute;n empresarial deben contemplar rutas espec&iacute;ficas para tortiller&iacute;as: esquemas simplificados de afiliaci&oacute;n al IMSS, apoyos para transici&oacute;n de personal no remunerado a remunerado, incentivos a la modernizaci&oacute;n.
+        </div>
 
-            <div class="callout callout-info">
-                <strong><i class="fas fa-file-contract"></i> 2. Pol&iacute;ticas de formalizaci&oacute;n gradual</strong>
-                Los programas federales y estatales de formalizaci&oacute;n empresarial deben contemplar rutas espec&iacute;ficas para tortiller&iacute;as: esquemas simplificados de afiliaci&oacute;n al IMSS, apoyos para transici&oacute;n de personal no remunerado a remunerado, incentivos a la modernizaci&oacute;n.
-            </div>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-utensils"></i> 3. Vinculaci&oacute;n con seguridad alimentaria</strong>
+            Los gobiernos municipales de zonas con alta dependencia del sector (Oaxaca, Puebla, Tlaxcala) deben incorporar a las tortiller&iacute;as en sus planes de abasto y seguridad alimentaria. Una crisis del sector &mdash;por insumos, por regulaci&oacute;n mal calibrada&mdash; impactar&iacute;a directamente al abasto popular.
+        </div>
 
-            <div class="callout callout-info">
-                <strong><i class="fas fa-utensils"></i> 3. Vinculaci&oacute;n con seguridad alimentaria</strong>
-                Los gobiernos municipales de zonas con alta dependencia del sector (Oaxaca, Puebla, Tlaxcala) deben incorporar a las tortiller&iacute;as en sus planes de abasto y seguridad alimentaria. Una crisis del sector &mdash;por insumos, por regulaci&oacute;n mal calibrada&mdash; impactar&iacute;a directamente al abasto popular.
-            </div>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-female"></i> 4. Protecci&oacute;n espec&iacute;fica a la mujer trabajadora</strong>
+            El 59.6% de participaci&oacute;n femenina y su concentraci&oacute;n en modelos de subsistencia familiar exige pol&iacute;ticas espec&iacute;ficas: acceso a guarder&iacute;as, capacitaci&oacute;n t&eacute;cnica, programas de cr&eacute;dito con perspectiva de g&eacute;nero.
+        </div>
 
-            <div class="callout callout-info">
-                <strong><i class="fas fa-female"></i> 4. Protecci&oacute;n espec&iacute;fica a la mujer trabajadora</strong>
-                El 59.6% de participaci&oacute;n femenina y su concentraci&oacute;n en modelos de subsistencia familiar exige pol&iacute;ticas espec&iacute;ficas: acceso a guarder&iacute;as, capacitaci&oacute;n t&eacute;cnica, programas de cr&eacute;dito con perspectiva de g&eacute;nero.
-            </div>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-bolt"></i> 5. Revisi&oacute;n de cargas sobre insumos</strong>
+            Las presiones coyunturales que motivan las protestas (gas LP, electricidad, harina de ma&iacute;z) se suman a una precariedad estructural. Subsidios o tarifas diferenciadas para el sector podr&iacute;an justificarse por su funci&oacute;n social, no solo por su peso econ&oacute;mico.
+        </div>
 
-            <div class="callout callout-info">
-                <strong><i class="fas fa-bolt"></i> 5. Revisi&oacute;n de cargas sobre insumos</strong>
-                Las presiones coyunturales que motivan las protestas (gas LP, electricidad, harina de ma&iacute;z) se suman a una precariedad estructural. Subsidios o tarifas diferenciadas para el sector podr&iacute;an justificarse por su funci&oacute;n social, no solo por su peso econ&oacute;mico.
-            </div>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-map-signs"></i> 6. Plan de desarrollo espec&iacute;fico en estados cr&iacute;ticos</strong>
+            Los Planes Estatales de Desarrollo de Oaxaca, Tlaxcala, Puebla y Guerrero deber&iacute;an incluir al sector tortillero como l&iacute;nea estrat&eacute;gica de atenci&oacute;n social, con metas medibles de mejora salarial y reducci&oacute;n de trabajo no remunerado.
+        </div>
 
-            <div class="callout callout-info">
-                <strong><i class="fas fa-map-signs"></i> 6. Plan de desarrollo espec&iacute;fico en estados cr&iacute;ticos</strong>
-                Los Planes Estatales de Desarrollo de Oaxaca, Tlaxcala, Puebla y Guerrero deber&iacute;an incluir al sector tortillero como l&iacute;nea estrat&eacute;gica de atenci&oacute;n social, con metas medibles de mejora salarial y reducci&oacute;n de trabajo no remunerado.
-            </div>
+        <h2>Datos t&eacute;cnicos</h2>
 
-            <h2>Datos t&eacute;cnicos</h2>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -592,86 +543,99 @@
                 <tbody>
                     <tr>
                         <td>C&oacute;digo SCIAN</td>
-                        <td class="highlight-cell">311830</td>
+                        <td>311830</td>
                     </tr>
                     <tr>
                         <td>Unidades econ&oacute;micas</td>
-                        <td class="highlight-cell">107,963</td>
+                        <td>107,963</td>
                     </tr>
                     <tr>
                         <td>Personal ocupado total</td>
-                        <td class="highlight-cell">253,966</td>
+                        <td>253,966</td>
                     </tr>
                     <tr>
                         <td>Personal ocupado mujeres</td>
-                        <td class="highlight-cell">151,385 (59.6%)</td>
+                        <td>151,385 (59.6%)</td>
                     </tr>
                     <tr>
                         <td>Personal no remunerado</td>
-                        <td class="danger-cell">122,795 (48.4%)</td>
+                        <td class="neg">122,795 (48.4%)</td>
                     </tr>
                     <tr>
                         <td>Producci&oacute;n bruta total</td>
-                        <td class="highlight-cell">$87,205.92 MDP</td>
+                        <td>$87,205.92 MDP</td>
                     </tr>
                     <tr>
                         <td>Valor agregado censal bruto</td>
-                        <td class="highlight-cell">$34,685.91 MDP</td>
+                        <td>$34,685.91 MDP</td>
                     </tr>
                     <tr>
                         <td>Remuneraciones totales</td>
-                        <td class="highlight-cell">$10,554.76 MDP</td>
+                        <td>$10,554.76 MDP</td>
                     </tr>
                     <tr>
                         <td>Remuneraci&oacute;n promedio anual</td>
-                        <td class="danger-cell">$41,560</td>
+                        <td class="neg">$41,560</td>
                     </tr>
                     <tr>
                         <td>% vs Salario M&iacute;nimo 2026</td>
-                        <td class="danger-cell">36.6%</td>
+                        <td class="neg">36.6%</td>
                     </tr>
                     <tr>
                         <td>Empleo promedio por UE</td>
-                        <td class="highlight-cell">2.4 personas</td>
+                        <td>2.4 personas</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><strong>Nota sobre datos confidenciales:</strong> INEGI suprimi&oacute; cifras de Baja California Sur y Colima por bajo n&uacute;mero de establecimientos, lo que impedir&iacute;a publicar datos sin revelar informaci&oacute;n comercial espec&iacute;fica.</p>
+        <p class="src"><strong>Nota sobre datos confidenciales:</strong> INEGI suprimi&oacute; cifras de Baja California Sur y Colima por bajo n&uacute;mero de establecimientos, lo que impedir&iacute;a publicar datos sin revelar informaci&oacute;n comercial espec&iacute;fica.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Actividad SCIAN 311830: Elaboraci&oacute;n de tortillas de ma&iacute;z y molienda de nixtamal.</p>
+        <p class="src"><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Actividad SCIAN 311830: Elaboraci&oacute;n de tortillas de ma&iacute;z y molienda de nixtamal.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><strong>Salario m&iacute;nimo de referencia:</strong> $113,464 anuales ($315.04 diarios &times; 360 d&iacute;as), vigente a partir del 1 de enero de 2026.</p>
+        <p class="src"><strong>Salario m&iacute;nimo de referencia:</strong> $113,464 anuales ($315.04 diarios &times; 360 d&iacute;as), vigente a partir del 1 de enero de 2026.</p>
 
-            <h2>Conclusi&oacute;n</h2>
+        <h2>Conclusi&oacute;n</h2>
 
-            <p>Las protestas de los tortilleros por el aumento de insumos han puesto al sector en la agenda p&uacute;blica. Pero el Censo Econ&oacute;mico 2024 revela que <strong>el problema es mucho m&aacute;s profundo que la inflaci&oacute;n del ma&iacute;z</strong>: es un sector que estructuralmente opera por debajo de los est&aacute;ndares laborales nacionales, sostenido por trabajo familiar no remunerado y concentrado en los estados con mayor marginaci&oacute;n.</p>
+        <p>Las protestas de los tortilleros por el aumento de insumos han puesto al sector en la agenda p&uacute;blica. Pero el Censo Econ&oacute;mico 2024 revela que <strong>el problema es mucho m&aacute;s profundo que la inflaci&oacute;n del ma&iacute;z</strong>: es un sector que estructuralmente opera por debajo de los est&aacute;ndares laborales nacionales, sostenido por trabajo familiar no remunerado y concentrado en los estados con mayor marginaci&oacute;n.</p>
 
-            <p>Ning&uacute;n estado del pa&iacute;s paga, en promedio, el salario m&iacute;nimo en las tortiller&iacute;as. Ninguno. El dato no es una curiosidad estad&iacute;stica: es un llamado directo a repensar c&oacute;mo el Estado mexicano mira, regula y protege al sector que alimenta diariamente a millones de hogares.</p>
+        <p>Ning&uacute;n estado del pa&iacute;s paga, en promedio, el salario m&iacute;nimo en las tortiller&iacute;as. Ninguno. El dato no es una curiosidad estad&iacute;stica: es un llamado directo a repensar c&oacute;mo el Estado mexicano mira, regula y protege al sector que alimenta diariamente a millones de hogares.</p>
 
-            <p>La pol&iacute;tica p&uacute;blica tiene tres caminos: ignorar la precariedad estructural (y seguir apagando incendios coyunturales), aplicar la ley al pie de la letra (y provocar el cierre masivo), o construir un marco diferenciado que reconozca la funci&oacute;n social del sector mientras eleva gradualmente sus condiciones laborales. <strong>La decisi&oacute;n no es t&eacute;cnica: es pol&iacute;tica.</strong></p>
+        <p>La pol&iacute;tica p&uacute;blica tiene tres caminos: ignorar la precariedad estructural (y seguir apagando incendios coyunturales), aplicar la ley al pie de la letra (y provocar el cierre masivo), o construir un marco diferenciado que reconozca la funci&oacute;n social del sector mientras eleva gradualmente sus condiciones laborales. <strong>La decisi&oacute;n no es t&eacute;cnica: es pol&iacute;tica.</strong></p>
 
-            <div class="quote-box">
-                Ning&uacute;n estado paga el salario m&iacute;nimo en las tortiller&iacute;as. Ninguno. Detr&aacute;s del precio de la tortilla hay 253,966 personas y 122,795 de ellas trabajan sin sueldo.
-            </div>
+        <div class="quote-box">
+            Ning&uacute;n estado paga el salario m&iacute;nimo en las tortiller&iacute;as. Ninguno. Detr&aacute;s del precio de la tortilla hay 253,966 personas y 122,795 de ellas trabajan sin sueldo.
+        </div>
 
-            <div class="cta-box">
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
                 <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres analizar el sector tortillero de tu estado o municipio?</h3>
                 <p>En GDI Data tenemos el Censo Econ&oacute;mico 2024 listo para consulta por municipio, estado y SCIAN.</p>
-                <a href="https://gdidata.com/" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar datos
-                </a>
+                <a href="https://gdidata.com/" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar datos</a>
             </div>
+        </div>
 
-            <div class="source-box">
-                <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Procesado con Microsoft Fabric. An&aacute;lisis: GDI Data.</p>
-                <p style="margin-top: 0.5rem;"><strong>Fecha de an&aacute;lisis:</strong> Abril 2026 | GDI &mdash; Gobierno Digital e Innovaci&oacute;n | gobiernodigitaleinnovacion.com</p>
-            </div>
+        <div class="source-box">
+            <p><strong>Fuente:</strong> Censo Econ&oacute;mico 2024, INEGI. Procesado con Microsoft Fabric. An&aacute;lisis: GDI Data.</p>
+            <p><strong>Fecha de an&aacute;lisis:</strong> Abril 2026 | GDI &mdash; Gobierno Digital e Innovaci&oacute;n | gobiernodigitaleinnovacion.com</p>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
