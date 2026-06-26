@@ -11,12 +11,15 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 - **Borradores redes:** social-drafts/
 - **Página del blog:** blog.html
 
-## Estilo Visual GDI
+## Estilo Visual GDI — Sistema cartográfico (alineado con landing y blog.html)
 
-- **Color principal:** #667eea (púrpura)
-- **Color secundario:** #764ba2 (violeta)
-- **Gradiente:** `linear-gradient(135deg, #667eea 0%, #764ba2 100%)`
-- **CSS:** Inline (NO usa Tailwind)
+Los artículos deben verse **idénticos en lenguaje visual a la landing** (`index.html`) y a `blog.html`. NO usar el viejo estilo púrpura/gradiente. Sistema actual:
+
+- **Fuentes:** Space Grotesk (títulos / `font-display`), Inter (cuerpo), JetBrains Mono (etiquetas `mono coord`)
+- **Paleta (tokens):** `--ink #0A1626` (navy texto/fondos oscuros), `--ink2 #0F2238`, `--paper #F6F3EC` (crema, fondo), `--bone #EDE8DD`, `--gdi #7C5CFF` (morado marca: nav, botón "Ir a la App"), `--muted #5b6573`
+- **Texturas:** clases `.topo`, `.topo-lines`, `.grid-ticks` (copiar tal cual del template)
+- **Etiquetas tipo coordenada:** `.mono .coord` (mayúsculas, `letter-spacing: .12em`)
+- **CSS:** Inline en `<style>` (cada artículo es autónomo — NO depende del build de Tailwind), pero reproduciendo los tokens de arriba
 - **Iconos:** Font Awesome 6.5
 
 ## Datos que necesitas del usuario
@@ -25,14 +28,18 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 2. **Categoría** (Finanzas Municipales, Alerta, Economía, Tecnología)
 3. **Contenido** completo del artículo
 
-## Categorías y colores
+## Categorías y color de acento (`--accent`)
 
-| Categoría | categoryColor | Uso |
-|-----------|---------------|-----|
-| Finanzas Municipales | purple | Análisis de finanzas públicas |
-| Alerta | red | Situaciones críticas/problemas |
-| Economía | green | Datos económicos generales |
-| Tecnología | blue | Innovación y transformación digital |
+El acento por categoría es la ÚNICA variable que cambia entre artículos. Usar la paleta de la landing (NO rojo/verde viejos):
+
+| Categoría | categoryColor (posts.json) | `--accent` | `--accent-dark` | Ícono FA |
+|-----------|----------------------------|------------|-----------------|----------|
+| Finanzas Municipales | purple | `#7C5CFF` | `#5b3fd1` | `fa-coins` |
+| Alerta | amber | `#E8A33D` | `#b45309` | `fa-triangle-exclamation` |
+| Economía | green | `#2FA86A` | `#1f7d4e` | `fa-chart-line` |
+| Tecnología | blue | `#3B82F6` | `#2563eb` | `fa-microchip` |
+
+> `--accent-soft` = el mismo acento a ~12% de opacidad (rgba). Ej. Economía: `rgba(47,168,106,0.12)`.
 
 ## Pasos a ejecutar
 
@@ -40,13 +47,14 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
 
 - **Nombre del archivo:** `YYYY-MM-DD-slug-del-titulo.html`
 - **Ubicación:** `blog/articulos/`
-- **Usar como plantilla:** Cualquier artículo existente en esa carpeta (usan CSS inline, NO Tailwind)
-- **Gradientes por categoría:**
-  - Finanzas Municipales: `linear-gradient(135deg, #667eea 0%, #764ba2 100%)`
-  - Alerta: `linear-gradient(135deg, #ef4444 0%, #dc2626 100%)`
-  - Economía: `linear-gradient(135deg, #10b981 0%, #059669 100%)`
-  - Tecnología: `linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)`
-- **Tags de tracking (OBLIGATORIO en el `<head>`):** Incluir GA4 (`G-6ZDGM6LM7J`), Google Ads (`AW-3373421209`) y TikTok Pixel (`D5MHUKBC77UEK8Q4I9B0`) — copiar el bloque de scripts de cualquier artículo existente que ya los tenga
+- **PLANTILLA CANÓNICA:** copiar la estructura de **`blog/articulos/2026-06-26-tequila-jalisco-concentracion-149-empresas.html`** (es la referencia del sistema cartográfico). Reemplazar solo el contenido y, en `:root`, las 3 variables de acento según la categoría (ver tabla). NO reintroducir el estilo púrpura/gradiente viejo.
+- **Estructura del template (respetar el orden):**
+  1. `<nav class="nav">` con badge GDI morado + links (rutas `../../`)
+  2. `<header class="hero topo">` oscuro con `.topo-lines`, back-link, `hero-meta` (chip categoría + fecha + tiempo en `mono coord`), `<h1>` Space Grotesk con la palabra clave en `<span style="color:var(--accent)">`, subtítulo
+  3. `<article class="article-body">`: eyebrow `mono coord`, párrafos, `<h2>` con barra lateral de acento, tablas `.data-table` (header ink), banda oscura `.keyfact`, `.stat-grid` (barras verticales), `.callout`, `.quote-box`, `.cta-box` oscura con botón de acento, `.source-box`
+  4. `<footer class="footer">` ink
+- **Clases de celda en tablas:** `.pos` (dato positivo, color acento), `.neg` (negativo/caída), `.warn` (advertencia), `.row-accent` (fila destacada)
+- **Tags de tracking (OBLIGATORIO en el `<head>`):** GA4 (`G-6ZDGM6LM7J`), Google Ads (`AW-3373421209`), TikTok Pixel (`D5MHUKBC77UEK8Q4I9B0`), fuentes Google (Space Grotesk + Inter + JetBrains Mono) y Font Awesome — ya vienen en el template canónico, solo copiarlos
 
 ### 2. Actualizar posts.json
 
@@ -59,7 +67,7 @@ Cuando el usuario invoque este comando, sigue estos pasos para publicar un nuevo
   "date": "YYYY-MM-DD",
   "author": "Juan Heriberto Rosas",
   "category": "Categoría",
-  "categoryColor": "purple|red|green|blue",
+  "categoryColor": "purple|amber|green|blue",
   "image": "",
   "excerpt": "Resumen de 2-3 líneas (máximo 200 caracteres)",
   "url": "blog/articulos/YYYY-MM-DD-slug.html",

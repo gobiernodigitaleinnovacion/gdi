@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El tequila de Jalisco: $70 mil millones, 149 empresas y una concentraci&oacute;n que debe preocupar a los municipios - GDI</title>
-    <meta name="description" content="La industria del tequila genera $71,170 MDP con apenas 179 empresas; Jalisco concentra el 99.4%. Entre 2019 y 2024 el n&uacute;mero de empresas cay&oacute; 77% mientras el empleo y la producci&oacute;n subieron. Censo Econ&oacute;mico INEGI 2024.">
+    <title>El tequila de Jalisco: $70 mil millones, 149 empresas y una concentración que debe preocupar a los municipios - GDI</title>
+    <meta name="description" content="La industria del tequila genera $71,170 MDP con apenas 179 empresas; Jalisco concentra el 99.4%. Entre 2019 y 2024 el número de empresas cayó 77% mientras el empleo y la producción subieron. Censo Económico INEGI 2024.">
     <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-06-26-tequila-jalisco-concentracion-149-empresas">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="El tequila de Jalisco: $70 mil millones, 149 empresas y una concentración que debe preocupar a los municipios">
+    <meta property="og:description" content="Jalisco concentra el 99.4% de la producción nacional de tequila. Las empresas cayeron 77% entre 2019 y 2024 mientras el empleo y la producción subieron. Censo Económico INEGI 2024.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-06-26-tequila-jalisco-concentracion-149-empresas">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
@@ -40,605 +56,494 @@
     <!-- TikTok Pixel Code End -->
 
     <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --economy-color: #10b981;
-            --economy-dark: #059669;
-            --dark-color: #1e293b;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-economy: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --shadow-medium: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #2FA86A;
+            --accent-dark: #1f7d4e;
+            --accent-soft: rgba(47, 168, 106, 0.12);
         }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: var(--dark-color);
-            background: var(--light-gray);
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            position: fixed;
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .nav-inner {
+            max-width: 80rem;
             margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
         }
-
-        .logo-img { height: 45px; }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
         }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
         }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
 
-        .nav-menu a:hover { color: var(--primary-color); }
-
-        .cta-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 7rem 2rem 4rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--economy-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        .article-category {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-subtitle {
-            font-size: 1.25rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-        }
-
-        .article-hero {
-            background: var(--gradient-economy);
-            border-radius: 20px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .article-hero i { font-size: 5rem; opacity: 0.9; }
-
-        .article-content h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--economy-color);
-        }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin: 2rem 0 1rem 0;
-        }
-
-        .article-content p {
-            margin-bottom: 1.25rem;
-            color: #374151;
-        }
-
-        .article-content ul, .article-content ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-
-        .callout {
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .callout-info {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: var(--economy-color);
-        }
-
-        .callout-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: #f59e0b;
-        }
-
-        .callout-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-        }
-
-        .callout strong { display: block; margin-bottom: 0.5rem; }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
         }
 
-        .data-table th {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
         }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
         }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
 
-        .data-table tr:hover { background: rgba(16, 185, 129, 0.05); }
-
-        .highlight-cell { font-weight: 700; }
-        .danger-cell { color: #ef4444; font-weight: 700; }
-        .success-cell { color: #10b981; font-weight: 700; }
-        .warning-cell { color: #f59e0b; font-weight: 700; }
-
-        .stat-highlight {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .stat-highlight .number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
+        /* ===== Stat grid (barras verticales) ===== */
         .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
         }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
         }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
 
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--economy-color);
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
         }
-
-        .stat-card .label {
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
         }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
 
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
         .quote-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
-            border-left: 4px solid var(--economy-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
         }
 
+        /* ===== CTA ===== */
         .cta-box {
-            background: var(--gradient-economy);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 3rem 0;
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
         }
-
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
-
-        .cta-box a {
-            display: inline-block;
-            background: white;
-            color: var(--economy-dark);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
         }
+        .cta-btn:hover { filter: brightness(1.08); }
 
+        /* ===== Source box ===== */
         .source-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid #e5e7eb;
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
         }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
 
-        .source-box p { font-size: 0.9rem; color: var(--medium-gray); margin: 0; }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-top: 4rem;
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
         }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .article-title { font-size: 1.75rem; }
-            .nav-menu { display: none; }
+        @media (max-width: 640px) {
             .stat-grid { grid-template-columns: 1fr; }
-            .data-table { font-size: 0.85rem; }
+            .data-table { font-size: 0.82rem; }
             .data-table th, .data-table td { padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-container">
-            <a href="../../index.html">
-                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="GDI Logo" class="logo-img">
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#productos">Productos</a></li>
-                <li><a href="../../blog.html">Blog</a></li>
-                <li><a href="../../index.html#contacto-form">Contacto</a></li>
-            </ul>
-            <a href="https://gdidata.com/" target="_blank" class="cta-button">
-                <i class="fas fa-rocket"></i> Ir a la App
-            </a>
-        </nav>
-    </header>
-
-    <article class="article-container">
-        <a href="../../blog.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Volver al blog
-        </a>
-
-        <div class="article-meta">
-            <span class="article-category"><i class="fas fa-chart-line"></i> Econom&iacute;a</span>
-            <span><i class="far fa-calendar"></i> 26 de junio de 2026</span>
-            <span><i class="far fa-clock"></i> 14 min de lectura</span>
-        </div>
-
-        <h1 class="article-title">El tequila de Jalisco: $70 mil millones de producci&oacute;n, 149 empresas y una concentraci&oacute;n que debe preocupar a los gobiernos municipales</h1>
-        <p class="article-subtitle">El sector m&aacute;s productivo de la manufactura jalisciense se consolid&oacute; dr&aacute;sticamente entre 2019 y 2024. Menos empresas, m&aacute;s empleo, m&aacute;s valor. Un modelo que genera riqueza y riesgo al mismo tiempo.</p>
-
-        <div class="article-hero">
-            <div>
-                <i class="fas fa-wine-bottle"></i>
-                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">99.4% de la producci&oacute;n nacional est&aacute; en Jalisco</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">149 empresas &middot; $70,713 MDP &middot; Censo Econ&oacute;mico INEGI 2024 (SCIAN 312144)</p>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
             </div>
         </div>
+    </nav>
 
-        <div class="article-content">
-            <p><strong>Etiqueta:</strong> Econom&iacute;a Local &middot; Alerta Sectorial &middot; Jalisco &middot; <strong>Fecha de an&aacute;lisis:</strong> Junio 2026</p>
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-chart-line"></i> Economía</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 26 Jun 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 14 min</span>
+            </div>
+            <h1>El tequila de Jalisco: $70 mil millones de producción, 149 empresas y una <span style="color:var(--accent)">concentración</span> que debe preocupar a los gobiernos municipales</h1>
+            <p class="hero-subtitle">El sector más productivo de la manufactura jalisciense se consolidó drásticamente entre 2019 y 2024. Menos empresas, más empleo, más valor. Un modelo que genera riqueza y riesgo al mismo tiempo.</p>
+        </div>
+    </header>
 
-            <p>En 2024, la industria del tequila en M&eacute;xico genera <strong>$71,170 millones de pesos</strong> en producci&oacute;n bruta con apenas <strong>179 empresas</strong> en todo el pa&iacute;s. De ese universo, 149 operan en Jalisco y concentran el <strong>99.4% de toda la producci&oacute;n nacional</strong>. Es el sector manufacturero n&uacute;mero uno del estado por valor de producci&oacute;n, por encima de aceites vegetales, l&aacute;cteos y alimentos balanceados para animales.</p>
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Economía Local · Alerta Sectorial · Jalisco · Junio 2026
+        </div>
 
-            <p>Esos datos provienen del Censo Econ&oacute;mico 2024 del INEGI (c&oacute;digo SCIAN 312144, <em>Elaboraci&oacute;n de tequila</em>) y revelan una industria que en veinte a&ntilde;os no solo creci&oacute; &mdash; se transform&oacute; estructuralmente de manera que tiene implicaciones directas para la gesti&oacute;n p&uacute;blica de los municipios productores.</p>
+        <p>En 2024, la industria del tequila en México genera <strong>$71,170 millones de pesos</strong> en producción bruta con apenas <strong>179 empresas</strong> en todo el país. De ese universo, 149 operan en Jalisco y concentran el <strong>99.4% de toda la producción nacional</strong>. Es el sector manufacturero número uno del estado por valor de producción, por encima de aceites vegetales, lácteos y alimentos balanceados para animales.</p>
 
-            <h2>La paradoja del boom: m&aacute;s valor, menos empresas</h2>
+        <p>Esos datos provienen del Censo Económico 2024 del INEGI (código SCIAN 312144, <em>Elaboración de tequila</em>) y revelan una industria que en veinte años no solo creció — se transformó estructuralmente de manera que tiene implicaciones directas para la gestión pública de los municipios productores.</p>
 
-            <p>La serie de cinco censos econ&oacute;micos (2004-2024) cuenta una historia que no es lineal.</p>
+        <h2>La paradoja del boom: más valor, menos empresas</h2>
 
+        <p>La serie de cinco censos económicos (2004-2024) cuenta una historia que no es lineal.</p>
+
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
                     <tr>
                         <th>Censo</th>
                         <th>Empresas</th>
                         <th>Empleos</th>
-                        <th>Producci&oacute;n bruta (MDP)</th>
+                        <th>Producción bruta (MDP)</th>
                         <th>Valor agregado (MDP)</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>2004</strong></td>
-                        <td>242</td>
-                        <td>5,792</td>
-                        <td>9,573</td>
-                        <td>3,635</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2009</strong></td>
-                        <td>373</td>
-                        <td>7,455</td>
-                        <td>16,940</td>
-                        <td>9,192</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2014</strong></td>
-                        <td>572</td>
-                        <td>9,725</td>
-                        <td>19,472</td>
-                        <td>6,896</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2019</strong></td>
-                        <td class="warning-cell">779</td>
-                        <td>11,920</td>
-                        <td>55,564</td>
-                        <td>19,917</td>
-                    </tr>
-                    <tr style="background: rgba(16, 185, 129, 0.08);">
-                        <td><strong>2024</strong></td>
-                        <td class="danger-cell">179</td>
-                        <td class="success-cell">15,096</td>
-                        <td class="success-cell">71,170</td>
-                        <td class="success-cell">22,635</td>
-                    </tr>
+                    <tr><td><strong>2004</strong></td><td>242</td><td>5,792</td><td>9,573</td><td>3,635</td></tr>
+                    <tr><td><strong>2009</strong></td><td>373</td><td>7,455</td><td>16,940</td><td>9,192</td></tr>
+                    <tr><td><strong>2014</strong></td><td>572</td><td>9,725</td><td>19,472</td><td>6,896</td></tr>
+                    <tr><td><strong>2019</strong></td><td class="warn">779</td><td>11,920</td><td>55,564</td><td>19,917</td></tr>
+                    <tr class="row-accent"><td><strong>2024</strong></td><td class="neg">179</td><td class="pos">15,096</td><td class="pos">71,170</td><td class="pos">22,635</td></tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">Fuente: Censos Económicos INEGI 2004-2024, SCIAN 312144.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><em>Fuente: Censos Econ&oacute;micos INEGI 2004-2024, SCIAN 312144.</em></p>
+        <p>Entre 2004 y 2019 la industria creció en todas las dimensiones: más empresas, más empleos, más producción. Pero entre 2019 y 2024 algo fundamental cambió: el número de empresas cayó de 779 a 179 (<strong>−77%</strong>), mientras el empleo subió de 11,920 a 15,096 (<strong>+27%</strong>) y la producción aumentó de $55,564 a $71,170 MDP (<strong>+28%</strong>).</p>
 
-            <p>Entre 2004 y 2019 la industria creci&oacute; en todas las dimensiones: m&aacute;s empresas, m&aacute;s empleos, m&aacute;s producci&oacute;n. Pero entre 2019 y 2024 algo fundamental cambi&oacute;: el n&uacute;mero de empresas cay&oacute; de 779 a 179 (<strong>&minus;77%</strong>), mientras el empleo subi&oacute; de 11,920 a 15,096 (<strong>+27%</strong>) y la producci&oacute;n aument&oacute; de $55,564 a $71,170 MDP (<strong>+28%</strong>).</p>
-
-            <div class="stat-highlight">
-                <div class="number">779 &rarr; 179</div>
-                <p style="font-size: 1.1rem; margin-top: 0.5rem;">Empresas tequileras entre 2019 y 2024: una ca&iacute;da del 77%. Al mismo tiempo, el empleo subi&oacute; 27% y la producci&oacute;n 28%. Las grandes casas absorbieron capacidad, mercado y plazas. Menos actores, m&aacute;s riqueza concentrada.</p>
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(47,168,106,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">779 &rarr; 179</div>
+                <p>Empresas tequileras entre 2019 y 2024: una caída del 77%. Al mismo tiempo, el empleo subió 27% y la producción 28%. Las grandes casas absorbieron capacidad, mercado y plazas. Menos actores, más riqueza concentrada.</p>
             </div>
+        </div>
 
-            <p>La interpretaci&oacute;n es clara: el sector vivi&oacute; una <strong>consolidaci&oacute;n acelerada</strong>. Las grandes casas tequileras absorbieron producci&oacute;n, capacidad y mercado. Las peque&ntilde;as empresas desaparecieron o fueron adquiridas. El resultado es una industria que genera m&aacute;s riqueza y m&aacute;s empleo, pero en manos de menos actores.</p>
+        <p>La interpretación es clara: el sector vivió una <strong>consolidación acelerada</strong>. Las grandes casas tequileras absorbieron producción, capacidad y mercado. Las pequeñas empresas desaparecieron o fueron adquiridas. El resultado es una industria que genera más riqueza y más empleo, pero en manos de menos actores.</p>
 
-            <p>Para un gobierno municipal, eso significa una cosa concreta: <strong>alta dependencia en pocos empleadores</strong>. Si una de las tres o cuatro plantas m&aacute;s grandes de tu municipio cierra, se relocaliza o atraviesa una crisis &mdash; sanitaria, arancelaria, de precios del agave &mdash; el impacto sobre el empleo local ser&iacute;a severo y dif&iacute;cil de mitigar.</p>
+        <p>Para un gobierno municipal, eso significa una cosa concreta: <strong>alta dependencia en pocos empleadores</strong>. Si una de las tres o cuatro plantas más grandes de tu municipio cierra, se relocaliza o atraviesa una crisis — sanitaria, arancelaria, de precios del agave — el impacto sobre el empleo local sería severo y difícil de mitigar.</p>
 
-            <h2>El boom del valor ocurri&oacute; entre 2014 y 2019</h2>
+        <h2>El boom del valor ocurrió entre 2014 y 2019</h2>
 
-            <p>El dato m&aacute;s revelador de la serie hist&oacute;rica no es el &uacute;ltimo censo &mdash; es el salto de 2014 a 2019. En esos cinco a&ntilde;os, la producci&oacute;n bruta pas&oacute; de $19,472 a $55,564 MDP (<strong>+185%</strong>). Es en ese periodo cuando el tequila premium conquista mercados internacionales, cuando los precios por botella se disparan en Estados Unidos y Europa, y cuando las inversiones en capacidad instalada se multiplican.</p>
+        <p>El dato más revelador de la serie histórica no es el último censo — es el salto de 2014 a 2019. En esos cinco años, la producción bruta pasó de $19,472 a $55,564 MDP (<strong>+185%</strong>). Es en ese periodo cuando el tequila premium conquista mercados internacionales, cuando los precios por botella se disparan en Estados Unidos y Europa, y cuando las inversiones en capacidad instalada se multiplican.</p>
 
-            <p>De 2019 a 2024 el crecimiento contin&uacute;a, pero se modera (+28%). La industria ya no est&aacute; en explosi&oacute;n &mdash; est&aacute; en <strong>consolidaci&oacute;n y optimizaci&oacute;n</strong>. Para la pol&iacute;tica p&uacute;blica municipal, eso significa que el ciclo de inversi&oacute;n acelerada ya pas&oacute;; ahora el reto es retener lo que existe y diversificar la base econ&oacute;mica local.</p>
+        <p>De 2019 a 2024 el crecimiento continúa, pero se modera (+28%). La industria ya no está en explosión — está en <strong>consolidación y optimización</strong>. Para la política pública municipal, eso significa que el ciclo de inversión acelerada ya pasó; ahora el reto es retener lo que existe y diversificar la base económica local.</p>
 
-            <h2>Jalisco concentra el 99.4% de la producci&oacute;n nacional</h2>
+        <h2>Jalisco concentra el 99.4% de la producción nacional</h2>
 
-            <p>El Censo 2024 confirma que la industria del tequila es, en t&eacute;rminos pr&aacute;cticos, un fen&oacute;meno exclusivamente jalisciense.</p>
+        <p>El Censo 2024 confirma que la industria del tequila es, en términos prácticos, un fenómeno exclusivamente jalisciense.</p>
 
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
-                    <tr>
-                        <th>Estado</th>
-                        <th>Empresas</th>
-                        <th>Empleo</th>
-                        <th>Producci&oacute;n (MDP)</th>
-                    </tr>
+                    <tr><th>Estado</th><th>Empresas</th><th>Empleo</th><th>Producción (MDP)</th></tr>
                 </thead>
                 <tbody>
-                    <tr style="background: rgba(16, 185, 129, 0.08);">
-                        <td><strong>Jalisco</strong></td>
-                        <td>149</td>
-                        <td>14,606</td>
-                        <td class="success-cell">70,713</td>
-                    </tr>
-                    <tr>
-                        <td>Guanajuato</td>
-                        <td>6</td>
-                        <td>269</td>
-                        <td>398</td>
-                    </tr>
-                    <tr>
-                        <td>Michoac&aacute;n</td>
-                        <td>6</td>
-                        <td>139</td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total nacional</strong></td>
-                        <td><strong>179</strong></td>
-                        <td><strong>15,096</strong></td>
-                        <td><strong>71,170</strong></td>
-                    </tr>
+                    <tr class="row-accent"><td><strong>Jalisco</strong></td><td>149</td><td>14,606</td><td class="pos">70,713</td></tr>
+                    <tr><td>Guanajuato</td><td>6</td><td>269</td><td>398</td></tr>
+                    <tr><td>Michoacán</td><td>6</td><td>139</td><td>16</td></tr>
+                    <tr><td><strong>Total nacional</strong></td><td><strong>179</strong></td><td><strong>15,096</strong></td><td><strong>71,170</strong></td></tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">Fuente: Censo Económico 2024, INEGI. Solo estados con datos no confidenciales.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><em>Fuente: Censo Econ&oacute;mico 2024, INEGI. Solo estados con datos no confidenciales.</em></p>
+        <p>Guanajuato es el único estado con presencia relevante fuera de Jalisco, con 6 empresas y $398 MDP de producción — menos del 0.6% del total nacional. La Denominación de Origen del Tequila incluye municipios de cinco estados, pero la actividad económica real está casi completamente en Jalisco.</p>
 
-            <p>Guanajuato es el &uacute;nico estado con presencia relevante fuera de Jalisco, con 6 empresas y $398 MDP de producci&oacute;n &mdash; menos del 0.6% del total nacional. La Denominaci&oacute;n de Origen del Tequila incluye municipios de cinco estados, pero la actividad econ&oacute;mica real est&aacute; casi completamente en Jalisco.</p>
+        <h2>Dos Jaliscos del tequila: la región histórica y Los Altos</h2>
 
-            <h2>Dos Jaliscos del tequila: la regi&oacute;n hist&oacute;rica y Los Altos</h2>
+        <p>Dentro de Jalisco existe una geografía dual que los planes de desarrollo municipal raramente reconocen de forma explícita. El DENUE 05_2026 (Directorio Estadístico Nacional de Unidades Económicas, versión mayo 2026) permite ver los establecimientos activos con precisión municipal:</p>
 
-            <p>Dentro de Jalisco existe una geograf&iacute;a dual que los planes de desarrollo municipal raramente reconocen de forma expl&iacute;cita.</p>
+        <h3>Clúster histórico (región Tequila-Amatitán-El Arenal)</h3>
+        <ul>
+            <li><strong>Tequila:</strong> 25 establecimientos activos</li>
+            <li><strong>El Arenal:</strong> 11</li>
+            <li><strong>Amatitán:</strong> 8</li>
+        </ul>
 
-            <p>El DENUE 05_2026 (Directorio Estad&iacute;stico Nacional de Unidades Econ&oacute;micas, versi&oacute;n mayo 2026) permite ver los establecimientos activos con precisi&oacute;n municipal:</p>
+        <h3>Clúster Los Altos</h3>
+        <ul>
+            <li><strong>Arandas:</strong> 15</li>
+            <li><strong>Atotonilco el Alto:</strong> 11</li>
+            <li><strong>Tepatitlán de Morelos:</strong> 10</li>
+        </ul>
 
-            <h3>Cl&uacute;ster hist&oacute;rico (regi&oacute;n Tequila-Amatit&aacute;n-El Arenal)</h3>
-            <ul>
-                <li><strong>Tequila:</strong> 25 establecimientos activos</li>
-                <li><strong>El Arenal:</strong> 11</li>
-                <li><strong>Amatit&aacute;n:</strong> 8</li>
-            </ul>
+        <p>Estos dos clústeres tienen dinámicas distintas, perfiles de empresa distintos y necesidades de infraestructura distintas. Los Altos concentra empresas más recientes y de mayor escala. La región histórica tiene la identidad territorial pero enfrenta más presión de consolidación.</p>
 
-            <h3>Cl&uacute;ster Los Altos</h3>
-            <ul>
-                <li><strong>Arandas:</strong> 15</li>
-                <li><strong>Atotonilco el Alto:</strong> 11</li>
-                <li><strong>Tepatitl&aacute;n de Morelos:</strong> 10</li>
-            </ul>
+        <p>El Censo 2024 confirma este desplazamiento: <strong>Tepatitlán de Morelos</strong> aparece como el municipio con mayor producción visible ($3,302 MDP, 722 empleos), mientras que el municipio de <strong>Tequila</strong> — que da nombre a la bebida — tiene sus datos confidenciales en el censo, lo que indica que pocas empresas muy grandes dominan su actividad y el INEGI no puede publicarlos sin identificarlas. La confidencialidad de datos es en sí misma un indicador de concentración extrema.</p>
 
-            <p>Estos dos cl&uacute;steres tienen din&aacute;micas distintas, perfiles de empresa distintos y necesidades de infraestructura distintas. Los Altos concentra empresas m&aacute;s recientes y de mayor escala. La regi&oacute;n hist&oacute;rica tiene la identidad territorial pero enfrenta m&aacute;s presi&oacute;n de consolidaci&oacute;n.</p>
+        <div class="callout callout-info">
+            <strong><i class="fas fa-lightbulb"></i> Cuando "confidencial" es un dato en sí mismo</strong>
+            El INEGI oculta cifras municipales cuando hay tan pocas empresas que publicarlas equivaldría a revelar los números de una compañía individual. Que el municipio de Tequila sea confidencial no es un vacío de información: es la prueba de que dos o tres plantas concentran prácticamente toda su producción.
+        </div>
 
-            <p>El Censo 2024 confirma este desplazamiento: <strong>Tepatitl&aacute;n de Morelos</strong> aparece como el municipio con mayor producci&oacute;n visible ($3,302 MDP, 722 empleos), mientras que el municipio de <strong>Tequila</strong> &mdash; que da nombre a la bebida &mdash; tiene sus datos confidenciales en el censo, lo que indica que pocas empresas muy grandes dominan su actividad y el INEGI no puede publicarlos sin identificarlas. La confidencialidad de datos es en s&iacute; misma un indicador de concentraci&oacute;n extrema.</p>
+        <h2>El municipio de El Arenal: el caso de crecimiento más documentado</h2>
 
-            <div class="callout callout-info">
-                <strong><i class="fas fa-lightbulb"></i> Cuando &ldquo;confidencial&rdquo; es un dato en s&iacute; mismo</strong>
-                El INEGI oculta cifras municipales cuando hay tan pocas empresas que publicarlas equivaldr&iacute;a a revelar los n&uacute;meros de una compa&ntilde;&iacute;a individual. Que el municipio de Tequila sea confidencial no es un vac&iacute;o de informaci&oacute;n: es la prueba de que dos o tres plantas concentran pr&aacute;cticamente toda su producci&oacute;n.
-            </div>
+        <p>Entre los municipios con serie histórica visible, El Arenal es el que más claramente ilustra la expansión reciente:</p>
 
-            <h2>El municipio de El Arenal: el caso de crecimiento m&aacute;s documentado</h2>
-
-            <p>Entre los municipios con serie hist&oacute;rica visible, El Arenal es el que m&aacute;s claramente ilustra la expansi&oacute;n reciente:</p>
-
+        <div class="table-wrap">
             <table class="data-table">
                 <thead>
-                    <tr>
-                        <th>Censo</th>
-                        <th>Empresas</th>
-                        <th>Empleo</th>
-                        <th>Producci&oacute;n (MDP)</th>
-                    </tr>
+                    <tr><th>Censo</th><th>Empresas</th><th>Empleo</th><th>Producción (MDP)</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>2014</strong></td>
-                        <td>6</td>
-                        <td>54</td>
-                        <td>7.8</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2019</strong></td>
-                        <td>8</td>
-                        <td>122</td>
-                        <td>44.7</td>
-                    </tr>
-                    <tr style="background: rgba(16, 185, 129, 0.08);">
-                        <td><strong>2024</strong></td>
-                        <td>10</td>
-                        <td class="success-cell">278</td>
-                        <td class="success-cell">197.7</td>
-                    </tr>
+                    <tr><td><strong>2014</strong></td><td>6</td><td>54</td><td>7.8</td></tr>
+                    <tr><td><strong>2019</strong></td><td>8</td><td>122</td><td>44.7</td></tr>
+                    <tr class="row-accent"><td><strong>2024</strong></td><td>10</td><td class="pos">278</td><td class="pos">197.7</td></tr>
                 </tbody>
             </table>
+        </div>
+        <p class="src">Fuente: Censos Económicos INEGI 2014-2024, SCIAN 312144.</p>
 
-            <p style="font-size: 0.85rem; color: var(--medium-gray);"><em>Fuente: Censos Econ&oacute;micos INEGI 2014-2024, SCIAN 312144.</em></p>
+        <p>En diez años <strong>multiplicó su empleo en el sector por cinco y su producción por 25</strong>. Es el tipo de crecimiento que requiere respuesta municipal en infraestructura, vivienda para trabajadores, servicios y conectividad.</p>
 
-            <p>En diez a&ntilde;os <strong>multiplic&oacute; su empleo en el sector por cinco y su producci&oacute;n por 25</strong>. Es el tipo de crecimiento que requiere respuesta municipal en infraestructura, vivienda para trabajadores, servicios y conectividad.</p>
+        <h2>Implicaciones para la gestión pública</h2>
 
-            <h2>Implicaciones para la gesti&oacute;n p&uacute;blica</h2>
+        <h3>1. Monitoreo de concentración empresarial</h3>
+        <p>Los planes municipales de desarrollo económico deben incluir indicadores de concentración sectorial. Un municipio cuyo principal empleador son dos o tres plantas de una sola industria es vulnerable a shocks externos: aranceles al tequila en EE.UU., crisis del agave azul, movimientos de capital de las grandes casas.</p>
 
-            <h3>1. Monitoreo de concentraci&oacute;n empresarial</h3>
-            <p>Los planes municipales de desarrollo econ&oacute;mico deben incluir indicadores de concentraci&oacute;n sectorial. Un municipio cuyo principal empleador son dos o tres plantas de una sola industria es vulnerable a shocks externos: aranceles al tequila en EE.UU., crisis del agave azul, movimientos de capital de las grandes casas.</p>
+        <h3>2. Diversificación económica como política prioritaria</h3>
+        <p>El DENUE 2026 muestra que en municipios como Tequila y El Arenal el comercio (sector 46) sigue siendo el mayor empleador por número de establecimientos. La industria genera más valor, pero el tejido económico local depende de actividades diversas. Los programas de desarrollo económico municipal deben fortalecer esa diversidad, no solo atraer más tequileras.</p>
 
-            <h3>2. Diversificaci&oacute;n econ&oacute;mica como pol&iacute;tica prioritaria</h3>
-            <p>El DENUE 2026 muestra que en municipios como Tequila y El Arenal el comercio (sector 46) sigue siendo el mayor empleador por n&uacute;mero de establecimientos. La industria genera m&aacute;s valor, pero el tejido econ&oacute;mico local depende de actividades diversas. Los programas de desarrollo econ&oacute;mico municipal deben fortalecer esa diversidad, no solo atraer m&aacute;s tequileras.</p>
+        <h3>3. Infraestructura para el clúster de Los Altos</h3>
+        <p>El desplazamiento del crecimiento hacia Arandas, Atotonilco y Tepatitlán requiere que los gobiernos municipales de esa región actualicen sus planes de infraestructura — agua, energía, logística, vivienda — para absorber la expansión industrial.</p>
 
-            <h3>3. Infraestructura para el cl&uacute;ster de Los Altos</h3>
-            <p>El desplazamiento del crecimiento hacia Arandas, Atotonilco y Tepatitl&aacute;n requiere que los gobiernos municipales de esa regi&oacute;n actualicen sus planes de infraestructura &mdash; agua, energ&iacute;a, log&iacute;stica, vivienda &mdash; para absorber la expansi&oacute;n industrial.</p>
+        <h3>4. Negociación de beneficios fiscales con bases de datos</h3>
+        <p>Con datos del Censo Económico, los gobiernos municipales pueden negociar con las grandes casas tequileras desde una posición informada: conocen el valor que generan, cuánto empleo sostienen, cuáles son sus remuneraciones. Sin datos, la negociación es asimétrica.</p>
 
-            <h3>4. Negociaci&oacute;n de beneficios fiscales con bases de datos</h3>
-            <p>Con datos del Censo Econ&oacute;mico, los gobiernos municipales pueden negociar con las grandes casas tequileras desde una posici&oacute;n informada: conocen el valor que generan, cu&aacute;nto empleo sostienen, cu&aacute;les son sus remuneraciones. Sin datos, la negociaci&oacute;n es asim&eacute;trica.</p>
+        <h3>5. Seguimiento de remuneraciones</h3>
+        <p>Las remuneraciones totales en el sector fueron $3,002 MDP para 15,096 empleos en 2024, equivalente a aproximadamente <strong>$199,000 MXN anuales por persona</strong>. Es un sector de remuneraciones superiores al promedio manufacturero. Los municipios deben asegurarse de que esa masa salarial circule en la economía local.</p>
 
-            <h3>5. Seguimiento de remuneraciones</h3>
-            <p>Las remuneraciones totales en el sector fueron $3,002 MDP para 15,096 empleos en 2024, equivalente a aproximadamente <strong>$199,000 MXN anuales por persona</strong>. Es un sector de remuneraciones superiores al promedio manufacturero. Los municipios deben asegurarse de que esa masa salarial circule en la econom&iacute;a local.</p>
-
-            <div class="callout callout-warning">
-                <strong><i class="fas fa-exclamation-triangle"></i> El riesgo de la dependencia de un solo gigante</strong>
-                Una industria que crece concentr&aacute;ndose es una espada de doble filo para la hacienda local: mientras opera, derrama empleo y salarios altos; pero el d&iacute;a que una sola planta decide reubicarse o frena por una crisis externa, no hay 20 empresas medianas que amortig&uuml;en el golpe. La resiliencia econ&oacute;mica se construye con diversidad, no solo con volumen.
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">99.4%</div>
+                <div class="lbl">De la producción nacional de tequila se elabora en Jalisco</div>
             </div>
-
-            <h2>Conclusi&oacute;n</h2>
-
-            <p>El tequila de Jalisco es una historia de &eacute;xito econ&oacute;mico innegable: $71,170 MDP de producci&oacute;n, empleo creciente, salarios por encima del promedio manufacturero y una marca-pa&iacute;s reconocida en el mundo. Pero debajo de esos agregados hay una estructura cada vez m&aacute;s concentrada &mdash; 600 empresas menos en cinco a&ntilde;os &mdash; que convierte a municipios enteros en dependientes de un pu&ntilde;ado de plantas. Para el gobierno local, el reto no es celebrar el boom, sino administrar el riesgo que viene con &eacute;l.</p>
-
-            <div class="quote-box">
-                Cuando una industria genera m&aacute;s riqueza con menos empresas, el municipio gana recaudaci&oacute;n hoy y hereda vulnerabilidad ma&ntilde;ana. La pregunta no es cu&aacute;nto produce el tequila, sino qu&eacute; pasar&iacute;a con tu municipio si las dos plantas que lo sostienen decidieran irse.
+            <div class="stat-card">
+                <div class="num">−77%</div>
+                <div class="lbl">Caída de empresas tequileras entre 2019 y 2024</div>
             </div>
-
-            <div class="cta-box">
-                <h3><i class="fas fa-chart-bar"></i> &iquest;Quieres medir la concentraci&oacute;n sectorial de tu municipio?</h3>
-                <p>En GDI Data cruzamos los cinco Censos Econ&oacute;micos del INEGI (2004-2024) y el DENUE m&aacute;s reciente para medir por SCIAN qu&eacute; sectores se est&aacute;n concentrando, cu&aacute;ntos empleadores sostienen tu econom&iacute;a local y d&oacute;nde est&aacute; el riesgo de dependencia &mdash; a nivel nacional, estatal y municipal.</p>
-                <a href="https://gdidata.com/" target="_blank">
-                    <i class="fas fa-rocket"></i> Explorar datos
-                </a>
+            <div class="stat-card">
+                <div class="num">$199K</div>
+                <div class="lbl">Remuneración anual promedio por persona en el sector</div>
             </div>
+        </div>
 
-            <h2>Datos t&eacute;cnicos</h2>
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> El riesgo de la dependencia de un solo gigante</strong>
+            Una industria que crece concentrándose es una espada de doble filo para la hacienda local: mientras opera, derrama empleo y salarios altos; pero el día que una sola planta decide reubicarse o frena por una crisis externa, no hay 20 empresas medianas que amortigüen el golpe. La resiliencia económica se construye con diversidad, no solo con volumen.
+        </div>
 
-            <div class="source-box">
-                <p><strong>Fuente principal:</strong> Censos Econ&oacute;micos INEGI 2004, 2009, 2014, 2019 y 2024. SCIAN 312144 (<em>Elaboraci&oacute;n de tequila</em>).</p>
-                <p style="margin-top: 0.75rem;"><strong>Fuente complementaria:</strong> DENUE versi&oacute;n 05_2026 (mayo 2026), SCIAN 312144.</p>
-                <p style="margin-top: 0.75rem;"><strong>Nivel geogr&aacute;fico:</strong> Nacional, estatal y municipal.</p>
-                <p style="margin-top: 0.75rem;"><strong>Nota sobre confidencialidad:</strong> varios municipios productores &mdash; incluyendo el municipio de Tequila, Amatit&aacute;n y otros &mdash; tienen datos censales confidenciales por el INEGI, lo que indica alta concentraci&oacute;n empresarial en esas localidades. Cifras monetarias en millones de pesos corrientes de cada a&ntilde;o (no ajustadas por inflaci&oacute;n). Empleo: personal ocupado total.</p>
-                <p style="margin-top: 0.75rem;"><strong>Fuente:</strong> INEGI. An&aacute;lisis y visualizaci&oacute;n: GDI &mdash; Gobierno Digital e Innovaci&oacute;n.</p>
-                <p style="margin-top: 0.5rem;"><strong>Fecha de an&aacute;lisis:</strong> Junio 2026 | gobiernodigitaleinnovacion.com</p>
+        <h2>Conclusión</h2>
+
+        <p>El tequila de Jalisco es una historia de éxito económico innegable: $71,170 MDP de producción, empleo creciente, salarios por encima del promedio manufacturero y una marca-país reconocida en el mundo. Pero debajo de esos agregados hay una estructura cada vez más concentrada — 600 empresas menos en cinco años — que convierte a municipios enteros en dependientes de un puñado de plantas. Para el gobierno local, el reto no es celebrar el boom, sino administrar el riesgo que viene con él.</p>
+
+        <div class="quote-box">
+            Cuando una industria genera más riqueza con menos empresas, el municipio gana recaudación hoy y hereda vulnerabilidad mañana. La pregunta no es cuánto produce el tequila, sino qué pasaría con tu municipio si las dos plantas que lo sostienen decidieran irse.
+        </div>
+
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
+                <h3><i class="fas fa-chart-bar"></i> ¿Quieres medir la concentración sectorial de tu municipio?</h3>
+                <p>En GDI Data cruzamos los cinco Censos Económicos del INEGI (2004-2024) y el DENUE más reciente para medir por SCIAN qué sectores se están concentrando, cuántos empleadores sostienen tu economía local y dónde está el riesgo de dependencia — a nivel nacional, estatal y municipal.</p>
+                <a href="https://gdidata.com/" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar datos</a>
             </div>
+        </div>
+
+        <h2>Datos técnicos</h2>
+
+        <div class="source-box">
+            <p><strong>Fuente principal:</strong> Censos Económicos INEGI 2004, 2009, 2014, 2019 y 2024. SCIAN 312144 (<em>Elaboración de tequila</em>).</p>
+            <p><strong>Fuente complementaria:</strong> DENUE versión 05_2026 (mayo 2026), SCIAN 312144.</p>
+            <p><strong>Nivel geográfico:</strong> Nacional, estatal y municipal.</p>
+            <p><strong>Nota sobre confidencialidad:</strong> varios municipios productores — incluyendo el municipio de Tequila, Amatitán y otros — tienen datos censales confidenciales por el INEGI, lo que indica alta concentración empresarial en esas localidades. Cifras monetarias en millones de pesos corrientes de cada año (no ajustadas por inflación). Empleo: personal ocupado total.</p>
+            <p><strong>Análisis y visualización:</strong> GDI — Gobierno Digital e Innovación · Junio 2026 · gobiernodigitaleinnovacion.com</p>
         </div>
     </article>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 GDI - Gobierno Digital e Innovacion. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
