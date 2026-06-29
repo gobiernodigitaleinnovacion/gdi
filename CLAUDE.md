@@ -23,7 +23,7 @@
 - **IndexNow:** clave pública en `gdi-indexnow-key-2026.txt` (raíz). Script `scripts/ping-search-engines.js` notifica a Bing/Yandex en cada publicación
 - **Google Search Console:** propiedad de Dominio `gobiernodigitaleinnovacion.com` (sc-domain), sitemap enviado el 2026-04-07
 - **GA4:** `G-6ZDGM6LM7J` (en `index.html`)
-- **Google Ads tag:** `AW-3373421209` (en `index.html`)
+- **Google Ads tag:** `AW-17677239215` (en `index.html`)
 - **TikTok Pixel:** `D5MHUKBC77UEK8Q4I9B0` (en `index.html`)
 
 ### Eventos de conversión instrumentados (`index.html`)

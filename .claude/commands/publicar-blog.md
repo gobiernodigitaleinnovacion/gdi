@@ -54,7 +54,7 @@ El acento por categoría es la ÚNICA variable que cambia entre artículos. Usar
   3. `<article class="article-body">`: eyebrow `mono coord`, párrafos, `<h2>` con barra lateral de acento, tablas `.data-table` (header ink), banda oscura `.keyfact`, `.stat-grid` (barras verticales), `.callout`, `.quote-box`, `.cta-box` oscura con botón de acento, `.source-box`
   4. `<footer class="footer">` ink
 - **Clases de celda en tablas:** `.pos` (dato positivo, color acento), `.neg` (negativo/caída), `.warn` (advertencia), `.row-accent` (fila destacada)
-- **Tags de tracking (OBLIGATORIO en el `<head>`):** GA4 (`G-6ZDGM6LM7J`), Google Ads (`AW-3373421209`), TikTok Pixel (`D5MHUKBC77UEK8Q4I9B0`), fuentes Google (Space Grotesk + Inter + JetBrains Mono) y Font Awesome — ya vienen en el template canónico, solo copiarlos
+- **Tags de tracking (OBLIGATORIO en el `<head>`):** GA4 (`G-6ZDGM6LM7J`), Google Ads (`AW-17677239215`), TikTok Pixel (`D5MHUKBC77UEK8Q4I9B0`), fuentes Google (Space Grotesk + Inter + JetBrains Mono) y Font Awesome — ya vienen en el template canónico, solo copiarlos
 
 ### 2. Actualizar posts.json
 
