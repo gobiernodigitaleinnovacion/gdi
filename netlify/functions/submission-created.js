@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 // TikTok Events API Configuration
-const TIKTOK_PIXEL_ID = 'D5MHUKBC77UEK8Q4I9B0';
+const TIKTOK_PIXEL_ID = 'D922C93C77UB3EFMT22G';
 const TIKTOK_API_URL = 'https://business-api.tiktok.com/open_api/v1.3/event/track/';
 
 // Hash function for PII (TikTok requires SHA256)
