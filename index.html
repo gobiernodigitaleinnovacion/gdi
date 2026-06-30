@@ -592,6 +592,8 @@
             box.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/uDpAcpMWCHo?autoplay=1&rel=0&modestbranding=1" title="Video GDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
             box.style.cursor = 'default';
             if (window.ttq) ttq.track('ViewContent', {content_name: 'Video GDI'});
+            // Google Ads: señal secundaria "vio el video" (no biddable)
+            if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-17677239215/A-IMCLyov8gcEK-Hle1B' });
         }
     </script>
 </body>
