@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dónde el mercado se recicla más rápido: el mapa del turnover empresarial mexicano 2025-2026 - GDI</title>
+    <meta name="description" content="El directorio de empresas de México creció 0.66% en un año, pero por debajo se movieron 2.34 millones de negocios: 1.19 M de aperturas y 1.15 M de cierres. El mapa del recambio empresarial por municipio y giro. DENUE INEGI 2025-2026.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-03-mapa-turnover-empresarial-mexico">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Dónde el mercado se recicla más rápido: el mapa del turnover empresarial mexicano 2025-2026">
+    <meta property="og:description" content="México recicló 2.34 millones de negocios en un año detrás de un crecimiento neto de apenas 0.66%. El mapa de dónde el mercado nace y muere más rápido, por municipio y por giro. DENUE INEGI.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-03-mapa-turnover-empresarial-mexico">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZDGM6LM7J');
+    </script>
+
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17677239215"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17677239215');
+    </script>
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D922C93C77UB3EFMT22G');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #2FA86A;
+            --accent-dark: #1f7d4e;
+            --accent-soft: rgba(47, 168, 106, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
+        }
+        .nav-inner {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
+        }
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
+        }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
+
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
+            overflow: hidden;
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
+        }
+
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
+        }
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
+        }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
+
+        /* ===== Stat grid (barras verticales) ===== */
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
+        }
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
+        }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
+        }
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
+        }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: var(--accent-dark); font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
+
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: var(--accent); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
+        .quote-box {
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
+        }
+
+        /* ===== CTA ===== */
+        .cta-box {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
+        }
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
+        }
+        .cta-btn:hover { filter: brightness(1.08); }
+
+        /* ===== Source box ===== */
+        .source-box {
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
+        }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+        }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
+
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-chart-line"></i> Economía</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 3 Jul 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 11 min</span>
+            </div>
+            <h1>Dónde el mercado se <span style="color:var(--accent)">recicla</span> más rápido: el mapa del turnover empresarial mexicano 2025-2026</h1>
+            <p class="hero-subtitle">El directorio de empresas de México creció apenas 0.66% en un año. Pero por debajo se movieron 2.34 millones de negocios. Este es el mapa de dónde el mercado nace y muere más rápido — y qué significa para quien busca dónde entrar.</p>
+        </div>
+    </header>
+
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Mercado · Tendencia · Nacional · Julio 2026
+        </div>
+
+        <h2>Un mercado que parece quieto y no lo está</h2>
+
+        <p>De mayo de 2025 a mayo de 2026, las unidades económicas activas en México pasaron de 6,097,676 a 6,138,075. En saldo, 40,399 negocios más: un crecimiento de <strong>0.66%</strong> que, leído en frío, sugiere un mercado estancado.</p>
+
+        <p>Es una lectura equivocada. Ese saldo neto es el residuo de <strong>1,191,585 aperturas</strong> y <strong>1,151,176 cierres</strong> en un solo año. En total, <strong>2.34 millones de movimientos</strong> sobre una base de seis millones. Cerca del 19% del directorio es nuevo; una proporción similar cerró sus puertas.</p>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(47,168,106,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">2.34 millones</div>
+                <p>Movimientos —aperturas más cierres— en el directorio de empresas de México en un solo año. El saldo neto de +0.66% esconde 1.19 M de negocios que nacieron y 1.15 M que murieron. El mercado no está congelado: se recicla a gran velocidad.</p>
+            </div>
+        </div>
+
+        <p>Para quien evalúa dónde invertir o expandirse, esta es la primera señal accionable: <strong>el mercado mexicano no está congelado, se está reciclando a gran velocidad.</strong> La pregunta estratégica no es cuánto creció el país, sino <em>dónde</em> ese reciclaje es más intenso — porque la velocidad de recambio dice mucho sobre el dinamismo, la competencia y el ritmo al que hay que moverse en cada plaza.</p>
+
+        <p class="src">Fuente: DENUE 05_2025 y 05_2026, INEGI.</p>
+
+        <h2>El mercado: dónde está la masa y dónde la velocidad</h2>
+
+        <p>Conviene separar dos cosas que suelen confundirse: <strong>masa</strong> (cuántos negocios netos se sumaron) y <strong>velocidad de recambio</strong> (qué tan rápido rota el tejido).</p>
+
+        <p>En <strong>masa neta</strong>, el crecimiento vive en las grandes metrópolis. Monterrey lideró con +1,055 unidades netas, seguido de Guadalajara (+960), León (+910) y Mérida (+895). Es la geografía esperable de la expansión: donde ya hay mercado, se suma más.</p>
+
+        <p>La <strong>velocidad</strong>, medida como tasa de recambio —aperturas más cierres sobre la base—, cuenta una historia más rica. Y sigue un patrón claro.</p>
+
+        <h2>Geografía de la oportunidad: la volatilidad tiene un gradiente</h2>
+
+        <p>Ordenamos 1,286 municipios con base suficiente (500+ unidades económicas) por su tasa de recambio y la cruzamos con su índice de oportunidades. El resultado es un gradiente sostenido:</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Perfil del municipio (quintil de oportunidad)</th>
+                        <th>Índice promedio</th>
+                        <th>Recambio anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Menor oportunidad</td><td>20.1</td><td>29.6%</td></tr>
+                    <tr><td>—</td><td>22.7</td><td>31.3%</td></tr>
+                    <tr><td>—</td><td>24.3</td><td>33.4%</td></tr>
+                    <tr><td>—</td><td>26.2</td><td>35.7%</td></tr>
+                    <tr class="row-accent"><td><strong>Mayor oportunidad</strong></td><td class="pos">34.5</td><td class="pos">41.3%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Fuente: DENUE INEGI 05_2025–05_2026 × índice de oportunidades municipal (masters_v2).</p>
+
+        <p><strong>A mayor índice de oportunidades del municipio, más rápido se recicla su mercado.</strong> El mismo efecto aparece con el tamaño: las plazas de más de un millón de habitantes rotan 41.1% de su tejido al año, frente a 32.2% en las de menos de 50 mil.</p>
+
+        <p>La correlación es de 0.38 —moderada, no absoluta—, así que el perfil del municipio explica una parte del recambio, no todo. Pero la señal de negocio es nítida: <strong>las plazas más dinámicas son también las más darwinianas.</strong> Ahí el mercado ofrece más rotación de clientes, locales y competidores; entrar es más fácil, pero permanecer exige más.</p>
+
+        <p>En el mapa concreto, los cores urbanos encabezan la velocidad: Monterrey (60.6%), la Cuauhtémoc en CDMX (56.5%), Mérida (56.4%) y San Pedro Garza García (79.4%) reciclan su tejido a un ritmo que duplica al de las plazas rurales estables.</p>
+
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> Dos velocidades distintas</strong>
+            El tope absoluto de recambio no lo tienen las grandes ciudades, sino tres plazas agrícolas: Juan José Ríos (140.8%) y Eldorado (127.5%) en Sinaloa, y Villa de Pozos, SLP (107.2%). Su volatilidad no es dinamismo de mercado urbano: es <strong>estacionalidad agrícola</strong> —empaque, jornaleros, servicios de temporada que entran y salen del directorio cada ciclo—. La volatilidad de una metrópoli señala un ecosistema competitivo maduro; la de una plaza agrícola señala un mercado de temporada que hay que operar con lógica de ciclo, no de permanencia.
+        </div>
+
+        <h2>Competencia y cadena de valor: qué giros ganan y cuáles pierden</h2>
+
+        <p>El recambio también tiene composición sectorial. Al desglosar por clase de actividad SCIAN (excluyendo un artefacto de reclasificación en el sector bancario que distorsiona la serie 2025-2026 y que no representa cierres reales), el mercado dibuja ganadores y perdedores claros:</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Giros en expansión (clase SCIAN)</th><th>Aperturas netas</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="row-accent"><td>Abarrotes y misceláneas (461110)</td><td class="pos">+10,843</td></tr>
+                    <tr><td>Comercio de cerveza (461212)</td><td class="pos">+8,111 (+17%)</td></tr>
+                    <tr><td>Ropa (463211)</td><td class="pos">+2,189</td></tr>
+                    <tr><td>Consultorios dentales privados (621211)</td><td class="pos">+2,155</td></tr>
+                    <tr><td>Perfumería y cosméticos (465111)</td><td class="pos">+1,444</td></tr>
+                    <tr><td>Medicina general privada (621111)</td><td class="pos">+1,320</td></tr>
+                    <tr><td>Mensajería y paquetería local (492210)</td><td class="pos">+1,071 (+139%)</td></tr>
+                    <tr><td>Farmacias (464111)</td><td class="pos">+1,005</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Giros en contracción (clase SCIAN)</th><th>Cierres netos</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="row-accent"><td>Minisúpers (462112)</td><td class="neg">−3,957</td></tr>
+                    <tr><td>Tiendas de regalos (465912)</td><td class="neg">−3,134</td></tr>
+                    <tr><td>Supermercados (462111)</td><td class="neg">−1,127</td></tr>
+                    <tr><td>Confección de uniformes (315223)</td><td class="neg">−1,044</td></tr>
+                    <tr><td>Pesca (114119)</td><td class="neg">−1,035</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Fuente: DENUE INEGI 05_2025–05_2026, por clase SCIAN. Excluye reclasificación del sector 52.</p>
+
+        <p>Tres lecturas de mercado saltan a la vista:</p>
+
+        <ul>
+            <li><strong>El formato chico le está ganando al mediano.</strong> Mientras el abarrote de barrio y la tienda especializada de cerveza suman decenas de miles de unidades, el minisúper y el supermercado retroceden. La conveniencia de proximidad está reconfigurando el comercio al menudeo.</li>
+            <li><strong>La micro-salud privada es el clúster de mayor crecimiento con sustancia.</strong> Consultorios dentales, de medicina general y especializada suman en conjunto miles de nuevas unidades: un ecosistema de servicios de salud accesibles en franca expansión.</li>
+            <li><strong>La última milla explotó.</strong> La mensajería local creció 139% mientras la foránea cayó. El reparto se está atomizando y acercando al consumidor — la huella logística del comercio electrónico local.</li>
+        </ul>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">+139%</div>
+                <div class="lbl">Crecimiento de la mensajería y paquetería local (SCIAN 492210)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">+10,843</div>
+                <div class="lbl">Aperturas netas de abarrotes y misceláneas, el giro más expansivo</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">−3,957</div>
+                <div class="lbl">Cierres netos de minisúpers, el formato en mayor retirada</div>
+            </div>
+        </div>
+
+        <h2>Recomendaciones estratégicas</h2>
+
+        <ul>
+            <li><strong>Elige la plaza según tu tolerancia al recambio.</strong> Las metrópolis de alto índice de oportunidades (Monterrey, Guadalajara, Mérida, Querétaro) ofrecen mercados grandes y dinámicos, pero con alta mortalidad: entra con capital de resistencia para el primer año. Las plazas medianas de recambio moderado ofrecen menos rotación de competidores y pueden ser más amables para consolidar.</li>
+            <li><strong>No confundas volatilidad agrícola con oportunidad urbana.</strong> Sinaloa aparece arriba en recambio, pero por estacionalidad. Si tu modelo no es de temporada, esas plazas exigen otra lógica.</li>
+            <li><strong>Súbete a las cadenas en expansión.</strong> Proximidad (abarrotes, cerveza, farmacia), micro-salud privada y última milla son los tres vectores donde el tejido crece con fuerza. Alrededor de cada uno hay cadena de valor —proveeduría, logística, franquicia— por capturar.</li>
+            <li><strong>Cuidado con los formatos en retirada.</strong> El minisúper y el supermercado de piso pequeño pierden terreno frente al abarrote y, presumiblemente, frente al comercio digital. Invertir en ese formato hoy es nadar contra corriente.</li>
+        </ul>
+
+        <div class="quote-box">
+            El mercado mexicano parece quieto y es todo lo contrario: recicló 2.34 millones de negocios en un año. La cifra tranquilizadora del +0.66% es justo la que conviene ignorar.
+        </div>
+
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
+                <h3><i class="fas fa-map-location-dot"></i> ¿Quieres el mapa de recambio de tu plaza o tu giro?</h3>
+                <p>En GDI Data cruzamos las versiones sucesivas del DENUE del INEGI con el índice de oportunidades municipal para medir aperturas, cierres y velocidad de recambio por municipio y por clase SCIAN — dónde el mercado está vivo, a qué velocidad se mueve y en qué giros vale la pena apostar.</p>
+                <a href="https://gdidata.com/" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar datos</a>
+            </div>
+        </div>
+
+        <h2>Datos técnicos</h2>
+
+        <div class="source-box">
+            <p><strong>Fuente:</strong> DENUE, INEGI, versiones 05_2025 y 05_2026 (universo formal de unidades económicas activas).</p>
+            <p><strong>Índice de oportunidades y competitividad:</strong> marco integrado municipal LokusData (masters_v2).</p>
+            <p><strong>Universo:</strong> 1,286 municipios con 500+ unidades económicas en 2025.</p>
+            <p><strong>Tasa de recambio (turnover):</strong> (aperturas + cierres) / base 2025 × 100.</p>
+            <p><strong>Correlación de Pearson</strong> recambio–índice de oportunidades: 0.38 (moderada).</p>
+            <p><strong>Advertencia metodológica:</strong> el sector 52 (servicios financieros) presenta un desplome aparente (−44.9%) que corresponde a una reclasificación en el directorio, no a cierres reales; se excluyó del análisis sectorial. El DENUE mide unidades activas en un momento puntual, no flujos fiscales.</p>
+            <p><strong>Alcance:</strong> este análisis no incorpora ingreso (ENIGH) ni pobreza (CONEVAL) municipal, inexistentes a esa escala; las lecturas de "oportunidad" se basan en el índice compuesto, no en poder adquisitivo.</p>
+            <p><strong>Códigos SCIAN citados:</strong> 461110, 461212, 463211, 621211, 465111, 621111, 492210, 464111 (expansión); 462112, 465912, 462111, 315223, 114119 (contracción).</p>
+            <p><strong>Análisis y visualización:</strong> GDI — Gobierno Digital e Innovación · Julio 2026 · gobiernodigitaleinnovacion.com</p>
+        </div>
+    </article>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
