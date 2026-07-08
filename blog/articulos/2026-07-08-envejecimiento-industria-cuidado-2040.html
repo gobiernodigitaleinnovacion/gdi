@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El país que envejece sin quien lo cuide: la infraestructura que ningún plan de desarrollo está viendo - GDI</title>
+    <meta name="description" content="México tendrá 20.5 millones de adultos mayores en 2040 (+71% vs 2026, proyección CONAPO). Su industria formal de residencias y cuidado: 31,570 trabajadores en todo el país — y dejó de crecer justo cuando la ola arranca. Censo Económico 2024 + CONAPO.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-08-envejecimiento-industria-cuidado-2040">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="El país que envejece sin quien lo cuide: la infraestructura que ningún plan de desarrollo está viendo">
+    <meta property="og:description" content="20.5 millones de adultos mayores en 2040 y solo 31,570 trabajadores formales del cuidado en todo el país. La brecha estado por estado, con datos de CONAPO y el Censo Económico 2024.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-08-envejecimiento-industria-cuidado-2040">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/og-gdi.png">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZDGM6LM7J');
+    </script>
+
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17677239215"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17677239215');
+    </script>
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D922C93C77UB3EFMT22G');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — cambiar SOLO esta línea según categoría:
+               Finanzas Municipales #7C5CFF · Alerta #E8A33D · Economía #2FA86A · Tecnología #3B82F6 */
+            --accent: #E8A33D;
+            --accent-dark: #b45309;
+            --accent-soft: rgba(232, 163, 61, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+        .grid-ticks {
+            background-image:
+                linear-gradient(rgba(10,22,38,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,22,38,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
+        }
+        .nav-inner {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
+        }
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta {
+            background: var(--gdi); color: #fff !important;
+            padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600;
+            transition: filter .2s;
+        }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
+
+        /* ===== Hero oscuro ===== */
+        .hero {
+            position: relative;
+            background: var(--ink);
+            color: var(--paper);
+            overflow: hidden;
+        }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner {
+            position: relative; z-index: 1;
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem;
+            font-size: 0.72rem; margin-bottom: 1.5rem;
+        }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 {
+            font-size: 1.3rem; font-weight: 600; color: var(--ink);
+            margin: 2.25rem 0 0.9rem 0;
+        }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0;
+        }
+
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center;
+        }
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent);
+            line-height: 1;
+        }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
+
+        /* ===== Stat grid ===== */
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0;
+        }
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1;
+        }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table {
+            width: 100%; border-collapse: collapse; background: #fff;
+            border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden;
+            font-size: 0.95rem;
+        }
+        .data-table th {
+            background: var(--ink); color: var(--paper);
+            padding: 0.85rem 1rem; text-align: left; font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
+        }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: #1f7d4e; font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
+
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
+        .quote-box {
+            background: var(--bone); border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0;
+            font-style: italic; font-size: 1.1rem; color: var(--ink);
+        }
+
+        /* ===== CTA ===== */
+        .cta-box {
+            position: relative; overflow: hidden;
+            background: var(--ink); color: var(--paper);
+            border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center;
+        }
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s;
+        }
+        .cta-btn:hover { filter: brightness(1.08); }
+
+        /* ===== Source box ===== */
+        .source-box {
+            background: #fff; border: 1px solid rgba(10,22,38,.1);
+            padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;
+        }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+        }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
+
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-triangle-exclamation"></i> Alerta</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 8 Jul 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 9 min</span>
+            </div>
+            <h1>El país que envejece <span style="color:var(--accent)">sin quien lo cuide</span>: la infraestructura que ningún plan de desarrollo está viendo</h1>
+            <p class="hero-subtitle">México tendrá 20.5 millones de adultos mayores en 2040 — 71% más que hoy, según la proyección de CONAPO. Su industria formal de residencias y cuidado: 31,570 trabajadores en todo el país. Y dejó de crear empleo justo cuando la ola arranca.</p>
+        </div>
+    </header>
+
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Demografía · Infraestructura Social · Nacional y Estatal · Julio 2026
+        </div>
+
+        <p>Según la proyección de CONAPO, México pasará de <strong>11,944,733 personas de 65 años o más en 2026 a 20,450,259 en 2040</strong>: 8.5 millones adicionales en catorce años, un crecimiento de 71%. No es un escenario hipotético — es la inercia demográfica de decisiones que ya se tomaron. Para un gobierno estatal o municipal, cada una de esas personas significará demanda de salud, cuidados, pensiones y adaptación de servicios públicos.</p>
+
+        <p>La pregunta que este análisis responde con datos del Censo Económico 2024 (INEGI) es incómoda: <strong>¿qué tan preparada está la infraestructura de cuidado del país para recibir esa ola?</strong> La respuesta corta: no lo está. Y el detalle territorial es peor que el promedio.</p>
+
+        <h2>La industria del cuidado es minúscula</h2>
+
+        <p>El Censo Económico 2024 registra en el subsector SCIAN 623 — <em>residencias de asistencia social y para el cuidado de la salud</em>, el corazón formal de la economía del cuidado — apenas <strong>3,929 unidades económicas con 31,570 personas ocupadas en todo el país</strong>.</p>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(232,163,61,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">648 a 1</div>
+                <p>Adultos mayores proyectados a 2040 por cada trabajador actual de residencias y asistencia social. La ola demográfica ya tiene fecha; la infraestructura de cuidado, no.</p>
+            </div>
+        </div>
+
+        <p>La serie intercensal 2004-2024 muestra el problema fino. Los establecimientos del sector se multiplicaron por cinco en veinte años; el empleo, solo por 3.4:</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Censo</th><th>Establecimientos (SCIAN 623)</th><th>Personal ocupado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>2004</strong></td><td>779</td><td>9,414</td></tr>
+                    <tr><td><strong>2009</strong></td><td>1,738</td><td>19,695</td></tr>
+                    <tr><td><strong>2014</strong></td><td>2,053</td><td>22,110</td></tr>
+                    <tr><td><strong>2019</strong></td><td>2,847</td><td>30,847</td></tr>
+                    <tr class="row-accent"><td><strong>2024</strong></td><td class="warn">3,929</td><td class="warn">31,570</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Fuente: Censos Económicos INEGI 2004-2024, SCIAN 623.</p>
+
+        <p>Y el tramo más reciente es el más preocupante: <strong>entre 2019 y 2024 los establecimientos crecieron 38% mientras el personal quedó prácticamente plano</strong> (de 30,847 a 31,570, +2.3%). El sector se atomiza: más establecimientos, cada vez más chicos — alrededor de 8 personas por unidad — sin crear empleo neto. Justo cuando la demanda empieza a acelerar.</p>
+
+        <h2>La alerta territorial: el cuidado no está donde envejece la gente</h2>
+
+        <p>Al cruzar la proyección estatal de CONAPO a 2040 con el personal del sector cuidado del Censo 2024, el desajuste territorial salta a la vista:</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Estado</th><th>65+ en 2040 (proyección)</th><th>Personal cuidado (2024)</th><th>Adultos mayores por trabajador</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="row-accent"><td><strong>Estado de México</strong></td><td>2,773,898</td><td>1,522</td><td class="neg">1,823</td></tr>
+                    <tr><td><strong>CDMX</strong></td><td>1,776,103</td><td>3,977</td><td class="pos">447</td></tr>
+                    <tr class="row-accent"><td><strong>Veracruz</strong></td><td>1,349,417</td><td>718</td><td class="neg">1,880</td></tr>
+                    <tr><td><strong>Jalisco</strong></td><td>1,343,345</td><td>3,603</td><td class="pos">373</td></tr>
+                    <tr><td><strong>Puebla</strong></td><td>956,074</td><td>983</td><td class="warn">973</td></tr>
+                    <tr class="row-accent"><td><strong>Tabasco</strong></td><td>347,391</td><td>76</td><td class="neg">4,571</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Fuente: CONAPO (proyección 2040) · Censo Económico 2024 INEGI, SCIAN 623. Selección: mayores masas y casos extremos del universo de 32 entidades.</p>
+
+        <p>La infraestructura formal de cuidado vive donde hay mercado — CDMX, Jalisco, Nuevo León — no donde crecerá la masa. <strong>Veracruz será el tercer estado con más adultos mayores del país y ocupa el lugar 17 en personal de cuidado. El Estado de México, el primero en masa, tiene menos de la mitad del personal de Jalisco.</strong> Y Tabasco, con 76 trabajadores registrados en todo el estado, enfrentaría 4,571 adultos mayores por cada uno.</p>
+
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> El dato que no está en el censo también alerta</strong>
+            El Censo Económico solo registra unidades económicas formales. El cuidado informal — familiares, cuidadoras sin registro, residencias fuera de norma — no aparece en estas cifras. Eso no reduce la alerta: la agranda, porque significa que la demanda ya se está resolviendo sin regulación, sin supervisión sanitaria y sin derechos laborales.
+        </div>
+
+        <h2>Implicaciones para la gestión pública</h2>
+
+        <h3>1. La variable 65+ debe entrar a todo plan de desarrollo</h3>
+        <p>Los PMD y PED con horizonte 2030-2040 que no modelen el envejecimiento de su población están planeando para un municipio que ya no va a existir. Los datos por entidad y municipio existen (CONAPO) y la brecha de infraestructura es medible hoy, como muestra este análisis.</p>
+
+        <h3>2. Regulación y padrón de un sector que se atomiza</h3>
+        <p>Con un sector de establecimientos cada vez más pequeños — y una porción informal creciente — el registro, la supervisión sanitaria y la certificación de residencias y cuidadores es tarea inmediata de las autoridades estatales de salud y bienestar. Regular después del accidente siempre cuesta más.</p>
+
+        <h3>3. Los estados con masa alta y oferta mínima concentran el riesgo</h3>
+        <p>Veracruz, Estado de México, Puebla y Tabasco combinan masas grandes o crecientes de adultos mayores con oferta de cuidado mínima. Ahí el cuidado recaerá por completo en las familias — con el costo en participación laboral, sobre todo femenina, que eso implica para la economía local.</p>
+
+        <h3>4. La ventana se está cerrando</h3>
+        <p>La diferencia entre preparar infraestructura de cuidado en 2026 y improvisarla en 2035 es presupuestal y humana. Los 8.5 millones de adultos mayores adicionales no son una posibilidad: ya nacieron, y el calendario corre.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">+71%</div>
+                <div class="lbl">Crecimiento proyectado de la población 65+ entre 2026 y 2040 (CONAPO)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">31,570</div>
+                <div class="lbl">Trabajadores formales de residencias y asistencia social en todo el país (CE 2024)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">+2.3%</div>
+                <div class="lbl">Crecimiento del empleo del sector entre 2019 y 2024 — prácticamente plano</div>
+            </div>
+        </div>
+
+        <h2>Conclusión</h2>
+
+        <p>México discute pensiones y salud, pero la infraestructura física y humana del cuidado — quién atiende, dónde y con qué estándares — no aparece en la conversación pública ni en la mayoría de los planes de desarrollo. Los datos son inequívocos: la demanda crecerá 71% en catorce años y la oferta formal lleva un quinquenio sin crear empleo. Esa brecha no se cierra sola; se cierra con regulación, padrones, incentivos y planeación territorial que empiece hoy.</p>
+
+        <div class="quote-box">
+            El envejecimiento de México ya tiene fecha y magnitud: 20.5 millones de personas en 2040. La única variable que los gobiernos todavía controlan es si ese país llegará con infraestructura de cuidado o con 8 millones de familias improvisándola.
+        </div>
+
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
+                <h3><i class="fas fa-chart-bar"></i> ¿Cómo envejece tu estado y tu municipio?</h3>
+                <p>En la plataforma de GDI puedes consultar las proyecciones de CONAPO, los indicadores del Censo Económico y el panorama social CONEVAL de cualquier territorio de México — y generar el diagnóstico de tu municipio en minutos.</p>
+                <a href="https://app.gobiernodigitaleinnovacion.com/?utm_source=blog&utm_medium=cta&utm_campaign=20260708_envejecimiento" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar mi territorio</a>
+            </div>
+        </div>
+
+        <h2>Datos técnicos</h2>
+
+        <div class="source-box">
+            <p><strong>Fuente principal:</strong> CONAPO, proyecciones de población (consulta julio 2026; las cifras a 2040 son proyección) · Censos Económicos INEGI 2004-2024, SCIAN 623 (<em>Residencias de asistencia social y para el cuidado de la salud</em>).</p>
+            <p><strong>Nivel geográfico:</strong> Nacional y estatal (universo completo de 32 entidades; la tabla muestra una selección de mayores masas y casos extremos).</p>
+            <p><strong>Nota metodológica:</strong> el Censo Económico registra la actividad del año previo al levantamiento y solo unidades económicas formales; el cuidado informal no está incluido, por lo que el déficit real puede ser mayor. La razón "adultos mayores por trabajador" divide la población 65+ proyectada a 2040 entre el personal ocupado del sector en 2024.</p>
+            <p><strong>Análisis:</strong> GDI — Gobierno Digital e Innovación · Julio 2026 · gobiernodigitaleinnovacion.com</p>
+        </div>
+    </article>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

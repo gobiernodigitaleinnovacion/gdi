@@ -1,5 +1,25 @@
 [
   {
+    "title": "El país que envejece sin quien lo cuide: la infraestructura que ningún plan de desarrollo está viendo",
+    "slug": "envejecimiento-industria-cuidado-2040",
+    "date": "2026-07-08",
+    "author": "Juan Heriberto Rosas",
+    "category": "Alerta",
+    "categoryColor": "amber",
+    "image": "",
+    "excerpt": "México tendrá 20.5 millones de adultos mayores en 2040 (+71%, proyección CONAPO). Su industria formal de cuidado: 31,570 trabajadores — y dejó de crecer justo cuando la ola arranca.",
+    "url": "blog/articulos/2026-07-08-envejecimiento-industria-cuidado-2040.html",
+    "readTime": "9 min",
+    "featured": true,
+    "keywords": [
+      "envejecimiento mexico 2040",
+      "adultos mayores mexico",
+      "proyecciones conapo",
+      "residencias adultos mayores",
+      "politica publica envejecimiento"
+    ]
+  },
+  {
     "title": "Volatilidad empresarial y desarrollo municipal: qué revela el recambio de negocios sobre la economía local",
     "slug": "mapa-turnover-empresarial-mexico",
     "date": "2026-07-03",
@@ -11,7 +31,14 @@
     "url": "blog/articulos/2026-07-03-mapa-turnover-empresarial-mexico.html",
     "readTime": "10 min",
     "featured": true,
-    "keywords": ["desarrollo económico municipal", "plan municipal de desarrollo", "denue inegi 2026", "rotación de empresas por municipio", "economía local méxico", "rendición de cuentas municipal"]
+    "keywords": [
+      "desarrollo económico municipal",
+      "plan municipal de desarrollo",
+      "denue inegi 2026",
+      "rotación de empresas por municipio",
+      "economía local méxico",
+      "rendición de cuentas municipal"
+    ]
   },
   {
     "title": "El tequila de Jalisco: $70 mil millones de producción, 149 empresas y una concentración que debe preocupar a los gobiernos municipales",
@@ -25,7 +52,14 @@
     "url": "blog/articulos/2026-06-26-tequila-jalisco-concentracion-149-empresas.html",
     "readTime": "14 min",
     "featured": true,
-    "keywords": ["industria del tequila jalisco", "producción de tequila méxico", "censo económico 2024 inegi", "empresas tequileras arandas", "concentración de mercado tequila", "denominación de origen tequila"]
+    "keywords": [
+      "industria del tequila jalisco",
+      "producción de tequila méxico",
+      "censo económico 2024 inegi",
+      "empresas tequileras arandas",
+      "concentración de mercado tequila",
+      "denominación de origen tequila"
+    ]
   },
   {
     "title": "La concentración silenciosa: cómo México pasó de miles de empresas a unos pocos gigantes en 20 años",
@@ -39,7 +73,14 @@
     "url": "blog/articulos/2026-06-19-concentracion-silenciosa-empresas-mexico-20-anos.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["concentración de mercado méxico", "censo económico 2024 inegi", "panificación industrial bimbo", "comercio de proximidad méxico", "finanzas municipales ingresos propios", "consolidación empresarial méxico"]
+    "keywords": [
+      "concentración de mercado méxico",
+      "censo económico 2024 inegi",
+      "panificación industrial bimbo",
+      "comercio de proximidad méxico",
+      "finanzas municipales ingresos propios",
+      "consolidación empresarial méxico"
+    ]
   },
   {
     "title": "Chihuahua y Baja California: casi la mitad de su economía depende de la manufactura",
@@ -53,7 +94,14 @@
     "url": "blog/articulos/2026-06-12-chihuahua-baja-california-dependencia-manufactura.html",
     "readTime": "14 min",
     "featured": true,
-    "keywords": ["dependencia manufacturera por estado", "aranceles manufactura méxico", "empleo manufactura chihuahua", "maquiladoras baja california", "censo económico 2024 inegi", "impuesto sobre nómina estados"]
+    "keywords": [
+      "dependencia manufacturera por estado",
+      "aranceles manufactura méxico",
+      "empleo manufactura chihuahua",
+      "maquiladoras baja california",
+      "censo económico 2024 inegi",
+      "impuesto sobre nómina estados"
+    ]
   },
   {
     "title": "Wrangler se fue, pero la crisis textil de Coahuila lleva 20 años",
@@ -67,7 +115,14 @@
     "url": "blog/articulos/2026-06-05-wrangler-crisis-textil-coahuila-20-anos.html",
     "readTime": "13 min",
     "featured": true,
-    "keywords": ["cierre wrangler coahuila", "crisis textil la laguna", "empleo san pedro de las colonias", "industria textil méxico", "censo económico 2024 inegi", "desindustrialización coahuila"]
+    "keywords": [
+      "cierre wrangler coahuila",
+      "crisis textil la laguna",
+      "empleo san pedro de las colonias",
+      "industria textil méxico",
+      "censo económico 2024 inegi",
+      "desindustrialización coahuila"
+    ]
   },
   {
     "title": "El mapa real del nearshoring: qué entidades sumaron manufactura 2019-2024 (y cuál se desindustrializó)",
@@ -81,7 +136,14 @@
     "url": "blog/articulos/2026-05-29-mapa-real-nearshoring-manufactura-2019-2024.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["nearshoring méxico 2024", "censo económico 2024 inegi", "empleo manufacturero por estado", "industria automotriz méxico", "desindustrialización cdmx", "manufactura nuevo león bajío"]
+    "keywords": [
+      "nearshoring méxico 2024",
+      "censo económico 2024 inegi",
+      "empleo manufacturero por estado",
+      "industria automotriz méxico",
+      "desindustrialización cdmx",
+      "manufactura nuevo león bajío"
+    ]
   },
   {
     "title": "Razón de dependencia 2040: los estados donde cada vez menos trabajadores sostendrán a más adultos mayores",
@@ -95,7 +157,14 @@
     "url": "blog/articulos/2026-05-23-razon-dependencia-2040-estados-envejecimiento.html",
     "readTime": "14 min",
     "featured": true,
-    "keywords": ["razón de dependencia méxico", "envejecimiento poblacional méxico", "proyecciones conapo 2040", "pensiones méxico estados", "finanzas públicas estatales", "transición demográfica méxico"]
+    "keywords": [
+      "razón de dependencia méxico",
+      "envejecimiento poblacional méxico",
+      "proyecciones conapo 2040",
+      "pensiones méxico estados",
+      "finanzas públicas estatales",
+      "transición demográfica méxico"
+    ]
   },
   {
     "title": "El Edomex de los 749 mil changarros: líder en empresas, rezagado en riqueza",
@@ -109,7 +178,14 @@
     "url": "blog/articulos/2026-05-15-edomex-749-mil-changarros.html",
     "readTime": "16 min",
     "featured": true,
-    "keywords": ["economía estado de méxico", "censo económico 2024 edomex", "empresas en ecatepec", "industria toluca lerma", "productividad méxico", "trabajo informal edomex"]
+    "keywords": [
+      "economía estado de méxico",
+      "censo económico 2024 edomex",
+      "empresas en ecatepec",
+      "industria toluca lerma",
+      "productividad méxico",
+      "trabajo informal edomex"
+    ]
   },
   {
     "title": "Tabasco recibe lo mismo que Nuevo León por habitante. Lo gasta cuatro veces peor.",
@@ -123,7 +199,14 @@
     "url": "blog/articulos/2026-05-13-tabasco-quiebra-moral-37-pesos-nomina.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["finanzas públicas tabasco", "deuda estatal méxico", "gasto público tabasco", "efipem inegi 2024", "transparencia fiscal estatal", "presupuesto tabasco"]
+    "keywords": [
+      "finanzas públicas tabasco",
+      "deuda estatal méxico",
+      "gasto público tabasco",
+      "efipem inegi 2024",
+      "transparencia fiscal estatal",
+      "presupuesto tabasco"
+    ]
   },
   {
     "title": "El Espejismo de Mérida: Capital con Más Empresas que Querétaro, pero la Mitad de Producción",
@@ -137,7 +220,14 @@
     "url": "blog/articulos/2026-05-08-espejismo-merida-mas-empresas-mitad-produccion.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["economía mérida yucatán", "productividad mérida querétaro", "censo económico 2024 yucatán", "empresas en mérida", "industria yucatán datos", "hub sureste méxico"]
+    "keywords": [
+      "economía mérida yucatán",
+      "productividad mérida querétaro",
+      "censo económico 2024 yucatán",
+      "empresas en mérida",
+      "industria yucatán datos",
+      "hub sureste méxico"
+    ]
   },
   {
     "title": "Los 6.5 Millones Invisibles: El México que Trabaja Sin Sueldo",
@@ -151,7 +241,14 @@
     "url": "blog/articulos/2026-05-01-6-5-millones-invisibles-mexico-trabaja-sin-sueldo.html",
     "readTime": "16 min",
     "featured": true,
-    "keywords": ["trabajo no remunerado méxico", "empleo informal méxico", "censo económico 2024", "salario mínimo méxico", "pobreza laboral oaxaca", "economía familiar méxico"]
+    "keywords": [
+      "trabajo no remunerado méxico",
+      "empleo informal méxico",
+      "censo económico 2024",
+      "salario mínimo méxico",
+      "pobreza laboral oaxaca",
+      "economía familiar méxico"
+    ]
   },
   {
     "title": "El Cártel del Gas: La Industria que Pactó Precios por 10 Años en tus Municipios",
@@ -165,7 +262,14 @@
     "url": "blog/articulos/2026-04-24-cartel-gas-lp-53-empresas-coludidas.html",
     "readTime": "16 min",
     "featured": true,
-    "keywords": ["precio gas lp méxico", "gaseras méxico", "cofece gas lp", "competencia económica méxico", "cartel gas lp", "distribuidores gas méxico"]
+    "keywords": [
+      "precio gas lp méxico",
+      "gaseras méxico",
+      "cofece gas lp",
+      "competencia económica méxico",
+      "cartel gas lp",
+      "distribuidores gas méxico"
+    ]
   },
   {
     "title": "La Tortilla de México: Ningún Estado Paga el Salario Mínimo en las Tortillerías",
@@ -179,7 +283,14 @@
     "url": "blog/articulos/2026-04-18-tortilla-mexico-salario-minimo-tortillerias.html",
     "readTime": "14 min",
     "featured": true,
-    "keywords": ["precio de la tortilla méxico", "tortillerías en méxico", "salario mínimo 2026", "empleo informal méxico", "industria tortillera méxico", "tortilleras salario"]
+    "keywords": [
+      "precio de la tortilla méxico",
+      "tortillerías en méxico",
+      "salario mínimo 2026",
+      "empleo informal méxico",
+      "industria tortillera méxico",
+      "tortilleras salario"
+    ]
   },
   {
     "title": "Lo que el Chapopote No Tapa: Radiografía Económica del Litoral Afectado",
@@ -193,7 +304,14 @@
     "url": "blog/articulos/2026-04-11-chapopote-radiografia-economica-litoral-afectado.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["derrame petróleo veracruz", "chapopote golfo méxico", "pescadores veracruz", "contaminación litoral méxico", "derrame pemex", "pescadores tabasco"]
+    "keywords": [
+      "derrame petróleo veracruz",
+      "chapopote golfo méxico",
+      "pescadores veracruz",
+      "contaminación litoral méxico",
+      "derrame pemex",
+      "pescadores tabasco"
+    ]
   },
   {
     "title": "Pesca o Granja: La Decisión que Definirá el Mar de México",
@@ -207,7 +325,14 @@
     "url": "blog/articulos/2026-04-02-pesca-o-granja-la-decision-que-definira-el-mar-de-mexico.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["acuicultura méxico", "pesca en méxico", "industria pesquera méxico", "salario pescadores méxico", "acuacultura vs pesca", "pesca artesanal méxico"]
+    "keywords": [
+      "acuicultura méxico",
+      "pesca en méxico",
+      "industria pesquera méxico",
+      "salario pescadores méxico",
+      "acuacultura vs pesca",
+      "pesca artesanal méxico"
+    ]
   },
   {
     "title": "Los Cabos: Cuando el 84% del Hospedaje Estatal Depende de un Solo Municipio",
@@ -221,7 +346,14 @@
     "url": "blog/articulos/2026-03-27-los-cabos-84-hospedaje-estatal-depende-un-municipio.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["turismo los cabos", "hoteles baja california sur", "economía los cabos", "empleo hotelero méxico", "turismo bcs datos", "hospedaje los cabos"]
+    "keywords": [
+      "turismo los cabos",
+      "hoteles baja california sur",
+      "economía los cabos",
+      "empleo hotelero méxico",
+      "turismo bcs datos",
+      "hospedaje los cabos"
+    ]
   },
   {
     "title": "Mapa de Vulnerabilidad: Los Municipios que No Sobrevivirían una Crisis Sectorial",
@@ -235,7 +367,13 @@
     "url": "blog/articulos/2026-03-21-mapa-vulnerabilidad-municipios-crisis-sectorial.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["municipios vulnerables méxico", "crisis económica municipios", "empleo por sector méxico", "diversificación económica municipal", "concentración económica municipios"]
+    "keywords": [
+      "municipios vulnerables méxico",
+      "crisis económica municipios",
+      "empleo por sector méxico",
+      "diversificación económica municipal",
+      "concentración económica municipios"
+    ]
   },
   {
     "title": "Seguros en Mexico: Un Oligopolio con Datos Ocultos",
@@ -249,7 +387,13 @@
     "url": "blog/articulos/2026-03-14-seguros-en-mexico-oligopolio-datos-ocultos.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["seguros en méxico", "mercado asegurador méxico", "aseguradoras méxico", "industria seguros datos", "seguros méxico estadísticas"]
+    "keywords": [
+      "seguros en méxico",
+      "mercado asegurador méxico",
+      "aseguradoras méxico",
+      "industria seguros datos",
+      "seguros méxico estadísticas"
+    ]
   },
   {
     "title": "Trabajar en Salud No Garantiza un Salario Digno: La Brecha que el Gobierno Debe Atender",
@@ -263,7 +407,13 @@
     "url": "blog/articulos/2026-03-07-trabajar-en-salud-no-garantiza-salario-digno.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["sueldos sector salud méxico", "salario enfermeras méxico", "empleo salud méxico", "cuánto gana un enfermero", "salarios médicos méxico"]
+    "keywords": [
+      "sueldos sector salud méxico",
+      "salario enfermeras méxico",
+      "empleo salud méxico",
+      "cuánto gana un enfermero",
+      "salarios médicos méxico"
+    ]
   },
   {
     "title": "Tres Ciudades, Tres Estrategias: El Mapa Industrial de la Frontera",
@@ -277,7 +427,13 @@
     "url": "blog/articulos/2026-02-28-tres-ciudades-tres-estrategias-mapa-industrial-frontera.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["maquiladoras frontera norte", "industria tijuana juárez", "manufactura frontera méxico", "empleo frontera norte", "maquilas reynosa"]
+    "keywords": [
+      "maquiladoras frontera norte",
+      "industria tijuana juárez",
+      "manufactura frontera méxico",
+      "empleo frontera norte",
+      "maquilas reynosa"
+    ]
   },
   {
     "title": "Quien Gana con la Carne en Mexico? El Mapa de la Desigualdad Salarial Carnica",
@@ -291,7 +447,13 @@
     "url": "blog/articulos/2026-02-21-quien-gana-con-la-carne-en-mexico.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["industria cárnica méxico", "ganadería méxico datos", "salarios industria carne", "producción carne méxico", "rastros en méxico"]
+    "keywords": [
+      "industria cárnica méxico",
+      "ganadería méxico datos",
+      "salarios industria carne",
+      "producción carne méxico",
+      "rastros en méxico"
+    ]
   },
   {
     "title": "La Mineria Oculta de Sinaloa: Lo que el Censo Economico Revela sobre el Oro y la Plata",
@@ -305,7 +467,13 @@
     "url": "blog/articulos/2026-02-13-mineria-oculta-sinaloa.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["minería sinaloa", "minas oro sinaloa", "minería méxico datos", "oro plata sinaloa", "sector minero méxico"]
+    "keywords": [
+      "minería sinaloa",
+      "minas oro sinaloa",
+      "minería méxico datos",
+      "oro plata sinaloa",
+      "sector minero méxico"
+    ]
   },
   {
     "title": "Que heredo Diego Rivera: Analisis financiero revela las vulnerabilidades de Tequila",
@@ -319,7 +487,12 @@
     "url": "blog/articulos/2026-02-07-que-heredo-diego-rivera-analisis-financiero-tequila.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["finanzas tequila jalisco", "deuda municipio tequila", "presupuesto municipal jalisco", "finanzas públicas jalisco"]
+    "keywords": [
+      "finanzas tequila jalisco",
+      "deuda municipio tequila",
+      "presupuesto municipal jalisco",
+      "finanzas públicas jalisco"
+    ]
   },
   {
     "title": "Tijuana 2040: Proyecciones Demograficas Revelan Envejecimiento Acelerado",
@@ -333,7 +506,13 @@
     "url": "blog/articulos/2026-01-30-tijuana-proyecciones-demograficas-2040.html",
     "readTime": "12 min",
     "featured": true,
-    "keywords": ["población tijuana", "crecimiento poblacional tijuana", "demografía tijuana", "proyecciones población méxico", "envejecimiento poblacional méxico"]
+    "keywords": [
+      "población tijuana",
+      "crecimiento poblacional tijuana",
+      "demografía tijuana",
+      "proyecciones población méxico",
+      "envejecimiento poblacional méxico"
+    ]
   },
   {
     "title": "Decisiones Basadas en Datos: Capacidades de IA Empresarial para los Tres Niveles de Gobierno",
@@ -347,7 +526,13 @@
     "url": "blog/articulos/2026-01-25-ia-empresarial-tres-niveles-gobierno.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["inteligencia artificial gobierno", "IA sector público méxico", "transformación digital gobierno", "microsoft fabric gobierno", "datos gobierno méxico"]
+    "keywords": [
+      "inteligencia artificial gobierno",
+      "IA sector público méxico",
+      "transformación digital gobierno",
+      "microsoft fabric gobierno",
+      "datos gobierno méxico"
+    ]
   },
   {
     "title": "IA + Datos Oficiales: El Nuevo Estandar para Municipios Inteligentes",
@@ -361,7 +546,13 @@
     "url": "blog/articulos/2026-01-17-ia-datos-oficiales-municipios.html",
     "readTime": "10 min",
     "featured": true,
-    "keywords": ["datos INEGI municipios", "municipios inteligentes", "consultar datos INEGI", "CONEVAL datos municipales", "inteligencia artificial municipios"]
+    "keywords": [
+      "datos INEGI municipios",
+      "municipios inteligentes",
+      "consultar datos INEGI",
+      "CONEVAL datos municipales",
+      "inteligencia artificial municipios"
+    ]
   },
   {
     "title": "El Renacer Ferroviario de México: Entre la Ambición y el Descarrilamiento",
@@ -375,7 +566,13 @@
     "url": "blog/articulos/2026-01-09-renacer-ferroviario-mexico.html",
     "readTime": "12 min",
     "featured": true,
-    "keywords": ["ferrocarril méxico", "trenes de carga méxico", "industria ferroviaria méxico", "transporte ferroviario datos", "tren interoceánico datos"]
+    "keywords": [
+      "ferrocarril méxico",
+      "trenes de carga méxico",
+      "industria ferroviaria méxico",
+      "transporte ferroviario datos",
+      "tren interoceánico datos"
+    ]
   },
   {
     "title": "México Hackeado: La Crisis de Ciberseguridad y el Camino hacia la Protección de Datos",
@@ -389,7 +586,13 @@
     "url": "blog/articulos/2026-01-03-mexico-hackeado-crisis-ciberseguridad.html",
     "readTime": "15 min",
     "featured": true,
-    "keywords": ["hackeo gobierno méxico", "ciberseguridad méxico", "ataques cibernéticos gobierno", "datos hackeados gobierno", "seguridad informática gobierno"]
+    "keywords": [
+      "hackeo gobierno méxico",
+      "ciberseguridad méxico",
+      "ataques cibernéticos gobierno",
+      "datos hackeados gobierno",
+      "seguridad informática gobierno"
+    ]
   },
   {
     "title": "Toluca: 44% para Nómina, 8% para Obras",
@@ -403,7 +606,13 @@
     "url": "blog/articulos/2025-12-13-toluca-finanzas-publicas-2024.html",
     "readTime": "10 min",
     "featured": true,
-    "keywords": ["finanzas toluca", "presupuesto toluca", "deuda toluca", "gasto público toluca", "finanzas estado de méxico"]
+    "keywords": [
+      "finanzas toluca",
+      "presupuesto toluca",
+      "deuda toluca",
+      "gasto público toluca",
+      "finanzas estado de méxico"
+    ]
   },
   {
     "title": "Tijuana: Radiografía del Municipio Más Endeudado de México",
@@ -417,7 +626,13 @@
     "url": "blog/articulos/2025-12-06-tijuana-municipio-mas-endeudado.html",
     "readTime": "10 min",
     "featured": true,
-    "keywords": ["deuda tijuana", "finanzas públicas tijuana", "municipios endeudados méxico", "deuda pública municipal", "presupuesto tijuana"]
+    "keywords": [
+      "deuda tijuana",
+      "finanzas públicas tijuana",
+      "municipios endeudados méxico",
+      "deuda pública municipal",
+      "presupuesto tijuana"
+    ]
   },
   {
     "title": "Falla Técnica en Uruapan: Lo que los Datos Revelan Sobre una Deuda Heredada",
@@ -431,6 +646,12 @@
     "url": "blog/articulos/2025-11-22-uruapan-falla-tecnica-deuda-heredada.html",
     "readTime": "10 min",
     "featured": true,
-    "keywords": ["deuda uruapan", "finanzas uruapan michoacán", "municipios endeudados michoacán", "deuda pública uruapan", "crisis financiera municipal"]
+    "keywords": [
+      "deuda uruapan",
+      "finanzas uruapan michoacán",
+      "municipios endeudados michoacán",
+      "deuda pública uruapan",
+      "crisis financiera municipal"
+    ]
   }
 ]
