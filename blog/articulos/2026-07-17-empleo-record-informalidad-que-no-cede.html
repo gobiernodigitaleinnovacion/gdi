@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El empleo récord y los 32.6 millones sin red: el mapa de la informalidad que ningún trimestre mueve - GDI</title>
+    <meta name="description" content="México tiene su desempleo más bajo en años y aun así 32,625,872 personas trabajan sin seguridad social: 54.8% de los ocupados. La informalidad va de 34.2% en Coahuila a 79.9% en Oaxaca, y crear empleo formal no la está moviendo. ENOE 1T2026, INEGI.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-17-empleo-record-informalidad-que-no-cede">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="El empleo récord y los 32.6 millones sin red: el mapa de la informalidad que ningún trimestre mueve">
+    <meta property="og:description" content="32,625,872 personas trabajan sin seguridad social en México — el 54.8% de los ocupados. De 34.2% en Coahuila a 79.9% en Oaxaca. Y el empleo formal, que creció en los 32 estados, no está bajando la informalidad. ENOE 1T2026.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-17-empleo-record-informalidad-que-no-cede">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/2026-07-17-og-informalidad.png">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZDGM6LM7J');
+    </script>
+
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17677239215"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17677239215');
+    </script>
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D922C93C77UB3EFMT22G');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — Alerta #E8A33D */
+            --accent: #E8A33D;
+            --accent-dark: #b45309;
+            --accent-soft: rgba(232, 163, 61, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
+        }
+        .nav-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            height: 4rem; display: flex; align-items: center; justify-content: space-between;
+        }
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
+        }
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta { background: var(--gdi); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600; transition: filter .2s; }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
+
+        /* ===== Hero oscuro ===== */
+        .hero { position: relative; background: var(--ink); color: var(--paper); overflow: hidden; }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner { position: relative; z-index: 1; max-width: 52rem; margin: 0 auto; padding: 2.5rem 1.5rem 3.5rem 1.5rem; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; font-size: 0.72rem; margin-bottom: 1.5rem; }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem; }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow { display: flex; align-items: center; gap: 0.75rem; font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem; }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 { font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 2.25rem 0 0.9rem 0; }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0; }
+
+        /* ===== Figura / gráfica ===== */
+        .figure { margin: 2.5rem 0; }
+        .figure img { width: 100%; height: auto; border-radius: 0.9rem; border: 1px solid rgba(10,22,38,.1); background: #fff; }
+        .figure figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; text-align: center; }
+
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center; }
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent); line-height: 1; }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
+
+        /* ===== Stat grid ===== */
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0; }
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1; }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden; font-size: 0.95rem; }
+        .data-table th { background: var(--ink); color: var(--paper); padding: 0.85rem 1rem; text-align: left; font-weight: 600; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: #1f7d4e; font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
+
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
+        .quote-box { background: var(--bone); border-left: 4px solid var(--accent); padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0; font-style: italic; font-size: 1.1rem; color: var(--ink); }
+
+        /* ===== CTA ===== */
+        .cta-box { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center; }
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: #fff; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s; }
+        .cta-btn:hover { filter: brightness(1.08); }
+
+        /* ===== Source box ===== */
+        .source-box { background: #fff; border: 1px solid rgba(10,22,38,.1); padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
+
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-triangle-exclamation"></i> Alerta</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 17 Jul 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 10 min</span>
+            </div>
+            <h1>El empleo récord y los 32.6 millones <span style="color:var(--accent)">sin red</span>: el mapa de la informalidad que ningún trimestre mueve</h1>
+            <p class="hero-subtitle">México tiene su desempleo más bajo en años y aun así 32,625,872 personas trabajan sin seguridad social: el 54.8% de los ocupados. La informalidad va de 34.2% en Coahuila a 79.9% en Oaxaca — y crear empleo formal, que creció en los 32 estados, no la está moviendo.</p>
+        </div>
+    </header>
+
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Empleo · Recaudación y Seguridad Social · Nacional y Estatal · Julio 2026
+        </div>
+
+        <p>El primer trimestre de 2026 dejó una cifra que se presta al optimismo: la tasa de desocupación nacional fue de <strong>2.6%</strong>, de las más bajas registradas. Casi todo el que busca trabajo, lo encuentra. Pero debajo de ese titular hay otro número que un gobierno no puede ignorar: de los <strong>59,552,660 mexicanos ocupados</strong>, <strong>32,625,872 lo hacen en la informalidad</strong> — sin contrato, sin seguridad social, sin acceso pleno a derechos laborales. Es el <strong>54.8% de toda la fuerza laboral</strong>.</p>
+
+        <p>Que haya empleo no significa que haya empleo protegido. Y para un tesorero, un secretario de desarrollo o un presidente municipal, la diferencia es concreta: cada trabajador informal es una persona fuera del padrón de seguridad social, una base gravable que no se recauda y una demanda de servicios públicos que no se financia con las cuotas de quien la genera. Este análisis ordena el <strong>universo completo de las 32 entidades</strong> con la ENOE del 1er trimestre de 2026 del INEGI, sin agrupar de antemano, para ver dónde se concentra el problema y qué lo mueve —o no—.</p>
+
+        <h2>La radiografía: dos Méxicos laborales</h2>
+
+        <p>Ordenadas por su tasa de informalidad, las 32 entidades dibujan una geografía nítida. En un extremo, un bloque de estados del sur y centro donde trabajar sin protección es la norma; en el otro, un norte industrial donde es la excepción.</p>
+
+        <figure class="figure">
+            <img src="../../images/2026-07-17-informalidad-estados-hero.png" alt="Ranking de informalidad laboral por estado, 1er trimestre 2026: de Oaxaca 79.9% a Coahuila 34.2%">
+            <figcaption>Tasa de informalidad laboral por entidad, 1T2026. Fuente: ENOE, INEGI.</figcaption>
+        </figure>
+
+        <p><strong>Oaxaca encabeza con 79.9% de informalidad: cuatro de cada cinco ocupados.</strong> Le siguen Guerrero (76.4%), Chiapas (75.3%), Hidalgo y Tlaxcala (71.2%) y Puebla (70.9%). En el otro extremo, Coahuila (34.2%), Chihuahua y Nuevo León (34.9%) y Baja California (37.6%). La brecha entre el estado más informal y el menos informal es de <strong>45.7 puntos porcentuales</strong>: la informalidad de Oaxaca <strong>más que duplica</strong> la de Coahuila. No es un matiz regional; son dos economías laborales distintas dentro del mismo país.</p>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(232,163,61,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">32,625,872</div>
+                <p>Personas ocupadas en la informalidad en México, 1T2026 — el 54.8% de todos los que trabajan. Cada una está fuera del padrón de seguridad social.</p>
+            </div>
+        </div>
+
+        <p>La masa no está donde la tasa es más alta. Aunque Oaxaca lidera en proporción, el estado con <strong>más trabajadores informales en términos absolutos es el Estado de México, con 4,504,998</strong>, seguido de Veracruz (2,303,925), Puebla (2,176,821) y la Ciudad de México (2,167,105). Esos cuatro estados concentran <strong>uno de cada tres informales del país</strong>. Es un dato que importa para focalizar: la política de formalización debe atender tanto la alta incidencia del sur como el enorme volumen del centro.</p>
+
+        <h2>El hallazgo: crear empleo formal no está bajando la informalidad</h2>
+
+        <p>Aquí es donde los datos rompen la narrativa fácil. Sería intuitivo pensar que los estados que más empleo formal generaron en los últimos años son los que menos informalidad tienen. Cruzamos la informalidad de 2026 con el crecimiento del <strong>empleo remunerado formal entre los Censos Económicos 2019 y 2024</strong> (INEGI). El resultado es que <strong>ambas variables corren por vías separadas</strong>.</p>
+
+        <figure class="figure">
+            <img src="../../images/2026-07-17-informalidad-dos-vias.png" alt="Dispersión: crecimiento del empleo formal 2019-2024 contra informalidad 2026 por estado, sin relación clara">
+            <figcaption>Crecimiento del empleo formal 2019→2024 (Censo Económico) frente a informalidad 1T2026 (ENOE). Métodos distintos, no sumables.</figcaption>
+        </figure>
+
+        <p>Los <strong>32 estados crecieron</strong> en empleo formal remunerado —del +4.4% de la CDMX al +48% de Tabasco—, pero eso no se tradujo en menos informalidad donde más creció. <strong>Tabasco fue el líder nacional en creación de empleo formal (+48%) y sigue con 66.2% de informalidad. Hidalgo creció 40.9% y permanece en 71.2%.</strong> En sentido contrario, <strong>Chihuahua apenas creció 22.2% en empleo formal —de los últimos lugares— y es el segundo estado menos informal del país (34.9%)</strong>. Coahuila creció 31.1% y es el menos informal de todos.</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Estado</th><th>Informalidad 1T2026</th><th>Crec. empleo formal 2019-2024</th><th>Ingreso mensual del ocupado</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="row-accent"><td><strong>Oaxaca</strong></td><td class="warn">79.9%</td><td>+34.5%</td><td>$8,386</td></tr>
+                    <tr><td><strong>Chiapas</strong></td><td class="warn">75.3%</td><td>+26.6%</td><td>$7,309</td></tr>
+                    <tr class="row-accent"><td><strong>Hidalgo</strong></td><td class="warn">71.2%</td><td class="pos">+40.9%</td><td>$9,006</td></tr>
+                    <tr class="row-accent"><td><strong>Tabasco</strong></td><td class="warn">66.2%</td><td class="pos">+48.0%</td><td>$8,835</td></tr>
+                    <tr><td><strong>Nacional</strong></td><td>54.8%</td><td>—</td><td>$11,043</td></tr>
+                    <tr><td><strong>Nuevo León</strong></td><td class="pos">34.9%</td><td>+37.4%</td><td>$14,786</td></tr>
+                    <tr><td><strong>Chihuahua</strong></td><td class="pos">34.9%</td><td>+22.2%</td><td>$13,449</td></tr>
+                    <tr><td><strong>Coahuila</strong></td><td class="pos">34.2%</td><td>+31.1%</td><td>$12,425</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Fuente: ENOE 1T2026 (informalidad, ingreso) · Censos Económicos 2019 y 2024, INEGI (empleo formal remunerado, cifras nominales). Métodos distintos: no se suman entre sí.</p>
+
+        <p>La lectura es incómoda pero clara: <strong>la informalidad es estructural, no coyuntural</strong>. Un estado puede sumar plazas formales a buen ritmo y seguir mayoritariamente informal, porque la base informal es tan grande que las altas formales no alcanzan a moverla. El norte llegó a su baja informalidad tras décadas de estructura industrial y salarial, no por un impulso reciente. El "empleo récord" no está formalizando al país.</p>
+
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-exclamation-triangle"></i> Por qué esto es una alerta y no un dato más</strong>
+            Si la formalización dependiera solo de crear empleo, bastaría con atraer inversión. Los datos dicen que no: donde más creció el empleo formal (Tabasco, Hidalgo, Nayarit) la informalidad apenas se movió. Formalizar exige política deliberada —fiscalización, simplificación de trámites, incentivos a la afiliación— y no llega sola con el crecimiento.
+        </div>
+
+        <h2>El trimestre no mueve la aguja del sur</h2>
+
+        <p>Entre el 4º trimestre de 2025 y el 1º de 2026, la mayoría de los estados registró cambios pequeños. Los descensos más notorios —Sonora (−2.9 pp), Quintana Roo (−2.3 pp), Querétaro (−1.7 pp)— ocurrieron en estados que ya tenían informalidad baja o media. En contraste, <strong>los estados más informales prácticamente no se movieron</strong>: Oaxaca −0.1 pp, Chiapas +0.4 pp, Guerrero +0.6 pp. Con un solo trimestre no se puede hablar de tendencia —influyen factores estacionales—, pero la foto es consistente con el hallazgo de fondo: la informalidad estructural del sur no responde a los vaivenes de corto plazo.</p>
+
+        <h2>El costo que se paga en ingreso</h2>
+
+        <p>La informalidad no es neutral para el bolsillo. El ingreso mensual promedio del ocupado sigue de cerca a la tasa de informalidad, en sentido inverso: <strong>Chiapas, el tercer estado más informal, es el que menos paga ($7,309 al mes)</strong>; Oaxaca, $8,386. En el extremo formal, Baja California Sur ($16,327), Nuevo León ($14,786) y Baja California ($14,632) encabezan el ingreso. Un mercado laboral informal es, casi por definición, un mercado de bajos ingresos —y por tanto de baja recaudación local y menor derrama.</p>
+
+        <p>La estructura lo explica: en Oaxaca, el 37.5% de los ocupados trabaja por cuenta propia y otro 10.5% no recibe pago alguno. Sumados, <strong>casi la mitad de los ocupados oaxaqueños opera fuera de una relación salarial</strong> —changarros, autoempleo, trabajo familiar—. En Coahuila, el trabajo no remunerado es de apenas 0.9%.</p>
+
+        <h2>Implicaciones para la gestión pública</h2>
+
+        <h3>1. La formalización no es subproducto del crecimiento: es política</h3>
+        <p>Los datos desmontan la idea de que atraer empleo formal basta. Un gobierno estatal que quiera reducir informalidad necesita instrumentos propios: simplificación de la afiliación y el alta patronal, fiscalización proporcional, ventanillas únicas, incentivos a que el micronegocio se registre. Esperar a que el crecimiento lo resuelva es esperar en vano.</p>
+
+        <h3>2. Recaudación y padrón: el 54.8% que no cotiza</h3>
+        <p>Cada punto de informalidad es base gravable y afiliación que no ingresan. Los estados con informalidad superior al 70% —Oaxaca, Guerrero, Chiapas, Hidalgo, Tlaxcala, Puebla— financian sus servicios con una fracción pequeña de su población económicamente activa cotizando. La sostenibilidad de sus finanzas depende de ampliar esa base, no solo de las transferencias federales.</p>
+
+        <h3>3. Focalizar por incidencia y por volumen a la vez</h3>
+        <p>El sur concentra las tasas más altas; el centro, el mayor volumen absoluto. El Estado de México, con 4.5 millones de trabajadores informales, requiere una estrategia de escala distinta a la de Oaxaca, donde el reto es la incidencia casi universal. Una política nacional uniforme falla en ambos.</p>
+
+        <h3>4. Protección social desligada del empleo formal</h3>
+        <p>Si más de la mitad de los ocupados no accede a seguridad social por la vía laboral, los esquemas de protección —salud, pensiones, guarderías— que dependen del empleo formal dejan fuera a la mayoría. El diseño de política social de las entidades con alta informalidad no puede asumir un mercado laboral formalizado que no existe.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">54.8%</div>
+                <div class="lbl">De los ocupados en México trabaja en la informalidad (ENOE 1T2026)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">45.7 pp</div>
+                <div class="lbl">Brecha entre Oaxaca (79.9%) y Coahuila (34.2%), los extremos del país</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">+48%</div>
+                <div class="lbl">Creció el empleo formal en Tabasco 2019-2024, y sigue 66.2% informal</div>
+            </div>
+        </div>
+
+        <h2>Conclusión</h2>
+
+        <p>México celebra su desempleo mínimo, pero el indicador que define la calidad de su mercado laboral —y la salud fiscal de sus territorios— es otro: 32.6 millones de personas trabajando sin red. La informalidad no bajará por inercia del crecimiento; los datos muestran que ni siquiera los estados campeones en empleo formal la están reduciendo. Reducirla exige decisión de política pública, sostenida y territorializada. El "empleo récord" es una buena noticia a medias: hay trabajo, pero para más de la mitad de quienes lo tienen, sigue sin haber protección.</p>
+
+        <div class="quote-box">
+            El dato que conviene no perder de vista no es el 2.6% de desempleo, sino el 54.8% de informalidad. El primero dice que hay trabajo; el segundo, que para la mayoría todavía no hay derechos laborales detrás de ese trabajo.
+        </div>
+
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
+                <h3><i class="fas fa-chart-bar"></i> ¿Cómo es la informalidad en tu estado?</h3>
+                <p>En la plataforma de GDI puedes consultar la ENOE, el Censo Económico, el panorama social CONEVAL y las finanzas públicas de cualquier territorio de México — y construir el diagnóstico laboral de tu entidad o municipio en minutos.</p>
+                <a href="https://app.gobiernodigitaleinnovacion.com/?utm_source=blog&utm_medium=cta&utm_campaign=20260717_informalidad" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar mi territorio</a>
+            </div>
+        </div>
+
+        <h2>Datos técnicos</h2>
+
+        <div class="source-box">
+            <p><strong>Fuente principal:</strong> INEGI, Encuesta Nacional de Ocupación y Empleo (ENOE), 1er trimestre de 2026 — tasa de informalidad laboral, ocupados, ingreso promedio mensual del ocupado y estructura de la ocupación (cuenta propia, no remunerados). Nivel nacional y estatal (la ENOE no reporta a nivel municipal).</p>
+            <p><strong>Fuente complementaria:</strong> INEGI, Censos Económicos 2019 y 2024 — personal remunerado por entidad para estimar el crecimiento del empleo formal. Las cifras del Censo Económico son nominales y corresponden a unidades económicas formales; la ENOE es una encuesta en hogares. Son metodologías distintas: se presentan como columnas a observar por separado, nunca sumadas ni combinadas en un mismo indicador.</p>
+            <p><strong>Nota metodológica:</strong> se analizó el universo completo de 32 entidades ordenado por tasa de informalidad, sin agrupamientos previos. La ENOE clasifica la ocupación por sector (primario, secundario, terciario), no por código SCIAN. El cambio trimestral 2025T4→2026T1 se reporta como movimiento reciente y no como tendencia anual, dada la ventana disponible.</p>
+            <p><strong>Análisis:</strong> GDI — Gobierno Digital e Innovación · Fecha de análisis: 17 de julio de 2026 · gobiernodigitaleinnovacion.com</p>
+        </div>
+    </article>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
