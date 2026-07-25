@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El gran reacomodo: 1,094 municipios perderán población rumbo a 2040 y 20 absorberán 5 millones de nuevos habitantes - GDI</title>
+    <meta name="description" content="México sumará 11.4 millones de habitantes entre 2025 y 2040, pero el 44% de sus municipios perderá población según la proyección de CONAPO. Iztapalapa pierde 184 mil, García gana 345 mil. El mapa del reacomodo que los planes de desarrollo no están viendo.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-24-gran-reacomodo-municipal-2040">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="El gran reacomodo: 1,094 municipios perderán población rumbo a 2040 y 20 absorberán 5 millones de nuevos habitantes">
+    <meta property="og:description" content="México sumará 11.4 millones de habitantes al 2040, pero el 44% de sus municipios perderá población. Los núcleos urbanos se vacían y las periferias industriales estallan — y la infraestructura pública no está donde llegará la gente. Proyecciones CONAPO.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-24-gran-reacomodo-municipal-2040">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/2026-07-24-og-reacomodo.png">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZDGM6LM7J');
+    </script>
+
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17677239215"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17677239215');
+    </script>
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D922C93C77UB3EFMT22G');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — Economía #2FA86A */
+            --accent: #2FA86A;
+            --accent-dark: #1f7d4e;
+            --accent-soft: rgba(47, 168, 106, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
+        }
+        .nav-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            height: 4rem; display: flex; align-items: center; justify-content: space-between;
+        }
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
+        }
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta { background: var(--gdi); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600; transition: filter .2s; }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
+
+        /* ===== Hero oscuro ===== */
+        .hero { position: relative; background: var(--ink); color: var(--paper); overflow: hidden; }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner { position: relative; z-index: 1; max-width: 52rem; margin: 0 auto; padding: 2.5rem 1.5rem 3.5rem 1.5rem; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; font-size: 0.72rem; margin-bottom: 1.5rem; }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem; }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow { display: flex; align-items: center; gap: 0.75rem; font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem; }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 { font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 2.25rem 0 0.9rem 0; }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0; }
+
+        /* ===== Figura / gráfica ===== */
+        .figure { margin: 2.5rem 0; }
+        .figure img { width: 100%; height: auto; border-radius: 0.9rem; border: 1px solid rgba(10,22,38,.1); background: #fff; }
+        .figure figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; text-align: center; }
+
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center; }
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent); line-height: 1; }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
+
+        /* ===== Stat grid ===== */
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0; }
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1; }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden; font-size: 0.95rem; }
+        .data-table th { background: var(--ink); color: var(--paper); padding: 0.85rem 1rem; text-align: left; font-weight: 600; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: #1f7d4e; font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
+
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
+        .quote-box { background: var(--bone); border-left: 4px solid var(--accent); padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0; font-style: italic; font-size: 1.1rem; color: var(--ink); }
+
+        /* ===== CTA ===== */
+        .cta-box { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center; }
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: #fff; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s; }
+        .cta-btn:hover { filter: brightness(1.08); }
+
+        /* ===== Source box ===== */
+        .source-box { background: #fff; border: 1px solid rgba(10,22,38,.1); padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
+
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-people-arrows"></i> Economía</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 24 Jul 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 10 min</span>
+            </div>
+            <h1>El gran reacomodo: 1,094 municipios perderán población rumbo a 2040 y 20 absorberán <span style="color:var(--accent)">5 millones</span> de nuevos habitantes</h1>
+            <p class="hero-subtitle">México sumará 11.4 millones de personas entre 2025 y 2040 según la proyección de CONAPO — pero el 44% de sus municipios perderá población. Los núcleos urbanos se vacían, las periferias industriales estallan, y la infraestructura pública no está donde va a llegar la gente.</p>
+        </div>
+    </header>
+
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Demografía · Planeación territorial · Universo municipal completo · Julio 2026
+        </div>
+
+        <p>La pregunta con la que arrancó este análisis fue abierta: <strong>¿qué municipios de México se están vaciando, cuáles estallan de gente rumbo a 2040, y qué tienen en común unos y otros?</strong> Para responderla ordenamos el universo completo — los <strong>2,475 municipios</strong> con proyección de CONAPO y las 32 entidades — por su cambio poblacional proyectado entre 2025 y 2040, sin agrupar de antemano. El patrón que emergió no es el de un país que crece: es el de un país que <strong>se muda</strong>.</p>
+
+        <p>El agregado nacional engaña por tranquilo: México pasará de <strong>132.8 a 144.2 millones de habitantes</strong> entre 2025 y 2040, un crecimiento de 8.6% en quince años, cada vez más lento. Pero debajo de esa suma hay dos países moviéndose en sentidos opuestos: <strong>1,094 municipios — el 44% del total — perderán población</strong>, con una salida conjunta de 3 millones de personas, mientras los 1,381 restantes ganan 14.1 millones. Y esa ganancia está brutalmente concentrada: <strong>los 20 municipios que más crecen absorberán 5.15 millones de personas, el 36.5% de todo lo que ganan los municipios en crecimiento</strong>.</p>
+
+        <h2>Primero el mapa estatal: tres entidades ya están en números rojos</h2>
+
+        <figure class="figure">
+            <img src="../../images/2026-07-24-reacomodo-estados-hero.png" alt="Cambio de población proyectado por entidad 2025-2040: de Baja California Sur +25.9% a Ciudad de México -6.1%">
+            <figcaption>Cambio poblacional proyectado 2025→2040 por entidad. Fuente: Proyecciones de población, CONAPO.</figcaption>
+        </figure>
+
+        <p>En el extremo que crece, <strong>Baja California Sur (+25.9%), Quintana Roo (+23.7%), Querétaro (+22.5%), Nuevo León (+21.5%) y Baja California (+17.4%)</strong> — turismo y manufactura. En el que pierde, tres entidades verán reducirse su población: <strong>la Ciudad de México (−6.1%, unas 560 mil personas menos), Veracruz (−4.3%, −352 mil) y Guerrero (−3.5%, −127 mil)</strong>. El Estado de México, que durante medio siglo fue la esponja demográfica del país, crecerá apenas 4.5% — la cuarta tasa más baja.</p>
+
+        <p>La CDMX además envejece más rápido que nadie: su edad mediana proyectada para 2040 es de <strong>44 años</strong> (la nacional será 36) y su índice de envejecimiento de 175 — <strong>175 personas de 65 años o más por cada 100 niños de 0 a 14</strong>. La capital del país perderá habitantes jóvenes y ganará dependientes mayores al mismo tiempo.</p>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(47,168,106,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">1,094 de 2,475</div>
+                <p>Municipios de México perderán población entre 2025 y 2040 según la proyección de CONAPO — el 44% del país se está vaciando mientras el crecimiento se concentra en unas cuantas periferias.</p>
+            </div>
+        </div>
+
+        <h2>El mapa municipal: los núcleos se vacían, las periferias estallan</h2>
+
+        <p>El hallazgo más contundente está en <em>quiénes</em> pierden. No son solo municipios rurales remotos: <strong>los que más población pierden en términos absolutos son los grandes núcleos urbanos del país</strong>. Iztapalapa — la demarcación más poblada de la Ciudad de México — perderá 184 mil habitantes; Gustavo A. Madero, 122 mil; Guadalajara (el municipio central, no su zona metropolitana), 68 mil; Coyoacán, Naucalpan, Cuauhtémoc y Tultitlán, entre 42 y 64 mil cada uno. Acapulco, ya golpeado, perderá 39 mil más.</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Municipio</th><th>Población 2025</th><th>Población 2040</th><th>Cambio</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="row-accent"><td><strong>Iztapalapa, CDMX</strong></td><td>1,800,823</td><td>1,617,140</td><td class="neg">−183,683 (−10.2%)</td></tr>
+                    <tr><td><strong>Gustavo A. Madero, CDMX</strong></td><td>1,149,481</td><td>1,027,004</td><td class="neg">−122,477 (−10.7%)</td></tr>
+                    <tr><td><strong>San Pedro Garza García, NL</strong></td><td>123,389</td><td>53,225</td><td class="neg">−70,164 (−56.9%)</td></tr>
+                    <tr><td><strong>Guadalajara, Jal.</strong></td><td>1,383,955</td><td>1,316,107</td><td class="neg">−67,848 (−4.9%)</td></tr>
+                    <tr><td><strong>Coyoacán, CDMX</strong></td><td>602,223</td><td>538,574</td><td class="neg">−63,649 (−10.6%)</td></tr>
+                    <tr><td><strong>Naucalpan, Méx.</strong></td><td>827,125</td><td>767,871</td><td class="neg">−59,254 (−7.2%)</td></tr>
+                    <tr><td><strong>Valle de Chalco, Méx.</strong></td><td>382,565</td><td>324,641</td><td class="neg">−57,924 (−15.1%)</td></tr>
+                    <tr><td><strong>Cuauhtémoc, CDMX</strong></td><td>535,550</td><td>479,080</td><td class="neg">−56,470 (−10.5%)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Los 8 municipios con mayor pérdida absoluta proyectada 2025→2040. Fuente: Proyecciones de población, CONAPO.</p>
+
+        <p>¿Y a dónde va la gente? A la periferia inmediata de esas mismas ciudades. Entre los municipios de más de 50 mil habitantes, los que más crecen son <strong>cinturones industriales y logísticos</strong>: Huehuetoca (+78.7%) en el Arco Norte mexiquense — mientras Naucalpan y Valle de Chalco, en el mismo estado, se vacían —; Pesquería (+74.0%), Ciénega de Flores (+67.3%) y García (+69.6%) en el anillo manufacturero de Monterrey; Kanasín (+72.1%) pegado a Mérida; Cuautlancingo (+71.0%) junto al clúster automotriz de Puebla; El Salto (+61.5%) en el corredor industrial de Guadalajara.</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Municipio</th><th>Población 2025</th><th>Población 2040</th><th>Cambio</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="row-accent"><td><strong>Huehuetoca, Méx.</strong></td><td>206,810</td><td>369,661</td><td class="pos">+78.7%</td></tr>
+                    <tr><td><strong>Pesquería, NL</strong></td><td>202,281</td><td>351,886</td><td class="pos">+74.0%</td></tr>
+                    <tr><td><strong>Kanasín, Yuc.</strong></td><td>177,057</td><td>304,709</td><td class="pos">+72.1%</td></tr>
+                    <tr><td><strong>Cuautlancingo, Pue.</strong></td><td>170,843</td><td>292,108</td><td class="pos">+71.0%</td></tr>
+                    <tr class="row-accent"><td><strong>García, NL</strong></td><td>495,731</td><td>840,854</td><td class="pos">+69.6% (+345,123 personas)</td></tr>
+                    <tr><td><strong>Ciénega de Flores, NL</strong></td><td>92,740</td><td>155,184</td><td class="pos">+67.3%</td></tr>
+                    <tr><td><strong>El Salto, Jal.</strong></td><td>294,703</td><td>475,964</td><td class="pos">+61.5%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Municipios de más de 50 mil habitantes (2025) con mayor crecimiento relativo proyectado 2025→2040. Fuente: CONAPO.</p>
+
+        <h2>Nuevo León, el laboratorio del reacomodo</h2>
+
+        <p>Ningún estado condensa mejor el fenómeno que Nuevo León. Es la cuarta entidad que más crece (+21.5%), y al mismo tiempo <strong>8 de los 15 municipios que más rápido se vacían del país son suyos</strong>. Su cinturón metropolitano — García, Pesquería, Ciénega de Flores, Juárez, Apodaca — suma cientos de miles de habitantes nuevos, mientras su sur rural — Doctor Arroyo (−57.3%), Linares (−51.9%), Allende (−50.3%), Galeana (−42.2%) — pierde entre un tercio y más de la mitad de su gente.</p>
+
+        <figure class="figure">
+            <img src="../../images/2026-07-24-nuevo-leon-dos-destinos.png" alt="Nuevo León: municipios metropolitanos crecen hasta 74% mientras los del sur rural pierden hasta 57% de población">
+            <figcaption>El mismo estado, los dos extremos del país. Cambio proyectado 2025→2040. Fuente: CONAPO.</figcaption>
+        </figure>
+
+        <p>Y dentro de ese mismo estado está el caso más llamativo del análisis: <strong>San Pedro Garza García — el municipio con menor pobreza del país (5.5%, CONEVAL 2020) — perdería el 57% de su población hacia 2040</strong>. Su trayectoria proyectada es una curva suave y consistente — ya pierde habitantes desde 2020 — y viene acompañada de un envejecimiento extremo: su edad mediana pasaría de 38 a <strong>55 años</strong>, y uno de cada tres sampetrinos tendría 65 años o más. La proyección extrapola una dinámica real: los jóvenes no pueden quedarse a vivir donde crecieron y el municipio se convierte en un enclave de adultos mayores de alto ingreso.</p>
+
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-triangle-exclamation"></i> El dato que debe encender la alarma en los receptores</strong>
+            Los municipios que van a recibir a cientos de miles de personas ya llegan con déficits: Huehuetoca tenía 47.6% de su población en pobreza en 2020 (CONEVAL) y Kanasín 44.4%. Son municipios que hoy no alcanzan a cubrir a su población actual — y la proyección les suma entre 70% y 79% más habitantes en quince años.
+        </div>
+
+        <h2>Implicaciones para la gestión pública</h2>
+
+        <h3>1. Los planes de desarrollo están calibrados para un país que ya no existe</h3>
+        <p>La mayoría de los instrumentos de planeación municipal — PMD, planes de centros de población, programas de infraestructura — asumen crecimiento poblacional por inercia. En 1,094 municipios esa premisa es falsa: la inversión pública dimensionada para una población que no llegará se convierte en infraestructura ociosa y gasto corriente insostenible. El primer paso de cualquier plan municipal debería ser saber en qué lado del mapa está el municipio.</p>
+
+        <h3>2. Los receptores necesitan infraestructura anticipada, no reactiva</h3>
+        <p>García, Huehuetoca, Kanasín, Pesquería o Cuautlancingo enfrentan el problema inverso: agua, drenaje, escuelas, salud, transporte y seguridad para decenas de miles de hogares nuevos. La experiencia mexicana de las últimas décadas — periferias dormitorio sin servicios ni empleo cercano — muestra lo que pasa cuando la vivienda llega antes que el Estado. La ventana para planear es ahora: la proyección da quince años de visibilidad.</p>
+
+        <h3>3. Los que se vacían: base fiscal menguante y población que envejece</h3>
+        <p>Perder población no libera recursos: los costos fijos de servicios se reparten entre menos contribuyentes, el predial y los derechos caen, y la población que se queda es la de mayor edad y mayor demanda de servicios de salud y cuidado. Los municipios en contracción necesitan estrategias de consolidación — no de expansión — y las haciendas estatales deben anticipar la presión sobre las transferencias.</p>
+
+        <h3>4. El reacomodo es metropolitano: exige coordinación, no fronteras municipales</h3>
+        <p>La gente que pierde Iztapalapa o Naucalpan no desaparece: se muda a Huehuetoca o Zumpango. La que pierde Guadalajara aparece en Tlajomulco y El Salto. Planear agua, movilidad o suelo municipio por municipio, cuando la dinámica es de zona metropolitana, garantiza llegar tarde. Las entidades con periferias explosivas necesitan instrumentos metropolitanos con dientes — y los datos para dimensionarlos existen.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">44%</div>
+                <div class="lbl">De los municipios de México perderá población entre 2025 y 2040 (proyección CONAPO)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">5.15 M</div>
+                <div class="lbl">Personas que absorberán los 20 municipios de mayor crecimiento — 36.5% de toda la ganancia municipal</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">−560 mil</div>
+                <div class="lbl">Habitantes que perdería la Ciudad de México al 2040, con edad mediana de 44 años</div>
+            </div>
+        </div>
+
+        <h2>Conclusión</h2>
+
+        <p>El crecimiento poblacional de México ya no es una marea que sube pareja: es un reacomodo. El país sumará 11.4 millones de personas al 2040, pero las sumará en unas cuantas periferias industriales y turísticas mientras casi la mitad de sus municipios — incluidos los núcleos urbanos más grandes — se vacía y envejece. Para un gobierno municipal, la proyección de CONAPO no es un ejercicio académico: es el insumo que define si su reto de los próximos quince años será construir escuelas o reconvertirlas, ampliar la red de agua o sostenerla con menos contribuyentes. El dato existe, es público y da tres periodos de gobierno de visibilidad. No usarlo es planear a ciegas.</p>
+
+        <div class="quote-box">
+            1,094 municipios van a perder población y la mayoría de sus planes de desarrollo asume que van a crecer. El primer acto de planeación seria de cualquier administración 2026-2029 es revisar en qué lado del mapa está parada.
+        </div>
+
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
+                <h3><i class="fas fa-map-location-dot"></i> ¿Tu municipio se vacía o estalla?</h3>
+                <p>En la plataforma de GDI puedes consultar la proyección de población de CONAPO, el panorama social de CONEVAL, el Censo Económico y las finanzas públicas de cualquier municipio de México — y construir el diagnóstico territorial de tu administración en minutos.</p>
+                <a href="https://app.gobiernodigitaleinnovacion.com/?utm_source=blog&utm_medium=cta&utm_campaign=20260724_reacomodo2040" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar mi territorio</a>
+            </div>
+        </div>
+
+        <h2>Datos técnicos</h2>
+
+        <div class="source-box">
+            <p><strong>Fuente principal:</strong> CONAPO, Proyecciones de la Población de México y de las Entidades Federativas — serie anual, niveles nacional, estatal y municipal (2,475 municipios proyectados), consultada en la capa de datos validada de Lokus. Toda cifra a 2040 es <strong>proyección</strong>, no medición censal. Ventana de análisis: 2025→2040.</p>
+            <p><strong>Fuentes complementarias:</strong> CONEVAL, Medición de pobreza municipal 2020 (contexto de los municipios receptores) · INEGI, DENUE 2025 (densidad de unidades económicas). Metodologías distintas a CONAPO: se citan por separado y no se combinan en un mismo indicador.</p>
+            <p><strong>Nota metodológica:</strong> se analizó el universo completo de municipios y entidades ordenado por el cambio poblacional 2025→2040, sin preselección de territorios. Los rankings relativos destacados consideran municipios de 50 mil habitantes o más en 2025; los municipios de creación reciente (p. ej. Rincón Chamula San Pedro y El Parral, Chiapas) muestran tasas extremas propias de la extrapolación del modelo y se excluyeron de las tablas destacadas. La suma municipal (+11.1 M) difiere ligeramente del agregado nacional (+11.4 M) por la conciliación demográfica propia de CONAPO; las cifras municipales se usan solo para comparaciones municipales. Los sectores del DENUE se clasifican conforme al SCIAN 2023.</p>
+            <p><strong>Análisis:</strong> GDI — Gobierno Digital e Innovación · Fecha de análisis: 24 de julio de 2026 · gobiernodigitaleinnovacion.com</p>
+        </div>
+    </article>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
