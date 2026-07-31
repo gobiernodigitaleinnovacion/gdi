@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mitad de los municipios de México no genera ni 5 de cada 100 pesos de su presupuesto - GDI</title>
+    <meta name="description" content="1,178 de 2,380 municipios tienen autonomía fiscal menor a 5% y 230 dependen en 99% o más de las transferencias federales. El mapa completo de quién se paga solo — playa, nave industrial y suburbio premium — y quién no, según EFIPEM 2024 del INEGI.">
+    <link rel="canonical" href="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-31-mitad-municipios-autonomia-fiscal">
+    <link rel="icon" type="image/jpeg" href="../../images/gdi-logo.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gobierno Digital e Innovación">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="La mitad de los municipios de México no genera ni 5 de cada 100 pesos de su presupuesto">
+    <meta property="og:description" content="1,178 de 2,380 municipios tienen autonomía fiscal menor a 5% y 230 dependen en 99% o más de la federación. La radiografía completa de la autonomía fiscal municipal con EFIPEM 2024 del INEGI.">
+    <meta property="og:url" content="https://gobiernodigitaleinnovacion.com/blog/articulos/2026-07-31-mitad-municipios-autonomia-fiscal">
+    <meta property="og:image" content="https://gobiernodigitaleinnovacion.com/images/2026-07-31-og-autonomia-fiscal.png">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZDGM6LM7J');
+    </script>
+
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17677239215"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17677239215');
+    </script>
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+      ttq.load('D922C93C77UB3EFMT22G');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <style>
+        /* ===== Sistema visual cartográfico GDI ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #0A1626;
+            --ink2: #0F2238;
+            --paper: #F6F3EC;
+            --bone: #EDE8DD;
+            --gdi: #7C5CFF;
+            --muted: #5b6573;
+            /* Acento por categoría — Finanzas Municipales #7C5CFF */
+            --accent: #7C5CFF;
+            --accent-dark: #5b3fd6;
+            --accent-soft: rgba(124, 92, 255, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--gdi); color: #fff; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .coord { letter-spacing: 0.12em; text-transform: uppercase; }
+
+        .topo {
+            background-image:
+                radial-gradient(120% 90% at 82% -10%, rgba(124,92,255,.16), transparent 55%),
+                radial-gradient(100% 80% at -10% 110%, rgba(59,130,246,.12), transparent 55%);
+        }
+        .topo-lines {
+            background-image:
+                repeating-radial-gradient(circle at 78% 18%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px),
+                repeating-radial-gradient(circle at 14% 86%, rgba(255,255,255,.04) 0 1px, transparent 1px 60px);
+        }
+
+        /* ===== Nav ===== */
+        .nav {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(246, 243, 236, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(10, 22, 38, 0.1);
+        }
+        .nav-inner {
+            max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;
+            height: 4rem; display: flex; align-items: center; justify-content: space-between;
+        }
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); }
+        .brand-badge {
+            width: 2.25rem; height: 2.25rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--gdi); color: #fff; border-radius: 0.5rem;
+        }
+        .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .brand-tag { font-size: 0.7rem; color: rgba(10,22,38,.45); border-left: 1px solid rgba(10,22,38,.15); padding-left: 0.625rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.75rem; font-size: 0.875rem; font-weight: 500; }
+        .nav-links a { text-decoration: none; color: rgba(10,22,38,.7); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-cta { background: var(--gdi); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 9999px; font-weight: 600; transition: filter .2s; }
+        .nav-cta:hover { filter: brightness(1.1); }
+        @media (max-width: 860px) { .nav-links a:not(.nav-cta), .brand-tag { display: none; } }
+
+        /* ===== Hero oscuro ===== */
+        .hero { position: relative; background: var(--ink); color: var(--paper); overflow: hidden; }
+        .hero-texture { position: absolute; inset: 0; opacity: 0.6; }
+        .hero-inner { position: relative; z-index: 1; max-width: 52rem; margin: 0 auto; padding: 2.5rem 1.5rem 3.5rem 1.5rem; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: rgba(246,243,236,.6); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color .2s;
+        }
+        .back-link:hover { color: var(--paper); }
+        .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; font-size: 0.72rem; margin-bottom: 1.5rem; }
+        .cat-chip {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); border: 1px solid var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 9999px; font-weight: 600;
+        }
+        .hero-meta .meta-item { color: rgba(246,243,236,.55); }
+        .hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 700; line-height: 1.08; margin-bottom: 1.25rem; }
+        .hero-subtitle { font-size: 1.15rem; color: rgba(246,243,236,.72); max-width: 42rem; }
+
+        /* ===== Cuerpo ===== */
+        .article-body { max-width: 48rem; margin: 0 auto; padding: 3rem 1.5rem 1rem 1.5rem; }
+        .eyebrow { display: flex; align-items: center; gap: 0.75rem; font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem; }
+        .eyebrow .bar { height: 1px; width: 2rem; background: var(--accent); }
+
+        .article-body p { margin-bottom: 1.25rem; color: #2b3543; }
+        .article-body h2 {
+            font-size: 1.7rem; font-weight: 600; color: var(--ink);
+            margin: 3rem 0 1.25rem 0; padding-left: 1rem;
+            border-left: 4px solid var(--accent); line-height: 1.2;
+        }
+        .article-body h3 { font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 2.25rem 0 0.9rem 0; }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.4rem; }
+        .article-body li { margin-bottom: 0.5rem; color: #2b3543; }
+        .article-body strong { color: var(--ink); }
+        .src { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--muted); margin: -0.5rem 0 1.75rem 0; }
+
+        /* ===== Figura / gráfica ===== */
+        .figure { margin: 2.5rem 0; }
+        .figure img { width: 100%; height: auto; border-radius: 0.9rem; border: 1px solid rgba(10,22,38,.1); background: #fff; }
+        .figure figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; text-align: center; }
+
+        /* ===== Key fact (banda oscura) ===== */
+        .keyfact { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); border-radius: 1rem; padding: 2.25rem 2rem; margin: 2.5rem 0; text-align: center; }
+        .keyfact .kf-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .keyfact .kf-glow { position: absolute; inset: 0; }
+        .keyfact-content { position: relative; z-index: 1; }
+        .keyfact .big { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; color: var(--accent); line-height: 1; }
+        .keyfact p { color: rgba(246,243,236,.78); margin: 0.85rem 0 0 0; font-size: 1.02rem; }
+
+        /* ===== Stat grid ===== */
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2.5rem 0; }
+        .stat-card { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem; }
+        .stat-card .num { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.1; }
+        .stat-card .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+        /* ===== Tablas ===== */
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        .data-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid rgba(10,22,38,.1); border-radius: 0.75rem; overflow: hidden; font-size: 0.95rem; }
+        .data-table th { background: var(--ink); color: var(--paper); padding: 0.85rem 1rem; text-align: left; font-weight: 600; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; }
+        .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,22,38,.08); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table tbody tr:hover { background: var(--accent-soft); }
+        .row-accent { background: var(--accent-soft); }
+        .pos { color: #1f7d4e; font-weight: 700; }
+        .neg { color: #c2410c; font-weight: 700; }
+        .warn { color: #b45309; font-weight: 700; }
+
+        /* ===== Callouts ===== */
+        .callout { padding: 1.4rem 1.5rem; border-radius: 0.75rem; margin: 2rem 0; border-left: 4px solid; }
+        .callout strong { display: block; margin-bottom: 0.4rem; }
+        .callout-info { background: var(--accent-soft); border-color: var(--accent); }
+        .callout-warning { background: rgba(232,163,61,.12); border-color: #E8A33D; }
+
+        /* ===== Quote ===== */
+        .quote-box { background: var(--bone); border-left: 4px solid var(--accent); padding: 1.5rem 1.75rem; margin: 2.5rem 0; border-radius: 0 0.75rem 0.75rem 0; font-style: italic; font-size: 1.1rem; color: var(--ink); }
+
+        /* ===== CTA ===== */
+        .cta-box { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); border-radius: 1.25rem; padding: 2.5rem 2rem; margin: 3rem 0; text-align: center; }
+        .cta-box .cta-texture { position: absolute; inset: 0; opacity: 0.5; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 0.85rem; }
+        .cta-box p { color: rgba(246,243,236,.78); margin-bottom: 1.5rem; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: #fff; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; transition: filter .2s; }
+        .cta-btn:hover { filter: brightness(1.08); }
+
+        /* ===== Source box ===== */
+        .source-box { background: #fff; border: 1px solid rgba(10,22,38,.1); padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; }
+        .source-box p { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem 0; }
+        .source-box p:last-child { margin-bottom: 0; }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--ink); color: rgba(246,243,236,.7); padding: 2.5rem 0; margin-top: 3rem; }
+        .footer-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .footer-brand { display: flex; align-items: center; gap: 0.625rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer .coord { color: rgba(246,243,236,.5); font-size: 0.8rem; }
+
+        @media (max-width: 640px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.82rem; }
+            .data-table th, .data-table td { padding: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span class="brand-name">GDI</span>
+                <span class="brand-tag mono coord">Gobierno Digital</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#productos">Productos</a>
+                <a href="../../index.html#nosotros">Nosotros</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <a href="https://app.gobiernodigitaleinnovacion.com/" target="_blank" class="nav-cta"><i class="fas fa-rocket" style="font-size:.75rem;margin-right:.25rem;"></i> Ir a la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero topo">
+        <div class="hero-texture topo-lines"></div>
+        <div class="hero-inner">
+            <a href="../../blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+            <div class="hero-meta">
+                <span class="cat-chip mono coord"><i class="fas fa-coins"></i> Finanzas Municipales</span>
+                <span class="meta-item mono coord"><i class="far fa-calendar"></i> 31 Jul 2026</span>
+                <span class="meta-item mono coord"><i class="far fa-clock"></i> 10 min</span>
+            </div>
+            <h1>La mitad de los municipios de México no genera ni <span style="color:var(--accent)">5 de cada 100 pesos</span> de su presupuesto</h1>
+            <p class="hero-subtitle">1,178 de los 2,380 municipios con registro en EFIPEM 2024 tienen una autonomía fiscal menor a 5% — y 230 dependen en 99% o más de las transferencias federales. La radiografía completa de quién se paga solo, quién no, y por qué la brecha se está agrandando.</p>
+        </div>
+    </header>
+
+    <!-- ===== CUERPO ===== -->
+    <article class="article-body">
+        <div class="eyebrow mono coord">
+            <span class="bar"></span>
+            Finanzas públicas · Universo municipal completo · EFIPEM 2003-2024 · Julio 2026
+        </div>
+
+        <p>La pregunta con la que arrancó este análisis fue abierta: <strong>¿qué municipios de México se pagan solos y cuáles viven casi por completo de la federación — y qué tienen en común unos y otros?</strong> Para responderla ordenamos el universo completo — los <strong>2,380 municipios</strong> que reportaron sus finanzas en EFIPEM 2024 — por su autonomía fiscal: la proporción de su ingreso total que generan ellos mismos con impuestos (el predial ante todo), derechos, productos, aprovechamientos y contribuciones de mejoras. Sin preseleccionar territorios. El patrón que emergió es más duro que cualquier hipótesis previa.</p>
+
+        <p>En conjunto, los municipios del país administraron <strong>$708 mil millones de pesos en 2024</strong>. De cada 100 pesos de ese ingreso, <strong>24.5 se generaron localmente y 71.1 llegaron de participaciones y aportaciones federales</strong>. Pero ese promedio ponderado — que las grandes ciudades sostienen — esconde la distribución real: <strong>la mitad del país municipal opera con menos de 5% de ingresos propios</strong>.</p>
+
+        <h2>La distribución completa: el sótano es enorme</h2>
+
+        <figure class="figure">
+            <img src="../../images/2026-07-31-autonomia-distribucion.png" alt="Distribución de los 2,380 municipios por rango de autonomía fiscal 2024: 596 debajo de 2%, 582 entre 2 y 5%, solo 23 en 50% o más">
+            <figcaption>Distribución de los 2,380 municipios por rango de autonomía fiscal, 2024. Fuente: EFIPEM, INEGI.</figcaption>
+        </figure>
+
+        <p>Los números de la distribución no admiten lectura amable: <strong>596 municipios (uno de cada cuatro) no generan ni 2 de cada 100 pesos que ejercen; 1,178 (el 49.5%) no llegan a 5</strong>. En el otro extremo, apenas 142 municipios superan el 30% de autonomía y solo <strong>23 en todo el país generan la mitad o más de su propio ingreso</strong>. La autonomía fiscal municipal en México no es una escala continua: es una pirámide con una base enorme pegada al piso.</p>
+
+        <div class="keyfact">
+            <div class="kf-texture topo-lines"></div>
+            <div class="kf-glow" style="background: radial-gradient(60% 80% at 50% 30%, rgba(124,92,255,.22), transparent 70%);"></div>
+            <div class="keyfact-content">
+                <div class="big">230 municipios</div>
+                <p>dependen en 99% o más de las transferencias federales en 2024 — en 2003 eran 146. El grupo que vive por completo de la federación no se está reduciendo: está creciendo.</p>
+            </div>
+        </div>
+
+        <h2>El mapa estatal: de Quintana Roo (53%) a Chiapas (5%)</h2>
+
+        <figure class="figure">
+            <img src="../../images/2026-07-31-autonomia-estados-hero.png" alt="Autonomía fiscal ponderada de los municipios por estado 2024: Quintana Roo 53.2% encabeza y Chiapas 5.1% cierra la tabla">
+            <figcaption>Autonomía fiscal ponderada de los municipios de cada entidad, 2024. Fuente: EFIPEM, INEGI.</figcaption>
+        </figure>
+
+        <p>Agregados por entidad, los municipios de <strong>Quintana Roo (53.2%), Querétaro (49.7%) y Baja California Sur (40.2%)</strong> encabezan la tabla — turismo e industria con catastros que cobran. En el fondo, los municipios de <strong>Chiapas generan apenas 5.1% de su ingreso; los de Oaxaca y Tabasco, 9.1%; los de Tlaxcala, 9.8%</strong>. Entre el primer lugar y el último hay una brecha de 10 a 1: por cada peso propio que logra un municipio chiapaneco promedio, uno quintanarroense genera diez.</p>
+
+        <h2>Los que se pagan solos: playa, nave industrial y suburbio premium</h2>
+
+        <p>El grupo de municipios con mayor autonomía no corresponde al cliché del "norte rico". Ordenando el universo completo, los extremos altos son tres tipos de territorio muy concretos:</p>
+
+        <ul>
+            <li><strong>La playa:</strong> Puerto Morelos (68.4%), Tulum (63.3%), Cancún (63.0%), Isla Mujeres (62.1%) y Playa del Carmen (59.1%) — todo el litoral de Quintana Roo — más Bahía de Banderas (58.9%), Puerto Peñasco (56.7%) y Los Cabos (53.5%).</li>
+            <li><strong>La nave industrial:</strong> El Marqués (68.4%), Querétaro capital (60.0%), Ramos Arizpe (59.8%), Arteaga (59.2%), Ciénega de Flores (52.3%) y Villa de Reyes (50.0%) — los corredores manufactureros del Bajío, Saltillo y Monterrey.</li>
+            <li><strong>El suburbio de alta plusvalía:</strong> Huixquilucan (56.9%), Zapopan (50.8%) y San Pedro Garza García (48.4%), que recauda <strong>$12,402 pesos por habitante solo en impuestos</strong> — la cifra más alta del país entre municipios de más de 100 mil habitantes.</li>
+        </ul>
+
+        <p>Lo que comparten no es geografía sino <strong>base gravable</strong>: propiedad inmobiliaria de alto valor — hoteles, naves, vivienda residencial — y actividad económica formal sobre la cual cobrar predial, derechos y licencias. Donde eso existe y el catastro funciona, el municipio se paga solo.</p>
+
+        <h2>La alerta: 37 ciudades que no cobran</h2>
+
+        <p>La lectura fácil sería que la dependencia extrema es cosa de municipios rurales diminutos. Es falsa a medias: el gradiente por tamaño existe — los municipios de menos de 5 mil habitantes promedian 4.7% de autonomía ponderada y los de más de 500 mil, 35.6% — pero <strong>37 municipios de más de 50 mil habitantes operan con menos de 5% de ingresos propios</strong>. No son pueblos: son ciudades enteras que no cobran.</p>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Municipio</th><th>Población (2020)</th><th>Autonomía fiscal</th><th>Dependencia federal</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="row-accent"><td><strong>Ocosingo, Chis.</strong></td><td>234,661</td><td class="warn">1.9%</td><td>95.3%</td></tr>
+                    <tr><td><strong>Las Margaritas, Chis.</strong></td><td>141,027</td><td class="warn">0.8%</td><td>96.7%</td></tr>
+                    <tr><td><strong>Chilón, Chis.</strong></td><td>137,262</td><td class="warn">1.1%</td><td>94.2%</td></tr>
+                    <tr><td><strong>Huejutla de Reyes, Hgo.</strong></td><td>126,781</td><td class="warn">4.1%</td><td>84.8%</td></tr>
+                    <tr><td><strong>Villaflores, Chis.</strong></td><td>109,536</td><td class="warn">3.6%</td><td>96.4%</td></tr>
+                    <tr><td><strong>Villa Victoria, Méx.</strong></td><td>108,196</td><td class="warn">4.4%</td><td>92.2%</td></tr>
+                    <tr><td><strong>Centla, Tab.</strong></td><td>107,731</td><td class="warn">3.6%</td><td>96.4%</td></tr>
+                    <tr class="row-accent"><td><strong>Chamula, Chis.</strong></td><td>101,967</td><td class="warn">0.0%</td><td>94.2%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="src">Municipios de más de 100 mil habitantes con autonomía fiscal menor a 5% en 2024. Fuente: EFIPEM 2024, INEGI; población del Censo 2020.</p>
+
+        <p>El caso extremo es <strong>Chamula, Chiapas: 102 mil habitantes, un presupuesto de $743 millones de pesos en 2024 y una autonomía fiscal de 0.0%</strong> — su recaudación propia es tan pequeña que no alcanza ni una décima de punto porcentual de su ingreso. Ocosingo, con 235 mil habitantes y un territorio más grande que varios estados, genera 1.9 de cada 100 pesos que ejerce.</p>
+
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-triangle-exclamation"></i> El dato de tendencia que debe preocupar</strong>
+            La autonomía ponderada nacional mejoró de 20.4% (2003) a 24.5% (2024) — pero esa mejora viene casi toda de las grandes ciudades. Mientras tanto, el número de municipios con dependencia de 99% o más pasó de 146 a 230, y la proporción de municipios debajo de 5% de autonomía sigue clavada en torno a la mitad del país (47.6% en 2003, 49.5% en 2024). El promedio sube; el sótano crece.
+        </div>
+
+        <h2>Implicaciones para la gestión pública</h2>
+
+        <h3>1. El predial es la reforma municipal más rentable que casi nadie hace</h3>
+        <p>La diferencia entre un municipio de 5% y uno de 30% de autonomía rara vez es la riqueza de su gente: es la existencia de un catastro actualizado, valores unitarios realistas y voluntad de cobrar. Los municipios turísticos e industriales del top no tienen tasas extraordinarias — tienen bases catastrales que reflejan el valor real de la propiedad. Modernizar el catastro es la inversión con mejor retorno fiscal disponible para una tesorería municipal, y existen programas federales y estatales de acompañamiento para hacerlo.</p>
+
+        <h3>2. Dependencia extrema es fragilidad extrema</h3>
+        <p>Un municipio que financia 99 de cada 100 pesos con transferencias está expuesto por completo a decisiones que no controla: fórmulas de distribución, ciclos de la recaudación federal participable, recortes. Para 230 municipios, una caída de la bolsa federal no es un ajuste: es la nómina y el alumbrado. La primera línea de cualquier análisis de riesgo financiero municipal debería ser este indicador.</p>
+
+        <h3>3. Las ciudades que no cobran renuncian a gobernar su crecimiento</h3>
+        <p>En municipios de 100 y 200 mil habitantes con autonomía menor a 5%, el problema ya no es solo de ingresos: sin predial ni derechos funcionando, el gobierno local carece del instrumento que ordena el uso de suelo, registra la propiedad y captura una parte de la plusvalía que su propio crecimiento genera. La debilidad fiscal y la debilidad territorial son la misma debilidad.</p>
+
+        <h3>4. El indicador pertenece en el diagnóstico de todo plan municipal</h3>
+        <p>La autonomía fiscal del municipio, su serie histórica y su comparación con municipios similares están disponibles públicamente en EFIPEM. Un Plan Municipal de Desarrollo que no diagnostica de qué vive su hacienda — y qué pasaría si las transferencias se contraen — está planeando sobre un supuesto, no sobre un dato.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">49.5%</div>
+                <div class="lbl">De los municipios del país (1,178 de 2,380) generan menos de 5% de su ingreso total (EFIPEM 2024)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">10 a 1</div>
+                <div class="lbl">Brecha entre la autonomía municipal ponderada de Quintana Roo (53.2%) y la de Chiapas (5.1%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">$12,402</div>
+                <div class="lbl">Pesos por habitante que recauda San Pedro Garza García solo en impuestos — el máximo entre municipios de 100 mil+ habitantes</div>
+            </div>
+        </div>
+
+        <h2>Conclusión</h2>
+
+        <p>México tiene 23 municipios que se pagan solos y 230 que viven por completo de la federación. Entre esos dos extremos, la mitad del país municipal opera sin hacienda propia en cualquier sentido significativo del término. El dato más incómodo no es la foto sino la película: veinte años de EFIPEM muestran que el promedio nacional mejora porque las grandes ciudades cobran cada vez mejor, mientras el grupo de dependencia total se agranda. La federalización del ingreso municipal fue diseñada como un piso de equidad; en cientos de municipios se ha vuelto el techo de la capacidad de gobernar. Y la diferencia entre un lado y otro del mapa — lo muestran la playa, la nave y el suburbio — no es destino: es catastro, cobro y decisión administrativa.</p>
+
+        <div class="quote-box">
+            230 municipios financian 99 de cada 100 pesos con recursos que no controlan. Para ellos, la fórmula de participaciones no es un tecnicismo hacendario: es la diferencia entre pagar la nómina o no pagarla.
+        </div>
+
+        <div class="cta-box topo">
+            <div class="cta-texture topo-lines"></div>
+            <div class="cta-content">
+                <h3><i class="fas fa-magnifying-glass-chart"></i> ¿De qué vive la hacienda de tu municipio?</h3>
+                <p>En la plataforma de GDI puedes consultar los ingresos, egresos, autonomía fiscal y su serie histórica completa — junto con población, pobreza y economía — de cualquier municipio de México, y construir el diagnóstico financiero de tu administración en minutos.</p>
+                <a href="https://app.gobiernodigitaleinnovacion.com/?utm_source=blog&utm_medium=cta&utm_campaign=20260731_autonomiafiscal" target="_blank" class="cta-btn"><i class="fas fa-rocket"></i> Explorar mi territorio</a>
+            </div>
+        </div>
+
+        <h2>Datos técnicos</h2>
+
+        <div class="source-box">
+            <p><strong>Fuente principal:</strong> INEGI, Estadística de Finanzas Públicas Estatales y Municipales (EFIPEM), serie 2003-2024, consultada en la capa de datos validada de Lokus. Universo 2024: 2,380 municipios con registro (los municipios restantes no reportaron ese ejercicio; los comparativos 2003 usan los 2,324 reportantes de aquel año). Montos en pesos corrientes de cada ejercicio.</p>
+            <p><strong>Definiciones:</strong> <em>autonomía fiscal</em> = (impuestos + derechos + productos + aprovechamientos + contribuciones de mejoras) ÷ ingreso total; <em>dependencia federal</em> = (participaciones + aportaciones) ÷ ingreso total. No suman 100% porque el financiamiento (deuda), las disponibilidades y otros ingresos completan el total. Los agregados "ponderados" dividen la suma de ingresos propios entre la suma de ingresos totales del grupo.</p>
+            <p><strong>Fuentes complementarias:</strong> INEGI, Censo de Población y Vivienda 2020 (población municipal para cortes por tamaño y per cápita). Metodología distinta a EFIPEM: se usa solo como denominador poblacional y se cita por separado.</p>
+            <p><strong>Nota metodológica:</strong> se analizó el universo completo ordenado por la métrica, sin preselección de territorios. Las 16 alcaldías de la Ciudad de México reportan bajo un régimen presupuestal distinto y EFIPEM no calcula su autonomía fiscal, por lo que quedan fuera del comparativo municipal. La autonomía de 0.0% de Chamula corresponde al redondeo a un decimal del indicador publicado.</p>
+            <p><strong>Análisis:</strong> GDI — Gobierno Digital e Innovación · Fecha de análisis: 31 de julio de 2026 · gobiernodigitaleinnovacion.com</p>
+        </div>
+    </article>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-badge"><i class="fas fa-landmark"></i></span>
+                <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);">GDI</span>
+                <span style="font-size:.85rem;margin-left:.5rem;">© 2026 Gobierno Digital e Innovación</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1.25rem;">
+                <a href="../../blog.html">Blog</a>
+                <a href="../../index.html#contacto-form">Contacto</a>
+                <span class="mono coord">GOV-TECH · MÉXICO</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
