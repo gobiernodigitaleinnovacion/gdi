@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan Municipal de Desarrollo: guía práctica y los datos para el diagnóstico | GDI</title>
+<meta name="description" content="Qué es el Plan Municipal de Desarrollo, qué debe contener (diagnóstico, ejes, indicadores, alineación), qué datos oficiales necesita y cómo generarlos: 14 estudios técnicos por municipio con cifras de INEGI, CONEVAL, CONAPO y finanzas públicas.">
+<link rel="canonical" href="https://gobiernodigitaleinnovacion.com/plan-municipal-de-desarrollo/">
+<meta property="og:title" content="Plan Municipal de Desarrollo: guía práctica + datos del diagnóstico">
+<meta property="og:description" content="La guía del PMD para equipos municipales y consultores: estructura, datos oficiales del diagnóstico y 14 estudios técnicos generables por municipio.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gobiernodigitaleinnovacion.com/plan-municipal-de-desarrollo/">
+<meta property="og:locale" content="es_MX">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZDGM6LM7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6ZDGM6LM7J');
+  gtag('config', 'AW-17677239215');
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {"@type": "Question", "name": "¿Qué es el Plan Municipal de Desarrollo?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Es el documento rector que cada ayuntamiento elabora al inicio de su gestión: diagnostica la situación del municipio, define ejes, objetivos, estrategias e indicadores, y alinea el trabajo municipal con el plan estatal y el Plan Nacional de Desarrollo. Es la hoja de ruta contra la que se evalúa a la administración."}},
+  {"@type": "Question", "name": "¿Qué debe contener un Plan Municipal de Desarrollo?",
+   "acceptedAnswer": {"@type": "Answer", "text": "La estructura típica: marco jurídico, diagnóstico con datos (población, pobreza, economía, finanzas, servicios), ejes rectores, objetivos-estrategias-líneas de acción por eje, indicadores y metas medibles, alineación con el plan estatal, el PND y los ODS, mecanismos de participación ciudadana y esquema de evaluación."}},
+  {"@type": "Question", "name": "¿En cuánto tiempo se debe presentar el PMD?",
+   "acceptedAnswer": {"@type": "Answer", "text": "El plazo lo fija la ley de planeación de cada estado; comúnmente ronda entre 3 y 4 meses después de la toma de posesión del ayuntamiento, con aprobación por cabildo y publicación oficial. Verifica el plazo exacto en la ley de planeación de tu entidad."}},
+  {"@type": "Question", "name": "¿Qué datos necesita el diagnóstico municipal?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Como mínimo: población y proyecciones (Censo INEGI y CONAPO), pobreza y carencias (CONEVAL), economía local (Censos Económicos: unidades económicas, empleo, sectores), finanzas públicas municipales (ingresos, egresos, dependencia federal, deuda) y recursos federales como el FAIS. Todo existe en fuentes oficiales públicas."}},
+  {"@type": "Question", "name": "¿Quién elabora el Plan Municipal de Desarrollo?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Formalmente el ayuntamiento a través de su área de planeación (IMPLAN o equivalente), muchas veces con apoyo de consultores externos. El cuello de botella suele ser el diagnóstico con datos: reunir, validar y redactar la evidencia de 5-6 fuentes oficiales distintas en semanas."}}
+ ]
+}
+</script>
+<style>
+:root{
+  --ink:#0A1626; --paper:#F6F3EC; --card:#FFFFFF; --line:#E2DCCB;
+  --gdi:#7C5CFF; --alerta:#E8A33D; --eco:#2FA86A; --muted:#5B6472;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65}
+a{color:var(--gdi)}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);padding:16px 22px;background:var(--paper)}
+header .inner{max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand em{font-style:normal;color:var(--gdi)}
+.btn{display:inline-block;background:var(--gdi);color:#fff;font-weight:600;padding:12px 26px;border-radius:10px;text-decoration:none;font-size:16px}
+.btn:hover{filter:brightness(1.08)}
+.btn-lite{display:inline-block;border:1.5px solid var(--gdi);color:var(--gdi);font-weight:600;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:14.5px}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,5.4vw,44px);line-height:1.12;letter-spacing:-.02em;margin:38px 0 14px;text-wrap:balance}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3.6vw,29px);margin:40px 0 12px}
+h3{font-family:'Space Grotesk',sans-serif;font-size:18px;margin:18px 0 6px}
+p{margin-bottom:14px}
+.lead{font-size:19px;color:var(--muted)}
+.meta{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+table{width:100%;border-collapse:collapse;font-size:15.5px;margin:16px 0 22px;background:var(--card);border-radius:12px;overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-family:'Space Grotesk',sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.catalogo{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:18px 0 8px}
+.estudio{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px}
+.estudio b{font-family:'Space Grotesk',sans-serif;display:block;margin-bottom:4px}
+.estudio .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;
+  padding:2px 8px;border-radius:999px;margin-bottom:8px}
+.tag-gob{background:#EEE9FF;color:var(--gdi)} .tag-eco{background:#E3F4EA;color:var(--eco)} .tag-inv{background:#FBEFD9;color:#9A6E0D}
+.cta-box{background:var(--ink);color:#fff;border-radius:16px;padding:32px;text-align:center;margin:34px 0}
+.cta-box h2{margin-top:0;color:#fff}
+.cta-box p{color:#B9C2D8}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;font-family:'Space Grotesk',sans-serif}
+details p{margin:10px 0 0;color:var(--muted)}
+ol.pasos{counter-reset:paso;list-style:none;margin:16px 0 22px}
+ol.pasos li{position:relative;padding:0 0 18px 52px;counter-increment:paso}
+ol.pasos li::before{content:counter(paso);position:absolute;left:0;top:0;width:36px;height:36px;
+  border-radius:10px;background:var(--gdi);color:#fff;display:grid;place-items:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700}
+footer{border-top:1px solid var(--line);margin-top:52px;padding:26px 22px 42px;text-align:center;color:var(--muted);font-size:14px}
+.fuente{font-size:13px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+</style>
+</head>
+<body>
+<header><div class="inner">
+  <a class="brand" href="https://gobiernodigitaleinnovacion.com/">Gobierno Digital <em>e Innovación</em></a>
+  <nav style="display:flex;gap:14px;align-items:center">
+    <a href="https://gobiernodigitaleinnovacion.com/blog.html" style="font-size:14.5px;text-decoration:none;color:var(--muted)">Blog</a>
+    <a class="btn-lite" href="https://app.gobiernodigitaleinnovacion.com/?utm_source=pilar&utm_medium=header&utm_campaign=pmd">Entrar a LokusGov</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <p class="meta" style="margin-top:34px">GUÍA PRÁCTICA · PARA EQUIPOS MUNICIPALES Y CONSULTORES · AGOSTO 2026</p>
+  <h1>Plan Municipal de Desarrollo: la guía práctica (y los datos para el diagnóstico)</h1>
+  <p class="lead">Cada tres años, 2,400+ ayuntamientos de México repiten la misma carrera: armar en unos
+  meses el documento que regirá toda su gestión. Esta guía resume qué debe llevar un PMD que aguante
+  revisión — y resuelve el cuello de botella de siempre: <strong>el diagnóstico con datos oficiales</strong>.</p>
+
+  <h2>¿Qué es y por qué importa?</h2>
+  <p>El Plan Municipal de Desarrollo es el documento rector de la administración: diagnostica la
+  situación real del municipio, fija ejes y objetivos, define indicadores medibles y alinea el trabajo
+  local con el plan estatal, el Plan Nacional de Desarrollo y los ODS. No es un trámite: es el papel
+  contra el que el cabildo, los órganos de fiscalización y los ciudadanos evaluarán a la administración.</p>
+  <p>El plazo para presentarlo lo fija la ley de planeación de cada estado — comúnmente ronda entre
+  <strong>3 y 4 meses después de la toma de posesión</strong>, con aprobación de cabildo y publicación
+  oficial. Verifica el plazo exacto de tu entidad: es de los incumplimientos más observados.</p>
+
+  <h2>La estructura que debe llevar</h2>
+  <table>
+    <tr><th>Sección</th><th>Qué resuelve</th></tr>
+    <tr><td><strong>Marco jurídico</strong></td><td>Fundamento en la ley de planeación estatal y la Ley Orgánica Municipal</td></tr>
+    <tr><td><strong>Diagnóstico</strong></td><td>La foto real del municipio CON DATOS: población, pobreza, economía, finanzas, servicios</td></tr>
+    <tr><td><strong>Ejes rectores</strong></td><td>Las 4-6 grandes prioridades de la gestión</td></tr>
+    <tr><td><strong>Objetivos, estrategias y líneas de acción</strong></td><td>Qué se va a lograr y cómo, por eje</td></tr>
+    <tr><td><strong>Indicadores y metas</strong></td><td>Cómo se medirá el avance (línea base + meta)</td></tr>
+    <tr><td><strong>Alineación</strong></td><td>Correspondencia con plan estatal, PND y ODS</td></tr>
+    <tr><td><strong>Participación ciudadana</strong></td><td>Foros, consultas y cómo se incorporaron</td></tr>
+    <tr><td><strong>Evaluación</strong></td><td>Mecanismo de seguimiento (típicamente ligado a PbR-SED)</td></tr>
+  </table>
+
+  <h2>El cuello de botella: el diagnóstico con datos</h2>
+  <p>Lo que más detiene un PMD no son los ejes ni la redacción — es juntar la evidencia. Un diagnóstico
+  defendible necesita al menos cinco fuentes oficiales distintas, cada una con su formato y su técnica:</p>
+  <table>
+    <tr><th>Tema del diagnóstico</th><th>Fuente oficial</th></tr>
+    <tr><td>Población actual y proyección a 2030-2040</td><td>Censo de Población (INEGI) + CONAPO</td></tr>
+    <tr><td>Pobreza y carencias sociales</td><td>CONEVAL</td></tr>
+    <tr><td>Economía local: empresas, empleo, sectores</td><td>Censos Económicos (INEGI)</td></tr>
+    <tr><td>Finanzas municipales: ingresos, dependencia, deuda</td><td>EFIPEM / cuenta pública</td></tr>
+    <tr><td>Recursos federales para infraestructura social</td><td>FAIS (Ramo 33)</td></tr>
+  </table>
+
+  <div class="cta-box">
+    <h2>El diagnóstico, generado por municipio</h2>
+    <p>LokusGov genera estudios técnicos de 24-28 páginas por municipio con esas fuentes ya cruzadas
+    y validadas — incluido un <strong>insumo directo para el Plan de Desarrollo</strong>. Plan
+    gratuito para explorar los datos de tu municipio; planes de pago desde $299 MXN/mes.</p>
+    <a class="btn" href="https://app.gobiernodigitaleinnovacion.com/?utm_source=pilar&utm_medium=cta&utm_campaign=pmd">Ver los datos de mi municipio →</a>
+  </div>
+
+  <h2>Los 14 estudios generables por municipio</h2>
+  <p>Cada uno se genera con datos oficiales de tu municipio (o estado), con fuente citada en cada
+  cifra, formato profesional en PDF y comparativas contra municipios pares:</p>
+  <div class="catalogo">
+    <div class="estudio"><span class="tag tag-gob">PLANEACIÓN</span><b>Plan de Desarrollo (insumo)</b>El paquete de datos y diagnóstico listo para integrarse al PMD.</div>
+    <div class="estudio"><span class="tag tag-gob">PLANEACIÓN</span><b>Diagnóstico Territorial Integral</b>La foto completa del municipio: población, economía, social y fiscal.</div>
+    <div class="estudio"><span class="tag tag-gob">SOCIAL</span><b>Diagnóstico de Desarrollo Social</b>Pobreza, carencias y rezago con cifras CONEVAL.</div>
+    <div class="estudio"><span class="tag tag-gob">DEMOGRAFÍA</span><b>Dinámica Poblacional y Proyecciones</b>Cuánta gente habrá en 2030-2040 y qué edades tendrá (CONAPO).</div>
+    <div class="estudio"><span class="tag tag-gob">FINANZAS</span><b>Finanzas Públicas — Año</b>De dónde viene y a dónde va el dinero municipal, contra pares.</div>
+    <div class="estudio"><span class="tag tag-gob">FINANZAS</span><b>Finanzas Públicas — Trayectoria</b>La evolución multianual: dependencia federal, deuda, calidad del gasto.</div>
+    <div class="estudio"><span class="tag tag-gob">FINANZAS</span><b>Gasto Público Funcional — Trimestre</b>En qué funciones se ejerce el gasto, trimestre por trimestre.</div>
+    <div class="estudio"><span class="tag tag-gob">FINANZAS</span><b>Gasto Público Funcional — Trayectoria</b>La serie del gasto funcional para detectar giros de prioridad.</div>
+    <div class="estudio"><span class="tag tag-gob">RAMO 33</span><b>FAIS — Año</b>El fondo de infraestructura social: asignación y ejercicio.</div>
+    <div class="estudio"><span class="tag tag-gob">RAMO 33</span><b>FAIS — Trayectoria</b>Cómo ha evolucionado el FAIS del municipio en el tiempo.</div>
+    <div class="estudio"><span class="tag tag-eco">ECONOMÍA</span><b>Evolución Económica — Año</b>Empresas, empleo y producción del municipio en el último censo.</div>
+    <div class="estudio"><span class="tag tag-eco">ECONOMÍA</span><b>Evolución Económica — Trayectoria</b>20 años de censos económicos: qué sectores crecen y cuáles caen.</div>
+    <div class="estudio"><span class="tag tag-inv">INVERSIÓN</span><b>Estudio de Mercado Territorial</b>El mercado local para atraer o evaluar inversión.</div>
+    <div class="estudio"><span class="tag tag-inv">INVERSIÓN</span><b>Estudio de Factibilidad Económica</b>Viabilidad económica de un proyecto en el territorio.</div>
+  </div>
+
+  <h2>Cómo armar el PMD en 5 pasos</h2>
+  <ol class="pasos">
+    <li><strong>Asegura el marco y el plazo.</strong> Ley de planeación estatal + Ley Orgánica: fechas,
+    formato de aprobación (cabildo) y publicación. Este paso define tu calendario real.</li>
+    <li><strong>Levanta el diagnóstico con datos.</strong> Las 5 fuentes de la tabla de arriba, por
+    municipio, con línea base numérica para cada tema. Sin línea base no hay indicadores medibles.</li>
+    <li><strong>Convierte hallazgos en ejes.</strong> Los ejes salen del diagnóstico, no al revés:
+    si el dato dice que la dependencia federal es 90%, un eje de fortalecimiento recaudatorio se
+    justifica solo.</li>
+    <li><strong>Escribe objetivos con indicador y meta.</strong> Cada línea de acción con su indicador,
+    su línea base (del diagnóstico) y su meta al cierre de la gestión.</li>
+    <li><strong>Alinea, consulta y aprueba.</strong> Correspondencia con plan estatal/PND/ODS, foros de
+    participación documentados, aprobación de cabildo y publicación.</li>
+  </ol>
+
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Qué es el Plan Municipal de Desarrollo?</summary><p>El documento rector que cada
+  ayuntamiento elabora al inicio de su gestión: diagnóstico, ejes, objetivos, indicadores y alineación
+  con la planeación estatal y nacional.</p></details>
+  <details><summary>¿En cuánto tiempo debe presentarse?</summary><p>Lo fija la ley de cada estado;
+  comúnmente entre 3 y 4 meses tras la toma de posesión. Verifica tu ley estatal de planeación.</p></details>
+  <details><summary>¿Qué datos necesita el diagnóstico?</summary><p>Población (INEGI/CONAPO), pobreza
+  (CONEVAL), economía local (Censos Económicos), finanzas municipales y FAIS — todos existen en fuentes
+  oficiales; el trabajo está en cruzarlos por municipio.</p></details>
+  <details><summary>¿Quién lo elabora?</summary><p>El área de planeación del ayuntamiento (IMPLAN o
+  equivalente), con frecuencia apoyada por consultores. LokusGov sirve a ambos: al equipo interno le da
+  los datos listos y al consultor le multiplica la capacidad de producción.</p></details>
+  <details><summary>¿LokusGov hace el PMD completo?</summary><p>Genera el insumo duro: el diagnóstico con
+  datos oficiales, los estudios técnicos por municipio y las comparativas. La definición política —
+  ejes, prioridades, participación — es del ayuntamiento, como debe ser.</p></details>
+
+  <p style="margin-top:30px"><span class="fuente">Fuentes de los estudios: INEGI (Censos de Población y
+  Económicos), CONEVAL, CONAPO, finanzas públicas municipales y FAIS/Ramo 33 — vía la capa de datos
+  validada de LokusGov. Los plazos legales del PMD varían por entidad federativa; esta guía es
+  orientativa y no constituye asesoría jurídica.</span></p>
+</main>
+
+<footer>
+  <div>© 2026 Gobierno Digital e Innovación · <a href="https://gobiernodigitaleinnovacion.com/">gobiernodigitaleinnovacion.com</a> ·
+  <a href="https://gobiernodigitaleinnovacion.com/blog.html">Blog</a> ·
+  <a href="https://app.gobiernodigitaleinnovacion.com/?utm_source=pilar&utm_medium=footer&utm_campaign=pmd">LokusGov</a></div>
+</footer>
+</body>
+</html>

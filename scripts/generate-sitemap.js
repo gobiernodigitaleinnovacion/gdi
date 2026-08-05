@@ -12,6 +12,8 @@ const SITE = 'https://gobiernodigitaleinnovacion.com';
 const staticPages = [
   { loc: '/',           changefreq: 'weekly',  priority: '1.0' },
   { loc: '/blog.html',  changefreq: 'daily',   priority: '0.9' },
+  // Pilar SEO evergreen (2026-08-05): "plan municipal de desarrollo" (~1,900 busq/mes)
+  { loc: '/plan-municipal-de-desarrollo/', changefreq: 'monthly', priority: '0.9' },
   { loc: '/pdf.html',   changefreq: 'monthly', priority: '0.5' },
 ];
 
