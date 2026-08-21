@@ -110,6 +110,14 @@
     },
     {
       "@type": "Question",
+      "name": "¿El resultado se debe solo a que Campeche y Tabasco son estados petroleros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo en parte. Restando el sector minería (SCIAN 21) a las 32 entidades, Campeche cae del lugar 1 al 30 en valor agregado por persona y Tabasco del 2 al 23, y la correlación entre productividad e ingreso laboral sube de 0.096 a 0.557. La renta petrolera explica buena parte del desacople, pero aun depurada la productividad da cuenta de cerca de un tercio de la variación del ingreso entre entidades, frente a una correlación de −0.907 de la informalidad. En ocho entidades el Censo Económico reserva los datos de minería por confidencialidad, por lo que la depuración es conservadora."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Qué proporción del valor que genera la economía llega a los trabajadores?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -370,7 +378,7 @@
             </div>
         </div>
 
-        <p>Retirando esos dos enclaves la relación aparece, pero débil: <strong>la correlación sube a 0.535</strong>, que explica menos de un tercio de la variación. La productividad promedio de un territorio no dice, por sí sola, cuánto gana su gente.</p>
+        <p>Retirando esos dos enclaves la relación aparece, pero débil: <strong>la correlación sube a 0.535</strong>. La productividad promedio de un territorio no dice, por sí sola, cuánto gana su gente.</p>
 
         <h2>Lo que sí predice el ingreso: la estructura del empleo</h2>
 
@@ -427,6 +435,19 @@
         </div>
         <p class="src">Las 32 entidades ordenadas por valor agregado censal bruto por persona ocupada (Censo Económico 2024, cifras nominales). Ingreso promedio mensual del ocupado y tasa de informalidad, ENOE 1T2026. Personal sin pago = personal no remunerado ÷ personal ocupado total; nómina ÷ valor agregado = remuneraciones totales ÷ valor agregado censal bruto, ambos del Censo Económico 2024. En color, las 12 entidades del cuadrante cruzado. Fuente: INEGI.</p>
 
+        <h2>Prueba de robustez: el mismo mapa sin petróleo</h2>
+
+        <p>Si el desacople lo produjera únicamente la renta petrolera, retirarla debería restaurar la relación. Lo comprobamos restando el sector minería (SCIAN 21) a las 32 entidades y recalculando todo. <strong>A nivel nacional la minería aporta el 6.4% del valor agregado con el 0.54% del personal ocupado: 150,262 personas en 2,960 unidades económicas</strong>; sin ella, el valor por persona del país baja de $560,263 a $527,229.</p>
+
+        <p>El efecto sobre el ranking es demoledor donde tenía que serlo: <strong>Campeche cae del lugar 1 al 30 (de $1,765,839 a $290,151 por persona) y Tabasco del 2 al 23 (a $351,757)</strong>. También se mueven <strong>Zacatecas, donde la minería es el 24.3% del valor estatal con el 8.5% del personal (lugar 14 al 19); Veracruz, 14.2% del valor con el 0.4% del personal (12 al 16); y Sonora, 13.5% con 2.6% (7 al 8)</strong>. El primer lugar sin minería pasa a ser la Ciudad de México.</p>
+
+        <div class="callout callout-warning">
+            <strong><i class="fas fa-triangle-exclamation"></i> Qué sobrevive a la depuración</strong>
+            Sin minería, la correlación entre productividad e ingreso sube de <strong>0.096 a 0.557</strong> (de 0.468 a 0.661 midiendo posiciones en vez de montos). Es decir: <strong>la renta petrolera explica buena parte del desacople, pero no todo</strong>. Aun depurada, la productividad da cuenta de cerca de un tercio de la variación del ingreso entre entidades, mientras la informalidad se mantiene en <strong>−0.907</strong>. El enclave era la versión extrema del patrón, no su causa.
+        </div>
+
+        <p>Con una salvedad que conviene explicitar: <strong>en ocho entidades —Baja California Sur, Chiapas, Michoacán, Morelos, Nayarit, Oaxaca, San Luis Potosí y Tamaulipas— el Censo Económico reserva por confidencialidad los datos del sector minero</strong> (entre 19 y 121 unidades económicas con valores suprimidos), de modo que en ellas no fue posible descontarlo. El ejercicio es, por tanto, conservador: si esos montos se pudieran restar, la depuración sería algo mayor y no menor.</p>
+
         <h2>Los cuatro Méxicos que salen del cruce</h2>
 
         <p>Cruzar las dos medianas —$432,176 de valor por persona y $10,896 de ingreso mensual— reparte a las 32 entidades en cuatro grupos, sin que ninguna quede fuera:</p>
@@ -453,7 +474,7 @@
 
         <h2>El contraste con las carencias</h2>
 
-        <p>La medición de pobreza 2024 del CONEVAL ordena la carencia por acceso a la seguridad social casi igual que la informalidad de la ENOE: <strong>Chiapas 76.4%, Oaxaca 73.9% y Guerrero 72.6% en el extremo alto; Coahuila 23.4% y Nuevo León 24.7% en el bajo</strong>. Las dos entidades más productivas del país no escapan: <strong>Tabasco registra 54.8% de carencia por acceso a la seguridad social y 34.8% de pobreza; Campeche, 51.2% y 36.7%</strong>. Producir mucho por persona no protegió a su población.</p>
+        <p>La medición de pobreza 2024 del CONEVAL ordena la carencia por acceso a la seguridad social casi igual que la informalidad: <strong>Chiapas 76.4%, Oaxaca 73.9% y Guerrero 72.6% arriba; Coahuila 23.4% y Nuevo León 24.7% abajo</strong>. Las dos entidades más productivas no escapan: <strong>Tabasco registra 54.8% de carencia y 34.8% de pobreza; Campeche, 51.2% y 36.7%</strong>.</p>
 
         <h2>Implicaciones para la gestión pública</h2>
 
@@ -464,7 +485,7 @@
         <p>Con −0.907 entre informalidad e ingreso, y 0.953 entre informalidad y personal sin pago, el cuello de botella salarial en Oaxaca, Guerrero, Chiapas o Hidalgo no se resuelve solo elevando el valor agregado del territorio: se resuelve cambiando la estructura de las unidades donde la gente trabaja. Es un diagnóstico que lleva a otros instrumentos —formalización, seguridad social, tamaño de unidad económica— y que debería quedar explícito en un <a href="../../plan-municipal-de-desarrollo/">plan municipal o estatal de desarrollo</a>.</p>
 
         <h3>3. Dos cautelas al usar estas cifras en un informe</h3>
-        <p>Primera: el Censo Económico contabiliza puestos en establecimientos y la ENOE personas ocupadas en hogares —los 27.97 millones del censo equivalen al 47.0% de los 59.55 millones de la ENOE—, de modo que <strong>son universos que se comparan, no que se suman ni se dividen entre sí</strong>. Segunda: todos los montos censales son nominales. Presentar el crecimiento del valor agregado 2019-2024 como logro real, sin señalarlo, sobreestima el resultado; por eso aquí el argumento se apoya en proporciones y en la distancia entre dos series igualmente nominales.</p>
+        <p>El censo cuenta puestos en establecimientos y la ENOE personas ocupadas en hogares —los 27.97 millones del primero son el 47.0% de los 59.55 millones de la segunda—: <strong>se comparan, no se suman ni se dividen entre sí</strong>. Y todos los montos censales son nominales: presentar el crecimiento del valor agregado 2019-2024 como logro real, sin señalarlo, sobreestima el resultado.</p>
 
         <p>Este hallazgo se conecta con dos análisis previos: el <a href="2026-07-17-empleo-record-informalidad-que-no-cede.html">mapa de la informalidad que ningún trimestre mueve</a> ubicó a los 32.6 millones sin seguridad social, y <a href="2026-08-15-retirada-empresas-grandes-sur.html">la retirada silenciosa de la empresa grande del sur</a> mostró por qué. El eslabón que faltaba es este: el valor que genera un territorio y el ingreso que recibe su gente son dos hechos separados, unidos por el tipo de unidad económica donde se trabaja.</p>
 
@@ -501,6 +522,10 @@
                 <p>La estructura del empleo. La informalidad y el ingreso del ocupado correlacionan en −0.907. Y el personal no remunerado que registra el Censo Económico correlaciona en 0.953 con la informalidad de la ENOE, pese a ser dos fuentes independientes.</p>
             </div>
             <div class="faq-item">
+                <h3>¿El resultado se debe solo a que Campeche y Tabasco son petroleros?</h3>
+                <p>Solo en parte. Restando el sector minería a las 32 entidades, Campeche cae del lugar 1 al 30 y Tabasco del 2 al 23, y la correlación entre productividad e ingreso sube de 0.096 a 0.557: la renta petrolera explica buena parte del desacople, pero aun depurada la productividad da cuenta de cerca de un tercio de la variación del ingreso, contra −0.907 de la informalidad. En ocho entidades el censo reserva los datos de minería por confidencialidad, por lo que la depuración es conservadora.</p>
+            </div>
+            <div class="faq-item">
                 <h3>¿Qué proporción del valor que genera la economía llega a los trabajadores?</h3>
                 <p>Las remuneraciones equivalen al 22.2% del valor agregado censal bruto nacional en 2024, contra 24.8% en 2004. La participación bajó en 27 de las 32 entidades entre 2014 y 2024. En el mismo periodo largo, el valor por persona se multiplicó por 2.70 y la remuneración media por 2.12, ambas en pesos corrientes.</p>
             </div>
@@ -511,6 +536,7 @@
         <div class="source-box">
             <p><strong>Fuentes:</strong> INEGI, Censos Económicos 2004, 2009, 2014, 2019 y 2024 (agregados nacional y por entidad, y detalle por sector SCIAN); INEGI, Encuesta Nacional de Ocupación y Empleo, primer trimestre de 2026, nivel estatal; CONEVAL, medición de pobreza 2024, nivel estatal. Todo consultado en la capa de datos validada de Lokus. Universo completo: las 32 entidades federativas, sin preselección.</p>
             <p><strong>Definiciones:</strong> <em>valor agregado por persona</em> = valor agregado censal bruto ÷ personal ocupado total. <em>Remuneración media</em> = remuneraciones totales ÷ personal <em>remunerado</em> (excluye propietarios, familiares y demás personal no remunerado). <em>Participación de las remuneraciones</em> = remuneraciones totales ÷ valor agregado censal bruto, ambos del mismo censo. <em>Personal sin pago</em> = personal no remunerado ÷ personal ocupado total. <em>Tasa de informalidad</em> = ocupación informal ÷ población ocupada (ENOE).</p>
+            <p><strong>Prueba de robustez:</strong> el ejercicio sin minería resta el sector 21 (SCIAN) del valor agregado y del personal ocupado de cada entidad, tomando el agregado estatal validado como base. En ocho entidades (Baja California Sur, Chiapas, Michoacán, Morelos, Nayarit, Oaxaca, San Luis Potosí y Tamaulipas) el censo publica el número de unidades económicas del sector pero reserva sus montos por confidencialidad, por lo que ahí no pudo descontarse: el resultado es conservador. La diferencia entre el agregado estatal y la suma de sus sectores —0.93% del valor agregado y 0.16% del personal a nivel nacional— corresponde a esa misma reserva.</p>
             <p><strong>Advertencias metodológicas:</strong> el Censo Económico y la ENOE son fuentes independientes con universos distintos —establecimientos frente a hogares— y periodos de referencia distintos; en este análisis se comparan en paralelo y nunca se combinan dentro de un mismo cociente. Los censos económicos no cubren la actividad agropecuaria (salvo pesca y acuicultura) ni el trabajo sin establecimiento. Todas las cifras monetarias censales son <strong>nominales</strong>, en pesos corrientes del año de referencia de cada censo. Las correlaciones reportadas son de Pearson sobre las 32 entidades.</p>
             <p><strong>Clasificación SCIAN:</strong> sector 21, Minería; sectores 31-33, Industrias manufactureras; sector 43, Comercio al por mayor; sector 46, Comercio al por menor. Las cifras sectoriales de Campeche y Tabasco corresponden al nivel "Sector" del Sistema de Clasificación Industrial de América del Norte en el Censo Económico 2024.</p>
             <p><strong>Nota:</strong> el análisis partió de una pregunta abierta y del universo completo ordenado por la métrica; los grupos y el patrón emergen de los datos, no de una clasificación previa.</p>
