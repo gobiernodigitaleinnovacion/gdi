@@ -2,27 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gobiernodigitaleinnovacion.com/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://gobiernodigitaleinnovacion.com/blog.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://gobiernodigitaleinnovacion.com/plan-municipal-de-desarrollo/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://gobiernodigitaleinnovacion.com/pdf.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gobiernodigitaleinnovacion.com/blog/articulos/2026-11-13-11-millones-de-viviendas-se-conectaron-a-internet-y-hay-mas-sin-computadora-que-en-2020</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gobiernodigitaleinnovacion.com/blog/articulos/2026-10-30-fondo-federal-de-salud-23-estados-se-redujo-a-la-mitad-imss-bienestar</loc>
